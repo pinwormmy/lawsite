@@ -13,10 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HomeController {
-    
-    // 전반적으로 수정필요. 그래도 완전 처음부터 만드는 것보다 나아보임
-
-    // 커밋테스트!
 
     @Autowired
     BoardService boardService;

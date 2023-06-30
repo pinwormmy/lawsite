@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>컬럼형 사이트</title>
+<title>견본사이트 - 디자인 재구성해야함</title>
 <style>
 body {
     height: 100%;
