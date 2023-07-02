@@ -62,7 +62,10 @@ body {
     height: 100%;
     font-family: 'NanumSquareNeo', sans-serif;
     font-size: 16px;
-    background-color: blue;
+    background-color: #00007e;
+    color: white;
+}
+a {
     color: white;
 }
 
@@ -136,7 +139,7 @@ input {
     box-shadow: none;
     text-align: center;
     background-image: url("/img/search-icon.png");
-    background-color: white;
+    background-color: #00007e;
     background-repeat: no-repeat;
     background-size: 20px;
     background-position: 270px center;
@@ -183,7 +186,7 @@ input {
     margin: 1%;
 }
 .page-header {
-    background-color: white;
+    background-color: #00007e;
     margin: 0;
 }
 .keyword-button {
@@ -209,7 +212,7 @@ hr {
 }
 .admin-button {
     color: white;
-    background-color: Turquoise;
+    background-color: #00007e;
     margin: 10px;
 }
 </style>

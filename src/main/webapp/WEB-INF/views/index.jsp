@@ -8,7 +8,7 @@ body {
     height: 100%;
 }
 .boardList {
-    background-color: #fff;
+    background-color: #00007e;
     border-collapse: collapse;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
@@ -29,7 +29,7 @@ body {
     max-width: 100%;
 }
 .boardList tr th {
-    background-color: #EDFFFF;
+    background-color: #00007e;
     color: black;
 }
 .boardList tr th:first-child {
@@ -101,7 +101,7 @@ span {
 }
 
 .leftbar-ul li a:hover {
-  background-color: #eee;
+  background-color: #00007e;
 }
 
 .row {
