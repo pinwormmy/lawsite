@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
+<head>
+<style>
+.footer {
+    background-color: #00007e;
+}
+</style>
+</head>
 <footer class="footer section text-center">
 	<div class="container">
 		<div class="row" style="margin:15px;">

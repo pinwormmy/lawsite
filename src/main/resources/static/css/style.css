@@ -57,21 +57,26 @@ FACEBOOK: https://www.facebook.com/themefisher
 
 -------------------------------------------------------------------*/
 /*=== MEDIA QUERY ===*/
-@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500");
+
+@font-face {
+    font-family: 'DungGeunMo';
+    src: url('/fonts/DungGeunMo.ttf') format('truetype');
+}
+
 body {
   line-height: 1.5;
-  font-family: "Poppins", sans-serif;
-  -webkit-font-smoothing: antialiased;
+  font-family: "DungGeunMo", sans-serif;
+  color: white;
 }
 
 p {
-  font-family: "Poppins", sans-serif;
+  font-family: "DungGeunMo", sans-serif;
   color: #757575;
   font-size: 15px;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Poppins", sans-serif;
+  font-family: "DungGeunMo", sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -533,7 +538,7 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
 
 .commonSelect:before {
   content: '\f3d0';
-  font-family: "themefisher-font";
+  font-family: "DungGeunMo";
   position: absolute;
   right: -4px;
   top: 4px;
@@ -612,7 +617,7 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
   content: "\f209";
   position: absolute;
   right: 25px;
-  font-family: "themefisher-font";
+  font-family: "DungGeunMo";
 }
 
 .commonAccordion .panel .panel-title a.collapsed:before, .commonAccordion-2 .panel .panel-title a.collapsed:before {
@@ -1009,7 +1014,7 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
   font-weight: 400;
   color: white;
   letter-spacing: 1px;
-  font-family: "Roboto Condensed";
+  font-family: "DungGeunMo";
   border-color: white;
   border-style: solid;
   border-width: 2px;
@@ -1038,7 +1043,7 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
   font-weight: 400;
   color: white;
   letter-spacing: -2px;
-  font-family: "Playfair Display";
+  font-family: "DungGeunMo";
   margin-bottom: 35px;
 }
 
@@ -2106,7 +2111,7 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
 .widget.widget-category ul li a:before {
   padding-right: 10px;
   content: "\f3d1";
-  font-family: "themefisher-font";
+  font-family: "DungGeunMo";
 }
 
 .widget.widget-category ul li a:hover {
@@ -2550,7 +2555,7 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
   height: 45px !important;
   color: #0c0c0c;
   height: 38px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'DungGeunMo', sans-serif;
   font-size: 14px;
   border-radius: 0;
 }
