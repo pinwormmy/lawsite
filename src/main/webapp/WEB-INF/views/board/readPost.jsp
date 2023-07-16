@@ -6,17 +6,13 @@
 <title>${post.title} - 승인연재게시판</title>
 
 <style>
-.postTitle {
-    color: black;
-}
+
 .post-title {
     padding: 0.5rem 0.75rem;
     font-size: 20px;
     font-weight: 400;
     border-top: 1px solid;
     border-bottom: 1px solid;
-    border-color: #bbb;
-    background-color: #E8F8F5;
 }
 .info-row {
     padding: 0.35rem 0.75rem 0.3rem;
@@ -40,7 +36,6 @@
     background-color: #E8F8F5;
 }
 .col-xs-12 p {
-    color: black;
     padding: 15px;
 }
 .col-lg-7 {

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>견본사이트 - 디자인 재구성해야함</title>
+<title>게임핀 - 게임정보 사이트</title>
 <style>
 body {
     height: 100%;
@@ -30,7 +30,6 @@ body {
 }
 .boardList tr th {
     background-color: #00007e;
-    color: black;
 }
 .boardList tr th:first-child {
     border-radius: 5px 0 0 0;
@@ -113,6 +112,9 @@ span {
 .gap {
     margin-bottom: 20px;
 }
+.main-banner {
+    font-size: 32px;
+}
 
 </style>
 </head>
@@ -121,11 +123,11 @@ span {
     <div class="section-inner">
         <div class="container" style="width: 1600px;">
             <div class="main-banner">
-                <img src="/img/main_banner.jpg">
+                게임핀
             </div>
                 <%@include file="./include/sidebar.jspf" %>
                 <div class="col-lg-8">
-                    <div id="comments" class="col-sm-12 col-md-6">
+                    <div id="comments" class="col-sm-12 col-md-12">
                         <div id="comments-list" class="gap">
                             <div class="media">
                                 <span><a href="/openColumn/list">자유게시판</a></span>
@@ -143,7 +145,7 @@ span {
                             </div>
                         </div><!--/#comments-list-->
                     </div><!--/#comments-->
-                    <div id="comments" class="col-sm-12 col-md-6">
+                    <div id="comments" class="col-sm-12 col-md-12">
                         <div id="comments-list" class="gap">
                             <div class="media">
                                 <span><a href="/video/list">동영상 게시판</a></span>
@@ -161,7 +163,7 @@ span {
                             </div>
                         </div><!--/#comments-list-->
                     </div><!--/#comments-->
-                    <div id="comments" class="col-sm-12 col-md-6">
+                    <div id="comments" class="col-sm-12 col-md-12">
                         <div id="comments-list" class="gap">
                             <div class="media">
                                 <span><a href="/board/list">회원게시판</a></span>
@@ -179,7 +181,12 @@ span {
                             </div>
                         </div><!--/#comments-list-->
                     </div>
-                    <div id="comments" class="col-sm-12 col-md-6">
+                    <div id="comments" class="col-sm-12 col-md-12">
+
+                    </div><!--/#comments-->
+                </div>
+                <div class="col-lg-2">
+                    <div class="side-banner">
                         <div id="comments-list" class="gap">
                             <div class="media">
                                 <span><a href="/library/list">자료실</a></span>
@@ -190,18 +197,12 @@ span {
                                                     <a class="post-title" href="/library/readPost?postNum=${post.postNum}">${post.title}</a>
                                                     <c:if test="${post.commentCount > 0}">( ${post.commentCount} )</c:if>
                                                 </td>
-                                                <td><fmt:formatDate pattern="yyyy.MM.dd" value="${post.regDate}"/></td>
                                             </tr>
                                         </c:forEach>
                                  </table>
                                  <c:if test="${empty libraryList}"><tr><td>현재 등록된 글이 없습니다.</td></tr></c:if>
                             </div>
                         </div><!--/#comments-list-->
-                    </div><!--/#comments-->
-                </div>
-                <div class="col-lg-2">
-                    <div class="side-banner">
-                        <img src="/img/left_banner_ex1.jpg" width="100%">
                     </div>
                 </div>
 

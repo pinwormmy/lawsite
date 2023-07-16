@@ -8,19 +8,29 @@
 .panel-body ul li{
     text-align: left;
     font-size: 16px;
-    font-weight: 600;
     margin: 10px;
 }
 .panel {
-    border-color: #00007e;
+    border: 2px solid white;  /* Add border */
+    border-radius: 10px;
+    position: relative; /* Added for positioning the title */
+}
+.panel-title {
+    position: absolute; /* Position the title */
+    top: -20px; /* Adjust this value to move the title up or down */
+    left: 50%; /* Center the title */
+    transform: translateX(-50%); /* Center the title */
+    background: #00007e; /* Background color same as sidebar */
+    color: white; /* Title color */
+    padding: 0 10px; /* Padding around the title */
 }
 .panel-group {
-    margin-top: 15px;
+    margin-top: 25px; /* Adjusted to account for the title */
 }
 .sidebar {
     background-color: #00007e;
 }
-a, .panel-title a {
+a {
     color: white;
 }
 @media (max-width: 800px) {
@@ -33,26 +43,18 @@ a, .panel-title a {
 </style>
 </head>
 <div class="col-lg-2">
-    <div class="panel-group commonAccordion" id="accordion" role="tablist" aria-multiselectable="true">
-        <div class="panel panel-default sidebar" style="border-radius: 10px;">
-            <div class="panel-heading" role="tab" id="headingOne">
-                <h4 class="panel-title">
-                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    카테고리
-                    </a>
-                </h4>
-            </div>
-            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                <div class="panel-body">
-                    <ul>
-                        <li><a href="/">메인화면</a></li>
-                        <li><a href="/fullNotice/list">공지사항</a></li>
-                        <li><a href="/openColumn/list">자유게시판</a></li>
-                        <li><a href="/board/list">회원게시판</a></li>
-                        <li><a href="/video/list">동영상 게시판</a></li>
-                        <li><a href="/library/list">자료실</a></li>
-                    </ul>
-                </div>
+    <div class="panel-group commonAccordion">
+        <div class="panel panel-default sidebar">
+            <h4 class="panel-title">카테고리</h4>
+            <div class="panel-body">
+                <ul>
+                    <li><a href="/">메인화면</a></li>
+                    <li><a href="/fullNotice/list">공지사항</a></li>
+                    <li><a href="/openColumn/list">자유게시판</a></li>
+                    <li><a href="/board/list">회원게시판</a></li>
+                    <li><a href="/video/list">동영상 게시판</a></li>
+                    <li><a href="/library/list">자료실</a></li>
+                </ul>
             </div>
         </div>
     </div>

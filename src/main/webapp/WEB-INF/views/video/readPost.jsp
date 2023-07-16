@@ -98,7 +98,6 @@ body {
     float: right;
 }
 .col-xs-12 p {
-    color: black;
     padding: 15px;
 }
 .col-lg-7 {
