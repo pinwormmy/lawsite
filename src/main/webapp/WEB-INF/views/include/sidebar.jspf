@@ -9,17 +9,13 @@ body {
 }
 fieldset {
     border: 2px solid white;
-    padding: 20px;
 }
-legend {
-    color: white;
-    padding: 0 10px;
-    border-bottom: 0;
-    width: auto;
-    text-align: center;
-}
+
 a {
     color: white;
+}
+li {
+    margin: 3px;
 }
 
 </style>
@@ -29,12 +25,12 @@ a {
     <fieldset>
         <legend>카테고리</legend>
         <ul>
-            <li><a href="/">메인화면</a></li>
-            <li><a href="/fullNotice/list">공지사항</a></li>
-            <li><a href="/openColumn/list">자유게시판</a></li>
-            <li><a href="/board/list">회원게시판</a></li>
-            <li><a href="/video/list">동영상 게시판</a></li>
-            <li><a href="/library/list">자료실</a></li>
+            <li><a href="/">1. 메인화면</a></li>
+            <li><a href="/fullNotice/list">2. 공지사항</a></li>
+            <li><a href="/openColumn/list">3. 자유게시판</a></li>
+            <li><a href="/board/list">4. 회원게시판</a></li>
+            <li><a href="/video/list">5. 동영상 게시판</a></li>
+            <li><a href="/library/list">6. 자료실</a></li>
         </ul>
     </fieldset>
 </div>
