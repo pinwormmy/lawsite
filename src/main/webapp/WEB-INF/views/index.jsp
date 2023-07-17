@@ -4,6 +4,7 @@
 <head>
 <title>게임핀 - 게임정보 사이트</title>
 <style>
+
 body {
     height: 100%;
 }
@@ -33,10 +34,11 @@ body {
     font-weight: 400;
 }
 .main-banner {
-    font-size: 32px;
+    font-size: 48px;
     margin: 10px;
     text-align: center;
 }
+
 </style>
 </head>
 <body>

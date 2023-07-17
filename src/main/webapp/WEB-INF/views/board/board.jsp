@@ -4,68 +4,45 @@
 <head>
 <title>회원게시판</title>
 <style>
+
 body {
     height: 100%;
 }
 .boardList {
     width: 100%;
-    background-color: #fff;
     border-collapse: collapse;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-    border-radius: 5px;
     overflow: hidden;
 }
-.boardList caption {
-    font-size: 20px;
-    margin-bottom: 30px;
-}
-.boardList tr {
-    border-bottom: 1px solid #eee;
+
+.boardList th {
+    text-align: center;
+    border-bottom: 1px solid white;
 }
 .boardList tr:last-child {
     border: none;
 }
 .boardList th,
 .boardList td {
-    padding: 0px;
-    text-align: center;
+    padding: 2px;
 }
 .boardList tr th {
-    border-top: 1px solid #AEAEAE;
-    border-bottom: 2px solid #D3D3D3;
     padding: 5px;
-    color: black;
-    font-size: 12px;
-}
-.boardList tr th:first-child {
-    border-radius: 5px 0 0 0;
-}
-.boardList tr th:last-child {
-    border-radius: 0 5px 0 0;
-}
-.postTitle {
-    color: black;
-}
-.leftbar-ul {
-    border-top: solid 1px ivory;
-    list-style-type: none;
-}
-.leftbar-ul li {
-    border-bottom: solid 1px ivory;
-}
-.leftbar-ul li a{
-    color : white;
-    font-size: 16px;
-    font-weight: 500px;
 }
 .section-wrapper {
     min-height: 850px;
 }
-.notice-tr {
-    background-color: #F2F2F2;
-}
+
 .side-banner {
     margin-top: 15px;
+}
+.post-heading {
+    border-bottom: 2px solid white;
+}
+.writer, .date {
+    text-align: center;
+}
+.views, .post-num {
+    text-align: right;
 }
 </style>
 </head>

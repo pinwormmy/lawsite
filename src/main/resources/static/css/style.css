@@ -100,6 +100,9 @@ legend {
     text-align: center;
     margin: 0;
 }
+th {
+    font-weight: 100;
+}
 
 iframe {
   border: 0;
@@ -135,6 +138,24 @@ input[type="email"], input[type="password"], input[type="text"], input[type="tel
 input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focus, input[type="tel"]:focus {
   box-shadow: none;
   border: 1px solid #000;
+}
+
+input[name="keyword"] {
+    background: transparent;
+    border: none;
+}
+input[name="keyword"]:focus {
+    outline: none;
+}
+
+button.cancel-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+button.cancel-btn:hover {
+    color: grey;
 }
 
 .form-control {

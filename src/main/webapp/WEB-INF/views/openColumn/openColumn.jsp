@@ -10,64 +10,41 @@ body {
 }
 .boardList {
     width: 100%;
-    background-color: #fff;
     border-collapse: collapse;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-    border-radius: 5px;
     overflow: hidden;
 }
-.boardList caption {
-    font-size: 20px;
-    margin-bottom: 30px;
-}
-.boardList tr {
-    border-bottom: 1px solid #eee;
+
+.boardList th {
+    text-align: center;
+    border-bottom: 1px solid white;
 }
 .boardList tr:last-child {
     border: none;
 }
 .boardList th,
 .boardList td {
-    padding: 0px;
-    text-align: center;
+    padding: 2px;
 }
 .boardList tr th {
-    border-top: 1px solid #AEAEAE;
-    border-bottom: 2px solid #D3D3D3;
     padding: 5px;
-    color: black;
-    font-size: 12px;
-}
-.boardList tr th:first-child {
-    border-radius: 5px 0 0 0;
-}
-.boardList tr th:last-child {
-    border-radius: 0 5px 0 0;
-}
-.postTitle {
-    color: black;
-}
-.leftbar-ul {
-    border-top: solid 1px ivory;
-    list-style-type: none;
-}
-.leftbar-ul li {
-    border-bottom: solid 1px ivory;
-}
-.leftbar-ul li a{
-    color : white;
-    font-size: 16px;
-    font-weight: 500px;
 }
 .section-wrapper {
     min-height: 850px;
 }
-.notice-tr {
-    background-color: #F2F2F2;
-}
+
 .side-banner {
     margin-top: 15px;
 }
+.post-heading {
+    border-bottom: 2px solid white;
+}
+.writer, .date {
+    text-align: center;
+}
+.views, .post-num {
+    text-align: right;
+}
+
 </style>
 
 </head>
@@ -80,7 +57,7 @@ body {
                 <%@include file="../include/sidebar.jspf" %>
                 <div class="col-lg-7">
                     <div class="post-heading mb">
-                        <h3>자유게시판</h3>
+                        자유게시판
                     </div>
                     <div class="row">
                         <div id="comments" class="col-xs-12">
@@ -88,40 +65,45 @@ body {
                                 <div class="media">
                                      <table class="boardList">
                                             <tr>
-                                                <th style="width: 65%;">제목</th>
+                                                <th style="width: 10%;">번 호</th>
+                                                <th style="width: 50%;">제 &nbsp 목</th>
                                                 <th style="width: 15%;">작성자</th>
-                                                <th style="width: 10%;">작성일자</th>
-                                                <th style="width: 10%;">조회수</th>
+                                                <th style="width: 10%;">날 짜</th>
+                                                <th style="width: 10%;">조 회</th>
                                             </tr>
+
                                             <c:forEach var="notice" items="${fullNoticeList}">
                                                 <tr class="notice-tr">
-                                                    <td><h4><span>[전체공지]</span>
+                                                    <td class="post-num">${notice.postNum} &nbsp</td>
+                                                    <td><span>[전체공지]</span>
                                                     <a class="noticeTitle" href="/fullNotice/readPost?postNum=${notice.postNum}">
                                                      ${notice.title}</a>
-                                                    <c:if test="${notice.commentCount > 0}">( ${notice.commentCount} )</c:if></h4></td>
-                                                    <td>${notice.writer}</td>
-                                                    <td><fmt:formatDate pattern="yyyy.MM.dd" value="${notice.regDate}"/></td>
-                                                    <td>${notice.views}</td>
+                                                    <c:if test="${notice.commentCount > 0}">( ${notice.commentCount} )</c:if></td>
+                                                    <td class="writer">${notice.writer}</td>
+                                                    <td class="date"><fmt:formatDate pattern="yyyy.MM.dd" value="${notice.regDate}"/></td>
+                                                    <td class="views">${notice.views}</td>
                                                 </tr>
                                             </c:forEach>
                                             <c:forEach var="notice" items="${selfNoticeList}">
                                                 <tr class="notice-tr">
-                                                    <td><h4><span>[공지사항]</span>
+                                                    <td class="post-num">${notice.postNum} &nbsp</td>
+                                                    <td><span>[공지사항]</span>
                                                     <a class="noticeTitle" href="/openColumn/readPost?postNum=${notice.postNum}">
                                                      ${notice.title}</a>
-                                                    <c:if test="${notice.commentCount > 0}">( ${notice.commentCount} )</c:if></h4></td>
-                                                    <td>${notice.writer}</td>
-                                                    <td><fmt:formatDate pattern="yyyy.MM.dd" value="${notice.regDate}"/></td>
-                                                    <td>${notice.views}</td>
+                                                    <c:if test="${notice.commentCount > 0}">( ${notice.commentCount} )</c:if></td>
+                                                    <td class="writer">${notice.writer}</td>
+                                                    <td class="date"><fmt:formatDate pattern="yyyy.MM.dd" value="${notice.regDate}"/></td>
+                                                    <td class="views">${notice.views}</td>
                                                 </tr>
                                             </c:forEach>
                                             <c:forEach var="post" items="${postList}">
                                                 <tr>
-                                                    <td><h4><a class="postTitle" href="/openColumn/readPost?postNum=${post.postNum}">${post.title}</a>
-                                                    <c:if test="${post.commentCount > 0}">( ${post.commentCount} )</c:if></h4></td>
-                                                    <td>${post.writer}</td>
-                                                    <td><fmt:formatDate pattern="yyyy.MM.dd" value="${post.regDate}"/></td>
-                                                    <td>${post.views}</td>
+                                                    <td class="post-num">${post.postNum} &nbsp</td>
+                                                    <td><a class="postTitle" href="/openColumn/readPost?postNum=${post.postNum}">${post.title}</a>
+                                                    <c:if test="${post.commentCount > 0}">( ${post.commentCount} )</c:if></td>
+                                                    <td class="writer">${post.writer}</td>
+                                                    <td class="date"><fmt:formatDate pattern="yyyy.MM.dd" value="${post.regDate}"/></td>
+                                                    <td class="views">${post.views}</td>
                                                 </tr>
                                             </c:forEach>
                                      </table>
@@ -149,29 +131,37 @@ body {
                                 </div>
                                 <div class="form-group">
                                     <form action="/openColumn/list">
-                                        <select name="searchType">
-                                            <option value="titleAndContent" <c:if test="${page.searchType == 'titleAndContent'}">selected</c:if> >제목+내용</option>
-                                            <option value="title" <c:if test="${page.searchType == 'title'}">selected</c:if> >제목</option>
-                                            <option value="content" <c:if test="${page.searchType == 'content'}">selected</c:if> >내용</option>
-                                        </select>
+                                        검색 >>
+                                        <input type="hidden" name="searchType" value="titleAndContent">
                                         <input name="keyword" value=${page.keyword}>
-                                        <button class="pull btn btn-theme">검색</button>
+                                        <button type="submit" style="visibility:hidden">검색</button>
                                         <c:if test="${page.keyword != ''}">
-                                            <button type="button" class="pull btn btn-theme" onclick="location.href='/openColumn/list'">취소</button>
+                                        <button type="button" class="pull btn btn-theme cancel-btn" onclick="location.href='/openColumn/list'" accesskey="c">검색취소(C)</button>
                                         </c:if>
                                     </form>
                                 </div>
                                 <c:if test="${member.grade == 3}">
-                                    <a href="/openColumn/writePost" class="pull-right btn btn-theme">글쓰기</a>
+                                    <a href="/openColumn/writePost" class="pull-right btn btn-theme" accesskey="i">글쓰기(I)</a>
                                 </c:if>
                             </div><!--/#comments-list-->
                         </div><!--/#comments-->
                     </div>
                 </div>
                 <div class="col-lg-3">
-                    <div class="side-banner">
-                        <img src="/img/right_banner_ex1.jpg" width="100%">
-                    </div>
+                    <fieldset>
+                        <legend><a href="/library/list">자료실</a></legend>
+                        <table class="boardList" style="width: 100%;">
+                            <c:forEach var="post" items="${libraryList}">
+                            <tr>
+                                <td>
+                                <a class="post-title" href="/library/readPost?postNum=${post.postNum}">${post.title}</a>
+                                <c:if test="${post.commentCount > 0}">( ${post.commentCount} )</c:if>
+                                </td>
+                            </tr>
+                            </c:forEach>
+                        </table>
+                        <c:if test="${empty libraryList}"><tr><td>현재 등록된 글이 없습니다.</td></tr></c:if>
+                    </fieldset>
                 </div>
             </div>
         </div>
