@@ -1,7 +1,6 @@
 package com.study.column.config;
 
 import com.study.column.interceptor.AdminInterceptor;
-import com.study.column.interceptor.BoardLvInterceptor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
@@ -30,11 +29,6 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new BoardLvInterceptor())
-                .addPathPatterns("/board/**", "/video/**", "/fullNotice/**", "/openColumn/**", "/library/**")
-                .excludePathPatterns("/css/**", "/fonts/**", "/board/list/**", "/video/list/**", "/library/list/**",
-                        "/fullNotice/list/**", "/openColumn/list/**", "/openColumn/readPost/**",
-                        "/fullNotice/readPost/**", "/**/showCommentList/**");
         registry.addInterceptor(new AdminInterceptor())
                 .addPathPatterns("/**/writePost/**", "/**/modifyPost/**");
     }
