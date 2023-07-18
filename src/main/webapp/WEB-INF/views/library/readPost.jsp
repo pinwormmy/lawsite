@@ -4,17 +4,10 @@
 <html lang="ko">
 <head>
 <title>${post.title} - 자료실</title>
+
 <style>
 body {
     height: 100%;
-}
-.boardList {
-    width: 100%;
-    background-color: #fff;
-    border-collapse: collapse;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-    border-radius: 5px;
-    overflow: hidden;
 }
 .boardList caption {
     font-size: 20px;
@@ -33,19 +26,6 @@ body {
 .boardList td {
     padding: 12px;
     text-align: center;
-}
-.boardList tr th {
-    background-color: #CCFF33;
-    color: #fff;
-}
-.boardList tr th:first-child {
-    border-radius: 5px 0 0 0;
-}
-.boardList tr th:last-child {
-    border-radius: 0 5px 0 0;
-}
-.postTitle {
-    color: black;
 }
 .leftbar-ul {
     border-top: solid 1px ivory;
@@ -66,10 +46,7 @@ body {
     padding: 0.5rem 0.75rem;
     font-size: 20px;
     font-weight: 400;
-    border-top: 1px solid;
-    border-bottom: 1px solid;
     border-color: #bbb;
-    background-color: #E8F8F5;
 }
 .info-row {
     padding: 0.35rem 0.75rem 0.3rem;
@@ -79,19 +56,7 @@ body {
     font-weight: 300;
     overflow: hidden;
 }
-.post-info {
-    display: inline-block;
-    float: right;
-}
-.single-section-title {
-    padding: 0.5rem 0.75rem;
-    font-size: 20px;
-    font-weight: 300;
-    border-top: 1px solid;
-    border-bottom: 1px solid;
-    border-color: #bbb;
-    background-color: #E8F8F5;
-}
+
 .btn-theme {
     margin: 10px 0;
     float: right;
@@ -138,31 +103,25 @@ body {
         <div class="container" style="width: 1600px;">
             <div class="row">
                 <%@include file="../include/sidebar.jspf" %>
-                <div class="col-lg-7">
+                <div class="col-lg-8">
                     <div class="title-row">
                         <div class="post-title">${post.title}</div>
                     </div>
                     <div class="info-row">
-                        <span class="writer-info">작성자: ${post.writer}</span>
-                        <span class="post-info">작성일 ${post.regDate}</span>
-                        <span style="float: right; margin-right: 10px;">조회수 ${post.views}</span>
-                    </div>
-                    <div class="info-row">
-                        <span>첨부파일</span>
-                        <c:if test="${empty fileList}">: 첨부파일이 없습니다.</c:if>
-                        <c:forEach var="file" items="${fileList }">
-                            <br>
-                            <a class="downlink" id="${file.fileNum}" href="${file.originalFileName }">${file.originalFileName }</a>
-                        </c:forEach>
+                        <span>작성자 : ${post.writer} </span> &nbsp;
+                        <span>작성일 : <fmt:formatDate value="${post.regDate}" pattern="yyyy-MM-dd HH:mm"/> </span> &nbsp;
+                        <span>조회수 : ${post.views} </span> &nbsp;
                     </div>
                     <div class="row">
-                        <div class="col-xs-12 mb wow fadeInUp">
+                        <div class="col-xs-12 mb fadeInUp">
                             ${post.content}
+                            <hr>
                         </div>
+
                         <div id="comments" class="col-xs-12">
-                            <c:if test="${post.commentCount > 0 || member.grade > 1}">
+                            <c:if test="${post.commentCount > 0 && member.grade > 1}">
                                 <div class="mb">
-                                    <h3 class="single-section-title">Comments</h3>
+                                    [댓 글]
                                 </div>
                             </c:if>
                             <div id="comments-list" class="gap"></div>
@@ -176,33 +135,34 @@ body {
                                     </div>
                                     <div class="form-group">
                                         <div class="col-sm-12">
-                                            <textarea rows="3" class="form-control" name="commentContent" id="commentContent" placeholder="댓글을 작성합니다"></textarea>
+                                            <textarea rows="1" class="form-control" name="commentContent" id="commentContent" placeholder="댓글을 작성합니다"></textarea>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <button type="button" class="pull btn btn-theme cancel-btn" style="margin-left: 15px;" onclick="addComment();" accesskey="c">댓글작성(C)</button>
                                         </div>
                                     </div>
-                                    <button type="button" class="pull-right basic-button" style="margin-left: 15px;" onclick="addComment();">🔖댓글 달기</button>
                                 </div><!--/#comment-form-->
                             </c:if>
                         </div><!--/#comments-->
                         <div class="post-navigation col-xs-12"">
-                            <a class="pull-left basic-button-white" href="/library/list">📝글 목록</a>
+                            <hr>
+                            <a class="pull btn btn-theme cancel-btn" href="/library/list" accesskey="l">목 록(L)</a>
                             <c:if test="${member.id == post.writer || member.grade == 3}">
-                                <a class="pull-right basic-button-white" href="/library/deletePost?postNum=${post.postNum}">🗑️글 삭제</a>
-                                <a class="pull-right basic-button-white" href="/library/modifyPost?postNum=${post.postNum}">✏️글 수정</a>
+                                <a class="pull btn btn-theme cancel-btn" href="/library/deletePost?postNum=${post.postNum}" accesskey="t">삭 제(T)</a>
+                                <a class="pull btn btn-theme cancel-btn" href="/library/modifyPost?postNum=${post.postNum}" accesskey="o">️수 정(O)</a>
                             </c:if>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-lg-2">
                     <div class="side-banner">
-                        <img src="/img/right_banner_ex1.jpg" width="100%">
+                        부가 기능 넣기
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-<%@include file="../include/footer.jspf" %>
 
 <script>
 
@@ -294,8 +254,8 @@ function showCommentWithHtml(CommentDTOList) {
 function commentHtmlWithString(commentListHtml, CommentDTOList) {
     console.log("댓글 코맨트 소스 반복문 준비 확인");
     for(let comment of CommentDTOList) {
-        commentListHtml += "<div class='media'><div class='media-body'><div class='well' style='margin: 0; padding: 10px;'><div class='media-heading'>";
-        commentListHtml += "<strong>" + comment.memberDTO.nickName + "</strong> &nbsp; <small>";
+        commentListHtml += "<div class='media'><div class='media-body'><div style='margin: 0; padding: 10px;'><div class='media-heading'>";
+        commentListHtml += comment.memberDTO.nickName + " &nbsp; <small>";
         commentListHtml = displayDeleteButton(commentListHtml, comment);
         commentListHtml += comment.regDate + "</small></div><p style='margin: 0; padding: 0;'>" + comment.content + "</p></div></div></div>";
     }
@@ -304,8 +264,8 @@ function commentHtmlWithString(commentListHtml, CommentDTOList) {
 
 function displayDeleteButton(commentListHtml, commentDTO) {
     if( ("${member.id}" == commentDTO.id) || ("${member.grade}" == 3) ) {
-        commentListHtml += "<button class='pull-right basic-button-white' onclick='deleteComment(";
-        commentListHtml += commentDTO.commentNum + ");'>🗑️삭제</button>";
+        commentListHtml += "<button class='pull btn btn-theme cancel-btn' onclick='deleteComment(";
+        commentListHtml += commentDTO.commentNum + ");'>댓글삭제(-) </button>";
     }
     return commentListHtml;
 }
@@ -325,17 +285,8 @@ function updateCommentCount(postNum) {
         .catch(error => alert("댓글수 갱신 오류"));
 }
 
-$(document).ready(function() {
-    $(".downlink").click(function(e){
-        e.preventDefault();
-        // alert("a태그 href방지 확인");
-        var fileName = $(this).attr("href");
-        window.location = "fileDownload?fileName=" + fileName;
-    });
-});
-
 </script>
 
-
+<%@include file="../include/footer.jspf" %>
 </body>
 </html>
