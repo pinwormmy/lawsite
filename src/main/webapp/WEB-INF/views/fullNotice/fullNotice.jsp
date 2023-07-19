@@ -6,7 +6,6 @@
 <head>
 <title>공지사항</title>
 <style>
-
 body {
     height: 100%;
 }
@@ -15,7 +14,6 @@ body {
     border-collapse: collapse;
     overflow: hidden;
 }
-
 .boardList th {
     text-align: center;
     border-bottom: 1px solid white;
@@ -33,7 +31,6 @@ body {
 .section-wrapper {
     min-height: 850px;
 }
-
 .side-banner {
     margin-top: 15px;
 }
@@ -46,7 +43,6 @@ body {
 .views, .post-num {
     text-align: right;
 }
-
 </style>
 </head>
 <body>
