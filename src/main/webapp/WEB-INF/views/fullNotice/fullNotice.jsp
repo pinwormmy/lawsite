@@ -62,20 +62,22 @@ body {
                                     전체 공지사항
                                      <table class="boardList">
                                             <tr>
-                                                <th>제목</th>
-                                                <th>작성자</th>
-                                                <th>작성일자</th>
-                                                <th>조회수</th>
+                                                <th style="width: 10%;">번 호</th>
+                                                <th style="width: 50%;">제 &nbsp 목</th>
+                                                <th style="width: 15%;">작성자</th>
+                                                <th style="width: 10%;">날 짜</th>
+                                                <th style="width: 10%;">조 회</th>
                                             </tr>
                                              <c:forEach var="notice" items="${fullNoticeList}">
                                             <tr class="notice-tr">
-                                                <td><h4><span text-align="left">[전체공지]</span>
+                                                <td class="post-num">${notice.postNum} &nbsp</td>
+                                                <td><span>[전체공지]</span>
                                                 <a class="noticeTitle" href="/fullNotice/readPost?postNum=${notice.postNum}">
                                                  ${notice.title}</a>
-                                                <c:if test="${notice.commentCount > 0}">( ${notice.commentCount} )</c:if></h4></td>
-                                                <td>${notice.writer}</td>
-                                                <td><fmt:formatDate pattern="yyyy.MM.dd" value="${notice.regDate}"/></td>
-                                                <td>${notice.views}</td>
+                                                <c:if test="${notice.commentCount > 0}">( ${notice.commentCount} )</c:if></td>
+                                                <td class="writer">${notice.writer}</td>
+                                                <td class="date"><fmt:formatDate pattern="yyyy.MM.dd" value="${notice.regDate}"/></td>
+                                                <td class="views">${notice.views}</td>
                                             </tr>
                                             </c:forEach>
                                      </table>
@@ -105,19 +107,22 @@ body {
                                     회원게시판
                                      <table class="boardList">
                                             <tr>
-                                                <th>제목</th>
-                                                <th>작성자</th>
-                                                <th>작성일자</th>
-                                                <th>조회수</th>
+                                                <th style="width: 10%;">번 호</th>
+                                                <th style="width: 50%;">제 &nbsp 목</th>
+                                                <th style="width: 15%;">작성자</th>
+                                                <th style="width: 10%;">날 짜</th>
+                                                <th style="width: 10%;">조 회</th>
                                             </tr>
                                             <c:forEach var="post" items="${boardList}">
                                             <tr>
-                                                <td><h4><span>[공지]</span>
-                                                <a class="postTitle" href="/board/readPost?postNum=${post.postNum}">${post.title}</a>
-                                                <c:if test="${post.commentCount > 0}">( ${post.commentCount} )</c:if></h4></td>
-                                                <td>${post.writer}</td>
-                                                <td><fmt:formatDate pattern="yyyy.MM.dd" value="${post.regDate}"/></td>
-                                                <td>${post.views}</td>
+                                                <td class="post-num">${post.postNum} &nbsp</td>
+                                                <td><span>[공지]</span>
+                                                <a class="postTitle" href="/board/readPost?postNum=${post.postNum}">
+                                                 ${post.title}</a>
+                                                <c:if test="${post.commentCount > 0}">( ${post.commentCount} )</c:if></td>
+                                                <td class="writer">${post.writer}</td>
+                                                <td class="date"><fmt:formatDate pattern="yyyy.MM.dd" value="${post.regDate}"/></td>
+                                                <td class="views">${post.views}</td>
                                             </tr>
                                             </c:forEach>
                                      </table>
@@ -126,20 +131,23 @@ body {
                                 <div class="media">
                                     자유게시판
                                      <table class="boardList">
-                                            <tr>
-                                                <th>제목</th>
-                                                <th>작성자</th>
-                                                <th>작성일자</th>
-                                                <th>조회수</th>
-                                            </tr>
+                                           <tr>
+                                               <th style="width: 10%;">번 호</th>
+                                               <th style="width: 50%;">제 &nbsp 목</th>
+                                               <th style="width: 15%;">작성자</th>
+                                               <th style="width: 10%;">날 짜</th>
+                                               <th style="width: 10%;">조 회</th>
+                                           </tr>
                                             <c:forEach var="post" items="${opencolumnList}">
                                             <tr>
-                                                <td><h4><span>[공지]</span>
-                                                <a class="postTitle" href="/openColumn/readPost?postNum=${post.postNum}">${post.title}</a>
-                                                <c:if test="${post.commentCount > 0}">( ${post.commentCount} )</c:if></h4></td>
-                                                <td>${post.writer}</td>
-                                                <td><fmt:formatDate pattern="yyyy.MM.dd" value="${post.regDate}"/></td>
-                                                <td>${post.views}</td>
+                                                <td class="post-num">${post.postNum} &nbsp</td>
+                                                <td><span>[공지]</span>
+                                                <a class="postTitle" href="/openColumn/readPost?postNum=${post.postNum}">
+                                                 ${post.title}</a>
+                                                <c:if test="${post.commentCount > 0}">( ${post.commentCount} )</c:if></td>
+                                                <td class="writer">${post.writer}</td>
+                                                <td class="date"><fmt:formatDate pattern="yyyy.MM.dd" value="${post.regDate}"/></td>
+                                                <td class="views">${post.views}</td>
                                             </tr>
                                             </c:forEach>
                                      </table>
@@ -149,19 +157,22 @@ body {
                                     동영상 게시판
                                      <table class="boardList">
                                             <tr>
-                                                <th>제목</th>
-                                                <th>작성자</th>
-                                                <th>작성일자</th>
-                                                <th>조회수</th>
+                                                <th style="width: 10%;">번 호</th>
+                                                <th style="width: 50%;">제 &nbsp 목</th>
+                                                <th style="width: 15%;">작성자</th>
+                                                <th style="width: 10%;">날 짜</th>
+                                                <th style="width: 10%;">조 회</th>
                                             </tr>
                                             <c:forEach var="post" items="${videoList}">
                                             <tr>
-                                                <td><h4><span>[공지]</span>
-                                                <a class="postTitle" href="/video/readPost?postNum=${post.postNum}">${post.title}</a>
-                                                <c:if test="${post.commentCount > 0}">( ${post.commentCount} )</c:if></h4></td>
-                                                <td>${post.writer}</td>
-                                                <td><fmt:formatDate pattern="yyyy.MM.dd" value="${post.regDate}"/></td>
-                                                <td>${post.views}</td>
+                                                <td class="post-num">${post.postNum} &nbsp</td>
+                                                <td><span>[공지]</span>
+                                                <a class="postTitle" href="/video/readPost?postNum=${post.postNum}">
+                                                 ${post.title}</a>
+                                                <c:if test="${post.commentCount > 0}">( ${post.commentCount} )</c:if></td>
+                                                <td class="writer">${post.writer}</td>
+                                                <td class="date"><fmt:formatDate pattern="yyyy.MM.dd" value="${post.regDate}"/></td>
+                                                <td class="views">${post.views}</td>
                                             </tr>
                                             </c:forEach>
                                      </table>
@@ -171,19 +182,22 @@ body {
                                      <span><a href="/library/list">자료실</a></span>
                                      <table class="boardList">
                                             <tr>
-                                                <th>제목</th>
-                                                <th>작성자</th>
-                                                <th>작성일자</th>
-                                                <th>조회수</th>
+                                                <th style="width: 10%;">번 호</th>
+                                                <th style="width: 50%;">제 &nbsp 목</th>
+                                                <th style="width: 15%;">작성자</th>
+                                                <th style="width: 10%;">날 짜</th>
+                                                <th style="width: 10%;">조 회</th>
                                             </tr>
                                             <c:forEach var="post" items="${libraryList}">
                                             <tr>
-                                                <td><h4><span>[공지]</span>
-                                                <a class="postTitle" href="/video/readPost?postNum=${post.postNum}">${post.title}</a>
-                                                <c:if test="${post.commentCount > 0}">( ${post.commentCount} )</c:if></h4></td>
-                                                <td>${post.writer}</td>
-                                                <td><fmt:formatDate pattern="yyyy.MM.dd" value="${post.regDate}"/></td>
-                                                <td>${post.views}</td>
+                                                <td class="post-num">${post.postNum} &nbsp</td>
+                                                <td><span>[공지]</span>
+                                                <a class="postTitle" href="/library/readPost?postNum=${post.postNum}">
+                                                 ${post.title}</a>
+                                                <c:if test="${post.commentCount > 0}">( ${post.commentCount} )</c:if></td>
+                                                <td class="writer">${post.writer}</td>
+                                                <td class="date"><fmt:formatDate pattern="yyyy.MM.dd" value="${post.regDate}"/></td>
+                                                <td class="views">${post.views}</td>
                                             </tr>
                                             </c:forEach>
                                      </table>
