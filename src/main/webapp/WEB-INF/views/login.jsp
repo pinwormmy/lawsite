@@ -49,11 +49,26 @@
     .views, .post-num {
         text-align: right;
     }
-    /* 이하 로그인 페이지의 기존 스타일입니다. */
     html {
         height: 100%;
     }
-    /* ... (로그인 페이지의 기존 스타일 유지) ... */
+    #id, #pw {
+        height: 50px;
+        border: none;
+        margin: 2px;
+        outline: none;
+        padding-left: 10px;
+        background-color: transparent;
+    }
+    #loginButton {
+        height: 50px;
+        border: 2px solid #ffffff;
+        margin: 2px;
+        color: white;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
     </style>
 </head>
 <body>
@@ -77,13 +92,14 @@
                             </div>
                             <form action="/submitLogin" method="post">
                                 <div class="inputId">
-                                    <input type="text" name="id" id="id" placeholder="아이디">
+                                    회원ID :
+                                    <input type="text" name="id" id="id">
                                 </div>
                                 <div>
-                                    <input type="password" name="pw" id="pw" placeholder="4~16 자리 영문+숫자 조합">
+                                    패스워드 : <input type="password" name="pw" id="pw">
                                 </div>
-                                <button id="loginButton">로그인하기</button><br>
-                                <button type="button" class="homeButton" onclick="location.href='/'">처음으로</button>
+                                <button id="loginButton" accesskey="l">로그인(L)</button><br>
+                                <hr>
                             </form>
                             <div class="subMenu">
                                 <div id="right-menu">
