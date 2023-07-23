@@ -3,109 +3,120 @@
 <html>
 <head>
 <title>회원가입</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 <style>
+body {
+    height: 100%;
+}
+.boardList {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+}
+.boardList th {
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+.boardList tr:last-child {
+    border: none;
+}
+.boardList th,
+.boardList td {
+    padding: 2px;
+}
+.boardList tr th {
+    padding: 5px;
+}
+.section-wrapper {
+    min-height: 850px;
+}
+.side-banner {
+    margin-top: 15px;
+}
+.post-heading {
+    border-bottom: 2px solid white;
+}
+.writer, .date {
+    text-align: center;
+}
+.views, .post-num {
+    text-align: right;
+}
 html {
     height: 100%;
 }
-body {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 16px;
-}
-input {
-    width: 400px;
+#id, #pw, #inputId, #pw, #pw2, #email, #inputEmailVerificationNumber {
     height: 50px;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 16px;
-    border: 0;
+    border: none;
     margin: 2px;
-    border-radius: 10px;
     outline: none;
     padding-left: 10px;
-    background-color: rgb(233, 233, 233);
+    background-color: transparent;
 }
-.basicButton {
-    width: 410px;
+#loginButton, .basicButton {
     height: 50px;
-    border: 0px;
-    border-radius: 10px;
+    border: 2px solid #ffffff;
     margin: 2px;
     color: white;
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 18px;
-    background-color: Turquoise;
-    cursor:pointer;
+    background-color: transparent;
+    cursor: pointer;
 }
-.loginApi {
-    margin: 3px;
-}
-.loginMenu {
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    margin:-200px 0 0 -200px;
-}
-.signUpMenu {
-    margin-bottom: 10%;
-}
-.loginTitle {
-    font-size: 24px;
-}
-.tooltip {
-    font-size: 14px;
-    color: grey;
-}
-
 </style>
+
 </head>
 <body>
-<div class="loginMenu">
-    <div class="signUpMenu">
-        <div class="loginTitle">
-            <h2>회원가입</h2>
+<%@include file="./include/header.jspf" %>
+<section class="white section-wrapper">
+    <div class="section-inner">
+        <div class="container" style="width: 1600px;">
+            <div class="row">
+                <%@include file="./include/sidebar.jspf" %>
+                <div class="col-lg-7">
+                    <div class="post-heading mb">
+                        <h3>회원가입</h3>
+                    </div>
+                    <div class="loginMenu">
+                        <div class="signUpMenu">
+                            <form action="/submitSignUp" name="submitSignUp" id="submitSignUp" method="post">
+                                <div class="inputId">
+                                    <input type="text" name="id" id="inputId" placeholder="아이디"><br>
+                                    <span id="idCheckText" class="tooltip">ID 중복확인이 필요합니다.</span>
+                                </div>
+                                <div>
+                                    <input type="password" name="pw" id="pw" placeholder="4~16 자리 영문+숫자 조합">
+                                </div>
+                                <div>
+                                    <input type="password" name="pw2" id="pw2" placeholder="비밀번호 재입력">
+                                </div>
+                                <div>
+                                    <input type="text" name="realName" placeholder="이름">
+                                </div>
+                                <div>
+                                    <input type="text" name="nickName" placeholder="별명">
+                                </div>
+                                <div>
+                                    <input type="email" id="email" name="email" placeholder="이메일"><br>
+                                    <span id="emailCheckText" class="tooltip">이메일 중복확인이 필요합니다.</span><br>
+                                    <button type="button" id="sendVerificationNumberButton" class="basicButton" style="background-color: #AED6F1;">인증번호 받기</button><br>
+                                    <input id="inputEmailVerificationNumber" placeholder="이메일 인증번호 입력"><br>
+                                </div>
+                                <div>
+                                    <input type="text" name="phone" placeholder="연락처"><br><br>
+                                </div>
+                                <button type="button" class="basicButton" onclick="checkSignupForm();" accesskey="s">가입하기(S)</button><br>
+                            </form>
+                         </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="side-banner">
+                        추가 기능 구현필요
+                    </div>
+                </div>
+            </div>
         </div>
-        <form action="/submitSignUp" name="submitSignUp" id="submitSignUp" method="post">
-            <div class="inputId">
-                <input type="text" name="id" id="inputId" placeholder="아이디"><br>
-                <span id="idCheckText" class="tooltip">ID 중복확인이 필요합니다.</span>
-            </div>
-            <div>
-                <input type="password" name="pw" id="pw" placeholder="4~16 자리 영문+숫자 조합">
-            </div>
-            <div>
-                <input type="password" name="pw2" id="pw2" placeholder="비밀번호 재입력">
-            </div>
-            <div>
-                <input type="text" name="realName" placeholder="이름">
-            </div>
-            <div>
-                <input type="text" name="nickName" placeholder="별명">
-            </div>
-            <div>
-                <input type="email" id="email" name="email" placeholder="이메일"><br>
-                <span id="emailCheckText" class="tooltip">이메일 중복확인이 필요합니다.</span><br>
-                <button type="button" id="sendVerificationNumberButton" class="basicButton" style="background-color: #AED6F1;">인증번호 받기</button><br>
-                <input id="inputEmailVerificationNumber" placeholder="이메일 인증번호 입력"><br>
-            </div>
-            <div>
-                <input type="text" name="phone" placeholder="연락처"><br><br>
-            </div>
-
-            <button type="button" class="basicButton" onclick="checkSignupForm();">가입하기</button><br>
-            <button type="button" class="basicButton" style="background-color: yellowgreen;"
-            onclick="location.href='/login'">이미 가입한 회원이면 로그인하기</button><br>
-            <button type="button" class="basicButton" style="background-color:#9FE2BF;"
-            onclick="location.href='/'">처음 화면으로</button>
-        </form>
     </div>
-</div>
-
+</section>
 <script type="text/javascript">
 
 	let submitSignUpForm = document.getElementById("submitSignUp");

@@ -5,15 +5,10 @@
 <html lang="ko">
 <head>
     <title>로그인</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-    <!-- 공지사항 페이지의 스타일을 참고하여 추가/수정합니다. -->
+
     <style>
     body {
         height: 100%;
-        font-family: 'Noto Sans KR', sans-serif;
-        font-size: 16px;
     }
     .boardList {
         width: 100%;
