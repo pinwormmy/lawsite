@@ -1,12 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <title>로그인</title>
 
-    <style>
+<style>
     body {
         height: 100%;
     }
@@ -64,7 +62,8 @@
         cursor: pointer;
     }
 
-    </style>
+</style>
+    <!-- 로그인 페이지 스타일 복사 끝 -->
 </head>
 <body>
 
@@ -76,31 +75,20 @@
             <div class="row">
                 <%@include file="./include/sidebar.jspf" %>
 
-                <!-- 로그인 폼 시작 -->
+                <!-- ID 찾기 폼 시작 -->
                 <div class="col-lg-7">
                     <div class="post-heading mb">
-                        <h3>로그인</h3>
+                        <h3>ID 찾기</h3>
                     </div>
                     <div class="loginMenu">
-                        <div class="signUpMenu">
-                            <div class="loginTitle">
-                            </div>
-                            <form action="/submitLogin" method="post">
-                                <div class="inputId">
-                                    회원ID :
-                                    <input type="text" name="id" id="id">
+                        <div class="findIdMenu">
+                            <form action="/findId" method="post">
+                                <div class="inputIdEmail">
+                                    등록된 이메일 :
+                                    <input type="text" name="email" id="idEmail" placeholder="이메일">
                                 </div>
-                                <div>
-                                    패스워드 : <input type="password" name="pw" id="pw">
-                                </div>
-                                <button id="loginButton" accesskey="l">로그인(L)</button><br>
-                                <hr>
+                                <button id="findIdButton">아이디 찾기</button><br>
                             </form>
-                            <div class="subMenu">
-                                <div id="right-menu">
-                                    <a href="/findId">ID 찾기</a> | <a id="signUp" href="/signUp">패스워드 찾기</a>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -120,7 +108,6 @@
 <script>
     <c:if test="${not empty message}">
         alert("${message}");
-        history.back();
     </c:if>
 </script>
 </body>
