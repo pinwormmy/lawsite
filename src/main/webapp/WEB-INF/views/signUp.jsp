@@ -45,14 +45,7 @@ body {
 html {
     height: 100%;
 }
-#id, #pw, #inputId, #pw, #pw2, #email, #inputEmailVerificationNumber {
-    height: 50px;
-    border: none;
-    margin: 2px;
-    outline: none;
-    padding-left: 10px;
-    background-color: transparent;
-}
+
 #loginButton, .basicButton {
     height: 50px;
     border: 2px solid #ffffff;
@@ -61,6 +54,7 @@ html {
     background-color: transparent;
     cursor: pointer;
 }
+
 </style>
 
 </head>
@@ -79,29 +73,37 @@ html {
                         <div class="signUpMenu">
                             <form action="/submitSignUp" name="submitSignUp" id="submitSignUp" method="post">
                                 <div class="inputId">
-                                    <input type="text" name="id" id="inputId" placeholder="아이디"><br>
-                                    <span id="idCheckText" class="tooltip">ID 중복확인이 필요합니다.</span>
+                                    회원ID :
+                                    <input type="text" name="id" id="inputId"><br>
+                                    <span id="idCheckText">ID 중복확인이 필요합니다.</span>
                                 </div>
                                 <div>
+                                    패스워드 :
                                     <input type="password" name="pw" id="pw" placeholder="4~16 자리 영문+숫자 조합">
                                 </div>
                                 <div>
-                                    <input type="password" name="pw2" id="pw2" placeholder="비밀번호 재입력">
+                                    패스워드 재입력 :
+                                    <input type="password" name="pw2" id="pw2">
                                 </div>
                                 <div>
-                                    <input type="text" name="realName" placeholder="이름">
+                                    회원명 :
+                                    <input type="text" name="realName" id="realName">
                                 </div>
                                 <div>
-                                    <input type="text" name="nickName" placeholder="별명">
+                                    별명 :
+                                    <input type="text" name="nickName" id="nickName">
                                 </div>
                                 <div>
-                                    <input type="email" id="email" name="email" placeholder="이메일"><br>
-                                    <span id="emailCheckText" class="tooltip">이메일 중복확인이 필요합니다.</span><br>
+                                    이메일 :
+                                    <input type="email" id="email" name="email"><br>
+                                    <span id="emailCheckText">이메일 중복확인이 필요합니다.</span><br>
                                     <button type="button" id="sendVerificationNumberButton" class="basicButton" style="background-color: #AED6F1;">인증번호 받기</button><br>
-                                    <input id="inputEmailVerificationNumber" placeholder="이메일 인증번호 입력"><br>
+                                    이메일 인증번호 :
+                                    <input id="inputEmailVerificationNumber"><br>
                                 </div>
                                 <div>
-                                    <input type="text" name="phone" placeholder="연락처"><br><br>
+                                    연락처 :
+                                    <input type="text" name="phone" id="phone"><br><br>
                                 </div>
                                 <button type="button" class="basicButton" onclick="checkSignupForm();" accesskey="s">가입하기(S)</button><br>
                             </form>
@@ -117,6 +119,8 @@ html {
         </div>
     </div>
 </section>
+<%@include file="./include/footer.jspf" %>
+
 <script type="text/javascript">
 
 	let submitSignUpForm = document.getElementById("submitSignUp");
