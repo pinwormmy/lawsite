@@ -3,6 +3,7 @@ package com.study.column.mapper;
 import com.study.column.member.MemberDTO;
 import com.study.column.util.PageDTO;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -30,4 +31,6 @@ public interface MemberMapper {
     MemberDTO findByEmail(String email);
 
     void updatePassword(MemberDTO member);
+
+    String getIdByNameAndEmail(@Param("userName") String userName, @Param("email") String email);
 }

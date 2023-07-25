@@ -138,6 +138,15 @@ input:focus {
     outline: none;
 }
 
+button {
+    height: 50px;
+    border: 2px solid #ffffff;
+    margin: 2px;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+}
+
 button.cancel-btn {
     background: none;
     border: none;

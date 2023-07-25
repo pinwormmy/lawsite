@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-
+<title>회원ID 찾기</title>
 <style>
     body {
         height: 100%;
@@ -63,7 +63,6 @@
     }
 
 </style>
-    <!-- 로그인 페이지 스타일 복사 끝 -->
 </head>
 <body>
 
@@ -74,25 +73,24 @@
         <div class="container" style="width: 1600px;">
             <div class="row">
                 <%@include file="./include/sidebar.jspf" %>
-
-                <!-- ID 찾기 폼 시작 -->
                 <div class="col-lg-7">
-                    <div class="post-heading mb">
-                        <h3>ID 찾기</h3>
-                    </div>
-                    <div class="loginMenu">
-                        <div class="findIdMenu">
-                            <form action="/findId" method="post">
-                                <div class="inputIdEmail">
-                                    등록된 이메일 :
-                                    <input type="text" name="email" id="idEmail" placeholder="이메일">
-                                </div>
-                                <button id="findIdButton">아이디 찾기</button><br>
-                            </form>
-                        </div>
-                    </div>
+                   <div class="post-heading mb">
+                       <h3>ID 찾기</h3>
+                   </div>
+                   <div class="loginMenu">
+                       <div class="findIdMenu">
+                           <form action="/findId" method="post">
+                               <div class="inputUserName">
+                                   회원명 >> <input type="text" name="userName" id="userName">
+                               </div>
+                               <div class="inputIdEmail">
+                                   이메일 >> <input type="text" name="email" id="idEmail">
+                               </div>
+                               <button id="findIdButton">아이디 찾기</button><br>
+                           </form>
+                       </div>
+                   </div>
                 </div>
-
                 <div class="col-lg-3">
                     <div class="side-banner">
                         추가 기능 구현필요
@@ -102,6 +100,7 @@
         </div>
     </div>
 </section>
+
 
 <%@include file="./include/footer.jspf" %>
 

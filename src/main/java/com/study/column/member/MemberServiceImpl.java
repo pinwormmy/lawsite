@@ -107,6 +107,16 @@ public class MemberServiceImpl implements MemberService {
         return true;
     }
 
+    @Override
+    public String findIdByNameAndEmail(String userName, String email) {
+        try {
+            return memberMapper.getIdByNameAndEmail(userName, email);
+        } catch (Exception e) {
+            log.error("이름과 이메일로 아이디를 찾는 중 오류가 발생했습니다.", e);
+            return null;
+        }
+    }
+
     private PageService initPageUtil() {
         PageService util = new PageService();
         util.setDISPLAY_POST_LIMIT(10);

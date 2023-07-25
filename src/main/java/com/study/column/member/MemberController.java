@@ -169,8 +169,19 @@ public class MemberController {
     }
 
     @GetMapping(value = "/findId")
-    public String findCredentials() {
+    public String findId() {
         log.info("아이디 찾기 페이지");
+        return "findId";
+    }
+
+    @PostMapping("/findId")
+    public String findIdByNameAndEmail(String userName, String email, Model model) {
+        String userId = memberService.findIdByNameAndEmail(userName, email);
+        if (userId != null && !userId.isEmpty()) {
+            model.addAttribute("message", "당신의 아이디는 " + userId + "입니다.");
+        } else {
+            model.addAttribute("message", "입력하신 이름과 이메일로 등록된 아이디를 찾을 수 없습니다.");
+        }
         return "findId";
     }
 

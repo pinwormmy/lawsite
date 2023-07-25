@@ -76,5 +76,10 @@
         WHERE ID=#{id}
     </update>
 
+    <select id="getIdByNameAndEmail" resultType="String">
+        SELECT ID FROM MEMBER
+        WHERE REALNAME=#{userName} AND EMAIL=#{email}
+    </select>
+
 
 </mapper>
