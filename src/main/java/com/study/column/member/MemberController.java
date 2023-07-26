@@ -185,4 +185,10 @@ public class MemberController {
         return "findId";
     }
 
+    @GetMapping(value = "/findPassword")
+    public String findPassword() {
+        log.info("패스워드 찾기 페이지");
+        return "findPassword";
+    }
+
 }

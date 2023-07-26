@@ -89,7 +89,7 @@
                             </form>
                             <div class="subMenu">
                                 <div id="right-menu">
-                                    <a href="/findId">ID 찾기</a> | <a id="signUp" href="/signUp">패스워드 찾기</a>
+                                    <a href="/findId">ID 찾기</a> | <a href="/findPassword">패스워드 찾기</a>
                                 </div>
                             </div>
                         </div>
