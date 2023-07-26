@@ -197,15 +197,14 @@ public class MemberController {
             String result = memberService.findPassword(userId, email);
 
             if (result.equals("success")) {
-                model.addAttribute("message", "비밀번호 재설정 링크가 이메일로 전송되었습니다.");
+                model.addAttribute("message", "임시 패스워드가 이메일로 전송되었습니다.");
             } else {
-                model.addAttribute("message", "입력하신 ID와 이메일로 등록된 회원을 찾을 수 없습니다.");
+                model.addAttribute("message", result);
             }
         } catch (Exception e) {
             log.error("비밀번호 찾기 중 에러 발생", e);
             model.addAttribute("message", "비밀번호 찾기 중 문제가 발생했습니다. 다시 시도해 주세요.");
         }
-
         return "findPassword";
     }
 
