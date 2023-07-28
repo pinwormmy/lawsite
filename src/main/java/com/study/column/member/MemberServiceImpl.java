@@ -117,6 +117,32 @@ public class MemberServiceImpl implements MemberService {
         }
     }
 
+    @Override
+    public String findPassword(String userId, String email) {
+        MemberDTO member = memberMapper.findByUserIdAndEmail(userId, email);
+        if (member == null) {
+            return "입력하신 ID와 이메일로 등록된 회원을 찾을 수 없습니다.";
+        }
+
+        // 임시 비밀번호 생성
+        String tempPassword = UUID.randomUUID().toString().substring(0, 8);
+
+        // DB에 임시 비밀번호로 업데이트
+        member.setPw(tempPassword);
+        memberMapper.updatePassword(member);
+
+        // 이메일로 임시 비밀번호 전송
+        try {
+            emailService.sendNewPasswordMessage(email, tempPassword);
+            return "success";
+        } catch (Exception e) {
+            log.error("임시 비밀번호 이메일 전송 중 오류 발생", e);
+            return "비밀번호 찾기 중 문제가 발생했습니다. 다시 시도해 주세요.";
+        }
+    }
+
+
+
     private PageService initPageUtil() {
         PageService util = new PageService();
         util.setDISPLAY_POST_LIMIT(10);

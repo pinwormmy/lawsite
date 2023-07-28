@@ -33,4 +33,7 @@ public interface MemberMapper {
     void updatePassword(MemberDTO member);
 
     String getIdByNameAndEmail(@Param("userName") String userName, @Param("email") String email);
+
+    MemberDTO findByUserIdAndEmail(@Param("userId") String userId, @Param("email") String email);
+
 }

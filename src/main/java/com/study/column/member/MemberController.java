@@ -208,4 +208,6 @@ public class MemberController {
         return "findPassword";
     }
 
+    // 쉰다고 암것도 안 함 ㅋ
+
 }

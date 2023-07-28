@@ -81,5 +81,9 @@
         WHERE REALNAME=#{userName} AND EMAIL=#{email}
     </select>
 
+    <select id="findByUserIdAndEmail" resultType="com.study.column.member.MemberDTO">
+        SELECT * FROM MEMBER
+        WHERE ID=#{userId} AND EMAIL=#{email}
+    </select>
 
 </mapper>

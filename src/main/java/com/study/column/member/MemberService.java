@@ -28,4 +28,6 @@ public interface MemberService {
     boolean findCredentials(String email);
 
     String findIdByNameAndEmail(String userName, String email);
+
+    String findPassword(String userId, String email);
 }
