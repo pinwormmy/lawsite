@@ -210,5 +210,5 @@ public class MemberController {
 
     // 쉰다고 암것도 안 함 ㅋ
 
-
+    // 메뉴 개편 필요
 }
