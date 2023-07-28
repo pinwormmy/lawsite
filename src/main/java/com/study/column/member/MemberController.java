@@ -208,7 +208,5 @@ public class MemberController {
         return "findPassword";
     }
 
-    // 쉰다고 암것도 안 함 ㅋ
-
-    // 메뉴 개편 필요
+    // 회원 정보 수정 페이지 디자인 수정 필요(흰 바탕때문에 글씨 가려지는 문제 있음)
 }
