@@ -57,6 +57,7 @@
                         <a href="/modifyMyInfo" class="btn btn-turquoise">회원 정보 변경</a>
                     </div>
 				</div>
+
 			</div>
 		</div>
 	</div>
