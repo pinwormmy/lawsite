@@ -3,86 +3,103 @@
 <html lang="ko">
 <head>
 <title>회원정보 수정</title>
+<style>
+body {
+    height: 100%;
+}
+.my-page {
+    width: 1600px;
+    margin: auto;
+}
+.btn-turquoise {
+    background-color: #40E0D0;
+    color: #fff;
+    border: none;
+    margin: 10px;
+}
+.btn-turquoise:hover {
+    background-color: #3CB7B8;
+    color: #fff;
+}
+.leftbar-ul li a{
+    color : white;
+    font-size: 12px;
+    font-weight: 500px;
+}
+.page-navigation {
+    text-align: center;
+}
+.checkbox-list {
+    padding: 10px;
+}
+.checkbox-list label {
+    font-weight: 400;
+}
+.main-banner {
+    font-size: 48px;
+    margin: 10px;
+    text-align: center;
+}
+</style>
 </head>
 <body>
+<body>
 <%@include file="./include/header.jspf" %>
-
-<header id="headerwrap" class="halfscreen">
-    <div class="align-bottom wow fadeInUp">
-        <div class="row">
-            <div class="container">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="post-heading mb">
-                        <h1>회원정보 수정</h1>
+<div class="section-inner">
+    <div class="container" style="width: 1600px;">
+        <div class="main-banner">
+            회원정보 수정
+        </div>
+        <%@include file="./include/sidebar.jspf" %>
+        <div class="col-lg-8">
+            <div class="media">
+                <div class="media-body">
+                    <hr>
+                    <div class="member-info" style="font-size: 20px; line-height: 50px;">
+                        <form action="/submitModifyMyInfo" id="modifyMyInfo" method="post">
+                            <table>
+                                <tr>
+                                    <td>ID :</td>
+                                    <td>${member.id}<input type="hidden" name="id" value="${member.id}"></td>
+                                </tr>
+                                <tr>
+                                    <td>별명 :</td>
+                                    <td><input type="text" name="nickName" value="${member.nickName}"></td>
+                                </tr>
+                                <tr>
+                                    <td>비밀번호 :</td>
+                                    <td><input type="password" name="pw" placeholder="비밀번호를 입력하세요" value="${member.pw}"></td>
+                                </tr>
+                                <tr>
+                                    <td>비밀번호확인 :</td>
+                                    <td><input type="password" name="pw2" placeholder="비밀번호를 다시 입력하세요" value="${member.pw}"></td>
+                                </tr>
+                                <tr>
+                                    <td>이메일 :</td>
+                                    <td><input type="email" name="email" value="${member.email}" oninput="checkEmailChanged();">
+                                        <button type="button" id="sendVerificationNumberButton" class="btn btn-theme">이메일 인증</button>
+                                        <span id="emailCheckText" style="margin-left: 10px;">인증받은 이메일입니다.</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>인증 코드 :</td>
+                                    <td>
+                                        <input type="text" name="authCode" id="inputEmailVerificationNumber" placeholder="이메일로 받은 인증 코드를 입력하세요">
+                                    </td>
+                                </tr>
+                            </table>
+                            <div style="margin-top: 20px;">
+                                <button type="button" class="btn btn-theme" onclick="checkSignupForm();">수정하기</button>
+                                <button type="button" class="btn btn-theme" onclick="location.href='/myPage'">취소</button>
+                           </div>
+                       </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</header>
-<section class="white section-wrapper">
-    <div class="section-inner">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <div class="row">
-                        <div id="comments" class="col-xs-12">
-                            <div id="comments-list" class="gap">
-                                <div class="media">
-                                    <div class="media-body">
-                                        <div class="well">
-                                            <div class="media-heading">
-                                                <strong>${member.nickName}님의 회원정보수정</strong>
-                                            </div>
-                                            <hr>
-                                            <form action="/submitModifyMyInfo" id="modifyMyInfo" method="post">
-                                                <table>
-                                                    <tr>
-                                                        <td>ID :</td>
-                                                        <td>${member.id}<input type="hidden" name="id" value="${member.id}"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>별명 :</td>
-                                                        <td><input type="text" name="nickName" value="${member.nickName}"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>비밀번호 :</td>
-                                                        <td><input type="password" name="pw" placeholder="비밀번호를 입력하세요" value="${member.pw}"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>비밀번호확인 :</td>
-                                                        <td><input type="password" name="pw2" placeholder="비밀번호를 다시 입력하세요" value="${member.pw}"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>이메일 :</td>
-                                                        <td><input type="email" name="email" value="${member.email}" oninput="checkEmailChanged();">
-                                                            <button type="button" id="sendVerificationNumberButton" class="btn btn-theme">이메일 인증</button>
-                                                            <span id="emailCheckText" style="margin-left: 10px;">인증받은 이메일입니다.</span>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>인증 코드 :</td>
-                                                        <td>
-                                                            <input type="text" name="authCode" id="inputEmailVerificationNumber" placeholder="이메일로 받은 인증 코드를 입력하세요">
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                                <div style="margin-top: 20px;">
-                                                    <button type="button" class="btn btn-theme" onclick="checkSignupForm();">수정하기</button>
-                                                    <button type="button" class="btn btn-theme" onclick="location.href='/myPage'">취소</button>
-                                               </div>
-                                           </form>
-                                       </div>
-                                   </div>
-                               </div>
-                           </div>
-                       </div>
-                   </div>
-               </div>
-           </div>
-       </div>
-   </div>
-</section>
+</div>
+<%@include file="./include/footer.jspf" %>
 
 <script>
 let modifyMyInfoForm = document.getElementById("modifyMyInfo");
@@ -237,6 +254,5 @@ function checkSignupForm() {
 
 </script>
 
-<%@include file="./include/footer.jspf" %>
 </body>
 </html>

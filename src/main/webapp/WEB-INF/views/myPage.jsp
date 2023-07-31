@@ -46,9 +46,6 @@ body {
 <%@include file="./include/header.jspf" %>
 <div class="section-inner">
     <div class="container" style="width: 1600px;">
-        <div class="main-banner">
-            마이 페이지
-        </div>
         <%@include file="./include/sidebar.jspf" %>
         <div class="col-lg-8">
             <div class="media">
@@ -65,11 +62,11 @@ body {
                 </div>
             </div>
             <div>
-                <button onclick="href='/adminPage'">내 정보 수정</button>
+                <button onclick="location.href='/modifyMyInfo'">내 정보 수정</button>
             </div>
             <c:if test="${member.grade == 3}">
                 <div>
-                    <button onclick="href='/adminPage'">관리자 모드</button>
+                    <button onclick="location.href='/adminPage'">관리자 모드</button>
                 </div>
             </c:if>
         </div>
