@@ -36,7 +36,7 @@ body {
     font-weight: 400;
 }
 .main-banner {
-    font-size: 48px;
+    font-size: 32px;
     margin: 10px;
     text-align: center;
 }
@@ -59,38 +59,38 @@ body {
                         <form action="/submitModifyMyInfo" id="modifyMyInfo" method="post">
                             <table>
                                 <tr>
-                                    <td>ID :</td>
+                                    <td>ID >> </td>
                                     <td>${member.id}<input type="hidden" name="id" value="${member.id}"></td>
                                 </tr>
                                 <tr>
-                                    <td>별명 :</td>
+                                    <td>별명 >> </td>
                                     <td><input type="text" name="nickName" value="${member.nickName}"></td>
                                 </tr>
                                 <tr>
-                                    <td>비밀번호 :</td>
+                                    <td>비밀번호 >></td>
                                     <td><input type="password" name="pw" placeholder="비밀번호를 입력하세요" value="${member.pw}"></td>
                                 </tr>
                                 <tr>
-                                    <td>비밀번호확인 :</td>
+                                    <td>비밀번호확인 >></td>
                                     <td><input type="password" name="pw2" placeholder="비밀번호를 다시 입력하세요" value="${member.pw}"></td>
                                 </tr>
                                 <tr>
-                                    <td>이메일 :</td>
+                                    <td>이메일 >> </td>
                                     <td><input type="email" name="email" value="${member.email}" oninput="checkEmailChanged();">
-                                        <button type="button" id="sendVerificationNumberButton" class="btn btn-theme">이메일 인증</button>
+                                        <button type="button" id="sendVerificationNumberButton">인증받기</button>
                                         <span id="emailCheckText" style="margin-left: 10px;">인증받은 이메일입니다.</span>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>인증 코드 :</td>
+                                    <td>인증 코드 >> </td>
                                     <td>
-                                        <input type="text" name="authCode" id="inputEmailVerificationNumber" placeholder="이메일로 받은 인증 코드를 입력하세요">
+                                        <input type="text" name="authCode" id="inputEmailVerificationNumber" placeholder="메일로 받은 인증코드를 입력">
                                     </td>
                                 </tr>
                             </table>
                             <div style="margin-top: 20px;">
-                                <button type="button" class="btn btn-theme" onclick="checkSignupForm();">수정하기</button>
-                                <button type="button" class="btn btn-theme" onclick="location.href='/myPage'">취소</button>
+                                <button type="button" onclick="checkSignupForm();">수정하기</button>
+                                <button type="button" onclick="location.href='/myPage'">취소</button>
                            </div>
                        </form>
                     </div>
