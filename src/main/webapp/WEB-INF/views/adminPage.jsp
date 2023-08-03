@@ -83,7 +83,7 @@ body {
                                     <th>실명</th>
                                     <th>이메일</th>
                                     <th>연락처</th>
-                                    <th>회원 등급</th>
+                                    <th>회원등급</th>
                                     <th>가입일자</th>
                                     <th>관리</th>
                                 </tr>
@@ -104,7 +104,7 @@ body {
                                         </td>
                                     </tr>
                                 </c:forEach>
-                                <c:if test="${empty memberList}"><td colspan="8">조회 결과가 없습니다....</td></c:if>
+                                <c:if test="${empty memberList}"><td colspan="8">조회 결과가 없습니다..</td></c:if>
                             </tbody>
                         </table>
                     </div>
