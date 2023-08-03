@@ -75,7 +75,7 @@ body {
                         </div>
                     </form>
                     <div class="container">
-                        <table class="table table-bordered table-hover">
+                        <table>
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -97,7 +97,7 @@ body {
                                         <td>${member.email}</td>
                                         <td>${member.phone}</td>
                                         <td>${member.grade}</td>
-                                        <td>${member.regDate}</td>
+                                        <td><fmt:formatDate value="${member.regDate}" pattern="yy.MM.dd"/></td>
                                         <td>
                                             <button class="btn btn-turquoise" style="margin: 0px;" onclick="location.href='/modifyMemberByAdmin?id=${member.id}'">수정</button>
                                             <button class="btn btn-danger">탈퇴</button>
