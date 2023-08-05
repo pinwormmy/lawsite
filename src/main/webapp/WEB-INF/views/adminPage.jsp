@@ -46,6 +46,10 @@ body {
 .search-element {
     height: 38px;
 }
+li {
+    display: inline-block;
+    margin-right: 10px;
+}
 </style>
 </head>
 <body>
@@ -68,7 +72,7 @@ body {
                                 <option value="realName" <c:if test="${pageInfo.searchType == 'realName'}">selected</c:if>>실명</option>
                             </select>
                             <input type="text" name="keyword" class="search-element" style="border: 1px solid Turquoise; height: 38px;" value="${pageInfo.keyword}">
-                            <button type="submit" class="btn btn-primary search-element">검색</button>
+                            <button type="submit">검색</button>
                             <c:if test="${pageInfo.keyword != ''}">
                                 <button type="button" class="btn btn-primary search-element" onclick="location.href='/adminPage'">취소</button>
                             </c:if>
@@ -99,8 +103,8 @@ body {
                                         <td>${member.grade}</td>
                                         <td><fmt:formatDate value="${member.regDate}" pattern="yy.MM.dd"/></td>
                                         <td>
-                                            <button class="btn btn-turquoise" style="margin: 0px;" onclick="location.href='/modifyMemberByAdmin?id=${member.id}'">수정</button>
-                                            <button class="btn btn-danger">탈퇴</button>
+                                            <button style="margin: 0px;" onclick="location.href='/modifyMemberByAdmin?id=${member.id}'">수정</button>
+                                            <button>탈퇴</button>
                                         </td>
                                     </tr>
                                 </c:forEach>
@@ -109,8 +113,8 @@ body {
                         </table>
                     </div>
                     <div class="container">
-                    <nav aria-label="Page navigation">
-                        <ul class="pagination">
+                    <nav>
+                        <ul>
                             <c:if test="${pageInfo.prevPageSetPoint != 0}">
                                 <li class="page-item">
                                     <a class="page-link" href="/adminPage?recentPage=${pageInfo.prevPageSetPoint}&searchType=${pageInfo.searchType}&keyword=${pageInfo.keyword}" aria-label="Previous">
@@ -121,16 +125,16 @@ body {
                             <c:forEach var="i" begin="${pageInfo.pageBeginPoint}" end="${pageInfo.pageEndPoint}">
                                 <c:choose>
                                     <c:when test="${i == pageInfo.recentPage}">
-                                        <li class="page-item active"><a class="page-link" href="/adminPage?recentPage=${i}&searchType=${pageInfo.searchType}&keyword=${pageInfo.keyword}">${i}</a></li>
+                                        <li><a class="page-link" href="/adminPage?recentPage=${i}&searchType=${pageInfo.searchType}&keyword=${pageInfo.keyword}">${i}</a></li>
                                     </c:when>
                                     <c:otherwise>
-                                        <li class="page-item"><a class="page-link" href="/adminPage?recentPage=${i}&searchType=${pageInfo.searchType}&keyword=${pageInfo.keyword}">${i}</a></li>
+                                        <li><a class="page-link" href="/adminPage?recentPage=${i}&searchType=${pageInfo.searchType}&keyword=${pageInfo.keyword}">${i}</a></li>
                                     </c:otherwise>
                                 </c:choose>
                             </c:forEach>
                             <c:if test="${pageInfo.nextPageSetPoint <= pageInfo.totalPage}">
                                 <li class="page-item">
-                                    <a class="page-link" href="/adminPage?recentPage=${pageInfo.nextPageSetPoint}&searchType=${pageInfo.searchType}&keyword=${pageInfo.keyword}" aria-label="Next">
+                                    <a href="/adminPage?recentPage=${pageInfo.nextPageSetPoint}&searchType=${pageInfo.searchType}&keyword=${pageInfo.keyword}" aria-label="Next">
                                         <span aria-hidden="true">&raquo;</span>
                                     </a>
                                 </li>
