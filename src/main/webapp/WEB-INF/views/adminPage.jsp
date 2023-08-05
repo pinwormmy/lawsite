@@ -46,10 +46,7 @@ body {
 .search-element {
     height: 38px;
 }
-li {
-    display: inline-block;
-    margin-right: 10px;
-}
+
 </style>
 </head>
 <body>
