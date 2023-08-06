@@ -102,6 +102,16 @@ legend {
 }
 th {
     font-weight: 100;
+    padding: 10px;
+}
+
+li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+td {
+    padding : 10px;
 }
 
 iframe {
