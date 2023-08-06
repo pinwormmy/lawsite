@@ -102,7 +102,7 @@ body {
                                         <td><fmt:formatDate value="${member.regDate}" pattern="yy.MM.dd"/></td>
                                         <td>
                                             <button style="margin: 0px;" onclick="location.href='/modifyMemberByAdmin?id=${member.id}'">수정</button>
-                                            <button>탈퇴</button>
+                                            <button onclick="confirmDelete('${member.id}')">탈퇴</button>
                                         </td>
                                     </tr>
                                 </c:forEach>
@@ -145,6 +145,28 @@ body {
         </div>
 
 <%@ include file="/WEB-INF/views/include/footer.jspf" %>
+
+<script>
+function confirmDelete(id) {
+    if(confirm("정말로 탈퇴시키겠습니까?")) {
+        // AJAX 요청
+        $.ajax({
+            url: '/deleteMember',
+            type: 'POST',
+            data: { id: id },
+            success: function(data) {
+                // 응답 처리
+                if(data.success) {
+                    alert("탈퇴가 완료되었습니다.");
+                    location.href = '/logout';
+                } else {
+                    alert("탈퇴 처리 중 오류가 발생했습니다.");
+                }
+            }
+        });
+    }
+}
+</script>
 
 </body>
 </html>
