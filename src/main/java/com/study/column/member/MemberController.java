@@ -208,5 +208,16 @@ public class MemberController {
         return "findPassword";
     }
 
-    // 회원 정보 수정 페이지 디자인 수정 필요(흰 바탕때문에 글씨 가려지는 문제 있음)
+    @PostMapping("/deleteMember")
+    @ResponseBody
+    public String deleteMember(@RequestParam("id") String id) {
+        try {
+            memberService.deleteMember(id);
+            return "{\"success\": true}";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "{\"success\": false}";
+        }
+    }
+
 }
