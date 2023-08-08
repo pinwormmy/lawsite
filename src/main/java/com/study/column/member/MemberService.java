@@ -30,4 +30,6 @@ public interface MemberService {
     String findIdByNameAndEmail(String userName, String email);
 
     String findPassword(String userId, String email);
+
+    void deleteMember(String id);
 }

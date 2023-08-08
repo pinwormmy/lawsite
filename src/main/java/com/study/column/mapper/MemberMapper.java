@@ -36,4 +36,5 @@ public interface MemberMapper {
 
     MemberDTO findByUserIdAndEmail(@Param("userId") String userId, @Param("email") String email);
 
+    void deleteMember(String id);
 }

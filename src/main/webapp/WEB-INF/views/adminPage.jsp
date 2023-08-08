@@ -158,7 +158,7 @@ function confirmDelete(id) {
                 // 응답 처리
                 if(data.success) {
                     alert("탈퇴가 완료되었습니다.");
-                    location.href = '/logout';
+                    location.href = '/adminPage';
                 } else {
                     alert("탈퇴 처리 중 오류가 발생했습니다.");
                 }

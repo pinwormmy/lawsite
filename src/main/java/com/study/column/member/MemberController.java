@@ -3,6 +3,7 @@ package com.study.column.member;
 import com.study.column.util.PageDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -11,7 +12,9 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @Slf4j
@@ -210,14 +213,24 @@ public class MemberController {
 
     @PostMapping("/deleteMember")
     @ResponseBody
-    public String deleteMember(@RequestParam("id") String id) {
+    public ResponseEntity<Map<String, Boolean>> deleteMember(@RequestParam("id") String id) {
+        Map<String, Boolean> response = new HashMap<>();
         try {
             memberService.deleteMember(id);
-            return "{\"success\": true}";
+            response.put("success", true);
+            return new ResponseEntity<>(response, HttpStatus.OK);
+        } catch (DataAccessException dae) {
+            // DataAccessException 처리
+            log.error("회원 삭제 중 DataAccessException 발생, 회원 ID: {}", id, dae);
+            response.put("success", false);
+            return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
         } catch (Exception e) {
-            e.printStackTrace();
-            return "{\"success\": false}";
+            // 기타 예외 처리
+            log.error("회원 삭제 중 예외 발생, 회원 ID: {}", id, e);
+            response.put("success", false);
+            return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
 
 }

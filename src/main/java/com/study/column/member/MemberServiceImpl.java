@@ -141,6 +141,10 @@ public class MemberServiceImpl implements MemberService {
         }
     }
 
+    @Override
+    public void deleteMember(String id) {
+        memberMapper.deleteMember(id);
+    }
 
 
     private PageService initPageUtil() {
