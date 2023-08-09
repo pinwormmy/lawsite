@@ -91,6 +91,7 @@ body {
                             <div style="margin-top: 20px;">
                                 <button type="button" onclick="checkSignupForm();">수정하기</button>
                                 <button type="button" onclick="location.href='/myPage'">취소</button>
+                                <button type="button" onclick="confirmDelete();" style="background-color: #FF5733; color: #fff;">탈퇴하기</button>
                            </div>
                        </form>
                     </div>
@@ -250,6 +251,13 @@ function checkSignupForm() {
     }
 
     modifyMyInfoForm.submit();
+}
+
+function confirmDelete() {
+    if(confirm("정말로 탈퇴하시겠습니까? 탈퇴 시 모든 데이터가 삭제됩니다.")) {
+        // AJAX 요청 또는 탈퇴 처리 페이지로 이동
+        // 예: location.href = '/deleteMyAccount';
+    }
 }
 
 </script>
