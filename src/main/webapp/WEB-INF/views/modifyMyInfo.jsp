@@ -260,7 +260,7 @@ function confirmDelete() {
     }
 }
 
-// 시간이 늦어 코딩 거의 못함
+// 시간이 늦어 코딩 거의 못함 22
 
 </script>
 
