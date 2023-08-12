@@ -232,5 +232,28 @@ public class MemberController {
         }
     }
 
+    @PostMapping("/deleteMyAccount")
+    @ResponseBody
+    public String deleteMyAccount(HttpServletRequest request) {
+        log.info("계정 탈퇴 후 로그아웃 처리하기....");
+        String userId = null; // userId 변수를 try 블록 바깥에 선언합니다.
+        try {
+            MemberDTO member = (MemberDTO) request.getSession().getAttribute("member");
+            userId = member.getId(); // userId 변수를 초기화합니다.
+
+            memberService.deleteMember(userId);
+
+            request.getSession().invalidate();
+            return "{\"success\": true}";
+        } catch (DataAccessException dae) {
+            // 데이터베이스 관련 예외 처리
+            log.error("회원 삭제 중 DataAccessException 발생, 회원 ID: {}", userId, dae);
+            return "{\"success\": false, \"message\": \"데이터베이스 오류가 발생했습니다.\"}";
+        } catch (Exception e) {
+            // 기타 예외 처리
+            log.error("회원 삭제 중 예외 발생, 회원 ID: {}", userId, e);
+            return "{\"success\": false, \"message\": \"알 수 없는 오류가 발생했습니다.\"}";
+        }
+    }
 
 }

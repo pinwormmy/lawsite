@@ -255,12 +255,20 @@ function checkSignupForm() {
 
 function confirmDelete() {
     if(confirm("정말로 탈퇴하시겠습니까? 탈퇴 시 모든 데이터가 삭제됩니다.")) {
-        // AJAX 요청 또는 탈퇴 처리 페이지로 이동
-        // 예: location.href = '/deleteMyAccount';
+        $.ajax({
+            url: '/deleteMyAccount',
+            type: 'POST',
+            success: function(data) {
+                if(data.success) {
+                    alert("탈퇴가 완료되었습니다. 감사합니다.");
+                    location.href = '/'; // 홈페이지로 리다이렉트
+                } else {
+                    alert("탈퇴 처리 중 오류가 발생했습니다. 다시 시도해주세요.");
+                }
+            }
+        });
     }
 }
-
-// 시간이 늦어 코딩 거의 못함 22
 
 </script>
 
