@@ -258,17 +258,24 @@ function confirmDelete() {
         $.ajax({
             url: '/deleteMyAccount',
             type: 'POST',
+            contentType: 'application/json',
+            dataType: 'json',
             success: function(data) {
                 if(data.success) {
                     alert("탈퇴가 완료되었습니다. 감사합니다.");
-                    location.href = '/'; // 홈페이지로 리다이렉트
+                    location.href = '/';
                 } else {
                     alert("탈퇴 처리 중 오류가 발생했습니다. 다시 시도해주세요.");
                 }
+            },
+            error: function(err) {
+                console.error(err); // 오류 발생 시 콘솔에 오류 로그 출력
+                alert("탈퇴 처리 중 오류가 발생했습니다. 다시 시도해주세요.");
             }
         });
     }
 }
+
 
 </script>
 
