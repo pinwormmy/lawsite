@@ -95,7 +95,6 @@ body {
                         <c:if test="${empty libraryList}"><tr><td>현재 등록된 글이 없습니다.</td></tr></c:if>
                     </fieldset>
                 </div>
-
         </div>
     </div>
 </section>

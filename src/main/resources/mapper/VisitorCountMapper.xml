@@ -1,0 +1,25 @@
+<mapper namespace="com.example.mapper.VisitorCountMapper">
+    <select id="findByDate" resultType="com.example.model.VisitorCount">
+        SELECT * FROM visitor_count WHERE date = #{date}
+    </select>
+
+    <update id="incrementDailyCount">
+        UPDATE visitor_count SET daily_count = daily_count + 1 WHERE date = #{date}
+    </update>
+
+    <update id="incrementTotalCount">
+        UPDATE visitor_count SET total_count = total_count + 1
+    </update>
+
+    <insert id="insertNewRecord">
+        INSERT INTO visitor_count (date, daily_count, total_count) VALUES (#{date}, 1, #{totalCount})
+    </insert>
+
+    <select id="getTotalCount" resultType="int">
+        SELECT SUM(total_count) FROM visitor_count
+    </select>
+
+    <select id="getTodayCount" resultType="int">
+        SELECT daily_count FROM visitor_count WHERE date = #{date}
+    </select>
+</mapper>

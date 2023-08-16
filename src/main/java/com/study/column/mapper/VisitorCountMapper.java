@@ -7,10 +7,11 @@ import java.time.LocalDate;
 
 public interface VisitorCountMapper {
     VisitorCountDTO findByDate(@Param("date") LocalDate date);
-    void incrementCount(@Param("date") LocalDate date);
+    void incrementDailyCount(@Param("date") LocalDate date);
     void incrementTotalCount();
-    void insertNewRecord(@Param("date") LocalDate date);
+    void insertNewRecord(@Param("date") LocalDate date, @Param("totalCount") int totalCount);
     int getTotalCount();
     int getTodayCount(@Param("date") LocalDate date);
 }
+
 
