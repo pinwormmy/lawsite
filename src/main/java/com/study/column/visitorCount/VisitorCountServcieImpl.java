@@ -2,9 +2,11 @@ package com.study.column.visitorCount;
 
 import com.study.column.mapper.VisitorCountMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 
+@Service
 public class VisitorCountServcieImpl implements VisitorCountService {
     @Autowired
     private VisitorCountMapper visitorCountMapper;
@@ -24,9 +26,9 @@ public class VisitorCountServcieImpl implements VisitorCountService {
     }
 
     public int getTotalCount() {
-        return visitorCountMapper.getTotalCount();
+        Integer totalCount = visitorCountMapper.getTotalCount();
+        return totalCount != null ? totalCount : 0; // null 체크
     }
-
     public int getTodayCount() {
         LocalDate today = LocalDate.now();
         return visitorCountMapper.getTodayCount(today);

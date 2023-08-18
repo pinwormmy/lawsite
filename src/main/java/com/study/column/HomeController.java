@@ -35,7 +35,6 @@ public class HomeController {
         }
         model.addAttribute("todayCount", visitorCountService.getTodayCount());
         model.addAttribute("totalCount", visitorCountService.getTotalCount());
-
         model.addAttribute("page", boardService.pageSetting(page));
         model.addAttribute("boardList", boardService.showPostList(page));
         model.addAttribute("opencolumnList", openColumnService.showPostList(page));
