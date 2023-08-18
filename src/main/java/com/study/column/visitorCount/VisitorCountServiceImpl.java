@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 
 @Service
-public class VisitorCountServcieImpl implements VisitorCountService {
+public class VisitorCountServiceImpl implements VisitorCountService {
     @Autowired
     private VisitorCountMapper visitorCountMapper;
 
