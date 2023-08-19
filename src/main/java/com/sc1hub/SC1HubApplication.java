@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
-@MapperScan(value = {"com.study.column.mapper"})
+@MapperScan(value = {"com.sc1hub.mapper"})
 @SpringBootApplication
 public class SC1HubApplication extends SpringBootServletInitializer {
 
