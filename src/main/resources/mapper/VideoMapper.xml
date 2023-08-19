@@ -3,14 +3,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.study.column.mapper.VideoMapper">
+<mapper namespace="com.sc1hub.mapper.VideoMapper">
 
-    <resultMap id="MemberDTO" type="com.study.column.member.MemberDTO">
+    <resultMap id="MemberDTO" type="com.sc1hub.member.MemberDTO">
         <result column="id" property="id" />
         <result column="nickName" property="nickName" />
     </resultMap>
 
-    <resultMap id="VideoCommentDTO" type="com.study.column.video.VideoCommentDTO">
+    <resultMap id="VideoCommentDTO" type="com.sc1hub.video.VideoCommentDTO">
         <result column="POST_NUM" property="postNum" />
         <result column="COMMENT_NUM" property="commentNum" />
         <result column="id" property="id" />
@@ -19,7 +19,7 @@
         <collection property="memberDTO" resultMap="MemberDTO" />
     </resultMap>
 
-    <select id="showPostList" resultType="com.study.column.video.VideoDTO">
+    <select id="showPostList" resultType="com.sc1hub.video.VideoDTO">
         select post_num, title, content, writer, reg_date, views, COMMENT_COUNT, notice, url
             FROM VIDEO
             WHERE <include refid="searchKeyword" /> AND notice=0
@@ -34,7 +34,7 @@
             or content like CONCAT('%', #{keyword}, '%')</if>
     </sql>
 
-    <select id="readPost" resultType="com.study.column.video.VideoDTO">
+    <select id="readPost" resultType="com.sc1hub.video.VideoDTO">
         select * from VIDEO
             where post_num=#{postNum}
     </select>
@@ -112,13 +112,13 @@
             WHERE POST_NUM=#{postNum} AND IP=#{ip}
     </select>
 
-    <select id="showSelfNoticeList" resultType="com.study.column.video.VideoDTO">
+    <select id="showSelfNoticeList" resultType="com.sc1hub.video.VideoDTO">
         SELECT * FROM VIDEO
             WHERE NOTICE=1
             ORDER BY POST_NUM DESC
     </select>
 
-    <select id="showFullNoticeList" resultType="com.study.column.fullNotice.FullNoticeDTO">
+    <select id="showFullNoticeList" resultType="com.sc1hub.fullNotice.FullNoticeDTO">
         SELECT * FROM FULL_NOTICE
             WHERE NOTICE=1
             ORDER BY POST_NUM DESC

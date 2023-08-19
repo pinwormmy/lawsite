@@ -67,6 +67,8 @@ body {
   line-height: 1.5;
   font-family: "DungGeunMo", sans-serif;
   color: white;
+  background-color: #06115c;
+  font-size: 16px;
 }
 
 p {
@@ -2691,11 +2693,6 @@ button.cancel-btn:hover {
   display: none;
   font-size: 13px;
   padding: 10px;
-}
-
-.footer {
-  background: #F7F7F7;
-  padding: 50px 0;
 }
 
 .footer .footer-menu {

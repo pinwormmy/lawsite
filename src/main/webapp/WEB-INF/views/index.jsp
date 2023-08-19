@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>게임핀 - 게임정보 사이트</title>
+<title>SC1Hub - 스타크래프트1 전문 커뮤니티</title>
 <style>
 
 body {

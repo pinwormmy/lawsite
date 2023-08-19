@@ -3,7 +3,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.study.column.mapper.MemberMapper">
+<mapper namespace="com.sc1hub.mapper.MemberMapper">
 
     <select id="isUniqueId" resultType="String">
         SELECT COUNT(*) FROM MEMBER
@@ -20,7 +20,7 @@
             VALUES(#{id}, #{pw}, #{nickName}, #{realName}, #{email}, #{phone}, 1, NOW())
     </insert>
 
-    <select id="checkLoginData" resultType="com.study.column.member.MemberDTO">
+    <select id="checkLoginData" resultType="com.sc1hub.member.MemberDTO">
         SELECT * FROM MEMBER
             WHERE ID=#{id} AND PW=#{pw}
     </select>
@@ -33,13 +33,13 @@
 
 
 
-    <select id="getMemberInfo" resultType="com.study.column.member.MemberDTO">
+    <select id="getMemberInfo" resultType="com.sc1hub.member.MemberDTO">
         SELECT *
             FROM MEMBER
             WHERE ID=#{id}
     </select>
 
-    <select id="getMemberList" resultType="com.study.column.member.MemberDTO">
+    <select id="getMemberList" resultType="com.sc1hub.member.MemberDTO">
         SELECT *
             FROM MEMBER
             WHERE <include refid="searchKeyword" />
@@ -65,7 +65,7 @@
             WHERE ID=#{id}
     </update>
 
-    <select id="findByEmail" resultType="com.study.column.member.MemberDTO">
+    <select id="findByEmail" resultType="com.sc1hub.member.MemberDTO">
         SELECT * FROM MEMBER
         WHERE EMAIL=#{email}
     </select>
@@ -81,7 +81,7 @@
         WHERE REALNAME=#{userName} AND EMAIL=#{email}
     </select>
 
-    <select id="findByUserIdAndEmail" resultType="com.study.column.member.MemberDTO">
+    <select id="findByUserIdAndEmail" resultType="com.sc1hub.member.MemberDTO">
         SELECT * FROM MEMBER
         WHERE ID=#{userId} AND EMAIL=#{email}
     </select>
