@@ -11,7 +11,7 @@ public interface VisitorCountMapper {
     void incrementTotalCount();
     void insertNewRecord(@Param("date") LocalDate date, @Param("totalCount") int totalCount);
     Integer getTotalCount();
-    int getTodayCount(@Param("date") LocalDate date);
+    Integer getTodayCount(@Param("date") LocalDate date);
 }
 
 

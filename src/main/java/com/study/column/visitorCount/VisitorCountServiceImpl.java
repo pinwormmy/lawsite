@@ -31,6 +31,7 @@ public class VisitorCountServiceImpl implements VisitorCountService {
     }
     public int getTodayCount() {
         LocalDate today = LocalDate.now();
-        return visitorCountMapper.getTodayCount(today);
+        Integer todayCount = visitorCountMapper.getTodayCount(today);
+        return todayCount != null ? todayCount : 0; // null 체크
     }
 }
