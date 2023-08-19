@@ -14,6 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Controller
 public class HomeController {
@@ -61,8 +65,14 @@ public class HomeController {
 
     private void createVisitorCookie(HttpServletResponse response) {
         Cookie visitorCookie = new Cookie("visitor", "true");
-        visitorCookie.setMaxAge(24 * 60 * 60); // 24시간
+
+        // 오늘의 자정까지의 시간을 초 단위로 계산
+        LocalDateTime midnight = LocalDateTime.of(LocalDate.now().plusDays(1), LocalTime.MIDNIGHT);
+        int secondsUntilMidnight = (int) Duration.between(LocalDateTime.now(), midnight).getSeconds();
+
+        visitorCookie.setMaxAge(secondsUntilMidnight); // 자정까지
         visitorCookie.setPath("/"); // 전체 도메인에서 유효
         response.addCookie(visitorCookie);
     }
+
 }

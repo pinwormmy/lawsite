@@ -3,6 +3,7 @@ package com.study.column.visitorCount;
 import com.study.column.mapper.VisitorCountMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 
@@ -11,6 +12,7 @@ public class VisitorCountServiceImpl implements VisitorCountService {
     @Autowired
     private VisitorCountMapper visitorCountMapper;
 
+    @Transactional
     public void incrementVisitorCount() {
         LocalDate today = LocalDate.now();
         VisitorCountDTO visitorCount = visitorCountMapper.findByDate(today);

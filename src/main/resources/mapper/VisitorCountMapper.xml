@@ -14,7 +14,7 @@
     </update>
 
     <update id="incrementTotalCount">
-        UPDATE visitor_count SET total_count = total_count + 1
+        UPDATE total_visitor_count SET total_count = total_count + 1
     </update>
 
     <insert id="insertNewRecord">
@@ -22,7 +22,7 @@
     </insert>
 
     <select id="getTotalCount" resultType="int">
-        SELECT SUM(total_count) FROM visitor_count
+        SELECT total_count FROM total_visitor_count
     </select>
 
     <select id="getTodayCount" resultType="int">
