@@ -18,7 +18,7 @@
     </update>
 
     <insert id="insertNewRecord">
-        INSERT INTO visitor_count (date, count, total_count) VALUES (#{date}, 1, #{totalCount})
+        INSERT INTO visitor_count (date, count) VALUES (#{date}, 1)
     </insert>
 
     <select id="getTotalCount" resultType="int">
