@@ -64,22 +64,29 @@ body {
 a {
     color: white;
 }
-
 .navbar-wrapper {
-    border-bottom: solid 2px black;
+    padding: 0 20px; /* 좌우 여백 추가 */
+    border-bottom: solid 2px white;
 }
 .this-header {
-    width: 1600px;
-    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    max-width: 1600px; /* 최대 너비 설정 */
+    margin: 0 auto; /* 중앙 정렬 */
 }
-
+.super-top-menu {
+    display: flex; /* flexbox 사용 */
+    justify-content: flex-end; /* 오른쪽 정렬 */
+    flex-grow: 1; /* 가능한 모든 공간 차지 */
+}
 .super-top-menu ul {
-    list-style:none;
-    margin:0;
-    padding:0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
 }
 .super-top-menu ul li {
     margin-right: 20px;
@@ -135,6 +142,14 @@ a {
     background-color: #122088;
     margin: 0;
 }
+ .title-container {
+    font-size: 20px;
+    position: absolute; /* 절대 위치 지정 */
+    left: 50%; /* 왼쪽에서 50% 위치 */
+    top: 50%; /* 상단에서 50% 위치 */
+    transform: translate(-50%, -50%); /* 왼쪽으로 50%, 위로 50% 이동 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+}
 
 </style>
 </head>
@@ -142,11 +157,15 @@ a {
 <body>
 <div class="navbar-wrapper">
     <div class="this-header">
+        <div style="flex-grow: 1;"></div>
+        <div class="title-container">
+            SC1Hub - 스타크래프트1 전문 커뮤니티
+        </div>
         <div class="super-top-menu">
             <ul>
                 <c:if test="${member == null}">
-                    <li><a href="/loginForDemo" style="color:#070093;">(시연용)일반로그인</a></li>
-                    <li><a href="/loginForDemoAsAdmin" style="color:#070093;">(시연용)관리자로그인</a></li>
+                    <li><a href="/loginForDemo" style="color:#070093;">일반</a></li>
+                    <li><a href="/loginForDemoAsAdmin" style="color:#070093;">관리자</a></li>
                     <li><a href="/login">로그인</a></li>
                     <li><a href="/signUp">회원가입</a></li>
                 </c:if>

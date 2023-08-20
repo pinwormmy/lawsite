@@ -33,11 +33,6 @@ body {
 .checkbox-list label {
     font-weight: 400;
 }
-.main-banner {
-    font-size: 32px;
-    margin: 10px;
-    text-align: center;
-}
 
 </style>
 </head>
@@ -45,9 +40,6 @@ body {
 <%@include file="./include/header.jspf" %>
     <div class="section-inner">
         <div class="container" style="width: 1600px;">
-            <div class="main-banner">
-                SC1Hub - 스타크래프트1 전문 커뮤니티
-            </div>
                 <%@include file="./include/sidebar.jspf" %>
                 <div class="col-lg-8">
                     <fieldset>
