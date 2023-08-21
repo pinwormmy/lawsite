@@ -120,6 +120,19 @@ iframe {
   border: 0;
 }
 
+fieldset {
+    border: 1px solid white;
+}
+
+a {
+    color: white;
+}
+
+li {
+    margin: 3px;
+    display: block;
+}
+
 a, a:focus, a:hover {
   text-decoration: none;
   outline: none;
