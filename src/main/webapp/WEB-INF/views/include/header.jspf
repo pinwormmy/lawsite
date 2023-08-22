@@ -70,7 +70,7 @@ body {
     justify-content: space-between;
     align-items: center;
     position: relative;
-    max-width: 1600px; /* 최대 너비 설정 */
+    max-width: auto /* 최대 너비 설정 */
     margin: 0 auto; /* 중앙 정렬 */
 }
 .super-top-menu {
