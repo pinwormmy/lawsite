@@ -1,7 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 
-<footer class="footer section text-center">
+<style>
+
+.footer .container {
+    border-top: 1px solid white;
+    margin-top: 20px;
+}
+
+</style>
+
+<footer class="footer text-center">
 	<div class="container">
 		<div class="row" style="margin:15px;">
 			<div class="col-md-12">
