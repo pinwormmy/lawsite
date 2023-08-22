@@ -6,9 +6,9 @@
 </style>
 </head>
 <body>
-<div class="col-lg-2">
+<div class="col-lg-3">
     <fieldset>
-        <legend>지휘관회의실</legend>
+        <legend>[지휘관회의실]</legend>
         <ul>
             <li><a href="/">1. 초기화면</a></li>
             <li><a href="/">2. 대전리뷰</a></li>
@@ -20,7 +20,7 @@
         </ul>
     </fieldset>
     <fieldset>
-        <legend>종족게시판</legend>
+        <legend>[종족게시판]</legend>
         <ul>
             <li><a href="/">1. 테란 게시판</a></li>
             <li><a href="/">2. 테란 공략</a></li>
