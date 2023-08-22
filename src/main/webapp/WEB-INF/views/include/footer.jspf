@@ -14,6 +14,11 @@
 	<div class="container">
 		<div class="row" style="margin:15px;">
 			<div class="col-md-12">
+			    <div style="text-align: left; margin-bottom: 50px;"> <!-- 좌측 정렬을 위한 스타일 적용 -->
+                    명령어 안내 : ALT+(단축키) 혹은 숫자 입력으로 게시판 이동 <br>
+                    선택>
+                    <input>
+                </div>
                 <p class="copyright-text">Copyright 2023. OOO All right reserved.</p>
 				<p class="visitor-text">오늘의 방문자 수: ${todayCount}, 누적 방문자 수: ${totalCount}</p>
 			</div>
