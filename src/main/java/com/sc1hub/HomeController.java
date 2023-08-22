@@ -1,11 +1,7 @@
 package com.sc1hub;
 
-import com.sc1hub.board.BoardService;
-import com.sc1hub.openColumn.OpenColumnService;
 import com.sc1hub.util.PageDTO;
-import com.sc1hub.video.VideoService;
 import com.sc1hub.visitorCount.VisitorCountService;
-import com.sc1hub.library.LibraryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,14 +18,6 @@ import java.time.LocalTime;
 @Controller
 public class HomeController {
 
-    @Autowired
-    BoardService boardService;
-    @Autowired
-    OpenColumnService openColumnService;
-    @Autowired
-    VideoService videoService;
-    @Autowired
-    LibraryService libraryService;
     @Autowired
     VisitorCountService visitorCountService;
 
@@ -54,11 +42,6 @@ public class HomeController {
 
         model.addAttribute("todayCount", visitorCountService.getTodayCount());
         model.addAttribute("totalCount", visitorCountService.getTotalCount());
-        model.addAttribute("page", boardService.pageSetting(page));
-        model.addAttribute("boardList", boardService.showPostList(page));
-        model.addAttribute("opencolumnList", openColumnService.showPostList(page));
-        model.addAttribute("videoList", videoService.showPostList(page));
-        model.addAttribute("libraryList", libraryService.showPostList(page));
 
         return "index";
     }
