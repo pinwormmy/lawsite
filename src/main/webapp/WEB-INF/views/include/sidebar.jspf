@@ -10,7 +10,7 @@
     <fieldset>
         <legend>[지휘관회의실]</legend>
         <ul>
-            <li><a href="/">1. 초기화면</a></li>
+            <li><a href="/" accesskey="t">1. 초기화면(T)</a></li>
             <li><a href="/">2. 대전리뷰</a></li>
             <li><a href="/">3. 방송좌표</a></li>
             <li><a href="/">4. 영상자료실</a></li>
