@@ -10,6 +10,7 @@
     <fieldset>
         <legend>[지휘관회의실]</legend>
         <ul>
+            <li><a href="/" accesskey="h">0. 이용안내(H)</a></li>
             <li><a href="/" accesskey="t">1. 초기화면(T)</a></li>
             <li><a href="/">2. 대전리뷰</a></li>
             <li><a href="/">3. 방송좌표</a></li>
@@ -17,6 +18,7 @@
             <li><a href="/">5. 팀플게시판</a></li>
             <li><a href="/">6. 팀플공략</a></li>
             <li><a href="/">7. 자유게시판</a></li>
+            <li><a href="/">8. 초보자마당</a></li>
         </ul>
     </fieldset>
     <fieldset>
