@@ -46,43 +46,39 @@ body {
 <body>
 <%@include file="./include/header.jspf" %>
 <div class="section-inner">
-    <div class="container" style="width: 1600px;">
-        <div class="main-banner">
-            회원정보 수정
-        </div>
+    <div class="container">
         <%@include file="./include/sidebar.jspf" %>
-        <div class="col-lg-8">
+        <div class="col-lg-9">
             <div class="media">
                 <div class="media-body">
-                    <hr>
-                    <div class="member-info" style="font-size: 20px; line-height: 50px;">
+                    <div class="member-info" style="line-height: 50px;">
                         <form action="/submitModifyMyInfo" id="modifyMyInfo" method="post">
                             <table>
                                 <tr>
-                                    <td>ID >> </td>
+                                    <td>ID> </td>
                                     <td>${member.id}<input type="hidden" name="id" value="${member.id}"></td>
                                 </tr>
                                 <tr>
-                                    <td>별명 >> </td>
+                                    <td>별명> </td>
                                     <td><input type="text" name="nickName" value="${member.nickName}"></td>
                                 </tr>
                                 <tr>
-                                    <td>비밀번호 >></td>
+                                    <td>비밀번호></td>
                                     <td><input type="password" name="pw" placeholder="비밀번호를 입력하세요" value="${member.pw}"></td>
                                 </tr>
                                 <tr>
-                                    <td>비밀번호확인 >></td>
+                                    <td>비밀번호확인></td>
                                     <td><input type="password" name="pw2" placeholder="비밀번호를 다시 입력하세요" value="${member.pw}"></td>
                                 </tr>
                                 <tr>
-                                    <td>이메일 >> </td>
+                                    <td>이메일> </td>
                                     <td><input type="email" name="email" value="${member.email}" oninput="checkEmailChanged();">
                                         <button type="button" id="sendVerificationNumberButton">인증받기</button>
                                         <span id="emailCheckText" style="margin-left: 10px;">인증받은 이메일입니다.</span>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>인증 코드 >> </td>
+                                    <td>인증 코드> </td>
                                     <td>
                                         <input type="text" name="authCode" id="inputEmailVerificationNumber" placeholder="메일로 받은 인증코드를 입력">
                                     </td>
@@ -91,7 +87,7 @@ body {
                             <div style="margin-top: 20px;">
                                 <button type="button" onclick="checkSignupForm();">수정하기</button>
                                 <button type="button" onclick="location.href='/myPage'">취소</button>
-                                <button type="button" onclick="confirmDelete();" style="background-color: #FF5733; color: #fff;">탈퇴하기</button>
+                                <button type="button" onclick="confirmDelete();">탈퇴하기</button>
                            </div>
                        </form>
                     </div>
@@ -275,8 +271,6 @@ function confirmDelete() {
         });
     }
 }
-
-
 </script>
 
 </body>

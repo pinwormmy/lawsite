@@ -45,12 +45,11 @@ body {
 <body>
 <%@include file="./include/header.jspf" %>
 <div class="section-inner">
-    <div class="container" style="width: 1600px;">
+    <div class="container">
         <%@include file="./include/sidebar.jspf" %>
-        <div class="col-lg-8">
+        <div class="col-lg-9">
             <div class="media">
                 <div class="media-body">
-                    <hr>
                     <div class="member-info" style="font-size: 20px; line-height: 50px;">
                         <span>ID : ${member.id}</span><br>
                         <span>실명 : ${member.realName}</span><br>

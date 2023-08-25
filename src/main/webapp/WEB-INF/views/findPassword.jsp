@@ -67,16 +67,11 @@
 <body>
 
 <%@include file="./include/header.jspf" %>
-
-<section class="white section-wrapper">
     <div class="section-inner">
-        <div class="container" style="width: 1600px;">
+        <div class="container">
             <div class="row">
                 <%@include file="./include/sidebar.jspf" %>
-                <div class="col-lg-7">
-                   <div class="post-heading mb">
-                       <h3>패스워드 찾기</h3>
-                   </div>
+                <div class="col-lg-9">
                    <div class="loginMenu">
                        <div class="findPwMenu">
                            <form action="/findPassword" method="post">
@@ -91,16 +86,9 @@
                        </div>
                    </div>
                 </div>
-                <div class="col-lg-3">
-                    <div class="side-banner">
-                        추가 기능 구현필요
-                    </div>
-                </div>
             </div>
         </div>
     </div>
-</section>
-
 <%@include file="./include/footer.jspf" %>
 
 <script>

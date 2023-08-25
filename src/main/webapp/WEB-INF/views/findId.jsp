@@ -67,41 +67,28 @@
 <body>
 
 <%@include file="./include/header.jspf" %>
-
-<section class="white section-wrapper">
     <div class="section-inner">
-        <div class="container" style="width: 1600px;">
+        <div class="container">
             <div class="row">
                 <%@include file="./include/sidebar.jspf" %>
-                <div class="col-lg-7">
-                   <div class="post-heading mb">
-                       <h3>ID 찾기</h3>
-                   </div>
+                <div class="col-lg-9">
                    <div class="loginMenu">
                        <div class="findIdMenu">
                            <form action="/findId" method="post">
                                <div class="inputUserName">
-                                   회원명 >> <input type="text" name="userName" id="userName">
+                                   회원명> <input type="text" name="userName" id="userName">
                                </div>
                                <div class="inputIdEmail">
-                                   이메일 >> <input type="text" name="email" id="idEmail">
+                                   이메일> <input type="text" name="email" id="idEmail">
                                </div>
                                <button id="findIdButton">아이디 찾기</button><br>
                            </form>
                        </div>
                    </div>
                 </div>
-                <div class="col-lg-3">
-                    <div class="side-banner">
-                        추가 기능 구현필요
-                    </div>
-                </div>
             </div>
         </div>
     </div>
-</section>
-
-
 <%@include file="./include/footer.jspf" %>
 
 <script>

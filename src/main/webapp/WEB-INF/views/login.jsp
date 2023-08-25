@@ -29,7 +29,6 @@
     <div class="container">
         <div class="row">
             <%@include file="./include/sidebar.jspf" %>
-
             <div class="col-lg-9">
                 <div class="loginMenu">
                     <div class="signUpMenu">
@@ -57,7 +56,6 @@
         </div>
     </div>
 </div>
-
 <%@include file="./include/footer.jspf" %>
 
 <script>

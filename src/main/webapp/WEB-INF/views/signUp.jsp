@@ -33,9 +33,6 @@ body {
 .side-banner {
     margin-top: 15px;
 }
-.post-heading {
-    border-bottom: 2px solid white;
-}
 .writer, .date {
     text-align: center;
 }
@@ -60,49 +57,45 @@ html {
 </head>
 <body>
 <%@include file="./include/header.jspf" %>
-<section class="white section-wrapper">
     <div class="section-inner">
-        <div class="container" style="width: 1600px;">
+        <div class="container">
             <div class="row">
                 <%@include file="./include/sidebar.jspf" %>
-                <div class="col-lg-7">
-                    <div class="post-heading mb">
-                        <h3>회원가입</h3>
-                    </div>
+                <div class="col-lg-9">
                     <div class="loginMenu">
                         <div class="signUpMenu">
                             <form action="/submitSignUp" name="submitSignUp" id="submitSignUp" method="post">
                                 <div class="inputId">
-                                    회원ID :
+                                    회원ID>
                                     <input type="text" name="id" id="inputId"><br>
                                     <span id="idCheckText">ID 중복확인이 필요합니다.</span>
                                 </div>
                                 <div>
-                                    패스워드 :
+                                    패스워드>
                                     <input type="password" name="pw" id="pw" placeholder="4~16 자리 영문+숫자 조합">
                                 </div>
                                 <div>
-                                    패스워드 재입력 :
+                                    패스워드 재입력>
                                     <input type="password" name="pw2" id="pw2">
                                 </div>
                                 <div>
-                                    회원명 :
+                                    회원명>
                                     <input type="text" name="realName" id="realName">
                                 </div>
                                 <div>
-                                    별명 :
+                                    별명>
                                     <input type="text" name="nickName" id="nickName">
                                 </div>
                                 <div>
-                                    이메일 :
+                                    이메일>
                                     <input type="email" id="email" name="email"><br>
                                     <span id="emailCheckText">이메일 중복확인이 필요합니다.</span><br>
-                                    <button type="button" id="sendVerificationNumberButton" class="basicButton" style="background-color: #AED6F1;">인증번호 받기</button><br>
-                                    이메일 인증번호 :
+                                    <button type="button" id="sendVerificationNumberButton" class="basicButton">인증번호 받기</button><br>
+                                    이메일 인증번호>
                                     <input id="inputEmailVerificationNumber"><br>
                                 </div>
                                 <div>
-                                    연락처 :
+                                    연락처>
                                     <input type="text" name="phone" id="phone"><br><br>
                                 </div>
                                 <button type="button" class="basicButton" onclick="checkSignupForm();" accesskey="s">가입하기(S)</button><br>
@@ -110,15 +103,9 @@ html {
                          </div>
                     </div>
                 </div>
-                <div class="col-lg-3">
-                    <div class="side-banner">
-                        추가 기능 구현필요
-                    </div>
-                </div>
             </div>
         </div>
     </div>
-</section>
 <%@include file="./include/footer.jspf" %>
 
 <script type="text/javascript">
