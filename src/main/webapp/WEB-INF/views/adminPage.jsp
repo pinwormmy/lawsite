@@ -62,11 +62,6 @@ body {
             <div class="media">
                 <form action="/adminPage" method="get">
                     <div class="div-search">
-                        <select name="searchType" class="search-element">
-                            <option value="id" <c:if test="${pageInfo.searchType == 'id'}">selected</c:if>>ID</option>
-                            <option value="nickName" <c:if test="${pageInfo.searchType == 'nickName'}">selected</c:if>>별명</option>
-                            <option value="realName" <c:if test="${pageInfo.searchType == 'realName'}">selected</c:if>>실명</option>
-                        </select>
                         회원검색>
                         <input type="text" name="keyword" value="${pageInfo.keyword}">
                         <button type="submit" style="visibility:hidden">검색</button>

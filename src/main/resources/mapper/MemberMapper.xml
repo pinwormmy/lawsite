@@ -31,8 +31,6 @@
             WHERE ID=#{id}
     </update>
 
-
-
     <select id="getMemberInfo" resultType="com.sc1hub.member.MemberDTO">
         SELECT *
             FROM MEMBER
@@ -54,9 +52,9 @@
     </select>
 
     <sql id="searchKeyword">
-        <if test="searchType == 'id'">ID like CONCAT('%', #{keyword}, '%')</if>
-        <if test="searchType == 'nickName'">NICKNAME like CONCAT('%', #{keyword}, '%')</if>
-        <if test="searchType == 'realName'">REALNAME like CONCAT('%', #{keyword}, '%')</if>
+        ID like CONCAT('%', #{keyword}, '%') OR
+        NICKNAME like CONCAT('%', #{keyword}, '%') OR
+        REALNAME like CONCAT('%', #{keyword}, '%')
     </sql>
 
     <update id="submitModifyMemberByAdmin">
@@ -67,23 +65,23 @@
 
     <select id="findByEmail" resultType="com.sc1hub.member.MemberDTO">
         SELECT * FROM MEMBER
-        WHERE EMAIL=#{email}
+            WHERE EMAIL=#{email}
     </select>
 
     <update id="updatePassword">
         UPDATE MEMBER
-        SET PW=#{pw}
-        WHERE ID=#{id}
+            SET PW=#{pw}
+            WHERE ID=#{id}
     </update>
 
     <select id="getIdByNameAndEmail" resultType="String">
         SELECT ID FROM MEMBER
-        WHERE REALNAME=#{userName} AND EMAIL=#{email}
+            WHERE REALNAME=#{userName} AND EMAIL=#{email}
     </select>
 
     <select id="findByUserIdAndEmail" resultType="com.sc1hub.member.MemberDTO">
         SELECT * FROM MEMBER
-        WHERE ID=#{userId} AND EMAIL=#{email}
+            WHERE ID=#{userId} AND EMAIL=#{email}
     </select>
 
     <delete id="deleteMember">
