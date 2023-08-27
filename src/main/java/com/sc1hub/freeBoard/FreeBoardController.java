@@ -27,7 +27,7 @@ public class FreeBoardController {
         model.addAttribute("selfNoticeList", freeBoardService.showSelfNoticeList());
         model.addAttribute("page", freeBoardService.pageSetting(page));
         model.addAttribute("postList", freeBoardService.showPostList(page));
-        return "freeBoard/freeBoard";
+        return "freeBoard/postList";
     }
 
     @RequestMapping("/readPost")
