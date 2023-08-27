@@ -1,4 +1,4 @@
-package com.sc1hub.video;
+package com.sc1hub.freeBoard;
 
 import com.sc1hub.util.IpService;
 import com.sc1hub.util.PageDTO;
@@ -17,16 +17,17 @@ import java.util.List;
 
 @Controller
 @Slf4j
-@RequestMapping("/video")
-public class VideoController {
+@RequestMapping("/freeBoard")
+public class FreeBoardController {
     @Autowired
-    VideoService videoService;
+    FreeBoardService freeBoardService;
+
     @GetMapping(value = "/list")
-    public String videoBoard(PageDTO page, Model model) throws Exception {
-        model.addAttribute("selfNoticeList", videoService.showSelfNoticeList());
-        model.addAttribute("page", videoService.pageSetting(page));
-        model.addAttribute("postList", videoService.showPostList(page));
-        return "video/videoBoard";
+    public String list(PageDTO page, Model model) throws Exception {
+        model.addAttribute("selfNoticeList", freeBoardService.showSelfNoticeList());
+        model.addAttribute("page", freeBoardService.pageSetting(page));
+        model.addAttribute("postList", freeBoardService.showPostList(page));
+        return "freeBoard/freeBoard";
     }
 
     @RequestMapping("/readPost")
@@ -34,74 +35,75 @@ public class VideoController {
     public String readPost(Model model, HttpServletRequest request) throws Exception {
         int postNum = Integer.parseInt(request.getParameter("postNum"));
         checkIpAndUpdateViews(request, postNum);
-        model.addAttribute("post", videoService.readPost(postNum));
-        return "video/readPost";
+        model.addAttribute("post", freeBoardService.readPost(postNum));
+        return "freeBoard/readPost";
     }
+
     private void checkIpAndUpdateViews(HttpServletRequest request, int postNum) throws Exception {
         String ip = IpService.getRemoteIP(request);
-        if(videoService.checkViewUserIp(postNum, ip) == 0) {
-            videoService.saveViewUserIp(postNum, ip);
-            videoService.updateViews(postNum);
+        if(freeBoardService.checkViewUserIp(postNum, ip) == 0) {
+            freeBoardService.saveViewUserIp(postNum, ip);
+            freeBoardService.updateViews(postNum);
         }
     }
 
     @RequestMapping("/writePost")
     public String writePost() {
-        return "video/writePost";
+        return "freeBoard/writePost";
     }
 
     @RequestMapping("/submitPost")
-    public String submitPost(VideoDTO post) throws Exception {
-        videoService.submitPost(post);
-        return "redirect:/video/list";
+    public String submitPost(FreeBoardDTO post) throws Exception {
+        freeBoardService.submitPost(post);
+        return "redirect:/freeBoard/list";
     }
 
     @RequestMapping("/deletePost")
     public String deletePost(int postNum) throws Exception {
-        videoService.deletePost(postNum);
-        return "redirect:/video/list";
+        freeBoardService.deletePost(postNum);
+        return "redirect:/freeBoard/list";
     }
 
     @RequestMapping(value = "/modifyPost")
     public String modifyPost(Model model, int postNum) throws Exception {
-        model.addAttribute("post", videoService.readPost(postNum));
-        return "video/modifyPost";
+        model.addAttribute("post", freeBoardService.readPost(postNum));
+        return "freeBoard/modifyPost";
     }
 
     @RequestMapping(value = "/submitModifyPost")
-    public String submitModifyPost(VideoDTO post) throws Exception {
-        videoService.submitModifyPost(post);
-        return "redirect:/video/readPost?postNum=" + post.getPostNum();
+    public String submitModifyPost(FreeBoardDTO post) throws Exception {
+        freeBoardService.submitModifyPost(post);
+        return "redirect:/freeBoard/readPost?postNum=" + post.getPostNum();
     }
 
     @RequestMapping(value = "/addComment")
     @ResponseBody
-    public void addComment(@RequestBody VideoCommentDTO comment) throws Exception {
+    public void addComment(@RequestBody FreeBoardCommentDTO comment) throws Exception {
         log.debug("댓글 인수 확인(댓글내용) : {}", comment.getContent());
-        videoService.addComment(comment);
+        freeBoardService.addComment(comment);
     }
 
     @RequestMapping(value = "/commentPageSetting")
     @ResponseBody
     public PageDTO commentPageSetting(@RequestBody PageDTO page) throws Exception {
-        return videoService.pageSetting(page);
+        return freeBoardService.commentPageSetting(page);
     }
 
     @RequestMapping(value = "/showCommentList")
     @ResponseBody
-    public List<VideoCommentDTO> showCommentList(@RequestBody PageDTO page) throws Exception {
-        return videoService.showCommentList(page);
+    public List<FreeBoardCommentDTO> showCommentList(@RequestBody PageDTO page) throws Exception {
+        return freeBoardService.showCommentList(page);
     }
 
     @RequestMapping(value = "/deleteComment")
     @ResponseBody
     public void deleteComment(int commentNum) throws Exception {
-        videoService.deleteComment(commentNum);
+        freeBoardService.deleteComment(commentNum);
     }
 
     @RequestMapping(value = "/updateCommentCount")
     @ResponseBody
     public void updateCommentCount(int postNum) throws Exception {
-        videoService.updateCommentCount(postNum);
+        freeBoardService.updateCommentCount(postNum);
     }
 }

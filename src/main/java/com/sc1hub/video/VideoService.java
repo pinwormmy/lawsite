@@ -1,6 +1,5 @@
 package com.sc1hub.video;
 
-import com.sc1hub.fullNotice.FullNoticeDTO;
 import com.sc1hub.util.PageDTO;
 
 import java.util.List;
@@ -36,5 +35,4 @@ public interface VideoService {
 
     List<VideoDTO> showSelfNoticeList() throws Exception;
 
-    List<FullNoticeDTO> showFullNoticeList() throws Exception;
 }

@@ -1,6 +1,5 @@
 package com.sc1hub.video;
 
-import com.sc1hub.fullNotice.FullNoticeDTO;
 import com.sc1hub.util.PageDTO;
 import com.sc1hub.util.PageService;
 import com.sc1hub.mapper.VideoMapper;
@@ -110,10 +109,5 @@ public class VideoServiceImpl implements VideoService {
     @Override
     public List<VideoDTO> showSelfNoticeList() throws Exception {
         return videoMapper.showSelfNoticeList();
-    }
-
-    @Override
-    public List<FullNoticeDTO> showFullNoticeList() throws Exception {
-        return videoMapper.showFullNoticeList();
     }
 }
