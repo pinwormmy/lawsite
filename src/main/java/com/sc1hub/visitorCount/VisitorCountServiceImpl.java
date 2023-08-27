@@ -17,10 +17,14 @@ public class VisitorCountServiceImpl implements VisitorCountService {
         LocalDate today = LocalDate.now();
         VisitorCountDTO visitorCount = visitorCountMapper.findByDate(today);
 
+        Integer totalCount = visitorCountMapper.getTotalCount();
+        if (totalCount == null) {
+            totalCount = 0;
+        }
+
         if (visitorCount != null) {
             visitorCountMapper.incrementDailyCount(today);
         } else {
-            int totalCount = visitorCountMapper.getTotalCount();
             visitorCountMapper.insertNewRecord(today, totalCount);
         }
 
