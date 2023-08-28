@@ -7,10 +7,6 @@
 body {
     height: 100%;
 }
-.admin-page {
-    width: 1600px;
-    margin: auto;
-}
 .btn-turquoise {
     background-color: #40E0D0;
     color: #fff;
@@ -44,7 +40,7 @@ body {
     height: 38px;
 }
 .admin-memberlist td{
-    padding: 5px;
+    padding: 3px;
 }
 .page-list {
     display: flex;
@@ -80,7 +76,7 @@ body {
                                 <th>실명</th>
                                 <th>이메일</th>
                                 <th>연락처</th>
-                                <th>회원등급</th>
+                                <th>등급</th>
                                 <th>가입일자</th>
                                 <th>관리</th>
                             </tr>
