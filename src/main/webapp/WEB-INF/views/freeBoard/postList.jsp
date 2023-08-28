@@ -50,12 +50,11 @@ body {
 </head>
 <body>
 <%@include file="../include/header.jspf" %>
-<section class="white section-wrapper">
     <div class="section-inner">
-        <div class="container" style="width: 1600px;">
+        <div class="container">
             <div class="row">
                 <%@include file="../include/sidebar.jspf" %>
-                <div class="col-lg-7">
+                <div class="col-lg-9">
                     <div class="post-heading mb">
                         자유게시판
                     </div>
@@ -107,9 +106,6 @@ body {
                                                 </tr>
                                             </c:forEach>
                                      </table>
-                                     <c:if test="${empty postList}">
-                                         <h3>검색 결과가 없습니다</h3>
-                                     </c:if>
                                      <c:if test="${empty postList}"><tr><td>관련 글이 없습니다...</td></tr></c:if>
                                 </div>
                                 <div class="post-navigation">
@@ -140,33 +136,16 @@ body {
                                         </c:if>
                                     </form>
                                 </div>
-                                <c:if test="${member.grade == 3}">
+                                <c:if test="${member.grade >= 1}">
                                     <a href="/freeBoard/writePost" class="pull-right btn btn-theme" accesskey="i">글쓰기(I)</a>
                                 </c:if>
                             </div><!--/#comments-list-->
                         </div><!--/#comments-->
                     </div>
                 </div>
-                <div class="col-lg-3">
-                    <fieldset>
-                        <legend><a href="/library/list">자료실</a></legend>
-                        <table class="boardList" style="width: 100%;">
-                            <c:forEach var="post" items="${libraryList}">
-                            <tr>
-                                <td>
-                                <a class="post-title" href="/library/readPost?postNum=${post.postNum}">${post.title}</a>
-                                <c:if test="${post.commentCount > 0}">( ${post.commentCount} )</c:if>
-                                </td>
-                            </tr>
-                            </c:forEach>
-                        </table>
-                        <c:if test="${empty libraryList}"><tr><td>현재 등록된 글이 없습니다.</td></tr></c:if>
-                    </fieldset>
-                </div>
             </div>
         </div>
     </div>
-</section>
 <%@include file="../include/footer.jspf" %>
 
 </body>

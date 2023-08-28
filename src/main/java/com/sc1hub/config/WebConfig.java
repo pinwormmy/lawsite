@@ -1,6 +1,7 @@
 package com.sc1hub.config;
 
 import com.sc1hub.interceptor.AdminInterceptor;
+import com.sc1hub.interceptor.BoardLvInterceptor;
 import com.sc1hub.interceptor.VisitorCountInterceptor;
 import com.sc1hub.visitorCount.VisitorCountService;
 import lombok.extern.slf4j.Slf4j;
@@ -37,8 +38,10 @@ public class WebConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new VisitorCountInterceptor(visitorCountService))
                 .addPathPatterns("/**");
+        registry.addInterceptor(new BoardLvInterceptor())
+                .addPathPatterns("/freeBoard/writePost/**", "/freeBoard/modifyPost/**");
         registry.addInterceptor(new AdminInterceptor())
-                .addPathPatterns("/**/writePost/**", "/**/modifyPost/**");
+                .addPathPatterns("/adminPage/**", "/modifyMemberByAdmin/**");
     }
 
 }
