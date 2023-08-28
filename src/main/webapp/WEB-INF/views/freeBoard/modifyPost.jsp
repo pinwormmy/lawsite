@@ -66,58 +66,31 @@ body {
 </head>
 <body>
 <%@include file="../include/header.jspf" %>
-<header id="headerwrap" class="quarterscreen">
-    <div class="align-bottom wow fadeInUp">
-        <div class="row">
-            <div class="container">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class="section-inner">
+    <div class="container">
+        <%@include file="../include/sidebar.jspf" %>
+        <div class="col-md-9">
+            <div class="col-xs-12 mb wow fadeInUp">
+                <form action="/freeBoard/submitModifyPost" method="post"> <!-- 작업해야함 -->
+                    <input type="hidden" name="writer" value="${post.writer}">
+                    <input type="hidden" name="postNum" value="${post.postNum}">
+                    제목 <input type="text" name="title" size="55" value="${post.title}" required>
+                    <input type="checkbox" name="notice" id="noticeChecked" value="1" onclick="checkboxForNotice();"
+                    <c:if test="${post.notice == 1}">checked</c:if> />공지로 등록<br>
+                    <input type="hidden" name="notice" id="noticeUnchecked" value="0" />
+                    <textarea name="content" id="content">${post.content}</textarea><br>
 
-                </div>
+                    <script type="text/javascript">
+                        CKEDITOR.replace('content', {filebrowserUploadUrl:'/imageUpload'});
+                    </script>
+
+                    <button class="pull-left btn btn-theme">게시하기</button>
+                    <button type="button" class="pull-left btn btn-theme" onclick="location.href='/freeBoard/readPost?postNum=${post.postNum}'">취소</button>
+                </form>
             </div>
         </div>
     </div>
-</header>
-<section class="white section-wrapper">
-    <div class="section-inner">
-        <div class="container">
-            <div class="row">
-                <%@include file="../include/sidebar.jspf" %>
-                <div class="col-md-9">
-                    <div class="row">
-                        <div class="post-heading mb">
-                            <h1>글 수정하기</h1>
-                        </div>
-                        <div class="col-xs-12 mb wow fadeInUp">
-                            <form action="/freeBoard/submitModifyPost" method="post"> <!-- 작업해야함 -->
-                                <input type="hidden" name="writer" value="${post.writer}">
-                                <input type="hidden" name="postNum" value="${post.postNum}">
-                                제목 <input type="text" name="title" size="55" value="${post.title}" required>
-                                <input type="checkbox" name="notice" id="noticeChecked" value="1" onclick="checkboxForNotice();"
-                                <c:if test="${post.notice == 1}">checked</c:if> />공지로 등록<br>
-                                <input type="hidden" name="notice" id="noticeUnchecked" value="0" />
-                                <textarea name="content" id="content">${post.content}</textarea><br>
-
-                                <script type="text/javascript">
-                                    CKEDITOR.replace('content', {filebrowserUploadUrl:'/imageUpload'});
-                                </script>
-
-                                <button class="pull-left btn btn-theme">게시하기</button>
-                                <button type="button" class="pull-left btn btn-theme" onclick="location.href='/freeBoard/readPost?postNum=${post.postNum}'">취소</button>
-                            </form>
-
-                        </div>
-
-                        <div class="post-navigation">
-                            <a class="pull-left btn btn-theme" href="#">Older Posts</a>
-                            <a class="pull-right btn btn-theme" href="#">Newer Posts</a>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+</div>
 <%@include file="../include/footer.jspf" %>
 
 <script>

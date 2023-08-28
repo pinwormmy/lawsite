@@ -98,71 +98,62 @@ body {
 </head>
 <body>
 <%@include file="../include/header.jspf" %>
-<section class="white section-wrapper">
-    <div class="section-inner">
-        <div class="container" style="width: 1600px;">
+<div class="section-inner">
+    <div class="container">
+        <%@include file="../include/sidebar.jspf" %>
+        <div class="col-lg-9">
+            <div class="title-row">
+                <div class="post-title">${post.title}</div>
+            </div>
+            <div class="info-row">
+                <span>작성자 : ${post.writer} </span> &nbsp;
+                <span>날 짜 : <fmt:formatDate value="${post.regDate}" pattern="yyyy-MM-dd HH:mm"/> </span> &nbsp;
+                <span>조 회 : ${post.views} </span> &nbsp;
+            </div>
             <div class="row">
-                <%@include file="../include/sidebar.jspf" %>
-                <div class="col-lg-8">
-                    <div class="title-row">
-                        <div class="post-title">${post.title}</div>
-                    </div>
-                    <div class="info-row">
-                        <span>작성자 : ${post.writer} </span> &nbsp;
-                        <span>날 짜 : <fmt:formatDate value="${post.regDate}" pattern="yyyy-MM-dd HH:mm"/> </span> &nbsp;
-                        <span>조 회 : ${post.views} </span> &nbsp;
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 mb fadeInUp">
-                            ${post.content}
-                            <hr>
-                        </div>
-
-                        <div id="comments" class="col-xs-12">
-                            <c:if test="${post.commentCount > 0 && member.grade > 1}">
-                                <div class="mb">
-                                    [댓 글]
-                                </div>
-                            </c:if>
-                            <div id="comments-list" class="gap"></div>
-                            <div id="comments-page" class="gap"></div>
-                            <c:if test="${member != null}">
-                                <div id="comment-form" class="gap">
-                                    <div class="form-group">
-                                        <div class="col-sm-6">
-                                            작성자 : ${member.nickName}
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-sm-12">
-                                            <textarea rows="1" class="form-control" name="commentContent" id="commentContent" placeholder="댓글을 작성합니다"></textarea>
-                                        </div>
-                                        <div class="col-sm-12">
-                                            <button type="button" class="pull btn btn-theme cancel-btn" style="margin-left: 15px;" onclick="addComment();" accesskey="c">댓글작성(C)</button>
-                                        </div>
-                                    </div>
-                                </div><!--/#comment-form-->
-                            </c:if>
-                        </div><!--/#comments-->
-                        <div class="post-navigation col-xs-12"">
-                            <hr>
-                            <a class="pull btn btn-theme cancel-btn" href="/freeBoard/list" accesskey="l">목 록(L)</a>
-                            <c:if test="${member.id == post.writer || member.grade == 3}">
-                                <a class="pull btn btn-theme cancel-btn" href="/freeBoard/deletePost?postNum=${post.postNum}" accesskey="t">삭 제(T)</a>
-                                <a class="pull btn btn-theme cancel-btn" href="/freeBoard/modifyPost?postNum=${post.postNum}" accesskey="o">️수 정(O)</a>
-                            </c:if>
-                        </div>
-                    </div>
+                <div class="col-xs-12 mb fadeInUp">
+                    ${post.content}
+                    <hr>
                 </div>
-                <div class="col-lg-2">
-                    <div class="side-banner">
-                        부가 기능 넣기
-                    </div>
+
+                <div id="comments" class="col-xs-12">
+                    <c:if test="${post.commentCount > 0 && member.grade > 1}">
+                        <div class="mb">
+                            [댓 글]
+                        </div>
+                    </c:if>
+                    <div id="comments-list" class="gap"></div>
+                    <div id="comments-page" class="gap"></div>
+                    <c:if test="${member != null}">
+                        <div id="comment-form" class="gap">
+                            <div class="form-group">
+                                <div class="col-sm-6">
+                                    작성자 : ${member.nickName}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <textarea rows="1" class="form-control" name="commentContent" id="commentContent" placeholder="댓글을 작성합니다"></textarea>
+                                </div>
+                                <div class="col-sm-12">
+                                    <button type="button" class="pull btn btn-theme cancel-btn" style="margin-left: 15px;" onclick="addComment();" accesskey="c">댓글작성(C)</button>
+                                </div>
+                            </div>
+                        </div><!--/#comment-form-->
+                    </c:if>
+                </div><!--/#comments-->
+                <div class="post-navigation col-xs-12"">
+                    <hr>
+                    <a class="pull btn btn-theme cancel-btn" href="/freeBoard/list" accesskey="l">목 록(L)</a>
+                    <c:if test="${member.id == post.writer || member.grade == 3}">
+                        <a class="pull btn btn-theme cancel-btn" href="/freeBoard/deletePost?postNum=${post.postNum}" accesskey="t">삭 제(T)</a>
+                        <a class="pull btn btn-theme cancel-btn" href="/freeBoard/modifyPost?postNum=${post.postNum}" accesskey="o">️수 정(O)</a>
+                    </c:if>
                 </div>
             </div>
         </div>
     </div>
-</section>
+</div>
 
 <script>
 
