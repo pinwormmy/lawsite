@@ -62,6 +62,10 @@ body {
 .section-wrapper {
     min-height: 850px;
 }
+.align-middle {
+    vertical-align: middle;
+}
+
 </style>
 </head>
 <body>
@@ -73,8 +77,9 @@ body {
             <div class="col-xs-12 mb wow fadeInUp">
                 <form action="/freeBoard/submitPost" method="post">
                     <input type="hidden" name="writer" value="${member.id}">
-                    제목 <input type="text" name="title" size="60" required>
-                    <input type="checkbox" name="notice" value="1">공지로 등록<br>
+                    제목> <input type="text" name="title" size="60" required>
+                    <span class="align-middle"> 공지> </span>
+                    <input class="align-middle" type="checkbox" name="notice" value="1"><br>
                     <textarea name="content" id="content"></textarea><br>
 
                     <script type="text/javascript">	// 글쓰기 editor 및 사진 업로드 기능

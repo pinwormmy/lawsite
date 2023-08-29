@@ -85,7 +85,7 @@ body {
                                         <c:forEach var="notice" items="${selfNoticeList}">
                                             <tr class="notice-tr">
                                                 <td class="post-num">${notice.postNum} &nbsp</td>
-                                                <td><span>[공지사항]</span>
+                                                <td><span>[공지]</span>
                                                 <a class="noticeTitle" href="/freeBoard/readPost?postNum=${notice.postNum}">
                                                  ${notice.title}</a>
                                                 <c:if test="${notice.commentCount > 0}">( ${notice.commentCount} )</c:if></td>
