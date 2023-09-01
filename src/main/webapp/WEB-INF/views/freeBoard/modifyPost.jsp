@@ -71,12 +71,13 @@ body {
         <%@include file="../include/sidebar.jspf" %>
         <div class="col-md-9">
             <div class="col-xs-12 mb wow fadeInUp">
-                <form action="/freeBoard/submitModifyPost" method="post"> <!-- 작업해야함 -->
+                <form action="/freeBoard/submitModifyPost" method="post">
                     <input type="hidden" name="writer" value="${post.writer}">
                     <input type="hidden" name="postNum" value="${post.postNum}">
-                    제목 <input type="text" name="title" size="55" value="${post.title}" required>
-                    <input type="checkbox" name="notice" id="noticeChecked" value="1" onclick="checkboxForNotice();"
-                    <c:if test="${post.notice == 1}">checked</c:if> />공지로 등록<br>
+                    제목> <input type="text" name="title" size="55" value="${post.title}" required>
+                    <span style="vertical-align: middle;">공지></span>
+                    <input type="checkbox" name="notice" id="noticeChecked" value="1" onclick="checkboxForNotice();" style="vertical-align: middle;"
+                    <c:if test="${post.notice == 1}">checked</c:if> /><br>
                     <input type="hidden" name="notice" id="noticeUnchecked" value="0" />
                     <textarea name="content" id="content">${post.content}</textarea><br>
 
