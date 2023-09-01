@@ -85,8 +85,8 @@ body {
                         CKEDITOR.replace('content', {filebrowserUploadUrl:'/imageUpload'});
                     </script>
 
-                    <button class="pull-left btn btn-theme">게시하기</button>
-                    <button type="button" class="pull-left btn btn-theme" onclick="location.href='/freeBoard/readPost?postNum=${post.postNum}'">취소</button>
+                    <button class="pull-left btn btn-theme" accesskey="s">게시하기(S)</button>
+                    <button type="button" class="pull-left btn btn-theme" onclick="location.href='/freeBoard/list'" accesskey="c">취소(C)</button>
                 </form>
             </div>
         </div>
