@@ -4,6 +4,8 @@ import com.sc1hub.util.IpService;
 import com.sc1hub.util.PageDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -106,4 +108,21 @@ public class FreeBoardController {
     public void updateCommentCount(int postNum) throws Exception {
         freeBoardService.updateCommentCount(postNum);
     }
+
+    @RequestMapping(value = "/addRecommendation")
+    @ResponseBody
+    public ResponseEntity<String> addRecommendation(HttpServletRequest request, int postNum) {
+        try {
+            // 사용자 ID를 얻는 로직 (세션, 토큰 등을 통해)
+            String userId = "someUserId"; // 예시입니다. 실제로는 세션 또는 토큰에서 가져와야 합니다.
+
+            // 서비스 메서드 호출
+            freeBoardService.addRecommendation(postNum, userId);
+
+            return new ResponseEntity<>("추천이 완료되었습니다.", HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>("추천 중 오류가 발생했습니다.", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
 }
