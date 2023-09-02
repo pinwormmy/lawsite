@@ -118,4 +118,37 @@
             ORDER BY POST_NUM DESC
     </select>
 
+    <!-- 추천 여부 확인 -->
+    <select id="checkFreeboardRecommend" resultType="int">
+        SELECT COUNT(*) FROM freeboard_recommend
+            WHERE postNum=#{postNum} AND userId=#{userId}
+    </select>
+
+    <!-- 추천 추가 -->
+    <insert id="insertFreeboardRecommend">
+        INSERT INTO freeboard_recommend (postNum, userId)
+            VALUES (#{postNum}, #{userId})
+    </insert>
+
+    <!-- 추천 수 증가 -->
+    <update id="increaseRecommendCount">
+        UPDATE freeboard
+            SET recommend_count = recommend_count + 1
+            WHERE postNum=#{postNum}
+    </update>
+
+    <!-- 추천 취소 -->
+    <delete id="deleteFreeboardRecommend">
+        DELETE FROM freeboard_recommend
+            WHERE postNum=#{postNum} AND userId=#{userId}
+    </delete>
+
+    <!-- 추천 수 감소 -->
+    <update id="decreaseRecommendCount">
+        UPDATE freeboard
+            SET recommend_count = recommend_count - 1
+            WHERE postNum=#{postNum}
+    </update>
+
+
 </mapper>

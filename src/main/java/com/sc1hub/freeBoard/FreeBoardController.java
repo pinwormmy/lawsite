@@ -1,5 +1,6 @@
 package com.sc1hub.freeBoard;
 
+import com.sc1hub.member.MemberDTO;
 import com.sc1hub.util.IpService;
 import com.sc1hub.util.PageDTO;
 import lombok.extern.slf4j.Slf4j;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -111,10 +113,11 @@ public class FreeBoardController {
 
     @RequestMapping(value = "/addRecommendation")
     @ResponseBody
-    public ResponseEntity<String> addRecommendation(HttpServletRequest request, int postNum) {
+    public ResponseEntity<String> addRecommendation(HttpSession session, int postNum) {
         try {
-            // 사용자 ID를 얻는 로직 (세션, 토큰 등을 통해)
-            String userId = "someUserId"; // 예시입니다. 실제로는 세션 또는 토큰에서 가져와야 합니다.
+            // 세션에서 사용자 정보 가져오기
+            MemberDTO member = (MemberDTO) session.getAttribute("member");
+            String userId = member.getId(); // 세션에 저장된 사용자 ID 가져오기
 
             // 서비스 메서드 호출
             freeBoardService.addRecommendation(postNum, userId);

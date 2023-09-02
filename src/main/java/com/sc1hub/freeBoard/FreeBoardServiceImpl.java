@@ -1,11 +1,12 @@
 package com.sc1hub.freeBoard;
 
+import com.sc1hub.mapper.FreeBoardMapper;
 import com.sc1hub.util.PageDTO;
 import com.sc1hub.util.PageService;
-import com.sc1hub.mapper.FreeBoardMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -13,30 +14,30 @@ import java.util.List;
 @Slf4j
 public class FreeBoardServiceImpl implements FreeBoardService {
     @Autowired
-    FreeBoardMapper FreeBoardMapper;
+    FreeBoardMapper freeBoardMapper;
     @Override
     public List<FreeBoardDTO> showPostList(PageDTO page) throws Exception {
-        return FreeBoardMapper.showPostList(page);
+        return freeBoardMapper.showPostList(page);
     }
 
     @Override
     public void submitPost(FreeBoardDTO board) throws Exception {
-        FreeBoardMapper.submitPost(board);
+        freeBoardMapper.submitPost(board);
     }
 
     @Override
     public FreeBoardDTO readPost(int postNum) throws Exception {
-        return FreeBoardMapper.readPost(postNum);
+        return freeBoardMapper.readPost(postNum);
     }
 
     @Override
     public void submitModifyPost(FreeBoardDTO post) throws Exception {
-        FreeBoardMapper.submitModifyPost(post);
+        freeBoardMapper.submitModifyPost(post);
     }
 
     @Override
     public void deletePost(int postNum) throws Exception {
-        FreeBoardMapper.deletePost(postNum);
+        freeBoardMapper.deletePost(postNum);
     }
 
     @Override
@@ -50,6 +51,24 @@ public class FreeBoardServiceImpl implements FreeBoardService {
         if(page.getRecentPage() < 1) { page.setRecentPage(1); }
         return utilLoadingForCommentPage(page);
     }
+
+    @Override
+    @Transactional
+    public void addRecommendation(int postNum, String userId) {
+        // 1. 사용자가 이미 해당 게시글을 추천했는지 확인
+        int count = freeBoardMapper.checkRecommendation(postNum, userId);
+
+        if (count == 0) {
+            // 2. 추천하지 않았다면, 추천 테이블에 데이터를 추가하고, 게시글의 추천 수를 증가
+            freeBoardMapper.insertRecommendation(postNum, userId);
+            freeBoardMapper.increaseRecommendationCount(postNum);
+        } else {
+            // 3. 이미 추천했다면, 추천을 취소하고 게시글의 추천 수를 감소
+            freeBoardMapper.deleteRecommendation(postNum, userId);
+            freeBoardMapper.decreaseRecommendationCount(postNum);
+        }
+    }
+
 
     private void checkPageAndKeyword(PageDTO page) {
         if(page.getRecentPage() < 1) { page.setRecentPage(1); }
@@ -73,11 +92,11 @@ public class FreeBoardServiceImpl implements FreeBoardService {
 
     @Override
     public int countTotalPost(PageDTO page) throws Exception {
-        return FreeBoardMapper.countTotalPost(page);
+        return freeBoardMapper.countTotalPost(page);
     }
 
     public int countTotalComment(PageDTO page) throws Exception {
-        return FreeBoardMapper.countTotalComment(page);
+        return freeBoardMapper.countTotalComment(page);
     }
 
     private PageService initPageUtil() {
@@ -89,42 +108,42 @@ public class FreeBoardServiceImpl implements FreeBoardService {
 
     @Override
     public void addComment(FreeBoardCommentDTO comment) throws Exception {
-        FreeBoardMapper.addComment(comment);
+        freeBoardMapper.addComment(comment);
     }
 
     @Override
     public List<FreeBoardCommentDTO> showCommentList(PageDTO page) throws Exception {
-        return FreeBoardMapper.showCommentList(page);
+        return freeBoardMapper.showCommentList(page);
     }
 
     @Override
     public void deleteComment(int commentNum) throws Exception {
-        FreeBoardMapper.deleteComment(commentNum);
+        freeBoardMapper.deleteComment(commentNum);
     }
 
     @Override
     public void updateCommentCount(int postNum) throws Exception {
-        FreeBoardMapper.updateCommentCount(postNum);
+        freeBoardMapper.updateCommentCount(postNum);
     }
 
     @Override
     public void updateViews(int postNum) throws Exception {
-        FreeBoardMapper.updateViews(postNum);
+        freeBoardMapper.updateViews(postNum);
     }
 
     @Override
     public int checkViewUserIp(int postNum, String ip) throws Exception {
-        return FreeBoardMapper.checkViewUserIp(postNum, ip);
+        return freeBoardMapper.checkViewUserIp(postNum, ip);
     }
 
     @Override
     public void saveViewUserIp(int postNum, String ip) throws Exception {
-        FreeBoardMapper.saveViewUserIp(postNum, ip);
+        freeBoardMapper.saveViewUserIp(postNum, ip);
     }
 
     @Override
     public List<FreeBoardDTO> showSelfNoticeList() throws Exception {
-        return FreeBoardMapper.showSelfNoticeList();
+        return freeBoardMapper.showSelfNoticeList();
     }
 
 }

@@ -37,4 +37,6 @@ public interface FreeBoardService {
 
 
     PageDTO commentPageSetting(PageDTO page) throws Exception;
+
+    void addRecommendation(int postNum, String userId);
 }

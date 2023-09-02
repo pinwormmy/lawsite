@@ -39,4 +39,15 @@ public interface FreeBoardMapper {
     List<FreeBoardDTO> showSelfNoticeList() throws Exception;
 
     int countTotalComment(PageDTO page) throws Exception;
+
+
+    int checkRecommendation(int postNum, String userId);
+
+    void insertRecommendation(int postNum, String userId);
+
+    void increaseRecommendationCount(int postNum);
+
+    void deleteRecommendation(int postNum, String userId);
+
+    void decreaseRecommendationCount(int postNum);
 }
