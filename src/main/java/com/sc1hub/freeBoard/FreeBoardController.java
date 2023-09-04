@@ -120,6 +120,7 @@ public class FreeBoardController {
         try {
             MemberDTO member = (MemberDTO) session.getAttribute("member");
             if (member == null || postNum == null) {
+                log.debug("추천 시 데이터 확인 - 회원: {}, 게시글 번호: {}", member, postNum);
                 response.put("message", "잘못된 요청입니다.");
                 return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
             }
@@ -128,6 +129,7 @@ public class FreeBoardController {
             response.put("message", "추천이 완료되었습니다.");
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (Exception e) {
+            log.error("추천 중 오류 발생", e);
             response.put("message", "추천 중 오류가 발생했습니다.");
             return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -140,6 +142,7 @@ public class FreeBoardController {
         try {
             MemberDTO member = (MemberDTO) session.getAttribute("member");
             if (member == null || postNum == null) {
+                log.debug("추천 취소 시 데이터 확인 - 회원: {}, 게시글 번호: {}", member, postNum);
                 response.put("message", "잘못된 요청입니다.");
                 return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
             }
@@ -148,11 +151,10 @@ public class FreeBoardController {
             response.put("message", "추천이 취소되었습니다.");
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (Exception e) {
+            log.error("추천 취소 중 오류 발생", e);
             response.put("message", "추천 취소 중 오류가 발생했습니다.");
             return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
-
 
 }
