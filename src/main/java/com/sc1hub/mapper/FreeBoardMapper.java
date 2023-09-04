@@ -50,4 +50,6 @@ public interface FreeBoardMapper {
     void deleteRecommendation(int postNum, String userId);
 
     void decreaseRecommendationCount(int postNum);
+
+    void updateTotalRecommendCount(int postNum);
 }

@@ -281,6 +281,38 @@ function updateCommentCount(postNum) {
         .catch(error => alert("댓글수 갱신 오류"));
 }
 
+let isRecommended = false; // 추천 상태를 저장하는 변수
+
+function addRecommend(postNum) {
+    isRecommended = !isRecommended; // 추천 상태 토글
+
+    let url = isRecommended ? "/freeBoard/addRecommendation" : "/freeBoard/cancelRecommendation";
+    let method = isRecommended ? "POST" : "DELETE";
+
+    fetch(url, {
+        method: method,
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            postNum: postNum
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === 'OK') {
+            // 추천 성공 또는 취소 성공
+            const recommendButton = document.querySelector('.recommend-div button');
+            recommendButton.textContent = isRecommended ? "추천취소(C) : ${data.newRecommendCount}" : `추천(M) : ${data.newRecommendCount}`;
+        } else {
+            // 추천 실패 또는 취소 실패
+            alert("추천 또는 취소에 실패했습니다.");
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+    });
+}
+
+
 </script>
 
 <%@include file="../include/footer.jspf" %>

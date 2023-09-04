@@ -69,6 +69,22 @@ public class FreeBoardServiceImpl implements FreeBoardService {
         }
     }
 
+    @Override
+    public void cancelRecommendation(int postNum, String userId) throws Exception {
+        // 1. 사용자가 이미 추천을 했는지 확인
+        int recommendCount = freeBoardMapper.checkRecommendation(postNum, userId);
+        if (recommendCount == 0) {
+            throw new Exception("해당 게시글에 대한 추천이 없습니다.");
+        }
+
+        // 2. 추천을 했다면, 해당 추천을 데이터베이스에서 삭제
+        freeBoardMapper.deleteRecommendation(postNum, userId);
+
+        // 3. 게시글의 총 추천 수를 갱신
+        freeBoardMapper.updateTotalRecommendCount(postNum);
+    }
+
+
 
     private void checkPageAndKeyword(PageDTO page) {
         if(page.getRecentPage() < 1) { page.setRecentPage(1); }

@@ -17,7 +17,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @Slf4j
@@ -113,19 +115,44 @@ public class FreeBoardController {
 
     @RequestMapping(value = "/addRecommendation")
     @ResponseBody
-    public ResponseEntity<String> addRecommendation(HttpSession session, int postNum) {
+    public ResponseEntity<Map<String, String>> addRecommendation(HttpSession session, Integer postNum) {
+        Map<String, String> response = new HashMap<>();
         try {
-            // 세션에서 사용자 정보 가져오기
             MemberDTO member = (MemberDTO) session.getAttribute("member");
-            String userId = member.getId(); // 세션에 저장된 사용자 ID 가져오기
-
-            // 서비스 메서드 호출
+            if (member == null || postNum == null) {
+                response.put("message", "잘못된 요청입니다.");
+                return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+            }
+            String userId = member.getId();
             freeBoardService.addRecommendation(postNum, userId);
-
-            return new ResponseEntity<>("추천이 완료되었습니다.", HttpStatus.OK);
+            response.put("message", "추천이 완료되었습니다.");
+            return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (Exception e) {
-            return new ResponseEntity<>("추천 중 오류가 발생했습니다.", HttpStatus.INTERNAL_SERVER_ERROR);
+            response.put("message", "추천 중 오류가 발생했습니다.");
+            return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    @RequestMapping(value = "/cancelRecommendation")
+    @ResponseBody
+    public ResponseEntity<Map<String, String>> cancelRecommendation(HttpSession session, Integer postNum) {
+        Map<String, String> response = new HashMap<>();
+        try {
+            MemberDTO member = (MemberDTO) session.getAttribute("member");
+            if (member == null || postNum == null) {
+                response.put("message", "잘못된 요청입니다.");
+                return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+            }
+            String userId = member.getId();
+            freeBoardService.cancelRecommendation(postNum, userId);
+            response.put("message", "추천이 취소되었습니다.");
+            return new ResponseEntity<>(response, HttpStatus.OK);
+        } catch (Exception e) {
+            response.put("message", "추천 취소 중 오류가 발생했습니다.");
+            return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+
 
 }
