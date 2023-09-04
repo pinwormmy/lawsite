@@ -40,7 +40,6 @@ public interface FreeBoardMapper {
 
     int countTotalComment(PageDTO page) throws Exception;
 
-
     int checkRecommendation(int postNum, String userId);
 
     void insertRecommendation(int postNum, String userId);

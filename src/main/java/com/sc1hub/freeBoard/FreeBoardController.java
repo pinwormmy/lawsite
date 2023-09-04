@@ -115,7 +115,8 @@ public class FreeBoardController {
 
     @RequestMapping(value = "/addRecommendation")
     @ResponseBody
-    public ResponseEntity<Map<String, String>> addRecommendation(HttpSession session, Integer postNum) {
+    public ResponseEntity<Map<String, String>> addRecommendation(HttpSession session, @RequestBody Map<String, Integer> payload) {
+        Integer postNum = payload.get("postNum");
         Map<String, String> response = new HashMap<>();
         try {
             MemberDTO member = (MemberDTO) session.getAttribute("member");
@@ -137,7 +138,8 @@ public class FreeBoardController {
 
     @RequestMapping(value = "/cancelRecommendation")
     @ResponseBody
-    public ResponseEntity<Map<String, String>> cancelRecommendation(HttpSession session, Integer postNum) {
+    public ResponseEntity<Map<String, String>> cancelRecommendation(HttpSession session, @RequestBody Map<String, Integer> payload) {
+        Integer postNum = payload.get("postNum");
         Map<String, String> response = new HashMap<>();
         try {
             MemberDTO member = (MemberDTO) session.getAttribute("member");
