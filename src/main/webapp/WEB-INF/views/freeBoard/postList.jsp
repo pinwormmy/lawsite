@@ -41,7 +41,7 @@ body {
 .writer, .date {
     text-align: center;
 }
-.views, .post-num {
+.views, .post-num, .recommend {
     text-align: right;
 }
 
@@ -65,23 +65,11 @@ body {
                                         <tr>
                                             <th style="width: 10%;">번 호</th>
                                             <th style="width: 50%;">제 &nbsp 목</th>
-                                            <th style="width: 15%;">작성자</th>
+                                            <th style="width: 10%;">작성자</th>
                                             <th style="width: 10%;">날 짜</th>
                                             <th style="width: 10%;">조 회</th>
+                                            <th style="width: 10%;">추 천</th>
                                         </tr>
-
-                                        <c:forEach var="notice" items="${fullNoticeList}">
-                                            <tr class="notice-tr">
-                                                <td class="post-num">${notice.postNum} &nbsp</td>
-                                                <td><span>[전체공지]</span>
-                                                <a class="noticeTitle" href="/fullNotice/readPost?postNum=${notice.postNum}">
-                                                 ${notice.title}</a>
-                                                <c:if test="${notice.commentCount > 0}">( ${notice.commentCount} )</c:if></td>
-                                                <td class="writer">${notice.writer}</td>
-                                                <td class="date"><fmt:formatDate pattern="yyyy.MM.dd" value="${notice.regDate}"/></td>
-                                                <td class="views">${notice.views}</td>
-                                            </tr>
-                                        </c:forEach>
                                         <c:forEach var="notice" items="${selfNoticeList}">
                                             <tr class="notice-tr">
                                                 <td class="post-num">${notice.postNum} &nbsp</td>
@@ -92,6 +80,7 @@ body {
                                                 <td class="writer">${notice.writer}</td>
                                                 <td class="date"><fmt:formatDate pattern="yyyy.MM.dd" value="${notice.regDate}"/></td>
                                                 <td class="views">${notice.views}</td>
+                                                <td class="recommend">${notice.recommendCount}</td>
                                             </tr>
                                         </c:forEach>
                                         <c:forEach var="post" items="${postList}">
@@ -102,6 +91,7 @@ body {
                                                 <td class="writer">${post.writer}</td>
                                                 <td class="date"><fmt:formatDate pattern="yyyy.MM.dd" value="${post.regDate}"/></td>
                                                 <td class="views">${post.views}</td>
+                                                <td class="recommend">${post.recommendCount}</td>
                                             </tr>
                                         </c:forEach>
                                  </table>

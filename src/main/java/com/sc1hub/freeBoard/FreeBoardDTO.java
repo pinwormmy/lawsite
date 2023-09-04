@@ -17,4 +17,5 @@ public class FreeBoardDTO {
     private int views;
     private int commentCount;
     private int notice;
+    private int recommendCount;
 }

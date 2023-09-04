@@ -93,6 +93,10 @@ body {
 .side-banner {
     margin-top: 15px;
 }
+.recommend-div {
+    text-align: center;
+}
+
 </style>
 
 </head>
@@ -113,15 +117,16 @@ body {
             <div class="row">
                 <div class="col-xs-12 mb fadeInUp">
                     ${post.content}
+                    <div class="recommend-div">
+                        <button onclick="addRecommend(${post.postNum})" accesskey="m">추천(M) : ${post.recommendCount}</button>
+                    </div>
                     <hr>
                 </div>
 
                 <div id="comments" class="col-xs-12">
-                    <c:if test="${post.commentCount > 0 && member.grade > 1}">
-                        <div class="mb">
-                            [댓 글]
-                        </div>
-                    </c:if>
+                    <div class="mb">
+                        [댓 글]
+                    </div>
                     <div id="comments-list" class="gap"></div>
                     <div id="comments-page" class="gap"></div>
                     <c:if test="${member != null}">
