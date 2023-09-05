@@ -10,16 +10,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Controller
 @Slf4j
@@ -118,13 +113,16 @@ public class FreeBoardController {
     public ResponseEntity<FreeBoardRecommendDTO> addRecommendation(HttpSession session, @RequestBody FreeBoardRecommendDTO recommendDTO) {
         try {
             MemberDTO member = (MemberDTO) session.getAttribute("member");
-            log.debug("추천 시 데이터 확인 - 회원: {}, 게시글 번호: {}", member, recommendDTO.getPostNum());
             if (member == null || recommendDTO.getPostNum() == 0) {
                 return new ResponseEntity<>(recommendDTO, HttpStatus.BAD_REQUEST);
             }
+            log.debug("추천 시 데이터 확인 - 회원: {}, 게시글 번호: {}", member, recommendDTO.getPostNum());
             recommendDTO.setUserId(member.getId());
             freeBoardService.addRecommendation(recommendDTO);
             return new ResponseEntity<>(recommendDTO, HttpStatus.OK);
+        } catch (IllegalArgumentException e) {
+            log.error("추천 중 잘못된 인자가 전달되었습니다.", e);
+            return new ResponseEntity<>(recommendDTO, HttpStatus.BAD_REQUEST);
         } catch (Exception e) {
             log.error("추천 중 오류 발생", e);
             return new ResponseEntity<>(recommendDTO, HttpStatus.INTERNAL_SERVER_ERROR);
@@ -133,23 +131,39 @@ public class FreeBoardController {
 
     @RequestMapping(value = "/cancelRecommendation")
     @ResponseBody
-    public ResponseEntity<Map<String, String>> cancelRecommendation(HttpSession session, @RequestBody FreeBoardRecommendDTO recommendDTO) {
-        Map<String, String> response = new HashMap<>();
+    public ResponseEntity<FreeBoardRecommendDTO> cancelRecommendation(HttpSession session, @RequestBody FreeBoardRecommendDTO recommendDTO) {
         try {
             MemberDTO member = (MemberDTO) session.getAttribute("member");
             if (member == null || recommendDTO.getPostNum() == 0) {
-                log.debug("추천 취소 시 데이터 확인 - 회원: {}, 게시글 번호: {}", member, recommendDTO.getPostNum());
-                response.put("message", "잘못된 요청입니다.");
-                return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+                return new ResponseEntity<>(recommendDTO, HttpStatus.BAD_REQUEST);
             }
+            log.debug("추천 취소 시 데이터 확인 - 회원: {}, 게시글 번호: {}", member, recommendDTO.getPostNum());
             recommendDTO.setUserId(member.getId());
             freeBoardService.cancelRecommendation(recommendDTO);
-            response.put("message", "추천이 취소되었습니다.");
-            return new ResponseEntity<>(response, HttpStatus.OK);
+            return new ResponseEntity<>(recommendDTO, HttpStatus.OK);
+        } catch (IllegalArgumentException e) {
+            log.error("추천 취소 중 잘못된 인자가 전달되었습니다.", e);
+            return new ResponseEntity<>(recommendDTO, HttpStatus.BAD_REQUEST);
         } catch (Exception e) {
             log.error("추천 취소 중 오류 발생", e);
-            response.put("message", "추천 취소 중 오류가 발생했습니다.");
-            return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>(recommendDTO, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @RequestMapping(value = "/checkRecommendation", method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity<FreeBoardRecommendDTO> checkRecommendation(FreeBoardRecommendDTO recommendDTO, HttpSession session) {
+        try {
+            MemberDTO member = (MemberDTO) session.getAttribute("member");
+            if (member == null) {
+                return new ResponseEntity<>(recommendDTO, HttpStatus.UNAUTHORIZED);
+            }
+            recommendDTO.setUserId(member.getId());
+            int count = freeBoardService.checkRecommendation(recommendDTO); // 메소드 제대로 안 짜여진 상태. 수정필요...
+            return new ResponseEntity<>(recommendDTO, HttpStatus.OK);
+        } catch (Exception e) {
+            log.error("추천 확인 중 오류 발생", e);
+            return new ResponseEntity<>(recommendDTO, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 

@@ -84,6 +84,10 @@ public class FreeBoardServiceImpl implements FreeBoardService {
         freeBoardMapper.updateTotalRecommendCount(recommendDTO.getPostNum());
     }
 
+    @Override
+    public int checkRecommendation(FreeBoardRecommendDTO recommendDTO) {
+        return freeBoardMapper.checkRecommendation(recommendDTO);
+    }
 
 
     private void checkPageAndKeyword(PageDTO page) {

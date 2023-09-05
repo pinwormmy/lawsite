@@ -283,8 +283,40 @@ function updateCommentCount(postNum) {
 
 let isRecommended = false; // 추천 상태를 저장하는 변수
 
+// 버튼 텍스트를 변경하는 함수
+function updateRecommendButtonText(isRecommended, newRecommendCount) {
+    const recommendButton = document.querySelector('.recommend-div button');
+    recommendButton.textContent = isRecommended ? `추천취소(C) : ${newRecommendCount}` : `추천(M) : ${newRecommendCount}`;
+}
+
+// 페이지 로딩 시 추천 상태 확인
+window.onload = function() {
+    fetch("/freeBoard/checkRecommendation?postNum=" + ${post.postNum})
+    .then(response => {
+        if (response.status === 200) {
+            return response.json();
+        } else {
+            throw new Error('Unauthorized');
+        }
+    })
+    .then(data => {
+        const count = data.count;
+        isRecommended = count > 0;
+        updateRecommendButtonText(isRecommended, post.recommendCount); // 함수 호출
+    })
+    .catch(error => {
+        console.error("Error:", error);
+    });
+};
+
 function addRecommend(postNum) {
-    isRecommended = !isRecommended; // 추천 상태 토글
+    // 로그인 여부 확인
+    if (typeof ${member} === 'undefined' || ${member} === null) {
+        alert("로그인이 필요합니다.");
+        return;
+    }
+
+    isRecommended = !isRecommended;
 
     let url = isRecommended ? "/freeBoard/addRecommendation" : "/freeBoard/cancelRecommendation";
     let method = isRecommended ? "POST" : "DELETE";
@@ -296,21 +328,19 @@ function addRecommend(postNum) {
             postNum: postNum
         })
     })
-    .then(response => response.json())
-    .then(data => {
-        if (data.status === 'OK') {
-            // 추천 성공 또는 취소 성공
-            console.log(data);
-            const recommendButton = document.querySelector('.recommend-div button');
-            recommendButton.textContent = isRecommended ? "추천취소(C) : ${data.newRecommendCount}" : `추천(M) : ${data.newRecommendCount}`;
+    .then(response => {
+        if (response.status === 200) {
+            return response.json();
         } else {
-            // 추천 실패 또는 취소 실패
-            console.log(data);
-            alert("추천 또는 취소에 실패했습니다.");
+            throw new Error("Failed to recommend");
         }
+    })
+    .then(data => {
+        updateRecommendButtonText(isRecommended, data.newRecommendCount); // 함수 호출
     })
     .catch(error => {
         console.error("Error:", error);
+        alert("추천 또는 취소에 실패했습니다.");
     });
 }
 

@@ -41,4 +41,6 @@ public interface FreeBoardService {
     void addRecommendation(FreeBoardRecommendDTO recommendDTO);
 
     void cancelRecommendation(FreeBoardRecommendDTO recommendDTO) throws Exception;
+
+    int checkRecommendation(FreeBoardRecommendDTO recommendDTO);
 }
