@@ -38,7 +38,7 @@ public interface FreeBoardService {
 
     PageDTO commentPageSetting(PageDTO page) throws Exception;
 
-    void addRecommendation(int postNum, String userId);
+    void addRecommendation(FreeBoardRecommendDTO recommendDTO);
 
-    void cancelRecommendation(int postNum, String userId) throws Exception;
+    void cancelRecommendation(FreeBoardRecommendDTO recommendDTO) throws Exception;
 }

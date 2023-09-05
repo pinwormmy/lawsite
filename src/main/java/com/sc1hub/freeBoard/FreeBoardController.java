@@ -115,41 +115,35 @@ public class FreeBoardController {
 
     @RequestMapping(value = "/addRecommendation")
     @ResponseBody
-    public ResponseEntity<Map<String, String>> addRecommendation(HttpSession session, @RequestBody Map<String, Integer> payload) {
-        Integer postNum = payload.get("postNum");
-        Map<String, String> response = new HashMap<>();
+    public ResponseEntity<FreeBoardRecommendDTO> addRecommendation(HttpSession session, @RequestBody FreeBoardRecommendDTO recommendDTO) {
         try {
             MemberDTO member = (MemberDTO) session.getAttribute("member");
-            if (member == null || postNum == null) {
-                log.debug("추천 시 데이터 확인 - 회원: {}, 게시글 번호: {}", member, postNum);
-                response.put("message", "잘못된 요청입니다.");
-                return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+            if (member == null || recommendDTO.getPostNum() == 0) {
+                log.debug("추천 시 데이터 확인 - 회원: {}, 게시글 번호: {}", member, recommendDTO.getPostNum());
+                return new ResponseEntity<>(recommendDTO, HttpStatus.BAD_REQUEST);
             }
-            String userId = member.getId();
-            freeBoardService.addRecommendation(postNum, userId);
-            response.put("message", "추천이 완료되었습니다.");
-            return new ResponseEntity<>(response, HttpStatus.OK);
+            recommendDTO.setUserId(member.getId());
+            freeBoardService.addRecommendation(recommendDTO.getUserId());
+            return new ResponseEntity<>(recommendDTO, HttpStatus.OK);
         } catch (Exception e) {
             log.error("추천 중 오류 발생", e);
-            response.put("message", "추천 중 오류가 발생했습니다.");
-            return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>(recommendDTO, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
     @RequestMapping(value = "/cancelRecommendation")
     @ResponseBody
-    public ResponseEntity<Map<String, String>> cancelRecommendation(HttpSession session, @RequestBody Map<String, Integer> payload) {
-        Integer postNum = payload.get("postNum");
+    public ResponseEntity<Map<String, String>> cancelRecommendation(HttpSession session, @RequestBody FreeBoardRecommendDTO recommendDTO) {
         Map<String, String> response = new HashMap<>();
         try {
             MemberDTO member = (MemberDTO) session.getAttribute("member");
-            if (member == null || postNum == null) {
-                log.debug("추천 취소 시 데이터 확인 - 회원: {}, 게시글 번호: {}", member, postNum);
+            if (member == null || recommendDTO.getPostNum() == 0) {
+                log.debug("추천 취소 시 데이터 확인 - 회원: {}, 게시글 번호: {}", member, recommendDTO.getPostNum());
                 response.put("message", "잘못된 요청입니다.");
                 return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
             }
-            String userId = member.getId();
-            freeBoardService.cancelRecommendation(postNum, userId);
+            recommendDTO.setUserId(member.getId());
+            freeBoardService.cancelRecommendation(recommendDTO);
             response.put("message", "추천이 취소되었습니다.");
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (Exception e) {
@@ -158,5 +152,6 @@ public class FreeBoardController {
             return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
 
 }

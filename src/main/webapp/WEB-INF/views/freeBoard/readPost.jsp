@@ -300,10 +300,12 @@ function addRecommend(postNum) {
     .then(data => {
         if (data.status === 'OK') {
             // 추천 성공 또는 취소 성공
+            console.log(data);
             const recommendButton = document.querySelector('.recommend-div button');
             recommendButton.textContent = isRecommended ? "추천취소(C) : ${data.newRecommendCount}" : `추천(M) : ${data.newRecommendCount}`;
         } else {
             // 추천 실패 또는 취소 실패
+            console.log(data);
             alert("추천 또는 취소에 실패했습니다.");
         }
     })
