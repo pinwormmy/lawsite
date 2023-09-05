@@ -121,13 +121,13 @@
     <!-- 추천 여부 확인 -->
     <select id="checkRecommendation" resultType="int">
         SELECT COUNT(*) FROM freeboard_recommend
-        WHERE post_Num=#{postNum} AND user_Id=#{userId}
+            WHERE post_Num=#{postNum} AND user_Id=#{userId}
     </select>
 
     <!-- 추천 추가 -->
     <insert id="insertRecommendation">
         INSERT INTO freeboard_recommend (post_Num, user_Id)
-        VALUES (#{postNum}, #{userId})
+            VALUES (#{postNum}, #{userId})
     </insert>
 
     <!-- 추천 수 증가 -->
@@ -153,8 +153,8 @@
     <!-- 추천 수 업데이트 -->
     <update id="updateTotalRecommendCount">
         UPDATE freeboard
-        SET recommend_count = (SELECT COUNT(*) FROM freeboard_recommend WHERE postNum=#{post_Num})
-        WHERE post_Num=#{post_Num}
+            SET recommend_count = (SELECT COUNT(*) FROM freeboard_recommend WHERE postNum=#{post_Num})
+            WHERE post_Num=#{post_Num}
     </update>
 
 </mapper>

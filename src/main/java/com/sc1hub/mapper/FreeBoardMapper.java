@@ -2,6 +2,7 @@ package com.sc1hub.mapper;
 
 import com.sc1hub.freeBoard.FreeBoardCommentDTO;
 import com.sc1hub.freeBoard.FreeBoardDTO;
+import com.sc1hub.freeBoard.FreeBoardRecommendDTO;
 import com.sc1hub.util.PageDTO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -40,13 +41,13 @@ public interface FreeBoardMapper {
 
     int countTotalComment(PageDTO page) throws Exception;
 
-    int checkRecommendation(int postNum, String userId);
+    int checkRecommendation(FreeBoardRecommendDTO recommendDTO);
 
-    void insertRecommendation(int postNum, String userId);
+    void insertRecommendation(FreeBoardRecommendDTO recommendDTO);
 
     void increaseRecommendationCount(int postNum);
 
-    void deleteRecommendation(int postNum, String userId);
+    void deleteRecommendation(FreeBoardRecommendDTO recommendDTO);
 
     void decreaseRecommendationCount(int postNum);
 

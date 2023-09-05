@@ -118,12 +118,12 @@ public class FreeBoardController {
     public ResponseEntity<FreeBoardRecommendDTO> addRecommendation(HttpSession session, @RequestBody FreeBoardRecommendDTO recommendDTO) {
         try {
             MemberDTO member = (MemberDTO) session.getAttribute("member");
+            log.debug("추천 시 데이터 확인 - 회원: {}, 게시글 번호: {}", member, recommendDTO.getPostNum());
             if (member == null || recommendDTO.getPostNum() == 0) {
-                log.debug("추천 시 데이터 확인 - 회원: {}, 게시글 번호: {}", member, recommendDTO.getPostNum());
                 return new ResponseEntity<>(recommendDTO, HttpStatus.BAD_REQUEST);
             }
             recommendDTO.setUserId(member.getId());
-            freeBoardService.addRecommendation(recommendDTO.getUserId());
+            freeBoardService.addRecommendation(recommendDTO);
             return new ResponseEntity<>(recommendDTO, HttpStatus.OK);
         } catch (Exception e) {
             log.error("추천 중 오류 발생", e);
