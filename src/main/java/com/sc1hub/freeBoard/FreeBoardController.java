@@ -159,13 +159,16 @@ public class FreeBoardController {
                 return new ResponseEntity<>(recommendDTO, HttpStatus.UNAUTHORIZED);
             }
             recommendDTO.setUserId(member.getId());
-            int count = freeBoardService.checkRecommendation(recommendDTO); // 메소드 제대로 안 짜여진 상태. 수정필요...
+            int count = freeBoardService.checkRecommendation(recommendDTO); // 추천 확인
+            boolean isRecommended = (count > 0); // int를 boolean으로 변환
+            recommendDTO.setCheckRecommend(isRecommended); // DTO에 설정
             return new ResponseEntity<>(recommendDTO, HttpStatus.OK);
         } catch (Exception e) {
             log.error("추천 확인 중 오류 발생", e);
             return new ResponseEntity<>(recommendDTO, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
 
 
 }

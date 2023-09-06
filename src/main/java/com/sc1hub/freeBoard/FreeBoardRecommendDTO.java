@@ -7,4 +7,5 @@ public class FreeBoardRecommendDTO {
     private int recommendId;
     private String userId;
     private int postNum;
+    private boolean checkRecommend;
 }
