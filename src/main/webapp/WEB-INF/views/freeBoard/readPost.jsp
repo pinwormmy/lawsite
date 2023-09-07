@@ -281,7 +281,8 @@ function updateCommentCount(postNum) {
         .catch(error => alert("댓글수 갱신 오류"));
 }
 
-let isRecommended = false; // 추천 상태를 저장하는 변수
+// 추천 상태를 저장하는 변수. 초기값은 false이지만 페이지 로딩 시 실제 추천 상태로 업데이트됨.
+let isRecommended = false;
 
 // 버튼 텍스트를 변경하는 함수
 function updateRecommendButtonText(isRecommended, newRecommendCount) {
@@ -289,29 +290,8 @@ function updateRecommendButtonText(isRecommended, newRecommendCount) {
     recommendButton.textContent = isRecommended ? `추천취소(C) : ${newRecommendCount}` : `추천(M) : ${newRecommendCount}`;
 }
 
-// 페이지 로딩 시 추천 상태 확인
-window.onload = function() {
-    fetch("/freeBoard/checkRecommendation?postNum=" + ${post.postNum})
-    .then(response => {
-        if (response.status === 200) {
-            return response.json();
-        } else {
-            throw new Error('Unauthorized');
-        }
-    })
-    .then(data => {
-        const count = data.count;
-        isRecommended = count > 0;
-        updateRecommendButtonText(isRecommended, post.recommendCount); // 함수 호출
-    })
-    .catch(error => {
-        console.error("Error:", error);
-    });
-};
-
 function addRecommend(postNum) {
-    // 로그인 여부 확인
-    if (typeof ${member} === 'undefined' || ${member} === null) {
+    if (!isLoggedIn) {
         alert("로그인이 필요합니다.");
         return;
     }
@@ -336,13 +316,43 @@ function addRecommend(postNum) {
         }
     })
     .then(data => {
-        updateRecommendButtonText(isRecommended, data.newRecommendCount); // 함수 호출
+        // 추천 수 업데이트
+        const newRecommendCount = isRecommended ? ${post.recommendCount} + 1 : ${post.recommendCount} - 1;
+        updateRecommendButtonText(isRecommended, newRecommendCount); // 함수 호출
     })
     .catch(error => {
         console.error("Error:", error);
         alert("추천 또는 취소에 실패했습니다.");
     });
 }
+
+// JSP에서 JavaScript 변수 설정
+let isLoggedIn = <c:choose>
+    <c:when test="${not empty member}">true</c:when>
+    <c:otherwise>false</c:otherwise>
+</c:choose>;
+
+window.onload = function() {
+    // 로그인 상태 확인
+    if (isLoggedIn) {
+        // 로그인한 사용자만 추천 상태 확인 요청
+        fetch("/freeBoard/checkRecommendation?postNum=" + ${post.postNum})
+        .then(response => {
+            if (response.status === 200) {
+                return response.json();
+            } else {
+                throw new Error('Unauthorized');
+            }
+        })
+        .then(data => {
+            isRecommended = data.checkRecommend;
+            updateRecommendButtonText(isRecommended, ${post.recommendCount});
+        })
+        .catch(error => {
+            // 필요한 경우 에러 처리
+        });
+    }
+};
 
 
 </script>
