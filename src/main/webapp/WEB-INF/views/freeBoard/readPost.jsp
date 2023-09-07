@@ -285,9 +285,9 @@ function updateCommentCount(postNum) {
 let isRecommended = false;
 
 // 버튼 텍스트를 변경하는 함수
-function updateRecommendButtonText(isRecommended, newRecommendCount) {
+function updateRecommendButtonText(isRecommended) {
     const recommendButton = document.querySelector('.recommend-div button');
-    recommendButton.textContent = isRecommended ? `추천취소(C) : ${newRecommendCount}` : `추천(M) : ${newRecommendCount}`;
+    recommendButton.textContent = isRecommended ? `추천취소(C) : ${post.recommendCount}` : `추천(M) : ${post.recommendCount}`;
 }
 
 function addRecommend(postNum) {
@@ -316,9 +316,7 @@ function addRecommend(postNum) {
         }
     })
     .then(data => {
-        // 추천 수 업데이트
-        const newRecommendCount = isRecommended ? ${post.recommendCount} + 1 : ${post.recommendCount} - 1;
-        updateRecommendButtonText(isRecommended, newRecommendCount); // 함수 호출
+        updateRecommendButtonText(isRecommended);
     })
     .catch(error => {
         console.error("Error:", error);
