@@ -78,14 +78,15 @@ body {
                 <form action="/freeBoard/submitPost" method="post">
                     <input type="hidden" name="writer" value="${member.id}">
                     제목> <input type="text" name="title" size="60" required>
-                    <span class="align-middle"> 공지> </span>
-                    <input class="align-middle" type="checkbox" name="notice" value="1"><br>
+                    <c:if test="${member.grade == 3}">
+                        <span class="align-middle"> 공지> </span>
+                        <input class="align-middle" type="checkbox" name="notice" value="1">
+                    </c:if>
+                    <br>
                     <textarea name="content" id="content"></textarea><br>
-
                     <script type="text/javascript">	// 글쓰기 editor 및 사진 업로드 기능
                         CKEDITOR.replace('content', {filebrowserUploadUrl:'/imageUpload'});
                     </script>
-
                     <button class="pull-left btn btn-theme" accesskey="s">게시하기(S)</button>
                     <button type="button" class="pull-left btn btn-theme" onclick="location.href='/freeBoard/list'" accesskey="c">취소(C)</button>
                 </form>
