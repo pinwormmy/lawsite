@@ -45,13 +45,11 @@ public interface FreeBoardMapper {
 
     void insertRecommendation(FreeBoardRecommendDTO recommendDTO);
 
-    void increaseRecommendationCount(int postNum);
-
     void deleteRecommendation(FreeBoardRecommendDTO recommendDTO);
-
-    void decreaseRecommendationCount(int postNum);
 
     void updateTotalRecommendCount(int postNum);
 
     int getRecommendCount(int postNum);
+
+    int getActualRecommendCount(int postNum);
 }

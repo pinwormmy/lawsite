@@ -57,31 +57,36 @@ public class FreeBoardServiceImpl implements FreeBoardService {
     public void addRecommendation(FreeBoardRecommendDTO recommendDTO) {
         // 1. 사용자가 이미 해당 게시글을 추천했는지 확인
         int count = freeBoardMapper.checkRecommendation(recommendDTO);
-
         if (count == 0) {
             // 2. 추천하지 않았다면, 추천 테이블에 데이터를 추가하고, 게시글의 추천 수를 증가
             freeBoardMapper.insertRecommendation(recommendDTO);
-            freeBoardMapper.increaseRecommendationCount(recommendDTO.getPostNum());
-        } else {
-            // 3. 이미 추천했다면, 추천을 취소하고 게시글의 추천 수를 감소
-            freeBoardMapper.deleteRecommendation(recommendDTO);
-            freeBoardMapper.decreaseRecommendationCount(recommendDTO.getPostNum());
+            // 3. 게시글의 총 추천 수를 갱신
+            updateRecommendCount(recommendDTO.getPostNum());
         }
     }
 
+
     @Override
+    @Transactional
     public void cancelRecommendation(FreeBoardRecommendDTO recommendDTO) throws Exception {
         // 1. 사용자가 이미 추천을 했는지 확인
         int recommendCount = freeBoardMapper.checkRecommendation(recommendDTO);
         if (recommendCount == 0) {
             throw new Exception("해당 게시글에 대한 추천이 없습니다.");
         }
-
         // 2. 추천을 했다면, 해당 추천을 데이터베이스에서 삭제
         freeBoardMapper.deleteRecommendation(recommendDTO);
-
         // 3. 게시글의 총 추천 수를 갱신
-        freeBoardMapper.updateTotalRecommendCount(recommendDTO.getPostNum());
+        updateRecommendCount(recommendDTO.getPostNum());
+    }
+
+    private void updateRecommendCount(int postNum) {
+        int actualRecommendCount = freeBoardMapper.getActualRecommendCount(postNum);
+        int currentRecommendCount = freeBoardMapper.getRecommendCount(postNum);
+
+        if (actualRecommendCount != currentRecommendCount) {
+            freeBoardMapper.updateTotalRecommendCount(postNum);
+        }
     }
 
     @Override

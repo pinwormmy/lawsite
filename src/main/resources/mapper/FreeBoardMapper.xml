@@ -130,31 +130,17 @@
             VALUES (#{postNum}, #{userId})
     </insert>
 
-    <!-- 추천 수 증가 -->
-    <update id="increaseRecommendationCount">
-        UPDATE freeboard
-        SET recommend_count = recommend_count + 1
-        WHERE post_Num=#{postNum}
-    </update>
-
     <!-- 추천 취소 -->
     <delete id="deleteRecommendation">
         DELETE FROM freeboard_recommend
         WHERE post_Num=#{postNum} AND user_Id=#{userId}
     </delete>
 
-    <!-- 추천 수 감소 -->
-    <update id="decreaseRecommendationCount">
-        UPDATE freeboard
-        SET recommend_count = recommend_count - 1
-        WHERE post_Num=#{postNum}
-    </update>
-
     <!-- 추천 수 업데이트 -->
     <update id="updateTotalRecommendCount">
         UPDATE freeboard
-            SET recommend_count = (SELECT COUNT(*) FROM freeboard_recommend WHERE postNum=#{post_Num})
-            WHERE post_Num=#{post_Num}
+            SET recommend_count = (SELECT COUNT(*) FROM freeboard_recommend WHERE post_Num=#{postNum})
+            WHERE post_Num=#{postNum}
     </update>
 
     <!-- 추천 수 조회 -->
@@ -163,5 +149,11 @@
             FROM freeboard
             WHERE post_Num=#{postNum}
     </select>
+
+    <!-- 실추천 수 조회 -->
+    <select id="getActualRecommendCount" resultType="int">
+        SELECT COUNT(*) FROM freeboard_recommend WHERE post_Num=#{postNum}
+    </select>
+
 
 </mapper>

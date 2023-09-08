@@ -281,20 +281,16 @@ function updateCommentCount(postNum) {
         .catch(error => alert("댓글수 갱신 오류"));
 }
 
-// 추천 상태를 저장하는 변수. 초기값은 false이지만 페이지 로딩 시 실제 추천 상태로 업데이트됨.
 let isRecommended = false;
 
-// 버튼 텍스트를 변경하는 함수
 function updateRecommendButtonText(isRecommended, recommendCount) {
-    console.log("updateRecommendButtonText 함수 호출. isRecommended:", isRecommended, "recommendCount:", recommendCount);
     const recommendButton = document.querySelector('.recommend-div button');
     recommendButton.textContent = isRecommended ? "추천취소(M) : " + recommendCount : "추천(M) : " + recommendCount;
-    console.log("설정된 버튼 텍스트:", recommendButton.textContent);
 }
 
 function addRecommend(postNum) {
     if (!isLoggedIn) {
-        alert("로그인이 필요합니다.");
+        alert("추천 기능을 사용하려면 로그인이 필요합니다.");
         return;
     }
 
@@ -318,15 +314,12 @@ function addRecommend(postNum) {
         }
     })
     .then(data => {
-        console.log("추천/추천취소 응답:", data);
         return fetchRecommendCount(postNum);
     })
     .then(recommendCount => {
-        console.log("추천 수:", recommendCount);
         updateRecommendButtonText(isRecommended, recommendCount);
     })
     .catch(error => {
-        console.error("Error:", error);
         alert("추천 또는 취소에 실패했습니다.");
     });
 }
@@ -346,25 +339,19 @@ function fetchRecommendCount(postNum) {
         });
 }
 
-// JSP에서 JavaScript 변수 설정
 let isLoggedIn = <c:choose>
     <c:when test="${not empty member}">true</c:when>
     <c:otherwise>false</c:otherwise>
 </c:choose>;
 
 window.onload = async function() {
-    console.log("페이지 로드. 로그인 상태:", isLoggedIn);
     if (isLoggedIn) {
         try {
             let response = await fetch("/freeBoard/checkRecommendation?postNum=" + ${post.postNum});
-            console.log("추천 상태 확인 응답:", response);
             if (response.status === 200) {
                 let data = await response.json();
-                console.log("추천 상태:", data.checkRecommend);
                 isRecommended = data.checkRecommend;
-                setTimeout(() => {
-                    updateRecommendButtonText(isRecommended, ${post.recommendCount});
-                }, 0);
+                updateRecommendButtonText(isRecommended, ${post.recommendCount});
             } else {
                 throw new Error('로그인이 필요한 작업입니다.');
             }
