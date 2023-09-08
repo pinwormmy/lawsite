@@ -286,8 +286,10 @@ let isRecommended = false;
 
 // 버튼 텍스트를 변경하는 함수
 function updateRecommendButtonText(isRecommended, recommendCount) {
+    console.log("updateRecommendButtonText 함수 호출. isRecommended:", isRecommended, "recommendCount:", recommendCount);
     const recommendButton = document.querySelector('.recommend-div button');
-    recommendButton.textContent = isRecommended ? `추천취소(C) : ${recommendCount}` : `추천(M) : ${recommendCount}`;
+    recommendButton.textContent = isRecommended ? "추천취소(M) : " + recommendCount : "추천(M) : " + recommendCount;
+    console.log("설정된 버튼 텍스트:", recommendButton.textContent);
 }
 
 function addRecommend(postNum) {
@@ -316,10 +318,11 @@ function addRecommend(postNum) {
         }
     })
     .then(data => {
-        // 추천 수를 실시간으로 가져옵니다.
+        console.log("추천/추천취소 응답:", data);
         return fetchRecommendCount(postNum);
     })
     .then(recommendCount => {
+        console.log("추천 수:", recommendCount);
         updateRecommendButtonText(isRecommended, recommendCount);
     })
     .catch(error => {
@@ -331,6 +334,7 @@ function addRecommend(postNum) {
 function fetchRecommendCount(postNum) {
     return fetch("/freeBoard/getRecommendCount?postNum=" + postNum)
         .then(response => {
+            console.log("추천 수 조회 응답:", response);
             if (response.status === 200) {
                 return response.json();
             } else {
@@ -348,29 +352,27 @@ let isLoggedIn = <c:choose>
     <c:otherwise>false</c:otherwise>
 </c:choose>;
 
-window.onload = function() {
-    // 로그인 상태 확인
+window.onload = async function() {
+    console.log("페이지 로드. 로그인 상태:", isLoggedIn);
     if (isLoggedIn) {
-        // 로그인한 사용자만 추천 상태 확인 요청
-        fetch("/freeBoard/checkRecommendation?postNum=" + ${post.postNum})
-        .then(response => {
+        try {
+            let response = await fetch("/freeBoard/checkRecommendation?postNum=" + ${post.postNum});
+            console.log("추천 상태 확인 응답:", response);
             if (response.status === 200) {
-                return response.json();
+                let data = await response.json();
+                console.log("추천 상태:", data.checkRecommend);
+                isRecommended = data.checkRecommend;
+                setTimeout(() => {
+                    updateRecommendButtonText(isRecommended, ${post.recommendCount});
+                }, 0);
             } else {
                 throw new Error('로그인이 필요한 작업입니다.');
             }
-        })
-        .then(data => {
-            isRecommended = data.checkRecommend;
-            updateRecommendButtonText(isRecommended, ${post.recommendCount});
-        })
-        .catch(error => {
+        } catch (error) {
             console.error(error);
-        });
+        }
     }
 };
-
-
 
 </script>
 
