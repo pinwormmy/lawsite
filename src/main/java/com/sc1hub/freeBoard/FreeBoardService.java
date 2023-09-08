@@ -43,4 +43,6 @@ public interface FreeBoardService {
     void cancelRecommendation(FreeBoardRecommendDTO recommendDTO) throws Exception;
 
     int checkRecommendation(FreeBoardRecommendDTO recommendDTO);
+
+    int getRecommendCount(int postNum);
 }

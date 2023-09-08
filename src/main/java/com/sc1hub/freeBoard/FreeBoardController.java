@@ -169,6 +169,22 @@ public class FreeBoardController {
         }
     }
 
+    @RequestMapping(value = "/getRecommendCount", method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity<Integer> getRecommendCount(@RequestParam("postNum") int postNum) {
+        try {
+            log.info("getRecommendCount 요청 받음. postNum: " + postNum); // 요청 로그 추가
 
+            // 게시글의 갱신된 최신 추천 수를 가져옵니다.
+            int recommendCount = freeBoardService.getRecommendCount(postNum);
+
+            log.info("게시글 번호 " + postNum + "의 추천 수: " + recommendCount); // 추천 수 로그 추가
+
+            return new ResponseEntity<>(recommendCount, HttpStatus.OK);
+        } catch (Exception e) {
+            log.error("추천 수 조회 중 오류 발생", e);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 
 }

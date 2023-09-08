@@ -52,4 +52,6 @@ public interface FreeBoardMapper {
     void decreaseRecommendationCount(int postNum);
 
     void updateTotalRecommendCount(int postNum);
+
+    int getRecommendCount(int postNum);
 }

@@ -285,9 +285,9 @@ function updateCommentCount(postNum) {
 let isRecommended = false;
 
 // 버튼 텍스트를 변경하는 함수
-function updateRecommendButtonText(isRecommended) {
+function updateRecommendButtonText(isRecommended, recommendCount) {
     const recommendButton = document.querySelector('.recommend-div button');
-    recommendButton.textContent = isRecommended ? `추천취소(C) : ${post.recommendCount}` : `추천(M) : ${post.recommendCount}`;
+    recommendButton.textContent = isRecommended ? `추천취소(C) : ${recommendCount}` : `추천(M) : ${recommendCount}`;
 }
 
 function addRecommend(postNum) {
@@ -316,12 +316,30 @@ function addRecommend(postNum) {
         }
     })
     .then(data => {
-        updateRecommendButtonText(isRecommended);
+        // 추천 수를 실시간으로 가져옵니다.
+        return fetchRecommendCount(postNum);
+    })
+    .then(recommendCount => {
+        updateRecommendButtonText(isRecommended, recommendCount);
     })
     .catch(error => {
         console.error("Error:", error);
         alert("추천 또는 취소에 실패했습니다.");
     });
+}
+
+function fetchRecommendCount(postNum) {
+    return fetch("/freeBoard/getRecommendCount?postNum=" + postNum)
+        .then(response => {
+            if (response.status === 200) {
+                return response.json();
+            } else {
+                throw new Error("추천 수 조회 중 오류 발생");
+            }
+        })
+        .catch(error => {
+            console.error("Error:", error);
+        });
 }
 
 // JSP에서 JavaScript 변수 설정
@@ -339,7 +357,7 @@ window.onload = function() {
             if (response.status === 200) {
                 return response.json();
             } else {
-                throw new Error('Unauthorized');
+                throw new Error('로그인이 필요한 작업입니다.');
             }
         })
         .then(data => {
@@ -347,10 +365,11 @@ window.onload = function() {
             updateRecommendButtonText(isRecommended, ${post.recommendCount});
         })
         .catch(error => {
-            // 필요한 경우 에러 처리
+            console.error(error);
         });
     }
 };
+
 
 
 </script>

@@ -157,4 +157,11 @@
             WHERE post_Num=#{post_Num}
     </update>
 
+    <!-- 추천 수 조회 -->
+    <select id="getRecommendCount" resultType="int">
+        SELECT recommend_count
+            FROM freeboard
+            WHERE post_Num=#{postNum}
+    </select>
+
 </mapper>
