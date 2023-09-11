@@ -9,7 +9,7 @@ import java.util.List;
 public abstract class AbstractBoardService<T, R, C> implements BoardService<T, R, C> {
 
     @Autowired
-    protected BoardMapper<T, R, C> boardMapper;
+    protected BoardMapper<T, R, C> boardMapper; // 공용 매퍼파일도 만들어야함
 
     @Override
     public List<T> showPostList(PageDTO page) throws Exception {
