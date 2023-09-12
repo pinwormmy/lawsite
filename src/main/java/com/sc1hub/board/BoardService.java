@@ -3,7 +3,7 @@ package com.sc1hub.board;
 import com.sc1hub.util.PageDTO;
 import java.util.List;
 
-public interface BoardService<T, R, C> {
+public interface BoardService<T, C, R> {
     List<T> showPostList(PageDTO page) throws Exception;
     void submitPost(T board) throws Exception;
     T readPost(int postNum) throws Exception;
@@ -23,4 +23,5 @@ public interface BoardService<T, R, C> {
     void saveViewUserIp(int postNum, String ip) throws Exception;
     List<T> showSelfNoticeList() throws Exception;
     PageDTO commentPageSetting(PageDTO page) throws Exception;
+    int countTotalPost(PageDTO page) throws Exception;
 }

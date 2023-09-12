@@ -7,10 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
-public abstract class AbstractBoardService<T, R, C> implements BoardService<T, R, C> {
+public abstract class AbstractBoardService<T, C, R> implements BoardService<T, C, R> {
 
     @Autowired
-    protected BoardMapper<T, R, C> boardMapper; // 공용 매퍼파일도 만들어야함
+    protected BoardMapper<T, C, R> boardMapper; // 공용 매퍼파일도 만들어야함
     // 추가로 컨트롤러랑 매퍼xml 구성 확인
     // db 구성은 어떻게 할지 파악하기
 
