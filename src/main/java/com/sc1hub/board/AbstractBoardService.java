@@ -10,6 +10,8 @@ public abstract class AbstractBoardService<T, R, C> implements BoardService<T, R
 
     @Autowired
     protected ViewsDTO BoardMapper<T, R, C> boardMapper; // 공용 매퍼파일도 만들어야함
+    // 추가로 컨트롤러랑 매퍼xml 구성 확인
+    // db 구성은 어떻게 할지 파악하기
 
     @Override
     public List<T> showPostList(PageDTO page) throws Exception {
