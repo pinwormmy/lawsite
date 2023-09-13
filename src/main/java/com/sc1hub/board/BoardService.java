@@ -24,4 +24,7 @@ public interface BoardService<T, C, R> {
     List<T> showSelfNoticeList() throws Exception;
     PageDTO commentPageSetting(PageDTO page) throws Exception;
     int countTotalPost(PageDTO page) throws Exception;
+
+    int countTotalComment(PageDTO page) throws Exception;
+
 }

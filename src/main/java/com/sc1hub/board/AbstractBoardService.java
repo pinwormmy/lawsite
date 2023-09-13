@@ -99,7 +99,7 @@ public abstract class AbstractBoardService<T, C, R> implements BoardService<T, C
 
     public abstract int countTotalPost(PageDTO page) throws Exception;
 
-    protected abstract int countTotalComment(PageDTO page) throws Exception;
+    public abstract int countTotalComment(PageDTO page) throws Exception;
 
     protected PageService initPageUtil() {
         PageService util = new PageService();
