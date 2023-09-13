@@ -1,21 +1,13 @@
 package com.sc1hub.freeBoard;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.sc1hub.board.CommentDTO;
 import com.sc1hub.member.MemberDTO;
 import lombok.Data;
 
 import java.util.Date;
 
 @Data
-public class FreeBoardCommentDTO {
-
-    private int postNum;
-    private int commentNum;
-    private String id;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+9")
-    private Date regDate;
-    private String content;
-
-    private MemberDTO memberDTO;
+public class FreeBoardCommentDTO extends CommentDTO {
 
 }

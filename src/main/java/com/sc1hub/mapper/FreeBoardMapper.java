@@ -3,53 +3,9 @@ package com.sc1hub.mapper;
 import com.sc1hub.freeBoard.FreeBoardCommentDTO;
 import com.sc1hub.freeBoard.FreeBoardDTO;
 import com.sc1hub.freeBoard.FreeBoardRecommendDTO;
-import com.sc1hub.util.PageDTO;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-
-import java.util.List;
 
 @Mapper
-public interface FreeBoardMapper {
-    List<FreeBoardDTO> showPostList(PageDTO page) throws Exception;
-
-    void submitPost(FreeBoardDTO board) throws Exception;
-
-    void submitModifyPost(FreeBoardDTO postNum) throws Exception;
-
-    FreeBoardDTO readPost(int postNum) throws Exception;
-
-    void deletePost(int postNum) throws Exception;
-
-    int countTotalPost(PageDTO page) throws Exception;
-
-    void addComment(FreeBoardCommentDTO comment) throws Exception;
-
-    List<FreeBoardCommentDTO> showCommentList(PageDTO page) throws Exception;
-
-    void deleteComment(int commentNum) throws Exception;
-
-    void updateCommentCount(int postNum) throws Exception;
-
-    void updateViews(int postNum) throws Exception;
-
-    int checkViewUserIp(@Param("postNum") int postNum, @Param("ip") String ip) throws Exception;
-
-    void saveViewUserIp(@Param("postNum") int postNum, @Param("ip") String ip) throws Exception;
-
-    List<FreeBoardDTO> showSelfNoticeList() throws Exception;
-
-    int countTotalComment(PageDTO page) throws Exception;
-
-    int checkRecommendation(FreeBoardRecommendDTO recommendDTO);
-
-    void insertRecommendation(FreeBoardRecommendDTO recommendDTO);
-
-    void deleteRecommendation(FreeBoardRecommendDTO recommendDTO);
-
-    void updateTotalRecommendCount(int postNum);
-
-    int getRecommendCount(int postNum);
-
-    int getActualRecommendCount(int postNum);
+public interface FreeBoardMapper extends BoardMapper<FreeBoardDTO, FreeBoardCommentDTO, FreeBoardRecommendDTO> {
+    // 자유게시판에만 특화된 메서드들을 여기에 추가합니다.
 }

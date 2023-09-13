@@ -50,4 +50,5 @@ public interface BoardMapper<T, C, R> {
     int getRecommendCount(int postNum);
 
     int getActualRecommendCount(int postNum);
+
 }

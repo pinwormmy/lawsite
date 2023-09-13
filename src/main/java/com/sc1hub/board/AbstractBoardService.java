@@ -9,34 +9,31 @@ import java.util.List;
 
 public abstract class AbstractBoardService<T, C, R> implements BoardService<T, C, R> {
 
-    @Autowired
-    protected BoardMapper<T, C, R> boardMapper; // 공용 매퍼파일도 만들어야함
-    // 추가로 컨트롤러랑 매퍼xml 구성 확인
-    // db 구성은 어떻게 할지 파악하기
+    abstract BoardMapper<T, C, R> getBoardMapper();
 
     @Override
     public List<T> showPostList(PageDTO page) throws Exception {
-        return boardMapper.showPostList(page);
+        return getBoardMapper().showPostList(page);
     }
 
     @Override
     public void submitPost(T board) throws Exception {
-        boardMapper.submitPost(board);
+        getBoardMapper().submitPost(board);
     }
 
     @Override
     public T readPost(int postNum) throws Exception {
-        return boardMapper.readPost(postNum);
+        return getBoardMapper().readPost(postNum);
     }
 
     @Override
     public void submitModifyPost(T post) throws Exception {
-        boardMapper.submitModifyPost(post);
+        getBoardMapper().submitModifyPost(post);
     }
 
     @Override
     public void deletePost(int postNum) throws Exception {
-        boardMapper.deletePost(postNum);
+        getBoardMapper().deletePost(postNum);
     }
 
     @Override
@@ -47,42 +44,42 @@ public abstract class AbstractBoardService<T, C, R> implements BoardService<T, C
 
     @Override
     public void addComment(C comment) throws Exception {
-        boardMapper.addComment(comment);
+        getBoardMapper().addComment(comment);
     }
 
     @Override
     public List<C> showCommentList(PageDTO page) throws Exception {
-        return boardMapper.showCommentList(page);
+        return getBoardMapper().showCommentList(page);
     }
 
     @Override
     public void deleteComment(int commentNum) throws Exception {
-        boardMapper.deleteComment(commentNum);
+        getBoardMapper().deleteComment(commentNum);
     }
 
     @Override
     public void updateCommentCount(int postNum) throws Exception {
-        boardMapper.updateCommentCount(postNum);
+        getBoardMapper().updateCommentCount(postNum);
     }
 
     @Override
     public void updateViews(int postNum) throws Exception {
-        boardMapper.updateViews(postNum);
+        getBoardMapper().updateViews(postNum);
     }
 
     @Override
     public int checkViewUserIp(int postNum, String ip) throws Exception {
-        return boardMapper.checkViewUserIp(postNum, ip);
+        return getBoardMapper().checkViewUserIp(postNum, ip);
     }
 
     @Override
     public void saveViewUserIp(int postNum, String ip) throws Exception {
-        boardMapper.saveViewUserIp(postNum, ip);
+        getBoardMapper().saveViewUserIp(postNum, ip);
     }
 
     @Override
     public List<T> showSelfNoticeList() throws Exception {
-        return boardMapper.showSelfNoticeList();
+        return getBoardMapper().showSelfNoticeList();
     }
 
     protected void checkPageAndKeyword(PageDTO page) {
@@ -93,10 +90,52 @@ public abstract class AbstractBoardService<T, C, R> implements BoardService<T, C
 
     protected PageDTO utilLoadingForPage(PageDTO page) throws Exception {
         page.setTotalPostCount(countTotalPost(page));
-        PageService util = initPageUtil();
-        return util.calculatePage(page);
+        return initPageUtil().calculatePage(page);
     }
 
-    protected abstract PageService initPageUtil();
+    protected PageDTO utilLoadingForCommentPage(PageDTO page) throws Exception {
+        page.setTotalPostCount(countTotalComment(page));
+        return initPageUtil().calculatePage(page);
+    }
+
+    public abstract int countTotalPost(PageDTO page) throws Exception;
+
+    protected abstract int countTotalComment(PageDTO page) throws Exception;
+
+    protected PageService initPageUtil() {
+        PageService util = new PageService();
+        util.setDISPLAY_POST_LIMIT(10);
+        util.setPAGESET_LIMIT(10);
+        return util;
+    }
+
+    @Override
+    public void addRecommendation(R recommendDTO) {
+        getBoardMapper().insertRecommendation(recommendDTO);
+    }
+
+    @Override
+    public void cancelRecommendation(R recommendDTO) throws Exception {
+        getBoardMapper().deleteRecommendation(recommendDTO);
+    }
+
+    @Override
+    public int checkRecommendation(R recommendDTO) {
+        return getBoardMapper().checkRecommendation(recommendDTO);
+    }
+
+    @Override
+    public int getRecommendCount(int postNum) {
+        return getBoardMapper().getRecommendCount(postNum);
+    }
+
+    @Override
+    public PageDTO commentPageSetting(PageDTO page) throws Exception {
+        checkPageAndKeyword(page);
+        return utilLoadingForCommentPage(page);
+    }
+
+
 }
+
 
