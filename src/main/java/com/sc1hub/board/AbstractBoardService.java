@@ -3,13 +3,12 @@ package com.sc1hub.board;
 import com.sc1hub.mapper.BoardMapper;
 import com.sc1hub.util.PageDTO;
 import com.sc1hub.util.PageService;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
 public abstract class AbstractBoardService<T, C, R> implements BoardService<T, C, R> {
 
-    abstract BoardMapper<T, C, R> getBoardMapper();
+    protected abstract BoardMapper<T, C, R> getBoardMapper();
 
     @Override
     public List<T> showPostList(PageDTO page) throws Exception {
@@ -115,7 +114,7 @@ public abstract class AbstractBoardService<T, C, R> implements BoardService<T, C
     }
 
     @Override
-    public void cancelRecommendation(R recommendDTO) throws Exception {
+    public void cancelRecommendation(R recommendDTO) {
         getBoardMapper().deleteRecommendation(recommendDTO);
     }
 

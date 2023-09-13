@@ -116,7 +116,7 @@ public class FreeBoardController {
             }
             log.debug("추천 시 데이터 확인 - 회원: {}, 게시글 번호: {}", member, recommendDTO.getPostNum());
             recommendDTO.setUserId(member.getId());
-            freeBoardService.addRecommendation(recommendDTO);
+            freeBoardService.insertRecommendation(recommendDTO);
             return new ResponseEntity<>(recommendDTO, HttpStatus.OK);
         } catch (IllegalArgumentException e) {
             log.error("추천 중 잘못된 인자가 전달되었습니다.", e);
