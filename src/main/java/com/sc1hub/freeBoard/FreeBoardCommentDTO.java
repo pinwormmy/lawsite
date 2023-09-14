@@ -7,7 +7,6 @@ import lombok.Data;
 
 import java.util.Date;
 
-@Data
 public class FreeBoardCommentDTO extends CommentDTO {
 
 }
