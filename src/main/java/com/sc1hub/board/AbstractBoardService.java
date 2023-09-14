@@ -35,6 +35,7 @@ public abstract class AbstractBoardService<T, C, R extends RecommendDTO> impleme
     public void deletePost(int postNum) throws Exception {
         getBoardMapper().deletePost(postNum);
     }
+    // 댓글과 추천, 조회 테이블 cascade 처리 확인해야함
 
     @Override
     public PageDTO pageSetting(PageDTO page) throws Exception {
@@ -124,7 +125,7 @@ public abstract class AbstractBoardService<T, C, R extends RecommendDTO> impleme
 
     @Override
     @Transactional
-    public void cancelRecommendation(R recommendDTO) throws Exception {
+    public void cancelRecommendation(R recommendDTO) {
         // 1. 사용자가 이미 추천을 했는지 확인
         int recommendCount = getBoardMapper().checkRecommendation(recommendDTO);
         if (recommendCount == 0) {
