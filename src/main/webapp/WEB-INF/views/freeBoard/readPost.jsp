@@ -151,7 +151,7 @@ body {
                     <hr>
                     <a class="pull btn btn-theme cancel-btn" href="/freeBoard/list" accesskey="l">목 록(L)</a>
                     <c:if test="${member.id == post.writer || member.grade == 3}">
-                        <a class="pull btn btn-theme cancel-btn" href="/freeBoard/deletePost?postNum=${post.postNum}" accesskey="t">삭 제(T)</a>
+                        <a class="pull btn btn-theme cancel-btn" href="/freeBoard/deletePost?postNum=${post.postNum}">삭 제(-)</a>
                         <a class="pull btn btn-theme cancel-btn" href="/freeBoard/modifyPost?postNum=${post.postNum}" accesskey="o">️수 정(O)</a>
                     </c:if>
                 </div>
