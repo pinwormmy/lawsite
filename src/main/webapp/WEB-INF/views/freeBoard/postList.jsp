@@ -31,10 +31,6 @@ body {
 .section-wrapper {
     min-height: 850px;
 }
-
-.side-banner {
-    margin-top: 15px;
-}
 .post-heading {
     border-bottom: 2px solid white;
 }
