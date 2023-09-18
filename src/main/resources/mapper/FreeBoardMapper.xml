@@ -20,7 +20,7 @@
     </resultMap>
 
     <select id="showPostList" resultType="com.sc1hub.freeBoard.FreeBoardDTO">
-        SELECT post_num, title, content, writer, REG_DATE, views, COMMENT_COUNT
+        SELECT post_num, title, content, writer, REG_DATE, views, COMMENT_COUNT, recommend_count
             from freeBoard
             WHERE <include refid="searchKeyword" /> AND notice=0
             order by post_num desc
