@@ -6,42 +6,7 @@
 <title>${post.title} - 자유게시판</title>
 
 <style>
-body {
-    height: 100%;
-}
-.boardList caption {
-    font-size: 20px;
-    margin-bottom: 30px;
-}
-.boardList tr {
-    border-bottom: 1px solid #eee;
-}
-.boardList tr:last-child {
-    border: none;
-}
-.boardList tr:nth-child(odd) {
-    background-color: #ddd;
-}
-.boardList th,
-.boardList td {
-    padding: 12px;
-    text-align: center;
-}
-.leftbar-ul {
-    border-top: solid 1px ivory;
-    list-style-type: none;
-}
-.leftbar-ul li {
-    border-bottom: solid 1px ivory;
-}
-.leftbar-ul li a{
-    color : white;
-    font-size: 16px;
-    font-weight: 500px;
-}
-.section-wrapper {
-    min-height: 850px;
-}
+
 .post-title {
     padding: 0.5rem 0.75rem;
     font-size: 20px;
@@ -56,48 +21,16 @@ body {
     font-weight: 300;
     overflow: hidden;
 }
-
 .btn-theme {
     margin: 10px 0;
     float: right;
-}
-.col-xs-12 p {
-    padding: 15px;
-}
-.col-lg-7 {
-    padding: 15px;
-}
-.basic-button {
-    color: white;
-    background-color: Turquoise;
-    font-size: 14px;
-    padding: 6px 12px;
-    border: none;
-    border-radius: 10px;
-    font-weight: 300;
-    margin: 5px;
-}
-.basic-button-white {
-    color: Turquoise;
-    background-color: white;
-    border: 1px solid Turquoise;
-    font-size: 14px;
-    padding: 6px 12px;
-    border-radius: 10px;
-    font-weight: 300;
-    margin: 5px;
-}
-.row {
-    margin-top: 15px;
-}
-.side-banner {
-    margin-top: 15px;
 }
 .recommend-div {
     text-align: center;
 }
 
 </style>
+
 
 </head>
 <body>

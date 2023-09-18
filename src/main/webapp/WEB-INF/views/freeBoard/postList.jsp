@@ -5,9 +5,7 @@
 <head>
 <title>자유게시판</title>
 <style>
-body {
-    height: 100%;
-}
+
 .boardList {
     width: 100%;
     border-collapse: collapse;
@@ -27,9 +25,6 @@ body {
 }
 .boardList tr th {
     padding: 5px;
-}
-.section-wrapper {
-    min-height: 850px;
 }
 .post-heading {
     border-bottom: 2px solid white;

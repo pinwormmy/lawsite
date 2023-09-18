@@ -64,11 +64,16 @@ FACEBOOK: https://www.facebook.com/themefisher
 }
 
 body {
+    height: 100%;
   line-height: 1.5;
   font-family: "DungGeunMo", sans-serif;
   color: white;
   background-color: #06115c;
   font-size: 16px;
+}
+
+.section-wrapper {
+    min-height: 850px;
 }
 
 p {
