@@ -53,31 +53,25 @@ FACEBOOK: https://www.facebook.com/themefisher
 
 <style>
 
-html {
-    height: 100%;
-}
-body {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.navbar-wrapper {
-    padding: 0 20px; /* 좌우 여백 추가 */
-}
 .this-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
-    max-width: auto /* 최대 너비 설정 */
-    margin: 0 auto; /* 중앙 정렬 */
+    max-width: 1200px; /* 최대 너비 설정 */
+    width: 80%; /* 메인 페이지의 컨테이너 너비와 동일하게 설정 */
+    margin: 10px auto; /* 중앙 정렬 */
+    padding: 8px;
+    border-top: solid 1px white;
+    border-bottom: solid 1px white;
 }
+
 .super-top-menu {
     display: flex; /* flexbox 사용 */
     justify-content: flex-end; /* 오른쪽 정렬 */
     flex-grow: 1; /* 가능한 모든 공간 차지 */
 }
+
 .super-top-menu ul {
     list-style: none;
     margin: 0;
@@ -85,61 +79,12 @@ body {
     display: flex;
     flex-direction: row;
 }
+
 .super-top-menu ul li {
     margin-right: 20px;
 }
-.header-menu {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    width: 100%;
-    height: 3%;
-}
-.header-menu ul {
-    list-style:none;
-    margin-top:20px;
-    padding:0;
-    line-height: 1;
-    margin: 0;
-}
-.header-menu ul li {
-    color: grey;
-    font-size: 14px;
-    text-align: center;
-}
-.header-menu-right li{
-    margin-left: 10px;
-    margin-right: 30px;
-    font-size: 30px;
-}
 
-.searchbar input:focus {
-    outline: none;
-}
-.searchbar form {
-    width: 300px;
-}
-.color-hr {
-    border-top: 1px solid black;
-    width: 100%;
-}
-.panel-body ul {
-    flex-direction: column;
-}
-.panel-body ul li{
-    text-align: left;
-    font-size: 16px;
-    margin: 5px;
-}
-.col-md-3 {
-    width: 20%;
-    margin: 1%;
-}
-.page-header {
-    background-color: #122088;
-    margin: 0;
-}
- .title-container {
+.title-container {
     font-size: 20px;
     position: absolute; /* 절대 위치 지정 */
     left: 50%; /* 왼쪽에서 50% 위치 */
@@ -147,17 +92,9 @@ body {
     transform: translate(-50%, -50%); /* 왼쪽으로 50%, 위로 50% 이동 */
     text-align: center; /* 텍스트 중앙 정렬 */
 }
-.this-header {
-    margin: 10px auto; /* 중앙 정렬 */
-    padding: 8px;
-    border-top: solid 1px white;
-    border-bottom: solid 1px white;
-    width: 80%; /* 메인 페이지의 컨테이너 너비와 동일하게 설정 */
-    max-width: 1200px; /* 필요한 경우 최대 너비 설정 */
-}
-
 
 </style>
+
 </head>
 
 <body>

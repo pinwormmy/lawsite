@@ -63,7 +63,13 @@ FACEBOOK: https://www.facebook.com/themefisher
     src: url('/fonts/DungGeunMo.ttf') format('truetype');
 }
 
+html {
+    height: 100%;
+}
+
 body {
+    position: relative;
+    width: 100%;
     height: 100%;
   line-height: 1.5;
   font-family: "DungGeunMo", sans-serif;
