@@ -95,6 +95,7 @@
 
 <script>
 
+// 자바스크립트 코드 정리 및 외부파일로 뺄 예정
 //alert("js test 21");
 let commentContent = document.getElementById("commentContent");
 showCommentList();
