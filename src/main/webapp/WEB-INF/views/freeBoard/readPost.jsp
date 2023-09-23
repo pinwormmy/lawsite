@@ -301,21 +301,30 @@ async function addRecommend(postNum) {
         return;
     }
 
+    // 현재 사용자가 이미 추천했는지 확인
+    const checkData = await fetchData("/freeBoard/checkRecommendation?postNum=" + postNum, "GET");
+    if (checkData && checkData.checkRecommend !== undefined) {
+        isRecommended = checkData.checkRecommend;
+    }
+    console.log("Initial isRecommended:", isRecommended);  // 디버깅 로그
+
     let url = isRecommended ? "/freeBoard/cancelRecommendation" : "/freeBoard/addRecommendation";
     let method = isRecommended ? "DELETE" : "POST";
 
     const body = { postNum: postNum };
-    const data = await fetchData(url, method, body);
-    console.log("서버로부터 받은 데이터:", data);
+    await fetchData(url, method, body);  // 추천 상태 변경
 
-    if (data && data.checkRecommend !== undefined) {
-        isRecommended = data.checkRecommend;
-        console.log("addRecommend - isRecommended:", isRecommended);
-        const recommendCount = await fetchRecommendCount(postNum);
-        updateRecommendButtonText(isRecommended, recommendCount);
-    } else {
-        console.error("추천 실패:", data);
+    const recommendCount = await fetchRecommendCount(postNum);  // 추천수 업데이트
+    console.log("Fetched recommendCount:", recommendCount);  // 디버깅 로그
+
+    // 다시 한번 현재 사용자가 추천했는지 확인
+    const updatedCheckData = await fetchData("/freeBoard/checkRecommendation?postNum=" + postNum, "GET");
+    if (updatedCheckData && updatedCheckData.checkRecommend !== undefined) {
+        isRecommended = updatedCheckData.checkRecommend;
     }
+    console.log("Updated isRecommended:", isRecommended);  // 디버깅 로그
+
+    updateRecommendButtonText(isRecommended, recommendCount);
 }
 
 
