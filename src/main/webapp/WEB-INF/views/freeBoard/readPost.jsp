@@ -100,99 +100,137 @@
 let commentContent = document.getElementById("commentContent");
 showCommentList();
 
-function addComment() {
-    if(commentContent.value == "") {
-        alert("댓글 내용을 작성해주세요~", commentContent.value);
-        return false;
+async function addComment() {
+    try {
+        const commentContent = document.getElementById("commentContent"); // commentContent를 어디서 가져오는지 명시적으로 추가했습니다.
+        if (commentContent.value === "") {
+            alert("댓글 내용을 작성해주세요~");
+            return false;
+        }
+        const response = await fetch("/freeBoard/addComment", {
+            method: 'POST',
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                postNum: ${post.postNum},  // 이 부분은 서버에서 어떻게 처리하는지에 따라 다를 수 있습니다.
+                id: "${member.id}",  // 이 부분은 서버에서 어떻게 처리하는지에 따라 다를 수 있습니다.
+                content: commentContent.value,
+            })
+        });
+
+        if (response.ok) {
+            const text = await response.text();  // 먼저 텍스트로 응답을 받습니다.
+            try {
+                const data = JSON.parse(text);  // 그 다음 JSON으로 파싱을 시도합니다.
+                console.log(data);
+                await updateCommentCount(${post.postNum});  // 이 함수는 기존에 정의되어 있다고 가정합니다.
+                await showCommentList();  // 이 함수는 기존에 정의되어 있다고 가정합니다.
+                commentContent.value = "";
+            } catch (e) {
+                console.error("JSON 파싱 오류:", e);
+                console.log("서버에서 받은 응답:", text);
+            }
+        } else {
+            console.error("댓글 추가 실패");
+        }
+    } catch (error) {
+        console.error("댓글 추가 중 오류 발생:", error);
     }
-    fetch("/freeBoard/addComment", {
-        method: 'POST',
-        headers: {"Content-Type" : "application/json"},
-        body: JSON.stringify({
-            postNum : ${post.postNum},
-            id : "${member.id}",
-            content : commentContent.value,
-        })
-    })
-    .then((data) => {
-        console.log(data);
-        updateCommentCount(${post.postNum});
-        showCommentList();
-    });
-    commentContent.value = "";
 }
 
-function showCommentList(commentPage) {
-    pageSettingAndLoadComment(commentPage);
+
+// 댓글 목록 표시
+async function showCommentList(commentPage) {
+    await pageSettingAndLoadComment(commentPage);
 }
 
-function pageSettingAndLoadComment(commentPage) {
-    fetch("/freeBoard/commentPageSetting", {
+// 페이지 설정 및 댓글 로드
+async function pageSettingAndLoadComment(commentPage) {
+    try {
+        const response = await fetch("/freeBoard/commentPageSetting", {
             method: 'POST',
             headers: {"Content-Type" : "application/json"},
             body: JSON.stringify({
                 recentPage : commentPage,
                 postNum : ${post.postNum}
             })
-        })
-    .then((response) => response.json())
-    .then((data) => {
-        console.log(data);
-        loadCommentFetch(data);
-        let commentPageDivTag = document.getElementById("comments-page");
-        commentPageDivTag.innerHTML = "";
-        let commentPageHtml = "";
+        });
 
-        if(data.prevPageSetPoint >= 1) {
-            commentPageHtml +="<a href='javascript:pageSettingAndLoadComment(" + data.prevPageSetPoint + ")'>◁</a>";
-        }
-        if(data.totalPage > 1) {
-            for(let i=data.pageBeginPoint; i<=data.pageEndPoint; i++) {
-                if(i == data.recentPage) {
-                    commentPageHtml += " " + i + " ";
-                }else {
-                    commentPageHtml += "<a href='javascript:pageSettingAndLoadComment(" + i + ")'>" + i + " </a>";
+        if (response.ok) {
+            const data = await response.json();
+            console.log(data);
+            await loadCommentFetch(data);
+
+            let commentPageDivTag = document.getElementById("comments-page");
+            commentPageDivTag.innerHTML = "";
+            let commentPageHtml = "";
+
+            if(data.prevPageSetPoint >= 1) {
+                commentPageHtml +="<a href='javascript:pageSettingAndLoadComment(" + data.prevPageSetPoint + ")'>◁</a>";
+            }
+            if(data.totalPage > 1) {
+                for(let i=data.pageBeginPoint; i<=data.pageEndPoint; i++) {
+                    if(i == data.recentPage) {
+                        commentPageHtml += " " + i + " ";
+                    } else {
+                        commentPageHtml += "<a href='javascript:pageSettingAndLoadComment(" + i + ")'>" + i + " </a>";
+                    }
                 }
             }
+            if(data.nextPageSetPoint <= data.totalPage) {
+                commentPageHtml +="<a href='javascript:pageSettingAndLoadComment(" + data.nextPageSetPoint + ")'>▷</a>";
+            }
+            commentPageDivTag.innerHTML += commentPageHtml;
+        } else {
+            console.error("페이지 설정 실패");
         }
-        if(data.nextPageSetPoint <= data.totalPage) {
-            commentPageHtml +="<a href='javascript:pageSettingAndLoadComment(" + data.nextPageSetPoint + ")'>▷</a>";
-        }
-        commentPageDivTag.innerHTML += commentPageHtml;
-    });
+    } catch (error) {
+        console.error("페이지 설정 중 오류 발생:", error);
+    }
 }
 
-function loadCommentFetch(pageDTO) {
-    console.log("댓글불러오기 펫치 시작전");
-    fetch("/freeBoard/showCommentList", {
-        method: "POST",
-        headers: {"Content-Type" : "application/json"},
-        body: JSON.stringify(pageDTO),
-    })
-    .then((response) => response.json())
-    .then((data) => showCommentWithHtml(data));
+// 댓글 불러오기
+async function loadCommentFetch(pageDTO) {
+    try {
+        const response = await fetch("/freeBoard/showCommentList", {
+            method: "POST",
+            headers: {"Content-Type" : "application/json"},
+            body: JSON.stringify(pageDTO),
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            showCommentWithHtml(data);
+        } else {
+            console.error("댓글 불러오기 실패");
+        }
+    } catch (error) {
+        console.error("댓글 불러오기 중 오류 발생:", error);
+    }
 }
 
-function showCommentWithHtml(CommentDTOList) {
+// 댓글 HTML로 표시
+async function showCommentWithHtml(CommentDTOList) {
     let commentDivTag = document.getElementById("comments-list");
     commentDivTag.innerHTML = "";
     let commentListHtml = "";
-    commentDivTag.innerHTML += commentHtmlWithString(commentListHtml, CommentDTOList);
+    commentDivTag.innerHTML += await commentHtmlWithString(commentListHtml, CommentDTOList);
     console.log("댓글 코맨트 소스 작업  반영 확인");
 }
 
-function commentHtmlWithString(commentListHtml, CommentDTOList) {
+// 댓글 HTML 문자열 생성
+async function commentHtmlWithString(commentListHtml, CommentDTOList) {
     console.log("댓글 코맨트 소스 반복문 준비 확인");
     for(let comment of CommentDTOList) {
         commentListHtml += "<div class='media'><div class='media-body'><div style='margin: 0; padding: 10px;'><div class='media-heading'>";
         commentListHtml += comment.memberDTO.nickName + " &nbsp; <small>";
-        commentListHtml = displayDeleteButton(commentListHtml, comment);
+        commentListHtml = await displayDeleteButton(commentListHtml, comment);
         commentListHtml += comment.regDate + "</small></div><p style='margin: 0; padding: 0;'>" + comment.content + "</p></div></div></div>";
     }
     return commentListHtml;
 }
 
-function displayDeleteButton(commentListHtml, commentDTO) {
+// 댓글 삭제 버튼 표시
+async function displayDeleteButton(commentListHtml, commentDTO) {
     if( ("${member.id}" == commentDTO.id) || ("${member.grade}" == 3) ) {
         commentListHtml += "<button class='pull btn btn-theme cancel-btn' onclick='deleteComment(";
         commentListHtml += commentDTO.commentNum + ");'>댓글삭제(-) </button>";
@@ -200,20 +238,35 @@ function displayDeleteButton(commentListHtml, commentDTO) {
     return commentListHtml;
 }
 
-function deleteComment(commentNum) {
-    fetch("/freeBoard/deleteComment?commentNum=" + commentNum, {method:"DELETE"})
-    .then(data => {
-        updateCommentCount(${post.postNum});
-        showCommentList();
-    })
-    .catch(error => alert("댓글 삭제 오류"));
+// 댓글 삭제
+async function deleteComment(commentNum) {
+    try {
+        const response = await fetch("/freeBoard/deleteComment?commentNum=" + commentNum, {method:"DELETE"});
+        if (response.ok) {
+            await updateCommentCount(${post.postNum});
+            await showCommentList();
+        } else {
+            console.error("댓글 삭제 실패");
+        }
+    } catch (error) {
+        alert("댓글 삭제 오류");
+    }
 }
 
-function updateCommentCount(postNum) {
-    fetch("/freeBoard/updateCommentCount?postNum=" + postNum, {method:"PUT"})
-        .then(data => console.log("댓글 업데이트"))
-        .catch(error => alert("댓글수 갱신 오류"));
+// 댓글 수 업데이트
+async function updateCommentCount(postNum) {
+    try {
+        const response = await fetch("/freeBoard/updateCommentCount?postNum=" + postNum, {method:"PUT"});
+        if (response.ok) {
+            console.log("댓글 업데이트");
+        } else {
+            console.error("댓글수 갱신 오류");
+        }
+    } catch (error) {
+        alert("댓글수 갱신 오류");
+    }
 }
+
 
 let isRecommended = false;
 

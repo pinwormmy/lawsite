@@ -13,14 +13,16 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @Slf4j
 public abstract class AbstractBoardController<T extends BoardDTO, C extends CommentDTO, R extends RecommendDTO> {
 
     @Autowired
-    protected abstract BoardService getBoardService();
+    protected abstract BoardService<T, C, R> getBoardService();
 
     protected abstract String getBoardName();
 
@@ -79,9 +81,12 @@ public abstract class AbstractBoardController<T extends BoardDTO, C extends Comm
 
     @RequestMapping(value = "/addComment")
     @ResponseBody
-    public void addComment(@RequestBody C comment) throws Exception {
+    public ResponseEntity<Map<String, String>> addComment(@RequestBody C comment) throws Exception {
         log.debug("댓글 인수 확인(댓글내용) : {}", comment.getContent());
         getBoardService().addComment(comment);
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "댓글이 성공적으로 추가되었습니다.");
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/commentPageSetting")
