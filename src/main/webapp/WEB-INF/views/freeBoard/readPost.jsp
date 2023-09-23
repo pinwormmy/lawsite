@@ -100,6 +100,24 @@
 let commentContent = document.getElementById("commentContent");
 showCommentList();
 
+// 공통 fetch 함수
+async function fetchData(url, method = 'GET', body = null) {
+    const headers = {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+    };
+
+    // GET 또는 HEAD 메서드일 경우 body를 제거
+    const config = method === 'GET' || method === 'HEAD' ? { method, headers } : { method, headers, body: JSON.stringify(body) };
+    const response = await fetch(url, config);
+
+    if (!response.ok) {
+        throw new Error(`Fetch failed: ${response.status}`);
+    }
+
+    return await response.json();
+}
+
 async function addComment() {
     try {
         const commentContent = document.getElementById("commentContent"); // commentContent를 어디서 가져오는지 명시적으로 추가했습니다.
@@ -136,7 +154,6 @@ async function addComment() {
         console.error("댓글 추가 중 오류 발생:", error);
     }
 }
-
 
 // 댓글 목록 표시
 async function showCommentList(commentPage) {
@@ -267,63 +284,50 @@ async function updateCommentCount(postNum) {
     }
 }
 
-
+// 추천 기능
 let isRecommended = false;
 
 function updateRecommendButtonText(isRecommended, recommendCount) {
+    console.log("updateRecommendButtonText - isRecommended:", isRecommended, "recommendCount:", recommendCount);  // 로그 추가
     const recommendButton = document.querySelector('.recommend-div button');
-    recommendButton.textContent = isRecommended ? "추천취소(M) : " + recommendCount : "추천(M) : " + recommendCount;
+    if (recommendCount !== undefined) {  // 추천 수가 undefined가 아닌 경우에만 텍스트를 업데이트합니다.
+        recommendButton.textContent = isRecommended ? "추천취소(M) : " + recommendCount : "추천(M) : " + recommendCount;
+    }
 }
 
-function addRecommend(postNum) {
+async function addRecommend(postNum) {
     if (!isLoggedIn) {
         alert("추천 기능을 사용하려면 로그인이 필요합니다.");
         return;
     }
 
-    isRecommended = !isRecommended;
+    let url = isRecommended ? "/freeBoard/cancelRecommendation" : "/freeBoard/addRecommendation";
+    let method = isRecommended ? "DELETE" : "POST";
 
-    let url = isRecommended ? "/freeBoard/addRecommendation" : "/freeBoard/cancelRecommendation";
-    let method = isRecommended ? "POST" : "DELETE";
+    const body = { postNum: postNum };
+    const data = await fetchData(url, method, body);
+    console.log("서버로부터 받은 데이터:", data);
 
-    fetch(url, {
-        method: method,
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({
-            postNum: postNum
-        })
-    })
-    .then(response => {
-        if (response.status === 200) {
-            return response.json();
-        } else {
-            throw new Error("Failed to recommend");
-        }
-    })
-    .then(data => {
-        return fetchRecommendCount(postNum);
-    })
-    .then(recommendCount => {
+    if (data && data.checkRecommend !== undefined) {
+        isRecommended = data.checkRecommend;
+        console.log("addRecommend - isRecommended:", isRecommended);
+        const recommendCount = await fetchRecommendCount(postNum);
         updateRecommendButtonText(isRecommended, recommendCount);
-    })
-    .catch(error => {
-        alert("추천 또는 취소에 실패했습니다.");
-    });
+    } else {
+        console.error("추천 실패:", data);
+    }
 }
 
-function fetchRecommendCount(postNum) {
-    return fetch("/freeBoard/getRecommendCount?postNum=" + postNum)
-        .then(response => {
-            console.log("추천 수 조회 응답:", response);
-            if (response.status === 200) {
-                return response.json();
-            } else {
-                throw new Error("추천 수 조회 중 오류 발생");
-            }
-        })
-        .catch(error => {
-            console.error("Error:", error);
-        });
+
+async function fetchRecommendCount(postNum) {
+    const data = await fetchData("/freeBoard/getRecommendCount?postNum=" + postNum, "GET");
+    console.log("fetchRecommendCount 응답:", data);  // 응답 로깅
+    if (data !== undefined && data !== null) {  // 조건 수정
+        return data;
+    } else {
+        console.error("추천 수를 가져오는 데 실패했습니다:", data);
+        return undefined;
+    }
 }
 
 let isLoggedIn = <c:choose>
@@ -334,13 +338,11 @@ let isLoggedIn = <c:choose>
 window.onload = async function() {
     if (isLoggedIn) {
         try {
-            let response = await fetch("/freeBoard/checkRecommendation?postNum=" + ${post.postNum});
-            if (response.status === 200) {
-                let data = await response.json();
+            const data = await fetchData("/freeBoard/checkRecommendation?postNum=" + ${post.postNum}, "GET");
+            if (data) {
                 isRecommended = data.checkRecommend;
+                console.log("window.onload - isRecommended:", isRecommended);  // 로그 추가
                 updateRecommendButtonText(isRecommended, ${post.recommendCount});
-            } else {
-                throw new Error('로그인이 필요한 작업입니다.');
             }
         } catch (error) {
             console.error(error);

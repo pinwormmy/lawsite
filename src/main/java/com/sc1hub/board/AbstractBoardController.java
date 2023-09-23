@@ -166,6 +166,7 @@ public abstract class AbstractBoardController<T extends BoardDTO, C extends Comm
             recommendDTO.setUserId(member.getId());
             int count = getBoardService().checkRecommendation(recommendDTO);
             boolean isRecommended = (count > 0);
+            log.info("추천 확인 컨트롤러 작동여부 : " + isRecommended);
             recommendDTO.setCheckRecommend(isRecommended);
             return new ResponseEntity<>(recommendDTO, HttpStatus.OK);
         } catch (Exception e) {
