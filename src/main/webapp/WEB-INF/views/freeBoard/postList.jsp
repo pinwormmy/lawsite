@@ -89,32 +89,10 @@
                                  <c:if test="${empty postList}"><tr><td>관련 글이 없습니다...</td></tr></c:if>
                             </div>
                             <div class="post-navigation">
-                                <c:if test="${page.prevPageSetPoint >= 1}">
-                                    <a class="pull-left btn btn-theme"
-                                    href="/freeBoard/list?recentPage=${page.prevPageSetPoint}&searchType=${page.searchType}&keyword=${page.keyword}">
-                                    이전</a>
-                                </c:if>
-                                <c:forEach var="countPage" begin="${page.pageBeginPoint}" end="${page.pageEndPoint}">
-                                    <a class="pull-center btn btn-theme"
-                                    href="/freeBoard/list?recentPage=${countPage}&searchType=${page.searchType}&keyword=${page.keyword}">
-                                    ${countPage}</a>
-                                </c:forEach>
-                                <c:if test="${page.nextPageSetPoint <= page.totalPage}">
-                                    <a class="pull-right btn btn-theme"
-                                    href="/freeBoard/list?recentPage=${page.nextPageSetPoint}&searchType=${page.searchType}&keyword=${page.keyword}">
-                                    다음</a>
-                                </c:if>
+                                <%@include file="../include/paging.jspf" %>
                             </div>
                             <div class="form-group">
-                                <form action="/freeBoard/list">
-                                    검색 >>
-                                    <input type="hidden" name="searchType" value="titleAndContent">
-                                    <input name="keyword" value=${page.keyword}>
-                                    <button type="submit" style="visibility:hidden">검색</button>
-                                    <c:if test="${page.keyword != ''}">
-                                    <button type="button" class="pull btn btn-theme cancel-btn" onclick="location.href='/freeBoard/list'" accesskey="c">검색취소(C)</button>
-                                    </c:if>
-                                </form>
+                                <%@include file="../include/searchForm.jspf" %>
                             </div>
                             <c:if test="${member.grade >= 1}">
                                 <a href="/freeBoard/writePost" class="pull-right btn btn-theme" accesskey="i">글쓰기(I)</a>
