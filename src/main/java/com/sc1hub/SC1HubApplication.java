@@ -20,5 +20,3 @@ public class SC1HubApplication extends SpringBootServletInitializer {
     }
 
 }
-
-// 커밋테스트
