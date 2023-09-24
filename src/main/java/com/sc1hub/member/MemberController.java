@@ -95,7 +95,7 @@ public class MemberController {
         request.getSession().setAttribute("pageBeforeLogin", request.getHeader("Referer"));
         MemberDTO member = new MemberDTO();
         member.setId("midori"); // midori는 시연용 승인회원 계정
-        member.setPw("1111");
+        member.setPw("a111");
         MemberDTO loginData = memberService.checkLoginData(member);
         HttpSession session = request.getSession();
         session.setAttribute("member", loginData);
@@ -108,7 +108,7 @@ public class MemberController {
         request.getSession().setAttribute("pageBeforeLogin", request.getHeader("Referer"));
         MemberDTO member = new MemberDTO();
         member.setId("admin"); // admin은 시연용 관리자 계정입니다.
-        member.setPw("1111");
+        member.setPw("a111");
         MemberDTO loginData = memberService.checkLoginData(member);
         HttpSession session = request.getSession();
         session.setAttribute("member", loginData);
@@ -127,7 +127,7 @@ public class MemberController {
 
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("인증 메일 발송 중 오류가 발생했습니다: ", e);
             VerificationResponseDTO response = new VerificationResponseDTO(false, null);
             return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
         }
