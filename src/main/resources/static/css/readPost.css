@@ -1,0 +1,21 @@
+.post-title {
+    padding: 0.5rem 0.75rem;
+    font-size: 20px;
+    font-weight: 400;
+    border-color: #bbb;
+}
+.info-row {
+    padding: 0.35rem 0.75rem 0.3rem;
+    border-bottom: 1px solid;
+    border-color: #bbb;
+    font-size: 18px;
+    font-weight: 300;
+    overflow: hidden;
+}
+.btn-theme {
+    margin: 10px 0;
+    float: right;
+}
+.recommend-div {
+    text-align: center;
+}

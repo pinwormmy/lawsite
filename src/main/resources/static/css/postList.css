@@ -1,0 +1,29 @@
+.boardList {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+}
+
+.boardList th {
+    text-align: center;
+    border-bottom: 1px solid white;
+}
+.boardList tr:last-child {
+    border: none;
+}
+.boardList th,
+.boardList td {
+    padding: 2px;
+}
+.boardList tr th {
+    padding: 5px;
+}
+.post-heading {
+    border-bottom: 2px solid white;
+}
+.writer, .date {
+    text-align: center;
+}
+.views, .post-num, .recommend {
+    text-align: right;
+}

@@ -1,0 +1,14 @@
+<script>
+
+    const postNum = ${post.postNum};
+    const recommendCount = ${post.recommendCount};
+    const memberId = "${member.id != null ? member.id : ''}";
+    const memberGrade = ${member.grade != null ? member.grade : 0};
+    const boardPath = "${boardPath}";
+
+    let isLoggedIn = <c:choose>
+        <c:when test="${not empty member}">true</c:when>
+        <c:otherwise>false</c:otherwise>
+    </c:choose>;
+
+</script>

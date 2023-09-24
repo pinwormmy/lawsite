@@ -27,7 +27,7 @@ async function addComment() {
             alert("댓글 내용을 작성해주세요~");
             return false;
         }
-        const response = await fetch("/freeBoard/addComment", {
+        const response = await fetch(boardPath + "/addComment", {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
@@ -65,7 +65,7 @@ async function showCommentList(commentPage) {
 // 페이지 설정 및 댓글 로드
 async function pageSettingAndLoadComment(commentPage) {
     try {
-        const response = await fetch("/freeBoard/commentPageSetting", {
+        const response = await fetch(boardPath + "/commentPageSetting", {
             method: 'POST',
             headers: {"Content-Type" : "application/json"},
             body: JSON.stringify({
@@ -110,7 +110,7 @@ async function pageSettingAndLoadComment(commentPage) {
 // 댓글 불러오기
 async function loadCommentFetch(pageDTO) {
     try {
-        const response = await fetch("/freeBoard/showCommentList", {
+        const response = await fetch(boardPath + "/showCommentList", {
             method: "POST",
             headers: {"Content-Type" : "application/json"},
             body: JSON.stringify(pageDTO),
@@ -160,7 +160,7 @@ async function displayDeleteButton(commentListHtml, commentDTO) {
 // 댓글 삭제
 async function deleteComment(commentNum) {
     try {
-        const response = await fetch("/freeBoard/deleteComment?commentNum=" + commentNum, {method:"DELETE"});
+        const response = await fetch(boardPath + "/deleteComment?commentNum=" + commentNum, {method:"DELETE"});
         if (response.ok) {
             await updateCommentCount(postNum);
             await showCommentList();
@@ -175,7 +175,7 @@ async function deleteComment(commentNum) {
 // 댓글 수 업데이트
 async function updateCommentCount(postNum) {
     try {
-        const response = await fetch("/freeBoard/updateCommentCount?postNum=" + postNum, {method:"PUT"});
+        const response = await fetch(boardPath + "/updateCommentCount?postNum=" + postNum, {method:"PUT"});
         if (response.ok) {
             console.log("댓글 업데이트");
         } else {
@@ -204,13 +204,13 @@ async function addRecommend(postNum) {
     }
 
     // 현재 사용자가 이미 추천했는지 확인
-    const checkData = await fetchData("/freeBoard/checkRecommendation?postNum=" + postNum, "GET");
+    const checkData = await fetchData(boardPath + "/checkRecommendation?postNum=" + postNum, "GET");
     if (checkData && checkData.checkRecommend !== undefined) {
         isRecommended = checkData.checkRecommend;
     }
     console.log("Initial isRecommended:", isRecommended);  // 디버깅 로그
 
-    let url = isRecommended ? "/freeBoard/cancelRecommendation" : "/freeBoard/addRecommendation";
+    let url = isRecommended ? boardPath + "/cancelRecommendation" : boardPath + "/addRecommendation";
     let method = isRecommended ? "DELETE" : "POST";
 
     const body = { postNum: postNum };
@@ -220,7 +220,7 @@ async function addRecommend(postNum) {
     console.log("Fetched recommendCount:", recommendCount);  // 디버깅 로그
 
     // 다시 한번 현재 사용자가 추천했는지 확인
-    const updatedCheckData = await fetchData("/freeBoard/checkRecommendation?postNum=" + postNum, "GET");
+    const updatedCheckData = await fetchData(boardPath + "/checkRecommendation?postNum=" + postNum, "GET");
     if (updatedCheckData && updatedCheckData.checkRecommend !== undefined) {
         isRecommended = updatedCheckData.checkRecommend;
     }
@@ -231,7 +231,7 @@ async function addRecommend(postNum) {
 
 
 async function fetchRecommendCount(postNum) {
-    const data = await fetchData("/freeBoard/getRecommendCount?postNum=" + postNum, "GET");
+    const data = await fetchData(boardPath + "/getRecommendCount?postNum=" + postNum, "GET");
     console.log("fetchRecommendCount 응답:", data);  // 응답 로깅
     if (data !== undefined && data !== null) {  // 조건 수정
         return data;
@@ -244,7 +244,7 @@ async function fetchRecommendCount(postNum) {
 window.onload = async function() {
     if (isLoggedIn) {
         try {
-            const data = await fetchData("/freeBoard/checkRecommendation?postNum=" + postNum, "GET");
+            const data = await fetchData(boardPath + "/checkRecommendation?postNum=" + postNum, "GET");
             if (data) {
                 isRecommended = data.checkRecommend;
                 console.log("window.onload - isRecommended:", isRecommended);  // 로그 추가
