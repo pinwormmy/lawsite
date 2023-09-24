@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<title>${post.title} - 자유게시판</title>
+<title>${post.title} - 초보자마당</title>
 
 <style>
 

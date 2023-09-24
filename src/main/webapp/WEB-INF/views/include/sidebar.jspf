@@ -18,7 +18,7 @@
             <li><a href="/">5. 팀플게시판</a></li>
             <li><a href="/">6. 팀플공략</a></li>
             <li><a href="/freeBoard/list">7. 자유게시판</a></li>
-            <li><a href="/">8. 초보자마당</a></li>
+            <li><a href="/beginnerBoard/list">8. 초보자마당</a></li>
         </ul>
     </fieldset>
     <fieldset>
