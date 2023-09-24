@@ -10,7 +10,7 @@
     </select>
 
     <update id="incrementDailyCount">
-        UPDATE visitor_count SET count = count + 1 WHERE date = #{date}
+        UPDATE visitor_count SET daily_count = daily_count + 1 WHERE date = #{date}
     </update>
 
     <update id="incrementTotalCount">
@@ -18,7 +18,7 @@
     </update>
 
     <insert id="insertNewRecord">
-        INSERT INTO visitor_count (date, count) VALUES (#{date}, 1)
+        INSERT INTO visitor_count (date, daily_count) VALUES (#{date}, 1)
     </insert>
 
     <select id="getTotalCount" resultType="int">
@@ -26,6 +26,6 @@
     </select>
 
     <select id="getTodayCount" resultType="int">
-        SELECT count FROM visitor_count WHERE date = #{date}
+        SELECT daily_count FROM visitor_count WHERE date = #{date}
     </select>
 </mapper>
