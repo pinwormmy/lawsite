@@ -3,17 +3,22 @@ package com.sc1hub.board;
 import com.sc1hub.mapper.BoardMapper;
 import com.sc1hub.util.PageDTO;
 import com.sc1hub.util.PageService;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Slf4j
 @Service
 public class BoardServiceImpl implements BoardService {
 
+    @Autowired
     BoardMapper boardMapper;
 
     @Override
     public List<BoardDTO> showPostList(String boardTitle, PageDTO page) throws Exception {
+        log.debug("showPostList 작동 테스트입니다.");
         return boardMapper.showPostList(boardTitle, page);
     }
 

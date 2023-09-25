@@ -12,7 +12,7 @@ import java.util.List;
 @Mapper
 public interface BoardMapper {
 
-    List<BoardDTO> showPostList(@Param("boardTitle") String boardTitle, PageDTO page) throws Exception;
+    List<BoardDTO> showPostList(@Param("boardTitle") String boardTitle, @Param("page") PageDTO page) throws Exception;
 
     void submitPost(@Param("boardTitle") String boardTitle, BoardDTO board) throws Exception;
 

@@ -4,6 +4,7 @@ import com.sc1hub.member.MemberDTO;
 import com.sc1hub.util.IpService;
 import com.sc1hub.util.PageDTO;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -19,6 +20,7 @@ import java.util.Map;
 @Slf4j
 public class BoardController {
 
+    @Autowired
     BoardService boardService;
 
     @GetMapping(value = "/{boardTitle}/list")
