@@ -24,14 +24,14 @@ public abstract class AbstractBoardController<T extends BoardDTO, C extends Comm
     @Autowired
     protected abstract BoardService<T, C, R> getBoardService();
 
-    protected abstract String getBoardName();
-
-    @GetMapping(value = "/list")
-    public String list(PageDTO page, Model model) throws Exception {
-        model.addAttribute("selfNoticeList", getBoardService().showSelfNoticeList());
-        model.addAttribute("page", getBoardService().pageSetting(page));
-        model.addAttribute("postList", getBoardService().showPostList(page));
-        return getBoardName() + "/postList";
+    @GetMapping(value = "{boardTitle}/list")
+    public String list(@PathVariable String boardTitle, PageDTO page, Model model) throws Exception {
+        model.addAttribute("boardTitle", boardTitle);
+        model.addAttribute("boardPath", "/" + boardTitle);
+        model.addAttribute("selfNoticeList", getBoardService().showSelfNoticeList(boardTitle));
+        model.addAttribute("page", getBoardService().pageSetting(page, boardTitle));
+        model.addAttribute("postList", getBoardService().showPostList(page, boardTitle));
+        return "board/postList";
     }
 
     @RequestMapping("/readPost")
@@ -39,7 +39,7 @@ public abstract class AbstractBoardController<T extends BoardDTO, C extends Comm
         int postNum = Integer.parseInt(request.getParameter("postNum"));
         checkIpAndUpdateViews(request, postNum);
         model.addAttribute("post", getBoardService().readPost(postNum));
-        return getBoardName() + "/readPost";
+        return "board/readPost";
     }
 
     private void checkIpAndUpdateViews(HttpServletRequest request, int postNum) throws Exception {
@@ -52,31 +52,31 @@ public abstract class AbstractBoardController<T extends BoardDTO, C extends Comm
 
     @RequestMapping("/writePost")
     public String writePost() {
-        return getBoardName() + "/writePost";
+        return "board/writePost";
     }
 
     @RequestMapping("/submitPost")
     public String submitPost(T post) throws Exception {
         getBoardService().submitPost(post);
-        return "redirect:/" + getBoardName() + "/list";
+        return "redirect:/" + "board/list";
     }
 
     @RequestMapping("/deletePost")
     public String deletePost(int postNum) throws Exception {
         getBoardService().deletePost(postNum);
-        return "redirect:/" + getBoardName() + "/list";
+        return "redirect:/" + "board/list";
     }
 
     @RequestMapping(value = "/modifyPost")
     public String modifyPost(Model model, int postNum) throws Exception {
         model.addAttribute("post", getBoardService().readPost(postNum));
-        return getBoardName() + "/modifyPost";
+        return "board/modifyPost";
     }
 
     @RequestMapping(value = "/submitModifyPost")
     public String submitModifyPost(T post) throws Exception {
         getBoardService().submitModifyPost(post);
-        return "redirect:/" + getBoardName() + "/readPost?postNum=" + post.getPostNum();
+        return "redirect:/" + "board/readPost?postNum=" + post.getPostNum();
     }
 
     @RequestMapping(value = "/addComment")
