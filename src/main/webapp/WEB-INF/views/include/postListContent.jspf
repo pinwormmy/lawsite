@@ -19,7 +19,7 @@
                             <tr class="notice-tr">
                                 <td class="post-num">${notice.postNum} &nbsp</td>
                                 <td><span>[공지]</span>
-                                <a class="noticeTitle" href="${boardPath}/readPost?postNum=${notice.postNum}">
+                                <a class="noticeTitle" href="/${boardTitle}/readPost?postNum=${notice.postNum}">
                                  ${notice.title}</a>
                                 <c:if test="${notice.commentCount > 0}">( ${notice.commentCount} )</c:if></td>
                                 <td class="writer">${notice.writer}</td>
@@ -31,7 +31,7 @@
                         <c:forEach var="post" items="${postList}">
                             <tr>
                                 <td class="post-num">${post.postNum} &nbsp</td>
-                                <td><a class="postTitle" href="${boardPath}/readPost?postNum=${post.postNum}">${post.title}</a>
+                                <td><a class="postTitle" href="/${boardTitle}/readPost?postNum=${post.postNum}">${post.title}</a>
                                 <c:if test="${post.commentCount > 0}">( ${post.commentCount} )</c:if></td>
                                 <td class="writer">${post.writer}</td>
                                 <td class="date"><fmt:formatDate pattern="yyyy.MM.dd" value="${post.regDate}"/></td>
@@ -49,7 +49,7 @@
                 <%@include file="../include/searchForm.jspf" %>
             </div>
             <c:if test="${member.grade >= 1}">
-                <a href="${boardPath}/writePost" class="pull-right btn btn-theme" accesskey="i">글쓰기(I)</a>
+                <a href="/${boardTitle}/writePost" class="pull-right btn btn-theme" accesskey="i">글쓰기(I)</a>
             </c:if>
         </div><!--/#comments-list-->
     </div><!--/#comments-->

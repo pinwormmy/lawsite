@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <div class="col-xs-12 mb wow fadeInUp">
-    <form action="${boardPath}/submitPost" method="post">
+    <form action="/${boardTitle}/submitPost" method="post">
         <input type="hidden" name="writer" value="${member.id}">
         제목> <input type="text" name="title" size="60" required>
         <c:if test="${member.grade == 3}">
@@ -13,6 +13,6 @@
             CKEDITOR.replace('content', {filebrowserUploadUrl:'/imageUpload'});
         </script>
         <button class="pull-left btn btn-theme" accesskey="s">게시하기(S)</button>
-        <button type="button" class="pull-left btn btn-theme" onclick="location.href='${boardPath}/list'" accesskey="c">취소(C)</button>
+        <button type="button" class="pull-left btn btn-theme" onclick="location.href='/${boardTitle}/list'" accesskey="c">취소(C)</button>
     </form>
 </div>

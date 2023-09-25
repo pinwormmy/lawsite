@@ -43,10 +43,10 @@
     </div><!--/#comments-->
     <div class="post-navigation col-xs-12"">
         <hr>
-        <a class="pull btn btn-theme cancel-btn" href="${boardPath}/list" accesskey="l">목 록(L)</a>
+        <a class="pull btn btn-theme cancel-btn" href="/${boardTitle}/list" accesskey="l">목 록(L)</a>
         <c:if test="${member.id == post.writer || member.grade == 3}">
-            <a class="pull btn btn-theme cancel-btn" href="${boardPath}/deletePost?postNum=${post.postNum}">삭 제(-)</a>
-            <a class="pull btn btn-theme cancel-btn" href="${boardPath}/modifyPost?postNum=${post.postNum}" accesskey="o">️수 정(O)</a>
+            <a class="pull btn btn-theme cancel-btn" href="/${boardTitle}/deletePost?postNum=${post.postNum}">삭 제(-)</a>
+            <a class="pull btn btn-theme cancel-btn" href="/${boardTitle}/modifyPost?postNum=${post.postNum}" accesskey="o">️수 정(O)</a>
         </c:if>
     </div>
 </div>

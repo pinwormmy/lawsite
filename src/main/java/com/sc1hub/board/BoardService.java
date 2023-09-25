@@ -3,28 +3,51 @@ package com.sc1hub.board;
 import com.sc1hub.util.PageDTO;
 import java.util.List;
 
-public interface BoardService<T, C, R> {
-    List<T> showPostList(PageDTO page) throws Exception;
-    void submitPost(T board) throws Exception;
-    T readPost(int postNum) throws Exception;
-    void submitModifyPost(T post) throws Exception;
-    void deletePost(int postNum) throws Exception;
-    PageDTO pageSetting(PageDTO page) throws Exception;
-    void addRecommendation(R recommendDTO);
-    void cancelRecommendation(R recommendDTO) throws Exception;
-    int checkRecommendation(R recommendDTO);
-    int getRecommendCount(int postNum);
-    void addComment(C comment) throws Exception;
-    List<C> showCommentList(PageDTO page) throws Exception;
-    void deleteComment(int commentNum) throws Exception;
-    void updateCommentCount(int postNum) throws Exception;
-    void updateViews(int postNum) throws Exception;
-    int checkViewUserIp(int postNum, String ip) throws Exception;
-    void saveViewUserIp(int postNum, String ip) throws Exception;
-    List<T> showSelfNoticeList() throws Exception;
-    PageDTO commentPageSetting(PageDTO page) throws Exception;
-    int countTotalPost(PageDTO page) throws Exception;
+public interface BoardService {
 
-    int countTotalComment(PageDTO page) throws Exception;
+    List<BoardDTO> showPostList(String boardTitle, PageDTO page) throws Exception;
 
+    void submitPost(String boardTitle, BoardDTO board) throws Exception;
+
+    BoardDTO readPost(String boardTitle, int postNum) throws Exception;
+
+    void submitModifyPost(String boardTitle, BoardDTO post) throws Exception;
+
+    void deletePost(String boardTitle, int postNum) throws Exception;
+
+    PageDTO pageSetting(String boardTitle, PageDTO page) throws Exception;
+
+    void addComment(String boardTitle, CommentDTO comment) throws Exception;
+
+    List<CommentDTO> showCommentList(String boardTitle, PageDTO page) throws Exception;
+
+    void deleteComment(String boardTitle, int commentNum) throws Exception;
+
+    void updateCommentCount(String boardTitle, int postNum) throws Exception;
+
+    void updateViews(String boardTitle, int postNum) throws Exception;
+
+    int checkViewUserIp(String boardTitle, int postNum, String ip) throws Exception;
+
+    void saveViewUserIp(String boardTitle, int postNum, String ip) throws Exception;
+
+    List<BoardDTO> showSelfNoticeList(String boardTitle) throws Exception;
+
+    int countTotalPost(String boardTitle, PageDTO page) throws Exception;
+
+    int countTotalComment(String boardTitle, PageDTO page) throws Exception;
+
+    int checkRecommendation(String boardTitle, RecommendDTO recommendDTO);
+
+    void insertRecommendation(String boardTitle, RecommendDTO recommendDTO);
+
+    void deleteRecommendation(String boardTitle, RecommendDTO recommendDTO);
+
+    void updateTotalRecommendCount(String boardTitle, int postNum);
+
+    int getRecommendCount(String boardTitle, int postNum);
+
+    int getActualRecommendCount(String boardTitle, int postNum);
+
+    PageDTO commentPageSetting(String boardTitle, PageDTO page) throws Exception;
 }
