@@ -41,13 +41,13 @@
 
     <insert id="submitPost">
         INSERT INTO ${boardTitle}(TITLE, WRITER, REG_DATE, VIEWS, CONTENT, COMMENT_COUNT, NOTICE)
-        VALUES(#{title}, #{writer}, NOW(), 0, #{content}, 0, #{notice})
+        VALUES(#{board.title}, #{board.writer}, NOW(), 0, #{board.content}, 0, #{board.notice})
     </insert>
 
     <update id="submitModifyPost">
         update ${boardTitle}
-        set title=#{title}, content=#{content}, writer=#{writer}, notice=#{notice}
-        where post_num=#{postNum}
+        set title=#{board.title}, content=#{board.content}, writer=#{board.writer}, notice=#{board.notice}
+        where post_num=#{board.postNum}
     </update>
 
     <delete id="deletePost">
@@ -67,7 +67,7 @@
 
     <insert id="addComment">
         INSERT INTO ${boardTitle}_COMMENT(POST_NUM, ID, REG_DATE, CONTENT)
-        VALUES(#{postNum}, #{id}, NOW(), #{content})
+        VALUES(#{comment.postNum}, #{comment.id}, NOW(), #{comment.content})
     </insert>
 
     <select id="showCommentList" resultMap="boardCommentDTO">
@@ -78,7 +78,7 @@
         ON A.ID=B.ID
         WHERE A.POST_NUM=#{postNum}
         ORDER BY A.COMMENT_NUM DESC
-        LIMIT #{postBeginPoint}, #{displayPostLimit} ) C
+        LIMIT #{page.postBeginPoint}, #{page.displayPostLimit} ) C
         ORDER BY COMMENT_NUM
     </select>
 
@@ -120,19 +120,19 @@
     <!-- 추천 여부 확인 -->
     <select id="checkRecommendation" resultType="int">
         SELECT COUNT(*) FROM ${boardTitle}_recommend
-        WHERE post_Num=#{postNum} AND user_Id=#{userId}
+        WHERE post_Num=#{recommendDTO.postNum} AND user_Id=#{recommendDTO.userId}
     </select>
 
     <!-- 추천 추가 -->
     <insert id="insertRecommendation">
         INSERT INTO ${boardTitle}_recommend (post_Num, user_Id)
-        VALUES (#{postNum}, #{userId})
+        VALUES (#{recommendDTO.postNum}, #{recommendDTO.userId})
     </insert>
 
     <!-- 추천 취소 -->
     <delete id="deleteRecommendation">
         DELETE FROM ${boardTitle}_recommend
-        WHERE post_Num=#{postNum} AND user_Id=#{userId}
+        WHERE post_Num=#{recommendDTO.postNum} AND user_Id=#{recommendDTO.userId}
     </delete>
 
     <!-- 추천 수 업데이트 -->
