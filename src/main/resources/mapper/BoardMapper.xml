@@ -57,12 +57,12 @@
 
     <select id="countTotalPost" resultType="int">
         select count(*) from ${boardTitle}
-        where <include refid="searchKeyword" /> and notice=0
+            where <include refid="searchKeyword" /> and notice=0
     </select>
 
     <select id="countTotalComment" resultType="int">
         select count(*) from ${boardTitle}_COMMENT
-        where POST_NUM=#{postNum}
+            where POST_NUM=#{page.postNum}
     </select>
 
     <insert id="addComment">
@@ -76,7 +76,7 @@
         FROM ${boardTitle}_COMMENT A
         INNER JOIN MEMBER B
         ON A.ID=B.ID
-        WHERE A.POST_NUM=#{postNum}
+        WHERE A.POST_NUM=#{page.postNum}
         ORDER BY A.COMMENT_NUM DESC
         LIMIT #{page.postBeginPoint}, #{page.displayPostLimit} ) C
         ORDER BY COMMENT_NUM
