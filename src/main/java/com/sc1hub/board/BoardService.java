@@ -43,8 +43,6 @@ public interface BoardService {
 
     void deleteRecommendation(String boardTitle, RecommendDTO recommendDTO);
 
-    void updateTotalRecommendCount(String boardTitle, int postNum);
-
     int getRecommendCount(String boardTitle, int postNum);
 
     int getActualRecommendCount(String boardTitle, int postNum);

@@ -6,6 +6,7 @@ import com.sc1hub.util.PageService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -104,16 +105,44 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
+    @Transactional
     public void insertRecommendation(String boardTitle, RecommendDTO recommendDTO) {
-        boardMapper.insertRecommendation(boardTitle, recommendDTO);
+        // 1. 사용자가 이미 해당 게시글을 추천했는지 확인
+        int count = boardMapper.checkRecommendation(boardTitle, recommendDTO);
+        if (count == 0) {
+            // 2. 추천하지 않았다면, 추천 테이블에 데이터를 추가
+            boardMapper.insertRecommendation(boardTitle, recommendDTO);
+            // 3. 게시글의 총 추천 수를 갱신
+            updateRecommendCount(boardTitle, recommendDTO.getPostNum());
+        } else {
+            throw new RuntimeException("이미 추천한 게시글입니다.");
+        }
     }
 
+
     @Override
+    @Transactional
     public void deleteRecommendation(String boardTitle, RecommendDTO recommendDTO) {
+        // 1. 사용자가 이미 추천을 했는지 확인
+        int recommendCount = boardMapper.checkRecommendation(boardTitle, recommendDTO);
+        if (recommendCount == 0) {
+            throw new RuntimeException("해당 게시글에 대한 추천이 없습니다.");
+        }
+        // 2. 추천을 했다면, 해당 추천을 데이터베이스에서 삭제
         boardMapper.deleteRecommendation(boardTitle, recommendDTO);
+        // 3. 게시글의 총 추천 수를 갱신
+        updateRecommendCount(boardTitle, recommendDTO.getPostNum());
     }
 
-    @Override
+    private void updateRecommendCount(String boardTitle, int postNum) {
+        int actualRecommendCount = getActualRecommendCount(boardTitle, postNum);
+        int currentRecommendCount = getRecommendCount(boardTitle, postNum);
+
+        if (actualRecommendCount != currentRecommendCount) {
+            updateTotalRecommendCount(boardTitle, postNum);
+        }
+    }
+
     public void updateTotalRecommendCount(String boardTitle, int postNum) {
         boardMapper.updateTotalRecommendCount(boardTitle, postNum);
     }
