@@ -45,7 +45,7 @@ body {
                     <fieldset>
                         <legend><a href="/"> [테란 네트워크]</a></legend>
                         <table class="boardList" style="width: 100%;">
-                            <tr><td><a href="">11. 테란 게시판</a></td></tr>
+                            <tr><td><a href="/terranBoard/list">11. 테란 게시판</a></td></tr>
                             <tr><td><a href="">12. 테란 종족특성</a></td></tr>
                             <tr><td><a href="">13. 대저그전 게시판(테저전)</a></td></tr>
                             <tr><td><a href="">14. 불꽃러쉬 타이밍</a></td></tr>
