@@ -41,7 +41,8 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addInterceptor(new BoardLvInterceptor())
                 .addPathPatterns("/freeBoard/writePost/**", "/freeBoard/modifyPost/**");
         registry.addInterceptor(new AdminInterceptor())
-                .addPathPatterns("/adminPage/**", "/modifyMemberByAdmin/**");
+                .addPathPatterns("/adminPage/**", "/modifyMemberByAdmin/**", "/terranGuideBoard/writePost/**",
+                        "/terranGuideBoard/modifyPost/**", "/terranGuideBoard/deletePost/**");
     }
 
 }

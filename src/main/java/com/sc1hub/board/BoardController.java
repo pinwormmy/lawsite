@@ -24,15 +24,25 @@ public class BoardController {
     BoardService boardService;
 
     @GetMapping(value = "/{boardTitle}/list")
-    public String list(@PathVariable String boardTitle, PageDTO page, Model model) throws Exception {
+    public String list(@PathVariable String boardTitle, PageDTO page, Model model, HttpSession session) throws Exception {
         String koreanTitle = getKoreanTitle(boardTitle);
         model.addAttribute("koreanTitle", koreanTitle);
         model.addAttribute("boardTitle", boardTitle);
         model.addAttribute("selfNoticeList", boardService.showSelfNoticeList(boardTitle));
         model.addAttribute("page", boardService.pageSetting(boardTitle, page));
         model.addAttribute("postList", boardService.showPostList(boardTitle, page));
+
+        // 글쓰기 권한 설정
+        boolean canWrite = true; // 기본적으로 글쓰기 가능
+        if ("terranGuideBoard".equals(boardTitle)) {
+            MemberDTO member = (MemberDTO) session.getAttribute("member");
+            canWrite = (member != null && member.getGrade() == 3); // 관리자만 글쓰기 가능
+        }
+        model.addAttribute("canWrite", canWrite);
+
         return "board/postList";
     }
+
 
     private String getKoreanTitle(String boardTitle) {
         switch (boardTitle) {
