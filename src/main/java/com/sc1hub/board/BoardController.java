@@ -42,6 +42,8 @@ public class BoardController {
                 return "초보자마당";
             case "terranBoard":
                 return "테란 게시판";
+            case "zVsTBoard":
+                return "저테전 게시판";
             // ... 기타 매핑
             default:
                 return "알 수 없는 게시판(오류가 있는지 확인하시오)";

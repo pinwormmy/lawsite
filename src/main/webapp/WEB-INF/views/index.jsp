@@ -69,7 +69,7 @@ body {
                         <table class="boardList" style="width: 100%;">
                             <tr><td><a href="">26. 저그 게시판</a></td></tr>
                             <tr><td><a href="">27. 저그 종족특성</a></td></tr>
-                            <tr><td><a href="">28. 대테란전 게시판(저테전)</a></td></tr>
+                            <tr><td><a href="/zVsTBoard/list">28. 대테란전 게시판(저테전)</a></td></tr>
                             <tr><td><a href="">29. 뮤탈 컨트롤 공략</a></td></tr>
                             <tr><td><a href="">30. 불꽃러쉬 대응법</a></td></tr>
                             <tr><td><a href="">31. 하이브 타이밍</a></td></tr>
