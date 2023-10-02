@@ -25,7 +25,7 @@
         <legend>[종족게시판]</legend>
         <ul>
             <li><a href="/terranBoard/list">1. 테란 게시판</a></li>
-            <li><a href="/">2. 테란 공략</a></li>
+            <li><a href="/terranGuideBoard/list">2. 테란 공략</a></li>
             <li><a href="/">3. 저그 게시판</a></li>
             <li><a href="/">4. 저그 공략</a></li>
             <li><a href="/">5. 프로토스 게시판</a></li>
