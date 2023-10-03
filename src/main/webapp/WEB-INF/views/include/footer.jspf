@@ -14,7 +14,7 @@
 			    <div style="text-align: left; margin-bottom: 50px;">
                     명령어 안내 : ALT+(단축키) 혹은 숫자 입력으로 게시판 이동 <br>
                     선택>
-                    <input>
+                    <input id="menuInput">
                 </div>
                 <p class="copyright-text">Copyright 2023. OOO All right reserved.</p>
 				<p class="visitor-text">오늘의 방문자 수: ${todayCount}, 누적 방문자 수: ${totalCount}</p>
@@ -22,6 +22,43 @@
 		</div>
 	</div>
 </footer>
+
+<script>
+    // 페이지 이동 함수
+    function navigateToPage(menuNumber) {
+        switch(menuNumber) {
+            case '0':
+                window.location.href = "/";
+                break;
+            case '1':
+                window.location.href = "/";
+                break;
+            case '7':
+                window.location.href = "/freeBoard/list";
+                break;
+            case '8':
+                window.location.href = "/beginnerBoard/list";
+                break;
+            case '11':
+                window.location.href = "/terranBoard/list";
+                break;
+            case '12':
+                window.location.href = "/terranGuideBoard/list";
+                break;
+            case '13':
+                window.location.href = "/zVsTBoard/list";
+                break;
+            // ... 다른 메뉴에 대한 처리
+            default:
+                alert("잘못된 입력입니다.");
+        }
+    }
+
+    // input 태그에 이벤트 리스너 추가
+    document.getElementById('menuInput').addEventListener('change', function() {
+        navigateToPage(this.value);
+    });
+</script>
 
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <script src="/plugins/bootstrap/js/bootstrap.min.js"></script>
