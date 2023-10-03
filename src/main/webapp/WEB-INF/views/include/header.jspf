@@ -96,7 +96,7 @@ FACEBOOK: https://www.facebook.com/themefisher
                     <li><a href="/loginForDemo" style="color:#070093;">일반</a></li>
                     <li><a href="/loginForDemoAsAdmin" style="color:#070093;">관리자</a></li>
                     <li><a href="/login">로그인</a></li>
-                    <li><a href="/signUp">회원가입</a></li>
+                    <li><a href="/signAgreement">회원가입</a></li>
                 </c:if>
                 <c:if test="${member != null}">
                     <li>${member.id}님 로그인 중 : </li>
@@ -111,26 +111,6 @@ FACEBOOK: https://www.facebook.com/themefisher
 </body>
 
 <script>
-
-    function comingSoon() {
-        alert("업데이트 예정입니다.");
-    }
-
-    function goCart() {
-        if(${member == null}) {
-            alert("로그인이 필요합니다.");
-            return false;
-        }
-        location.href="/cart?id=${member.id}";
-    }
-
-    function goLikeIt() {
-        if(${member == null}) {
-            alert("로그인이 필요합니다.");
-            return false;
-        }
-        location.href="/likeList?id=${member.id}";
-    }
 
     function goMyPage() {
         if(${member == null}) {

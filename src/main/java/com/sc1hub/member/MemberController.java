@@ -35,6 +35,11 @@ public class MemberController {
         return "signUp";
     }
 
+    @RequestMapping("/signAgreement")
+    public String signAgreement() {
+        return "signAgreement";
+    }
+
     @RequestMapping("/isUniqueId")
     @ResponseBody
     public String isUniqueId(String id) throws Exception {
