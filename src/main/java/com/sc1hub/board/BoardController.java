@@ -219,4 +219,22 @@ public class BoardController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    @RequestMapping("/{boardTitle}/movePost")
+    public String movePost(@PathVariable String boardTitle, int postNum, String targetBoardTitle) throws Exception {
+        // 1. 원본 게시글을 찾아서 내용을 수정합니다.
+        BoardDTO originalPost = boardService.readPost(boardTitle, postNum);
+        originalPost.setContent("이 게시글은 " + getKoreanTitle(targetBoardTitle) + "로 이동되었습니다.");
+        boardService.submitModifyPost(boardTitle, originalPost);
+
+        // 2. 새 게시판(targetBoardTitle)으로 게시글을 복사 또는 이동합니다.
+        BoardDTO newPost = new BoardDTO();
+        newPost.setTitle(originalPost.getTitle());
+        newPost.setContent(originalPost.getContent());
+        // ... 기타 필드 복사
+        boardService.submitPost(targetBoardTitle, newPost);
+
+        return "redirect:/" + boardTitle + "/list";
+    }
+
 }
