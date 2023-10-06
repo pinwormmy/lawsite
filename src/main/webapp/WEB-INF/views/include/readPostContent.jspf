@@ -48,5 +48,6 @@
             <a class="pull btn btn-theme cancel-btn" href="/${boardTitle}/deletePost?postNum=${post.postNum}">삭 제(-)</a>
             <a class="pull btn btn-theme cancel-btn" href="/${boardTitle}/modifyPost?postNum=${post.postNum}" accesskey="o">️수 정(O)</a>
         </c:if>
+        <!-- 이 부분에 게시물 이동 관련 코드 넣기. -->
     </div>
 </div>
