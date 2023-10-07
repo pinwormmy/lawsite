@@ -254,4 +254,17 @@ window.onload = async function() {
             console.error(error);
         }
     }
+
+    fetch('/api/boardList') // '/api/boardList'는 게시판 목록을 제공하는 API 엔드포인트입니다.
+    .then(response => response.json())
+    .then(data => {
+        const selectElement = document.getElementById('moveToBoard');
+        data.forEach(board => {
+            const optionElement = document.createElement('option');
+            optionElement.value = board.boardTitle;
+            optionElement.textContent = board.koreanTitle;
+            selectElement.appendChild(optionElement);
+        });
+    })
+    .catch(error => console.error('Error:', error));
 };
