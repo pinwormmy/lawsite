@@ -48,4 +48,6 @@ public interface BoardService {
     int getActualRecommendCount(String boardTitle, int postNum);
 
     PageDTO commentPageSetting(String boardTitle, PageDTO page) throws Exception;
+
+    List<BoardListDTO> getBoardList();
 }

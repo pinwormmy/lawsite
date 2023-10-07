@@ -154,4 +154,9 @@
         SELECT COUNT(*) FROM ${boardTitle}_recommend WHERE post_Num=#{postNum}
     </select>
 
+    <!-- 게시판 목록을 가져오는 쿼리 -->
+    <select id="getBoardList" resultType="com.sc1hub.board.BoardListDTO">
+        SELECT board_title FROM board_list
+    </select>
+
 </mapper>

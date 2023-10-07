@@ -237,4 +237,15 @@ public class BoardController {
         return "redirect:/" + boardTitle + "/list";
     }
 
+    @GetMapping("/boardList")
+    @ResponseBody
+    public List<BoardListDTO> getBoardList() {
+        List<BoardListDTO> boardList = boardService.getBoardList();
+        for (BoardListDTO board : boardList) {
+            String koreanTitle = getKoreanTitle(board.getBoardTitle());
+            board.setKoreanTitle(koreanTitle);
+        }
+        return boardList;
+    }
+
 }

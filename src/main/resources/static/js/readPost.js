@@ -255,7 +255,7 @@ window.onload = async function() {
         }
     }
 
-    fetch('/api/boardList') // '/api/boardList'는 게시판 목록을 제공하는 API 엔드포인트입니다.
+    fetch('/boardList')
     .then(response => response.json())
     .then(data => {
         const selectElement = document.getElementById('moveToBoard');

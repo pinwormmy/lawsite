@@ -163,6 +163,11 @@ public class BoardServiceImpl implements BoardService {
         return utilLoadingForCommentPage(boardTitle, page);
     }
 
+    @Override
+    public List<BoardListDTO> getBoardList() {
+        return boardMapper.getBoardList();
+    }
+
     // 나머지 유틸리티 메서드들
     protected void checkPageAndKeyword(PageDTO page) {
         if(page.getRecentPage() < 1) { page.setRecentPage(1); }

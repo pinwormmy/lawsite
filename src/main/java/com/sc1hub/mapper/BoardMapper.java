@@ -1,6 +1,7 @@
 package com.sc1hub.mapper;
 
 import com.sc1hub.board.BoardDTO;
+import com.sc1hub.board.BoardListDTO;
 import com.sc1hub.board.CommentDTO;
 import com.sc1hub.board.RecommendDTO;
 import com.sc1hub.util.PageDTO;
@@ -53,5 +54,7 @@ public interface BoardMapper {
     int getRecommendCount(@Param("boardTitle") String boardTitle, @Param("postNum") int postNum);
 
     int getActualRecommendCount(@Param("boardTitle") String boardTitle, @Param("postNum") int postNum);
+
+    List<BoardListDTO> getBoardList();
 }
 
