@@ -232,7 +232,7 @@ public class BoardController {
 
         // 1. 원본 게시글을 찾아서 내용을 수정합니다.
         BoardDTO originalPost = boardService.readPost(boardTitle, postNum);
-        originalPost.setContent("이 게시글은 " + getKoreanTitle(targetBoardTitle) + "로 이동되었습니다.");
+        originalPost.setContent("이 게시글은 " + getKoreanTitle(targetBoardTitle) + "로 이동되었습니다."); // 이 내용이 복사되버려서 원본글 내용이 날라감
         boardService.submitModifyPost(boardTitle, originalPost);
 
         // 2. 새 게시판(targetBoardTitle)으로 게시글을 복사 또는 이동합니다.
