@@ -271,6 +271,9 @@ window.onload = async function() {
 
 async function movePost(postNum) {
     const moveToBoard = document.getElementById('moveToBoard').value;
+
+    console.log("게시판이동 기능 디버그 - 게시물번호값: " + postNum);
+    console.log("게시판이동 기능 디버그 - 선택게시판: " + moveToBoard);
     if (!moveToBoard) {
         alert('이동할 게시판을 선택해주세요.');
         return;

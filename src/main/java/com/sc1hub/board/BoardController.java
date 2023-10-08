@@ -45,20 +45,24 @@ public class BoardController {
 
 
     private String getKoreanTitle(String boardTitle) {
-        switch (boardTitle) {
-            case "freeBoard":
-                return "자유게시판";
-            case "beginnerBoard":
-                return "초보자마당";
-            case "terranBoard":
-                return "테란 게시판";
-            case "zVsTBoard":
-                return "저테전 게시판";
-            case "terranGuideBoard":
-                return "테란 공략";
-            // ... 기타 매핑
-            default:
-                return "알 수 없는 게시판(오류가 있는지 확인하시오)";
+        if (boardTitle == null) {
+            return "알 수 없는 게시판(오류가 있는지 확인하시오)";
+        }
+
+        if (boardTitle.equalsIgnoreCase("freeBoard")) {
+            return "자유게시판";
+        } else if (boardTitle.equalsIgnoreCase("beginnerBoard")) {
+            return "초보자마당";
+        } else if (boardTitle.equalsIgnoreCase("terranBoard")) {
+            return "테란 게시판";
+        } else if (boardTitle.equalsIgnoreCase("zVsTBoard")) {
+            return "저테전 게시판";
+        } else if (boardTitle.equalsIgnoreCase("terranGuideBoard")) {
+            return "테란 공략";
+        }
+        // ... 기타 매핑
+        else {
+            return "알 수 없는 게시판(오류가 있는지 확인하시오)";
         }
     }
 
@@ -221,7 +225,11 @@ public class BoardController {
     }
 
     @RequestMapping("/{boardTitle}/movePost")
-    public String movePost(@PathVariable String boardTitle, int postNum, String targetBoardTitle) throws Exception {
+    public String movePost(@PathVariable String boardTitle, @RequestBody Map<String, Object> payload) throws Exception {
+        int postNum = (int) payload.get("postNum");
+        String targetBoardTitle = (String) payload.get("moveToBoard");
+        log.debug("게시글 이동 기능 {} {}", postNum, targetBoardTitle);
+
         // 1. 원본 게시글을 찾아서 내용을 수정합니다.
         BoardDTO originalPost = boardService.readPost(boardTitle, postNum);
         originalPost.setContent("이 게시글은 " + getKoreanTitle(targetBoardTitle) + "로 이동되었습니다.");
@@ -231,7 +239,13 @@ public class BoardController {
         BoardDTO newPost = new BoardDTO();
         newPost.setTitle(originalPost.getTitle());
         newPost.setContent(originalPost.getContent());
-        // ... 기타 필드 복사
+        newPost.setWriter(originalPost.getWriter());
+        newPost.setRegDate(originalPost.getRegDate());
+        newPost.setViews(originalPost.getViews());
+        newPost.setCommentCount(originalPost.getCommentCount());
+        newPost.setNotice(originalPost.getNotice());
+        // ... 여기에 다른 필드들을 추가할 수 있습니다.
+
         boardService.submitPost(targetBoardTitle, newPost);
 
         return "redirect:/" + boardTitle + "/list";
