@@ -268,3 +268,32 @@ window.onload = async function() {
     })
     .catch(error => console.error('Error:', error));
 };
+
+async function movePost(postNum) {
+    const moveToBoard = document.getElementById('moveToBoard').value;
+    if (!moveToBoard) {
+        alert('이동할 게시판을 선택해주세요.');
+        return;
+    }
+
+    try {
+        const response = await fetch(boardPath + `/movePost`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                postNum: postNum,
+                moveToBoard: moveToBoard
+            })
+        });
+        if (response.ok) {
+            alert('게시글이 성공적으로 이동되었습니다.');
+            location.reload();  // 페이지 새로고침
+        } else {
+            alert('게시글 이동에 실패했습니다.');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('게시글 이동 중 오류가 발생했습니다.');
+    }
+}
+
