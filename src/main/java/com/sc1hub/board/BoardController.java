@@ -230,21 +230,24 @@ public class BoardController {
         String targetBoardTitle = (String) payload.get("moveToBoard");
         log.debug("게시글 이동 기능 {} {}", postNum, targetBoardTitle);
 
-        // 1. 원본 게시글을 찾아서 내용을 수정합니다.
+        // 원본 게시글을 찾습니다.
         BoardDTO originalPost = boardService.readPost(boardTitle, postNum);
-        originalPost.setContent("이 게시글은 " + getKoreanTitle(targetBoardTitle) + "로 이동되었습니다."); // 이 내용이 복사되버려서 원본글 내용이 날라감
+        String originalContent = originalPost.getContent();  // 원본 내용을 저장
+
+        // 1. 원본 게시글의 내용을 수정합니다.
+        String newContent = "이 게시글은 " + getKoreanTitle(targetBoardTitle) + "으로 이동되었습니다.";
+        originalPost.setContent(newContent);
         boardService.submitModifyPost(boardTitle, originalPost);
 
-        // 2. 새 게시판(targetBoardTitle)으로 게시글을 복사 또는 이동합니다.
+        // 2. 새 게시판(targetBoardTitle)으로 게시글을 복사합니다.
         BoardDTO newPost = new BoardDTO();
         newPost.setTitle(originalPost.getTitle());
-        newPost.setContent(originalPost.getContent());
+        newPost.setContent(originalContent);  // 원본 내용을 그대로 사용
         newPost.setWriter(originalPost.getWriter());
         newPost.setRegDate(originalPost.getRegDate());
         newPost.setViews(originalPost.getViews());
         newPost.setCommentCount(originalPost.getCommentCount());
         newPost.setNotice(originalPost.getNotice());
-        // ... 여기에 다른 필드들을 추가할 수 있습니다.
 
         boardService.submitPost(targetBoardTitle, newPost);
 
