@@ -19,11 +19,3 @@
 .recommend-div {
     text-align: center;
 }
-select {
-    background-color: transparent;
-    border: none;
-    outline: none;
-}
-option {
-    background-color: #06115c;
-}

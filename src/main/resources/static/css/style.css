@@ -124,6 +124,16 @@ td {
     padding : 10px;
 }
 
+select {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+option {
+    background-color: #06115c;
+}
+
 iframe {
   border: 0;
 }
