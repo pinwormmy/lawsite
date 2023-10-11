@@ -255,18 +255,20 @@ window.onload = async function() {
         }
     }
 
-    fetch('/boardList')
-    .then(response => response.json())
-    .then(data => {
-        const selectElement = document.getElementById('moveToBoard');
-        data.forEach(board => {
-            const optionElement = document.createElement('option');
-            optionElement.value = board.boardTitle;
-            optionElement.textContent = board.koreanTitle;
-            selectElement.appendChild(optionElement);
-        });
-    })
-    .catch(error => console.error('Error:', error));
+    if (isAdmin) {
+        fetch('/boardList')
+        .then(response => response.json())
+        .then(data => {
+            const selectElement = document.getElementById('moveToBoard');
+            data.forEach(board => {
+                const optionElement = document.createElement('option');
+                optionElement.value = board.boardTitle;
+                optionElement.textContent = board.koreanTitle;
+                selectElement.appendChild(optionElement);
+            });
+        })
+        .catch(error => console.error('Error:', error));
+    }
 };
 
 async function movePost(postNum) {
