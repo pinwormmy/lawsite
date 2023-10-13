@@ -28,7 +28,7 @@
     function navigateToPage(menuNumber) {
         switch(menuNumber) {
             case '0':
-                window.location.href = "/";
+                window.location.href = "/guidelines";
                 break;
             case '1':
                 window.location.href = "/";

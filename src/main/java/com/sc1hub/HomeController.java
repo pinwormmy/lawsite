@@ -5,7 +5,7 @@ import com.sc1hub.visitorCount.VisitorCountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +21,7 @@ public class HomeController {
     @Autowired
     VisitorCountService visitorCountService;
 
-    @RequestMapping("/")
+    @GetMapping("/")
     public String home(PageDTO page, Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
         Cookie[] cookies = request.getCookies();
         boolean isVisitor = false;
@@ -56,6 +56,11 @@ public class HomeController {
         visitorCookie.setMaxAge(secondsUntilMidnight); // 자정까지
         visitorCookie.setPath("/"); // 전체 도메인에서 유효
         response.addCookie(visitorCookie);
+    }
+
+    @GetMapping("/guidelines")
+    public String showGuidelines() {
+        return "guidelines";
     }
 
 }
