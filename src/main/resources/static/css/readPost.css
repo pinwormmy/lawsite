@@ -12,9 +12,13 @@
     font-weight: 300;
     overflow: hidden;
 }
-.btn-theme {
+.btn-right {
     margin: 10px 0;
     float: right;
+}
+.btn-left {
+    margin: 10px 0;
+    float: left;
 }
 .recommend-div {
     text-align: center;
