@@ -37,7 +37,7 @@
                         <p>
                             Licensed under the MIT License (MIT).<br>
                             <a href="https://getbootstrap.com/docs/5.0/about/license/" target="_blank">
-                                View Bootstrap License
+                                View Bootstrap License.
                             </a>
                         </p>
                     </div>
