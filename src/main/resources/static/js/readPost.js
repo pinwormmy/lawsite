@@ -151,7 +151,7 @@ async function commentHtmlWithString(commentListHtml, CommentDTOList) {
 // 댓글 삭제 버튼 표시
 async function displayDeleteButton(commentListHtml, commentDTO) {
     if( (memberId == commentDTO.id) || (memberGrade == 3) ) {
-        commentListHtml += "<button class='pull btn btn-theme cancel-btn' onclick='deleteComment(";
+        commentListHtml += "<button class='pull btn btn-right cancel-btn' onclick='deleteComment(";
         commentListHtml += commentDTO.commentNum + ");'>댓글삭제(-) </button>";
     }
     return commentListHtml;

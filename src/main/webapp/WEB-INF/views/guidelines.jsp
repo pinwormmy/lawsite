@@ -22,10 +22,26 @@
                     <p>운영진 판단 하에 주제에 맞지 않는 글은 이동될 수 있습니다.</p>
                 </div>
                 <!-- License Information -->
-                <div class="license-info">
-                    <h3>라이선스 정보</h3>
-                    <p>이 웹사이트는 CKEditor를 사용하고 있습니다. CKEditor는 CKSource Holding sp. z o.o.의 저작권이며, Mozilla Public License 선택하여 사용됩니다.</p>
-                    <p>자세한 라이선스 정보는 <a href="https://ckeditor.com/legal/ckeditor-oss-license/" target="_blank">여기</a>를 참조하십시오.</p>
+                <div class="license-section">
+                    <h3>라이센스 정보</h3>
+                    <!-- CKEditor License -->
+                    <div class="license-info ckeditor-license">
+                        <p>This website is using CKEditor which is copyrighted by CKSource Holding sp. z o.o., licensed under the Mozilla Public License.</p>
+                        <p>For more license information, please refer <a href="https://ckeditor.com/legal/ckeditor-oss-license/" target="_blank">here</a>.</p>
+                    </div>
+                    <!-- Bootstrap License -->
+                    <div class="license-info bootstrap-license">
+                        <p>
+                            This website uses Bootstrap, Copyright © 2011-2022 by The Bootstrap Authors and Twitter, Inc.
+                        </p>
+                        <p>
+                            Licensed under the MIT License (MIT).<br>
+                            <a href="https://getbootstrap.com/docs/5.0/about/license/" target="_blank">
+                                View Bootstrap License
+                            </a>
+                        </p>
+                    </div>
+                    <!-- Additional licenses can be added below in a similar format -->
                 </div>
                 <!-- End of License Information -->
             </div>
