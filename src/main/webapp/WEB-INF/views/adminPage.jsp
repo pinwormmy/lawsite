@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>게임핀 - 관리자 페이지</title>
+<title>SC1Hub - 관리자 페이지</title>
 <style>
 body {
     height: 100%;

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<title>회원ID 찾기</title>
+<title>SC1Hub - ID 찾기</title>
 <style>
     body {
         height: 100%;

@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <title>로그인</title>
+    <title>SC1Hub - 로그인</title>
 
     <style>
     body {

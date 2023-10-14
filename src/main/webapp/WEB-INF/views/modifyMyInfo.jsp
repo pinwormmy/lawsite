@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<title>회원정보 수정</title>
+<title>SC1Hub - 회원정보 수정</title>
 <style>
 body {
     height: 100%;

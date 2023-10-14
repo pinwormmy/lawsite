@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>SC1Hub 이용안내 - 스타크래프트1 전문 커뮤니티</title>
+<title>SC1Hub - 이용안내</title>
 <style>
 
 </style>

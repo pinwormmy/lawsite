@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>회원가입</title>
+<title>SC1Hub - 회원가입</title>
 
 <style>
 body {
