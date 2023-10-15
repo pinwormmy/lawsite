@@ -4,24 +4,24 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <title>SC1Hub - 로그인</title>
+<title>SC1Hub - 로그인</title>
 
-    <style>
-    body {
-        height: 100%;
-    }
-    html {
-        height: 100%;
-    }
-    #id, #pw {
-        height: 50px;
-        border: none;
-        margin: 2px;
-        outline: none;
-        padding-left: 10px;
-        background-color: transparent;
-    }
-    </style>
+<style>
+body {
+    height: 100%;
+}
+html {
+    height: 100%;
+}
+#id, #pw {
+    height: 50px;
+    border: none;
+    margin: 2px;
+    outline: none;
+    padding-left: 10px;
+    background-color: transparent;
+}
+</style>
 </head>
 <body>
 <%@include file="./include/header.jspf" %>

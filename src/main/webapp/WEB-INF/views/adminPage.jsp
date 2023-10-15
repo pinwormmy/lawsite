@@ -4,42 +4,15 @@
 <head>
 <title>SC1Hub - 관리자 페이지</title>
 <style>
-body {
-    height: 100%;
-}
-.btn-turquoise {
-    background-color: #40E0D0;
-    color: #fff;
-    border: none;
-    margin: 10px;
-}
-.btn-turquoise:hover {
-    background-color: #3CB7B8;
-    color: #fff;
-}
-.leftbar-ul li a{
-    color : white;
+.leftbar-ul li a {
+    color: white;
     font-size: 12px;
-    font-weight: 500px;
+    font-weight: 500;
 }
 .page-navigation {
     text-align: center;
 }
-.checkbox-list {
-    padding: 10px;
-}
-.checkbox-list label {
-    font-weight: 400;
-}
-.main-banner {
-    font-size: 32px;
-    margin: 10px;
-    text-align: center;
-}
-.search-element {
-    height: 38px;
-}
-.admin-memberlist td{
+.admin-memberlist td {
     padding: 3px;
 }
 .page-list {

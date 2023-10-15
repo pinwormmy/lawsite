@@ -11,16 +11,6 @@ body {
     width: 1600px;
     margin: auto;
 }
-.btn-turquoise {
-    background-color: #40E0D0;
-    color: #fff;
-    border: none;
-    margin: 10px;
-}
-.btn-turquoise:hover {
-    background-color: #3CB7B8;
-    color: #fff;
-}
 .leftbar-ul li a{
     color : white;
     font-size: 12px;
