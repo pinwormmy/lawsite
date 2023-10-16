@@ -45,7 +45,6 @@ public class HomeController {
 
         return "index";
     }
-
     private void createVisitorCookie(HttpServletResponse response) {
         Cookie visitorCookie = new Cookie("visitor", "true");
 
