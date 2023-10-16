@@ -3,57 +3,6 @@
 <html>
 <head>
 <title>SC1Hub - 회원가입</title>
-
-<style>
-body {
-    height: 100%;
-}
-.boardList {
-    width: 100%;
-    border-collapse: collapse;
-    overflow: hidden;
-}
-.boardList th {
-    text-align: center;
-    border-bottom: 1px solid white;
-}
-.boardList tr:last-child {
-    border: none;
-}
-.boardList th,
-.boardList td {
-    padding: 2px;
-}
-.boardList tr th {
-    padding: 5px;
-}
-.section-wrapper {
-    min-height: 850px;
-}
-.side-banner {
-    margin-top: 15px;
-}
-.writer, .date {
-    text-align: center;
-}
-.views, .post-num {
-    text-align: right;
-}
-html {
-    height: 100%;
-}
-
-#loginButton, .basicButton {
-    height: 50px;
-    border: 2px solid #ffffff;
-    margin: 2px;
-    color: white;
-    background-color: transparent;
-    cursor: pointer;
-}
-
-</style>
-
 </head>
 <body>
 <%@include file="./include/header.jspf" %>

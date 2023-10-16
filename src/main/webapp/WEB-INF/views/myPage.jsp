@@ -3,34 +3,6 @@
 <html>
 <head>
 <title>SC1Hub - 마이 페이지</title>
-<style>
-body {
-    height: 100%;
-}
-.my-page {
-    width: 1600px;
-    margin: auto;
-}
-.leftbar-ul li a{
-    color : white;
-    font-size: 12px;
-    font-weight: 500px;
-}
-.page-navigation {
-    text-align: center;
-}
-.checkbox-list {
-    padding: 10px;
-}
-.checkbox-list label {
-    font-weight: 400;
-}
-.main-banner {
-    font-size: 48px;
-    margin: 10px;
-    text-align: center;
-}
-</style>
 </head>
 <body>
 <%@include file="./include/header.jspf" %>

@@ -2,22 +2,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>SC1Hub - 약관 동의</title>
-    <style>
-        .terms-section {
-            margin-bottom: 20px;
-        }
-        .terms-content {
-            height: 200px;
-            overflow-y: scroll;
-            border: 1px solid #ccc;
-            padding: 10px;
-        }
-        .checkbox-section label {
-            vertical-align: middle;
-            margin-bottom: 0;
-        }
-    </style>
+<title>SC1Hub - 약관 동의</title>
+<style>
+.terms-section {
+    margin-bottom: 20px;
+}
+.terms-content {
+    height: 200px;
+    overflow-y: scroll;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+.checkbox-section label {
+    vertical-align: middle;
+    margin-bottom: 0;
+}
+</style>
 </head>
 <body>
 <%@include file="./include/header.jspf" %>

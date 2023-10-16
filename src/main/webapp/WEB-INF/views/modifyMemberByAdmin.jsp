@@ -3,28 +3,8 @@
 <html lang="ko">
 <head>
 <title>SC1Hub - [관리자 모드]회원정보 수정</title>
-<style>
-body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-.container {
-    width: 33%;
-    margin: auto;
-    padding: 20px;
-}
-.my-page {
-    width: 1600px;
-    margin: auto;
-}
-label, input {
-    margin-bottom: 10px;
-}
-</style>
 </head>
 <body>
-
 <%@ include file="/WEB-INF/views/include/header.jspf" %>
 <div class="container">
     <%@include file="./include/sidebar.jspf" %>
@@ -40,6 +20,5 @@ label, input {
     </form>
 </div>
 <%@ include file="/WEB-INF/views/include/footer.jspf" %>
-
 </body>
 </html>
