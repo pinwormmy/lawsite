@@ -33,10 +33,13 @@ public class BoardController {
         model.addAttribute("postList", boardService.showPostList(boardTitle, page));
 
         // 글쓰기 권한 설정
-        boolean canWrite = true; // 기본적으로 글쓰기 가능
-        if ("terranGuideBoard".equals(boardTitle)) {
-            MemberDTO member = (MemberDTO) session.getAttribute("member");
-            canWrite = (member != null && member.getGrade() == 3); // 관리자만 글쓰기 가능
+        boolean canWrite = false;  // 기본적으로 글쓰기 불가능
+        MemberDTO member = (MemberDTO) session.getAttribute("member");
+        if (member != null) {  // 로그인된 사용자의 경우
+            canWrite = true;
+            if ("terranGuideBoard".equals(boardTitle)) {
+                canWrite = (member.getGrade() == 3);  // 관리자만 글쓰기 가능
+            }
         }
         model.addAttribute("canWrite", canWrite);
 
