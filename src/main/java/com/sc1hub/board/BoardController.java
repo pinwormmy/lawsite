@@ -55,14 +55,38 @@ public class BoardController {
             return "초보자마당";
         } else if (boardTitle.equalsIgnoreCase("terranBoard")) {
             return "테란 게시판";
-        } else if (boardTitle.equalsIgnoreCase("zVsTBoard")) {
-            return "저테전 게시판";
         } else if (boardTitle.equalsIgnoreCase("terranGuideBoard")) {
             return "테란 공략";
-        }
-        // ... 기타 매핑
-        // 게시판 모두 구현하고 디비 구조 따기
-        else {
+        } else if (boardTitle.equalsIgnoreCase("tVsTBoard")) {
+            return "테테전 게시판";
+        } else if (boardTitle.equalsIgnoreCase("tVsZBoard")) {
+            return "테저전 게시판";
+        } else if (boardTitle.equalsIgnoreCase("tVsPBoard")) {
+            return "테프전 게시판";
+        } else if (boardTitle.equalsIgnoreCase("zergBoard")) {
+            return "저그 게시판";
+        } else if (boardTitle.equalsIgnoreCase("zergGuideBoard")) {
+            return "저그 공략";
+        } else if (boardTitle.equalsIgnoreCase("zVsTBoard")) {
+            return "저테전 게시판";
+        } else if (boardTitle.equalsIgnoreCase("zVsZBoard")) {
+            return "저저전 게시판";
+        } else if (boardTitle.equalsIgnoreCase("zVsPBoard")) {
+            return "저프전 게시판";
+        }else if (boardTitle.equalsIgnoreCase("protossBoard")) {
+            return "프로토스 게시판";
+        }else if (boardTitle.equalsIgnoreCase("protossGuideBoard")) {
+            return "프로토스 공략";
+        } else if (boardTitle.equalsIgnoreCase("pVsTBoard")) {
+            return "프테전 게시판";
+        } else if (boardTitle.equalsIgnoreCase("pVsZBoard")) {
+            return "프저전 게시판";
+        } else if (boardTitle.equalsIgnoreCase("pVsPBoard")) {
+            return "프프전 게시판";
+            // ... 기타 매핑
+            
+            // 게시판 모두 구현하고 디비 구조 따기
+        } else {
             return "알 수 없는 게시판(오류가 있는지 확인하시오)";
         }
     }
