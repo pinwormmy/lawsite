@@ -86,9 +86,17 @@ public class BoardController {
             return "프저전 게시판";
         } else if (boardTitle.equalsIgnoreCase("pVsPBoard")) {
             return "프프전 게시판";
-            // ... 기타 매핑
-            
-            // 게시판 모두 구현하고 디비 구조 따기
+        } else if (boardTitle.equalsIgnoreCase("matchReviewBoard")) {
+            return "대전리뷰";
+        } else if (boardTitle.equalsIgnoreCase("videoLinkBoard")) {
+            return "영상좌표";
+        } else if (boardTitle.equalsIgnoreCase("promotionBoard")) {
+            return "홍보게시판";
+        } else if (boardTitle.equalsIgnoreCase("teamPlayBoard")) {
+            return "팀플게시판";
+        } else if (boardTitle.equalsIgnoreCase("teamPlayGuideBoard")) {
+            return "팀플 공략";
+        // ... 기타 매핑
         } else {
             return "알 수 없는 게시판(오류가 있는지 확인하시오)";
         }
