@@ -37,15 +37,25 @@ public class BoardController {
         MemberDTO member = (MemberDTO) session.getAttribute("member");
         if (member != null) {  // 로그인된 사용자의 경우
             canWrite = true;
-            if ("terranGuideBoard".equals(boardTitle)) {
-                canWrite = (member.getGrade() == 3);  // 관리자만 글쓰기 가능
+            // 관리자만 글쓰기 가능한 게시판 목록
+            String[] adminOnlyBoards = {
+                    "terranGuideBoard", "zergGuideBoard", "protossGuideBoard",
+                    "tVsTBoard", "tVsZBoard", "tVsPBoard",
+                    "zVsTBoard", "zVsZBoard", "zVsPBoard",
+                    "pVsTBoard", "pVsZBoard", "pVsPBoard",
+                    "teamPlayGuideBoard"
+            };
+            for (String adminOnlyBoard : adminOnlyBoards) {
+                if (boardTitle.equalsIgnoreCase(adminOnlyBoard)) {
+                    canWrite = (member.getGrade() == 3);  // 관리자만 글쓰기 가능
+                    break;
+                }
             }
         }
         model.addAttribute("canWrite", canWrite);
 
         return "board/postList";
     }
-
 
     private String getKoreanTitle(String boardTitle) {
         if (boardTitle == null) {
