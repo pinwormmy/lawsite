@@ -26,31 +26,41 @@
 <script>
     // 페이지 이동 함수
     function navigateToPage(menuNumber) {
-        switch(menuNumber) {
-            case '0':
-                window.location.href = "/guidelines";
-                break;
-            case '1':
-                window.location.href = "/";
-                break;
-            case '7':
-                window.location.href = "/freeBoard/list";
-                break;
-            case '8':
-                window.location.href = "/beginnerBoard/list";
-                break;
-            case '11':
-                window.location.href = "/terranBoard/list";
-                break;
-            case '12':
-                window.location.href = "/terranGuideBoard/list";
-                break;
-            case '13':
-                window.location.href = "/zVsTBoard/list";
-                break;
-            // ... 다른 메뉴에 대한 처리
-            default:
-                alert("잘못된 입력입니다.");
+        var pageMap = {
+            '0': '/guidelines',
+            '1': '/',
+            '2': '/matchReviewBoard/list',
+            '3': '/videoLinkBoard/list',
+            '4': '/promotionBoard/list',
+            '5': '/teamPlayBoard/list',
+            '6': '/teamPlayGuideBoard/list',
+            '7': '/freeBoard/list',
+            '8': '/beginnerBoard/list',
+            '9': '/terranBoard/list',
+            '10': '/terranGuideBoard/list',
+            '11': '/zergBoard/list',
+            '12': '/zergGuideBoard/list',
+            '13': '/protossBoard/list',
+            '14': '/protossGuideBoard/list',
+            '20': '/terranBoard/list',
+            '22': '/tVsZBoard/list',
+            '27': '/tVsPBoard/list',
+            '31': '/tVsTBoard/list',
+            '40': '/zergBoard/list',
+            '42': '/zVsTBoard/list',
+            '47': '/zVsPBoard/list',
+            '51': '/zVsZBoard/list',
+            '60': '/protossBoard/list',
+            '62': '/pVsTBoard/list',
+            '66': '/pVsZBoard/list',
+            '71': '/pVsPBoard/list'
+            // ... 다른 메뉴에 대한 매핑
+        };
+        var pageUrl = pageMap[menuNumber];
+        if (pageUrl) {
+            window.location.href = pageUrl;
+        } else {
+            alert("잘못된 입력입니다.");
         }
     }
 
@@ -59,6 +69,7 @@
         navigateToPage(this.value);
     });
 </script>
+
 
 <script src="https://code.jquery.com/jquery-latest.js"></script>
 <script src="/plugins/bootstrap/js/bootstrap.min.js"></script>

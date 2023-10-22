@@ -24,12 +24,12 @@
     <fieldset>
         <legend>[종족게시판]</legend>
         <ul>
-            <li><a href="/terranBoard/list" accesskey="t">1. 테란 게시판(T)</a></li>
-            <li><a href="/terranGuideBoard/list">2. 테란 공략</a></li>
-            <li><a href="/zergBoard/list" accesskey="z">3. 저그 게시판(Z)</a></li>
-            <li><a href="/zergGuideBoard/list">4. 저그 공략</a></li>
-            <li><a href="/protossBoard/list" accesskey="p">5. 프로토스 게시판(P)</a></li>
-            <li><a href="/protossGuideBoard/list">6. 프로토스 공략</a></li>
+            <li><a href="/terranBoard/list" accesskey="t">9. 테란 게시판(T)</a></li>
+            <li><a href="/terranGuideBoard/list">10. 테란 공략</a></li>
+            <li><a href="/zergBoard/list" accesskey="z">11. 저그 게시판(Z)</a></li>
+            <li><a href="/zergGuideBoard/list">12. 저그 공략</a></li>
+            <li><a href="/protossBoard/list" accesskey="p">13. 프로토스 게시판(P)</a></li>
+            <li><a href="/protossGuideBoard/list">14. 프로토스 공략</a></li>
         </ul>
     </fieldset>
 </div>

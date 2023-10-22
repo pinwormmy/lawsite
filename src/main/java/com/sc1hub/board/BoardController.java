@@ -247,7 +247,7 @@ public class BoardController {
             recommendDTO.setUserId(member.getId());
             int count = boardService.checkRecommendation(boardTitle, recommendDTO);
             boolean isRecommended = (count > 0);
-            log.info("추천 확인 컨트롤러 작동여부 : " + isRecommended);
+            log.debug("추천 확인 컨트롤러 작동여부 : " + isRecommended);
             recommendDTO.setCheckRecommend(isRecommended);
             return new ResponseEntity<>(recommendDTO, HttpStatus.OK);
         } catch (Exception e) {
