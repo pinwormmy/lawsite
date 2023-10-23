@@ -43,7 +43,7 @@
                 <div class="terms-section">
                     <div class="terms-header">개인정보처리방침</div>
                     <div class="terms-content">
-                        (장문의 <br> 개인정보처리방침  <br> 텍스트 ...)  <br> <br> <br>
+                        <%@include file="./include/privacy.jspf" %>
                     </div>
                     <div class="checkbox-section">
                         <input type="checkbox" id="terms2" name="terms2" style="vertical-align: middle;">
