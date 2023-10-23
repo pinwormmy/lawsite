@@ -31,7 +31,7 @@
                 <div class="terms-section">
                     <div class="terms-header">서비스 이용 약관</div>
                     <div class="terms-content">
-                        (장문의  <br> 이용약관  <br> 텍스트 ...)  <br> <br>
+                        <%@include file="./include/terms.jspf" %>
                     </div>
                     <div class="checkbox-section" >
                         <input type="checkbox" id="terms1" name="terms1" style="vertical-align: middle;">
