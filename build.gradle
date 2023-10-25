@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'com.sc1hub'
-version = '0.0.004-SNAPSHOT'
+version = '0.0.006-SNAPSHOT'
 sourceCompatibility = '17'
 targetCompatibility = '17'
 
