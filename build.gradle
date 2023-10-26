@@ -6,9 +6,9 @@ plugins {
 }
 
 group = 'com.sc1hub'
-version = '0.0.006-SNAPSHOT'
-sourceCompatibility = '17'
-targetCompatibility = '17'
+version = '0.0.001-SNAPSHOT'
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
 
 repositories {
 	mavenCentral()
