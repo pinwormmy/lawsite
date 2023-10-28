@@ -46,7 +46,7 @@ public class BoardController {
                     "teamPlayGuideBoard"
             };
             for (String adminOnlyBoard : adminOnlyBoards) {
-                if (boardTitle.equalsIgnoreCase(adminOnlyBoard)) {
+                if (boardTitle.equalsIgnoreCase(adminOnlyBoard)) { // 대소문자 구분 안 함. (디비 상황에 따라 변경필요할 수 있음)
                     canWrite = (member.getGrade() == 3);  // 관리자만 글쓰기 가능
                     break;
                 }
