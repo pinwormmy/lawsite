@@ -46,7 +46,7 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public PageDTO pageSetting(PageDTO page) throws Exception {
+    public PageDTO pageSetting(PageDTO page) {
         checkPageAndKeyword(page);
         return utilLoadingForPage(page);
     }
@@ -67,7 +67,7 @@ public class MemberServiceImpl implements MemberService {
         if(page.getKeyword() == null) { page.setKeyword(""); }
     }
 
-    private PageDTO utilLoadingForPage(PageDTO page) throws Exception {
+    private PageDTO utilLoadingForPage(PageDTO page) {
         log.debug("서비스단계에서 검색어 확인 : {}", page.getKeyword());
         page.setTotalPostCount(getTotalMemberCount(page));
         PageService util = initPageUtil();
@@ -101,7 +101,7 @@ public class MemberServiceImpl implements MemberService {
         try {
             emailService.sendSimpleMessage(email);
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("이메일 전송오류", e);
         }
 
         return true;

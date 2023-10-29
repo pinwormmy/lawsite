@@ -6,87 +6,87 @@
 <mapper namespace="com.sc1hub.mapper.MemberMapper">
 
     <select id="isUniqueId" resultType="String">
-        SELECT COUNT(*) FROM MEMBER
-            WHERE id=#{id}
+        select count(*) from member
+        where id=#{id}
     </select>
 
     <select id="isUniqueEmail" resultType="String">
-        SELECT COUNT(*) FROM MEMBER
-        WHERE email=#{email}
+        select count(*) from member
+        where email=#{email}
     </select>
 
     <insert id="submitSignUp">
-        INSERT INTO MEMBER(ID, PW, NICKNAME, REALNAME, EMAIL, PHONE, GRADE, REG_DATE)
-            VALUES(#{id}, #{pw}, #{nickName}, #{realName}, #{email}, #{phone}, 1, NOW())
+        insert into member(id, pw, nickname, realname, email, phone, grade, reg_date)
+        values(#{id}, #{pw}, #{nickName}, #{realName}, #{email}, #{phone}, 1, now())
     </insert>
 
     <select id="checkLoginData" resultType="com.sc1hub.member.MemberDTO">
-        SELECT * FROM MEMBER
-            WHERE ID=#{id} AND PW=#{pw}
+        select * from member
+        where id=#{id} and pw=#{pw}
     </select>
 
     <update id="submitModifyMyInfo">
-        UPDATE MEMBER
-            SET PW=#{pw}, NICKNAME=#{nickName}, EMAIL=#{email}
-            WHERE ID=#{id}
+        update member
+        set pw=#{pw}, nickname=#{nickName}, email=#{email}
+        where id=#{id}
     </update>
 
     <select id="getMemberInfo" resultType="com.sc1hub.member.MemberDTO">
-        SELECT *
-            FROM MEMBER
-            WHERE ID=#{id}
+        select *
+        from member
+        where id=#{id}
     </select>
 
     <select id="getMemberList" resultType="com.sc1hub.member.MemberDTO">
-        SELECT *
-            FROM MEMBER
-            WHERE <include refid="searchKeyword" />
-            ORDER by id
-            LIMIT #{postBeginPoint}, #{displayPostLimit}
+        select *
+        from member
+        where <include refid="searchKeyword" />
+        order by id
+        limit #{postBeginPoint}, #{displayPostLimit}
     </select>
 
     <select id="getTotalMemberCount" resultType="int">
-        SELECT COUNT(*)
-            FROM MEMBER
-            WHERE <include refid="searchKeyword" />
+        select count(*)
+        from member
+        where <include refid="searchKeyword" />
     </select>
 
     <sql id="searchKeyword">
-        ID like CONCAT('%', #{keyword}, '%') OR
-        NICKNAME like CONCAT('%', #{keyword}, '%') OR
-        REALNAME like CONCAT('%', #{keyword}, '%')
+        id like concat('%', #{keyword}, '%') or
+        nickname like concat('%', #{keyword}, '%') or
+        realname like concat('%', #{keyword}, '%')
     </sql>
 
     <update id="submitModifyMemberByAdmin">
-        UPDATE MEMBER
-            SET NICKNAME=#{nickName}, REALNAME=#{realName}, EMAIL=#{email}, PHONE=#{phone}, GRADE=#{grade}
-            WHERE ID=#{id}
+        update member
+        set nickname=#{nickName}, realname=#{realName}, email=#{email}, phone=#{phone}, grade=#{grade}
+        where id=#{id}
     </update>
 
     <select id="findByEmail" resultType="com.sc1hub.member.MemberDTO">
-        SELECT * FROM MEMBER
-            WHERE EMAIL=#{email}
+        select * from member
+        where email=#{email}
     </select>
 
     <update id="updatePassword">
-        UPDATE MEMBER
-            SET PW=#{pw}
-            WHERE ID=#{id}
+        update member
+        set pw=#{pw}
+        where id=#{id}
     </update>
 
     <select id="getIdByNameAndEmail" resultType="String">
-        SELECT ID FROM MEMBER
-            WHERE REALNAME=#{userName} AND EMAIL=#{email}
+        select id from member
+        where realname=#{userName} and email=#{email}
     </select>
 
     <select id="findByUserIdAndEmail" resultType="com.sc1hub.member.MemberDTO">
-        SELECT * FROM MEMBER
-            WHERE ID=#{userId} AND EMAIL=#{email}
+        select * from member
+        where id=#{userId} and email=#{email}
     </select>
 
     <delete id="deleteMember">
-        DELETE FROM MEMBER
-            WHERE ID=#{id}
+        delete from member
+        where id=#{id}
     </delete>
 
 </mapper>
