@@ -26,7 +26,7 @@ public class EmailServiceImpl implements EmailService {
         MimeMessageHelper helper = new MimeMessageHelper(message, true, "utf-8");
 
         helper.setTo(recipient);
-        helper.setSubject("컬럼사이트 이메일 인증");
+        helper.setSubject("SC1Hub 이메일 인증");
         helper.setText(generateEmailContent(verificationCode), true);
         helper.setFrom(new InternetAddress("mealchelin@gmail.com", "admin"));
 
@@ -36,7 +36,7 @@ public class EmailServiceImpl implements EmailService {
     private String generateEmailContent(String verificationCode) {
 
         return "<div style='margin:20px;'>" +
-                "<h2> 안녕하세요 컬럼사이트 이메일 인증입니다. </h2>" +
+                "<h2> 안녕하세요 SC1Hub 이메일 인증입니다. </h2>" +
                 "<br>" +
                 "<p>아래 코드를 회원가입 이메일 인증칸에 입력해주세요<p>" +
                 "<br>" +
@@ -105,7 +105,7 @@ public class EmailServiceImpl implements EmailService {
         MimeMessageHelper helper = new MimeMessageHelper(message, true, "utf-8");
 
         helper.setTo(recipient);
-        helper.setSubject("Your New Temporary Password from 컬럼사이트");
+        helper.setSubject("SC1Hub의 새 임시 비밀번호 발급");
         helper.setText(generateNewPasswordEmailContent(newPassword), true);
         helper.setFrom(new InternetAddress("mealchelin@gmail.com", "admin"));
 
@@ -114,7 +114,7 @@ public class EmailServiceImpl implements EmailService {
 
     private String generateNewPasswordEmailContent(String newPassword) {
 
-        return "<h2>컬럼사이트의 임시 비밀번호입니다</h2>" +
+        return "<h2>SC1Hub의 임시 비밀번호입니다</h2>" +
                 "<p>아래 임시 비밀번호로 로그인해 주 세요: <strong>" +
                 newPassword +
                 "</strong></p>" +
