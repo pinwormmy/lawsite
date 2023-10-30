@@ -16,7 +16,7 @@
                     선택>
                     <input id="menuInput">
                 </div>
-                <p class="copyright-text">Copyright 2023. OOO All right reserved.</p>
+                <p class="copyright-text">Copyright 2023. SC1Hub All right reserved.</p>
 				<p class="visitor-text">오늘의 방문자 수: ${todayCount}, 누적 방문자 수: ${totalCount}</p>
 			</div>
 		</div>
