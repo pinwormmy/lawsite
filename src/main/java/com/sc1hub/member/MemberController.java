@@ -95,6 +95,7 @@ public class MemberController {
         return "modifyMember";
     }
 
+    // 시연용 로그인. 서비스 오픈 전에 삭제하기 ---------------------------------------------------------
     @RequestMapping(value = "/loginForDemo")
     public String loginForDemo(HttpServletRequest request) throws Exception {
         request.getSession().setAttribute("pageBeforeLogin", request.getHeader("Referer"));
@@ -120,6 +121,8 @@ public class MemberController {
         log.info("(시연용) 관리자로그인 성공 : {}", loginData);
         return "redirect:" + session.getAttribute("pageBeforeLogin");
     }
+
+    // 시연용 로그인. 서비스 오픈 전에 삭제하기 ---------------------------------------------------------
 
     @PostMapping("/sendVerificationMail")
     @ResponseBody
