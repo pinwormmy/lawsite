@@ -17,7 +17,7 @@
                                 <div class="inputId">
                                     회원ID>
                                     <input type="text" name="id" id="inputId"><br>
-                                    <span id="idCheckText">ID 중복확인이 필요합니다.</span>
+                                    <span id="idCheckText">ID를 입력해주세요.</span>
                                 </div>
                                 <div>
                                     패스워드>
@@ -38,7 +38,7 @@
                                 <div>
                                     이메일>
                                     <input type="email" id="email" name="email"><br>
-                                    <span id="emailCheckText">이메일 중복확인이 필요합니다.</span><br>
+                                    <span id="emailCheckText">이메일을 입력해주세요.</span><br>
                                     <button type="button" id="sendVerificationNumberButton" class="basicButton">인증번호 받기</button><br>
                                     이메일 인증번호>
                                     <input id="inputEmailVerificationNumber"><br>
