@@ -56,10 +56,6 @@
         <div class="super-top-menu">
             <ul>
                 <c:if test="${member == null}">
-                    <!-- 시연용 로그인 메뉴. 실서비스 이전에 꼭 삭제하시오!! -->
-                    <li><a href="/loginForDemo" style="color:#070093;">일반</a></li>
-                    <li><a href="/loginForDemoAsAdmin" style="color:#070093;">관리자</a></li>
-                    <!-- 시연용 로그인 메뉴. 실서비스 이전에 꼭 삭제하시오!! -->
                     <li><a href="/login">로그인</a></li>
                     <li><a href="/signAgreement">회원가입</a></li>
                 </c:if>

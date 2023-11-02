@@ -95,35 +95,6 @@ public class MemberController {
         return "modifyMember";
     }
 
-    // 시연용 로그인. 서비스 오픈 전에 삭제하기 ---------------------------------------------------------
-    @RequestMapping(value = "/loginForDemo")
-    public String loginForDemo(HttpServletRequest request) throws Exception {
-        request.getSession().setAttribute("pageBeforeLogin", request.getHeader("Referer"));
-        MemberDTO member = new MemberDTO();
-        member.setId("midori"); // midori는 시연용 승인회원 계정
-        member.setPw("a111");
-        MemberDTO loginData = memberService.checkLoginData(member);
-        HttpSession session = request.getSession();
-        session.setAttribute("member", loginData);
-        log.info("(시연용) 일반로그인 성공 : {}", loginData);
-        return "redirect:" + session.getAttribute("pageBeforeLogin");
-    }
-
-    @RequestMapping(value = "/loginForDemoAsAdmin")
-    public String loginForDemoAsAdmin(HttpServletRequest request) throws Exception {
-        request.getSession().setAttribute("pageBeforeLogin", request.getHeader("Referer"));
-        MemberDTO member = new MemberDTO();
-        member.setId("admin"); // admin은 시연용 관리자 계정입니다.
-        member.setPw("a111");
-        MemberDTO loginData = memberService.checkLoginData(member);
-        HttpSession session = request.getSession();
-        session.setAttribute("member", loginData);
-        log.info("(시연용) 관리자로그인 성공 : {}", loginData);
-        return "redirect:" + session.getAttribute("pageBeforeLogin");
-    }
-
-    // 시연용 로그인. 서비스 오픈 전에 삭제하기 ---------------------------------------------------------
-
     @PostMapping("/sendVerificationMail")
     @ResponseBody
     public ResponseEntity<VerificationResponseDTO> sendVerificationMail(@RequestBody EmailDTO emailDTO) {
