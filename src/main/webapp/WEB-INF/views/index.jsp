@@ -37,6 +37,9 @@ body {
 </style>
 </head>
 <body>
+
+<!-- 모바일 환경 최적화 작업하기 -->
+
 <%@include file="./include/header.jspf" %>
     <div class="section-inner">
         <div class="container">
