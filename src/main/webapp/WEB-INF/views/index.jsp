@@ -38,7 +38,7 @@ body {
 </head>
 <body>
 
-<!-- 모바일 환경 최적화 작업하기 -->
+<!-- 모바일 환경 최적화 작업하기. 공통 CSS 확인하기 -->
 
 <%@include file="./include/header.jspf" %>
     <div class="section-inner">
