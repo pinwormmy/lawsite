@@ -49,7 +49,7 @@ body {
                     <legend><a href="/"> [테란 네트워크]</a></legend>
                     <table class="boardList" style="width: 100%;">
                         <tr><td><a href="/terranBoard/list">20. 테란 게시판</a></td></tr>
-                        <tr><td><a href="">21. 테란 종족특성</a></td></tr>
+                        <tr><td><a href="/terranGuideBoard/readPost?postNum=8">21. 테란 종족특성</a></td></tr>
                         <tr><td><a href="/tVsZBoard/list">22. 대저그전 게시판(테저전)</a></td></tr>
                         <tr><td><a href="">23. 불꽃러쉬 타이밍</a></td></tr>
                         <tr><td><a href="">24. 바이오닉 컨트롤법</a></td></tr>
@@ -71,7 +71,7 @@ body {
                     <legend><a href="/"> [저그 네트워크]</a></legend>
                     <table class="boardList" style="width: 100%;">
                         <tr><td><a href="/zergBoard/list">40. 저그 게시판</a></td></tr>
-                        <tr><td><a href="">41. 저그 종족특성</a></td></tr>
+                        <tr><td><a href="/zergGuideBoard/readPost?postNum=3">41. 저그 종족특성</a></td></tr>
                         <tr><td><a href="/zVsTBoard/list">42. 대테란전 게시판(저테전)</a></td></tr>
                         <tr><td><a href="">43. 뮤탈 컨트롤 공략</a></td></tr>
                         <tr><td><a href="">44. 불꽃러쉬 대응법</a></td></tr>
@@ -93,7 +93,7 @@ body {
                     <legend><a href="/"> [프로토스 네트워크] </a></legend>
                     <table class="boardList" style="width: 100%;">
                         <tr><td><a href="/protossBoard/list">60. 프로토스 게시판</a></td></tr>
-                        <tr><td><a href="">61. 프로토스 종족특성</a></td></tr>
+                        <tr><td><a href="/protossGuideBoard/readPost?postNum=3">61. 프로토스 종족특성</a></td></tr>
                         <tr><td><a href="/pVsTBoard/list">62. 대테란전 게시판(프테전)</a></td></tr>
                         <tr><td><a href="">63. 속업셔틀 뚫기 타이밍</a></td></tr>
                         <tr><td><a href="">64. 업테란 파악 후 운영법</a></td></tr>
