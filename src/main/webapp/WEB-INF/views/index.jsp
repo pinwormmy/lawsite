@@ -73,7 +73,7 @@ body {
                         <tr><td><a href="/zergBoard/list">40. 저그 게시판</a></td></tr>
                         <tr><td><a href="/zergGuideBoard/readPost?postNum=3">41. 저그 종족특성</a></td></tr>
                         <tr><td><a href="/zVsTBoard/list">42. 대테란전 게시판(저테전)</a></td></tr>
-                        <tr><td><a href="">43. 뮤탈 컨트롤 공략</a></td></tr>
+                        <tr><td><a href="/zVsTBoard/readPost?postNum=3">43. 투해처리 뮤탈 후 하이브</a></td></tr>
                         <tr><td><a href="">44. 불꽃러쉬 대응법</a></td></tr>
                         <tr><td><a href="">45. 하이브 타이밍</a></td></tr>
                         <tr><td><a href="">46. 디파일러 운영법</a></td></tr>
