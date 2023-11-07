@@ -15,9 +15,6 @@
                             <th style="width: 10%;">조 회</th>
                             <th style="width: 10%;">추 천</th>
                         </tr>
-
-                        <!-- 긴 제목도 한 줄만 뜨게 조정하기 -->
-
                         <c:forEach var="notice" items="${selfNoticeList}">
                             <tr class="notice-tr">
                                 <td class="post-num">${notice.postNum} &nbsp</td>
