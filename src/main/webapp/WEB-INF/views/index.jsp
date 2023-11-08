@@ -100,7 +100,7 @@ body {
                         <tr><td><a href="">65. 캐리어 가는 경우</a></td></tr>
                         <tr><td><a href="/pVsZBoard/list">66. 대저그전 게시판(프저전)</a></td></tr>
                         <tr><td><a href="/pVsZBoard/readPost?postNum=2">67. 선게이트 운영법</a></td></tr>
-                        <tr><td><a href="">68. 973 찌르기 대응법</a></td></tr>
+                        <tr><td><a href="/pVsZBoard/readPost?postNum=3">68. 973 찌르기 대응법</a></td></tr>
                         <tr><td><a href="">69. 투스타 운영법</a></td></tr>
                         <tr><td><a href="">70. 커공발 운영법</a></td></tr>
                         <tr><td><a href="/pVsPBoard/list">71. 대토스전 게시판(프프전)</a></td></tr>
