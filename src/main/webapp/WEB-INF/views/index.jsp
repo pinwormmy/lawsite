@@ -101,7 +101,7 @@ body {
                         <tr><td><a href="/pVsZBoard/list">66. 대저그전 게시판(프저전)</a></td></tr>
                         <tr><td><a href="/pVsZBoard/readPost?postNum=2">67. 선게이트 운영법</a></td></tr>
                         <tr><td><a href="/pVsZBoard/readPost?postNum=3">68. 973 찌르기 대응법</a></td></tr>
-                        <tr><td><a href="">69. 투스타 운영법</a></td></tr>
+                        <tr><td><a href="/pVsZBoard/readPost?postNum=5">69. 포지더블 운영법</a></td></tr>
                         <tr><td><a href="/pVsZBoard/readPost?postNum=4">70. 커공발 운영법</a></td></tr>
                         <tr><td><a href="/pVsPBoard/list">71. 대토스전 게시판(프프전)</a></td></tr>
                         <tr><td><a href="">72. 기어리버 운영법</a></td></tr>
