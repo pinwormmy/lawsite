@@ -60,7 +60,7 @@ body {
                         <tr><td><a href="/tVsPBoard/readPost?postNum=3">29. 타이밍 찌르기 정리</a></td></tr>
                         <tr><td><a href="/tVsPBoard/readPost?postNum=4">30. 안티 캐리어 빌드</a></td></tr>
                         <tr><td><a href="/tVsTBoard/list">31. 대테란전 게시판(테테전)</a></td></tr>
-                        <tr><td><a href="">32. 탱크 자리잡기 운영</a></td></tr>
+                        <tr><td><a href="/tVsTBoard/readPost?postNum=2">32. 기본 정석 운영은?</a></td></tr>
                         <tr><td><a href="">33. 그래도 빨리 끝내려면?</a></td></tr>
                         <tr><td><a href="">34. 배틀크루저 운영법</a></td></tr>
                     </table>
