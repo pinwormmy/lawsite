@@ -12,7 +12,7 @@ body {
     line-height: 1.5;
     font-family: "DungGeunMo", sans-serif;
     color: white;
-    background-color: #06115c;
+    background-color: #010a47;
     font-size: 16px;
 }
 .section-wrapper {
@@ -59,7 +59,7 @@ select {
     outline: none;
 }
 option {
-    background-color: #06115c;
+    background-color: #010a47;
 }
 fieldset {
     border: 1px solid white;
