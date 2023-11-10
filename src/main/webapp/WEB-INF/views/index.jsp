@@ -52,7 +52,7 @@ body {
                         <tr><td><a href="/terranGuideBoard/readPost?postNum=8">21. 테란 종족특성</a></td></tr>
                         <tr><td><a href="/tVsZBoard/list">22. 대저그전 게시판(테저전)</a></td></tr>
                         <tr><td><a href="/tVsZBoard/readPost?postNum=2">23. 선엔베 업테란 운영</a></td></tr>
-                        <tr><td><a href="">24. 바이오닉 컨트롤법</a></td></tr>
+                        <tr><td><a href="/tVsZBoard/readPost?postNum=3">24. 투배럭 아카데미 운영</a></td></tr>
                         <tr><td><a href="">25. 레이트 메카닉 운영법</a></td></tr>
                         <tr><td><a href="">26. 다크스웜 이후 운영법</a></td></tr>
                         <tr><td><a href="/tVsPBoard/list">27. 대토스전 게시판(테프전)</a></td></tr>
