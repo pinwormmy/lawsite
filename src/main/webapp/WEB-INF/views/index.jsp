@@ -62,7 +62,7 @@ body {
                         <tr><td><a href="/tVsTBoard/list">31. 대테란전 게시판(테테전)</a></td></tr>
                         <tr><td><a href="/tVsTBoard/readPost?postNum=2">32. 기본 정석 운영은?</a></td></tr>
                         <tr><td><a href="/tVsTBoard/readPost?postNum=3">33. 그래도 빨리 끝내려면?</a></td></tr>
-                        <tr><td><a href="">34. 배틀크루저 운영법</a></td></tr>
+                        <tr><td><a href="/tVsTBoard/readPost?postNum=4">34. 게임 터트릴 수도 있는 원팩원스타</a></td></tr>
                     </table>
                 </fieldset>
             </div>
