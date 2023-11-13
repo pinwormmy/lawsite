@@ -76,9 +76,9 @@ body {
                         <tr><td><a href="/zVsTBoard/readPost?postNum=3">43. 투해처리 뮤탈 후 하이브</a></td></tr>
                         <tr><td><a href="/zVsTBoard/readPost?postNum=4">44. 4드론...</a></td></tr>
                         <tr><td><a href="/zVsTBoard/readPost?postNum=5">45. 초반 빌드 분기 정리</a></td></tr>
-                        <tr><td><a href="">46. 디파일러 운영법</a></td></tr>
+                        <tr><td><a href="/zVsTBoard/readPost?postNum=6">46. 뮤탈짤짤이 공략</a></td></tr>
                         <tr><td><a href="/zVsPBoard/list">47. 대토스전 게시판(저프전)</a></td></tr>
-                        <tr><td><a href="">48. 973빌드 사용법</a></td></tr>
+                        <tr><td><a href="/zVsPBoard/readPost?postNum=2">48. 973빌드 사용법</a></td></tr>
                         <tr><td><a href="">49. 선게이트 대응법</a></td></tr>
                         <tr><td><a href="">50. 스톰 이후 대응 운영</a></td></tr>
                         <tr><td><a href="/zVsZBoard/list">51. 대저그전 게시판(저저전)</a></td></tr>
