@@ -79,7 +79,7 @@ body {
                         <tr><td><a href="/zVsTBoard/readPost?postNum=6">46. 뮤탈짤짤이 공략</a></td></tr>
                         <tr><td><a href="/zVsPBoard/list">47. 대토스전 게시판(저프전)</a></td></tr>
                         <tr><td><a href="/zVsPBoard/readPost?postNum=2">48. 973빌드 사용법</a></td></tr>
-                        <tr><td><a href="">49. 선게이트 대응법</a></td></tr>
+                        <tr><td><a href="/zVsPBoard/readPost?postNum=3">49. 5해처리 히드라 운영</a></td></tr>
                         <tr><td><a href="">50. 스톰 이후 대응 운영</a></td></tr>
                         <tr><td><a href="/zVsZBoard/list">51. 대저그전 게시판(저저전)</a></td></tr>
                         <tr><td><a href="">52. 저글링 컨트롤 공략</a></td></tr>
