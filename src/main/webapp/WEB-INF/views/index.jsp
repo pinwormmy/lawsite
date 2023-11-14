@@ -83,7 +83,7 @@ body {
                         <tr><td><a href="/zVsPBoard/readPost?postNum=4">50. 하이브 운영에 대해..</a></td></tr>
                         <tr><td><a href="/zVsZBoard/list">51. 대저그전 게시판(저저전)</a></td></tr>
                         <tr><td><a href="/zVsZBoard/readPost?postNum=2">52. 초반빌드 상성 정리</a></td></tr>
-                        <tr><td><a href="">53. 뮤탈스커지 컨트롤 심화</a></td></tr>
+                        <tr><td><a href="/zVsZBoard/readPost?postNum=3">53. 뮤짤로 스커지 잡기</a></td></tr>
                         <tr><td><a href="">54. 동족전 빌드상성 정리</a></td></tr>
                     </table>
                 </fieldset>
