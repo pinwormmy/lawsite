@@ -37,9 +37,6 @@ body {
 </style>
 </head>
 <body>
-
-<!-- 모바일 환경 최적화 작업하기. 공통 CSS 확인하기 -->
-
 <%@include file="./include/header.jspf" %>
     <div class="section-inner">
         <div class="container">
@@ -84,7 +81,7 @@ body {
                         <tr><td><a href="/zVsZBoard/list">51. 대저그전 게시판(저저전)</a></td></tr>
                         <tr><td><a href="/zVsZBoard/readPost?postNum=2">52. 초반빌드 상성 정리</a></td></tr>
                         <tr><td><a href="/zVsZBoard/readPost?postNum=3">53. 뮤짤로 스커지 잡기</a></td></tr>
-                        <tr><td><a href="">54. 동족전 빌드상성 정리</a></td></tr>
+                        <tr><td><a href="/zVsZBoard/readPost?postNum=4">54. 4드론 대신 쓸 날먹빌드</a></td></tr>
                     </table>
                 </fieldset>
             </div>
