@@ -93,8 +93,8 @@ body {
                         <tr><td><a href="/protossGuideBoard/readPost?postNum=3">61. 프로토스 종족특성</a></td></tr>
                         <tr><td><a href="/pVsTBoard/list">62. 대테란전 게시판(프테전)</a></td></tr>
                         <tr><td><a href="/pVsTBoard/readPost?postNum=2">63. 안전한 23넥 아비터 운영</a></td></tr>
-                        <tr><td><a href="/pVsTBoard/readPost?postNum=3">64. 극혐운영! 대각생넥캐리어!</a></td></tr>
-                        <tr><td><a href="">65. 캐리어 가는 경우</a></td></tr>
+                        <tr><td><a href="/pVsTBoard/readPost?postNum=3">64. 극혐? 대각생넥캐리어!</a></td></tr>
+                        <tr><td><a href="/pVsTBoard/readPost?postNum=4">65. 전진로보 전략</a></td></tr>
                         <tr><td><a href="/pVsZBoard/list">66. 대저그전 게시판(프저전)</a></td></tr>
                         <tr><td><a href="/pVsZBoard/readPost?postNum=2">67. 선게이트 운영법</a></td></tr>
                         <tr><td><a href="/pVsZBoard/readPost?postNum=3">68. 973 찌르기 대응법</a></td></tr>
