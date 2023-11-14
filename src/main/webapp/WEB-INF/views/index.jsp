@@ -92,7 +92,7 @@ body {
                         <tr><td><a href="/protossBoard/list">60. 프로토스 게시판</a></td></tr>
                         <tr><td><a href="/protossGuideBoard/readPost?postNum=3">61. 프로토스 종족특성</a></td></tr>
                         <tr><td><a href="/pVsTBoard/list">62. 대테란전 게시판(프테전)</a></td></tr>
-                        <tr><td><a href="">63. 속업셔틀 뚫기 타이밍</a></td></tr>
+                        <tr><td><a href="/pVsTBoard/readPost?postNum=2">63. 안전한 23넥 아비터 운영</a></td></tr>
                         <tr><td><a href="">64. 업테란 파악 후 운영법</a></td></tr>
                         <tr><td><a href="">65. 캐리어 가는 경우</a></td></tr>
                         <tr><td><a href="/pVsZBoard/list">66. 대저그전 게시판(프저전)</a></td></tr>
