@@ -101,7 +101,7 @@ body {
                         <tr><td><a href="/pVsZBoard/readPost?postNum=5">69. 포지더블 운영법</a></td></tr>
                         <tr><td><a href="/pVsZBoard/readPost?postNum=4">70. 커공발 운영법</a></td></tr>
                         <tr><td><a href="/pVsPBoard/list">71. 대토스전 게시판(프프전)</a></td></tr>
-                        <tr><td><a href="">72. 기어리버 운영법</a></td></tr>
+                        <tr><td><a href="/pVsPBoard/readPost?postNum=2">72. 기어리버 운영법</a></td></tr>
                         <tr><td><a href="">73. 옵3게이트 운영법</a></td></tr>
                         <tr><td><a href="">74. 4게이트 찌르기</a></td></tr>
                     </table>
