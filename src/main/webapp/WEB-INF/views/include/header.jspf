@@ -4,6 +4,8 @@
 <html>
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="stylesheet" href="/plugins/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="/css/style.css">
 
@@ -35,14 +37,35 @@
 .super-top-menu ul li {
     margin-right: 20px;
 }
-.title-container {
-    font-size: 20px;
-    position: absolute; /* 절대 위치 지정 */
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+
+/* 데스크톱 화면에서는 기본 타이틀 텍스트 사용 */
+.title-container .full-title {
+    display: inline;
 }
+
+.title-container .short-title {
+    display: none;
+}
+
+/* 모바일 화면에서는 SC1Hub만 표시 */
+@media (max-width: 768px) {
+    .title-container {
+        font-size: clamp(14px, 5vw, 30px);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    .title-container .full-title {
+        display: none;
+    }
+    .title-container .short-title {
+        display: inline;
+    }
+}
+
+
 </style>
 </head>
 
@@ -51,7 +74,8 @@
     <div class="this-header">
         <div style="flex-grow: 1;"></div>
         <div class="title-container">
-            SC1Hub - 스타크래프트1 전문 커뮤니티
+            <span class="full-title">SC1Hub - 스타크래프트1 전문 커뮤니티</span>
+            <span class="short-title">SC1Hub</span>
         </div>
         <div class="super-top-menu">
             <ul>

@@ -18,9 +18,8 @@ body {
 
 @media (max-width: 768px) {
     body {
-        width: 50%;
-        font-size: 24px;
-        margin: 0 auto; /* 중앙 정렬 */
+        font-size: clamp(10px, 2vw, 30px);
+        margin: 0 auto;
     }
 }
 
