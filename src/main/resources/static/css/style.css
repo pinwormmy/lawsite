@@ -2,9 +2,6 @@
     font-family: 'DungGeunMo';
     src: url('/fonts/DungGeunMo.ttf') format('truetype');
 }
-html {
-    height: 100%;
-}
 body {
     position: relative;
     width: 100%;
@@ -15,14 +12,11 @@ body {
     background-color: #010a47;
     font-size: 16px;
 }
-
 @media (max-width: 768px) {
     body {
-        font-size: clamp(10px, 2vw, 30px);
-        margin: 0 auto;
+        font-size: 20px;
     }
 }
-
 .section-wrapper {
     min-height: 850px;
 }

@@ -38,6 +38,17 @@
     margin-right: 20px;
 }
 
+/* 모바일 화면에서 로그인 관련 메뉴 두 줄로 표시 */
+@media (max-width: 768px) {
+    .super-top-menu ul {
+        flex-wrap: wrap;
+
+    .super-top-menu ul li {
+        margin-right: 10px;
+        margin-bottom: 5px;
+    }
+}
+
 /* 데스크톱 화면에서는 기본 타이틀 텍스트 사용 */
 .title-container .full-title {
     display: inline;
@@ -47,15 +58,14 @@
     display: none;
 }
 
-/* 모바일 화면에서는 SC1Hub만 표시 */
 @media (max-width: 768px) {
     .title-container {
-        font-size: clamp(14px, 5vw, 30px);
+        font-size: 32px;
         position: absolute;
-        left: 50%;
+        left: 10%;
         top: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
+        transform: translateY(-50%);
+        text-align: left;
     }
     .title-container .full-title {
         display: none;
@@ -64,6 +74,7 @@
         display: inline;
     }
 }
+
 
 
 </style>
