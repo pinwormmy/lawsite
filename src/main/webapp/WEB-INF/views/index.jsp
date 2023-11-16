@@ -5,9 +5,6 @@
 <title>SC1Hub - 스타크래프트1 전문 커뮤니티</title>
 <style>
 
-body {
-    height: 100%;
-}
 .boardList {
     border-collapse: collapse;
     overflow: hidden;
@@ -18,20 +15,6 @@ body {
 .boardList td {
     padding: 5px;
     max-width: 100%;
-}
-.leftbar-ul li a{
-    color : white;
-    font-size: 12px;
-    font-weight: 500px;
-}
-.page-navigation {
-    text-align: center;
-}
-.checkbox-list {
-    padding: 10px;
-}
-.checkbox-list label {
-    font-weight: 400;
 }
 
 </style>
