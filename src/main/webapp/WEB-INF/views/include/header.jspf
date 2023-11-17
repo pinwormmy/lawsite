@@ -28,25 +28,15 @@
     flex-grow: 1; /* 가능한 모든 공간 차지 */
 }
 .super-top-menu ul {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: row;
 }
 .super-top-menu ul li {
     margin-right: 20px;
-}
-
-/* 모바일 화면에서 로그인 관련 메뉴 두 줄로 표시 */
-@media (max-width: 768px) {
-    .super-top-menu ul {
-        flex-wrap: wrap;
-
-    .super-top-menu ul li {
-        margin-right: 10px;
-        margin-bottom: 5px;
-    }
 }
 
 /* 데스크톱 화면에서는 기본 타이틀 텍스트 사용 */
@@ -58,20 +48,35 @@
     display: none;
 }
 
+/* 모바일 화면에서 헤더 레이아웃 조정 */
 @media (max-width: 768px) {
-    .title-container {
-        font-size: 32px;
-        position: absolute;
-        left: 10%;
-        top: 50%;
-        transform: translateY(-50%);
-        text-align: left;
+    .this-header {
+        flex-direction: column;
+        align-items: flex-start;
     }
+
+    .title-container {
+        font-size: 32px; /* 폰트 크기 조정 */
+        position: static; /* 절대 위치 제거 */
+        transform: none; /* 변환 제거 */
+        margin-bottom: 10px; /* 타이틀 아래 마진 추가 */
+        text-align: left; /* 좌측 정렬 */
+    }
+
     .title-container .full-title {
         display: none;
     }
+
     .title-container .short-title {
-        display: inline;
+        display: block; /* 블록 레벨 요소로 변경 */
+    }
+
+    .super-top-menu ul {
+        justify-content: flex-end;
+    }
+
+     .super-top-menu ul li {
+        margin-right: 10px;
     }
 }
 
