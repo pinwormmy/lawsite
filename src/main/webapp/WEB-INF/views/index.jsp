@@ -29,7 +29,7 @@
                     <legend><a href="/"> [테란 네트워크]</a></legend>
                     <table class="boardList" style="width: 100%;">
                         <tr><td><a href="/terranBoard/list">30. 테란 게시판</a></td></tr>
-                        <tr><td><a href="/terranBoard/readPost?postNum=8">31. 테란 종족특성</a></td></tr>
+                        <tr><td><a href="/terranBoard/readPost?postNum=2">31. 테란 종족특성</a></td></tr>
                         <tr><td><a href="/tVsZBoard/list">32. 대저그전 게시판(테저전)</a></td></tr>
                         <tr><td><a href="/tVsZBoard/readPost?postNum=2">33. 선엔베 업테란 운영</a></td></tr>
                         <tr><td><a href="/tVsZBoard/readPost?postNum=3">34. 투배럭 아카데미 운영</a></td></tr>
@@ -51,7 +51,7 @@
                     <legend><a href="/"> [저그 네트워크]</a></legend>
                     <table class="boardList" style="width: 100%;">
                         <tr><td><a href="/zergBoard/list">50. 저그 게시판</a></td></tr>
-                        <tr><td><a href="/terranBoard/readPost?postNum=3">51. 저그 종족특성</a></td></tr>
+                        <tr><td><a href="/zergBoard/readPost?postNum=2">51. 저그 종족특성</a></td></tr>
                         <tr><td><a href="/zVsTBoard/list">52. 대테란전 게시판(저테전)</a></td></tr>
                         <tr><td><a href="/zVsTBoard/readPost?postNum=3">53. 투해처리 뮤탈 후 하이브</a></td></tr>
                         <tr><td><a href="/zVsTBoard/readPost?postNum=4">54. 4드론...</a></td></tr>
@@ -73,7 +73,7 @@
                     <legend><a href="/"> [프로토스 네트워크] </a></legend>
                     <table class="boardList" style="width: 100%;">
                         <tr><td><a href="/protossBoard/list">70. 프로토스 게시판</a></td></tr>
-                        <tr><td><a href="/terranBoard/readPost?postNum=3">71. 프로토스 종족특성</a></td></tr>
+                        <tr><td><a href="/protossBoard/readPost?postNum=2">71. 프로토스 종족특성</a></td></tr>
                         <tr><td><a href="/pVsTBoard/list">72. 대테란전 게시판(프테전)</a></td></tr>
                         <tr><td><a href="/pVsTBoard/readPost?postNum=2">73. 안전한 23넥 아비터 운영</a></td></tr>
                         <tr><td><a href="/pVsTBoard/readPost?postNum=3">74. 극혐? 대각생넥캐리어!</a></td></tr>
