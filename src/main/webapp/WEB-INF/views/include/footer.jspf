@@ -47,7 +47,7 @@
             '17': '/protossBoard/list',
             '18': '/pVsTBoard/list',
             '19': '/pVsZBoard/list',
-            '20': '/pVsPBoard/list'
+            '20': '/pVsPBoard/list',
             // 테란 관련 게시판 및 게시물 매핑
             '30': '/terranBoard/list',
             '31': '/terranGuideBoard/readPost?postNum=8',
