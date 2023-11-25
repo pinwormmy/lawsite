@@ -7,6 +7,9 @@
         <div id="comments-list" class="gap">
             <div class="media">
                  <table class="boardList">
+
+                 <!-- 모바일용 약식 리스트 필요 -->
+
                         <tr>
                             <th style="width: 10%;">번 호</th>
                             <th style="width: 50%;">제 &nbsp 목</th>
