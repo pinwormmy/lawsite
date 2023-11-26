@@ -8,7 +8,7 @@
             <div class="media">
                  <table class="boardList">
 
-                 <!-- 모바일용 약식 리스트 필요 -->
+                 <!-- 모바일용 약식 리스트 필요. 번호 제목 추천 정도만 남기기. 모자라면 번호날리기 -->
 
                         <tr>
                             <th style="width: 10%;">번 호</th>
