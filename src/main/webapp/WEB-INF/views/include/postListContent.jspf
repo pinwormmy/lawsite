@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+
 <div class="post-heading mb">
     ${koreanTitle}
 </div>
@@ -6,43 +7,45 @@
     <div id="comments" class="col-xs-12">
         <div id="comments-list" class="gap">
             <div class="media">
-                 <table class="boardList">
-
-                 <!-- 모바일용 약식 리스트 필요. 번호 제목 추천 정도만 남기기. 모자라면 번호날리기 -->
-
-                        <tr>
-                            <th style="width: 10%;">번 호</th>
-                            <th style="width: 50%;">제 &nbsp 목</th>
-                            <th style="width: 10%;">작성자</th>
-                            <th style="width: 10%;">날 짜</th>
-                            <th style="width: 10%;">조 회</th>
-                            <th style="width: 10%;">추 천</th>
-                        </tr>
-                        <c:forEach var="notice" items="${selfNoticeList}">
-                            <tr class="notice-tr">
-                                <td class="post-num">${notice.postNum} &nbsp</td>
-                                <td><span>[공지]</span>
-                                <a class="noticeTitle" href="/${boardTitle}/readPost?postNum=${notice.postNum}">
-                                 ${notice.title}</a>
-                                <c:if test="${notice.commentCount > 0}">( ${notice.commentCount} )</c:if></td>
-                                <td class="writer">${notice.writer}</td>
-                                <td class="date"><fmt:formatDate pattern="yyyy.MM.dd" value="${notice.regDate}"/></td>
-                                <td class="views">${notice.views}</td>
-                                <td class="recommend">${notice.recommendCount}</td>
-                            </tr>
-                        </c:forEach>
-                        <c:forEach var="post" items="${postList}">
-                            <tr>
-                                <td class="post-num">${post.postNum} &nbsp</td>
-                                <td><a class="postTitle" href="/${boardTitle}/readPost?postNum=${post.postNum}">${post.title}</a>
-                                <c:if test="${post.commentCount > 0}">( ${post.commentCount} )</c:if></td>
-                                <td class="writer">${post.writer}</td>
-                                <td class="date"><fmt:formatDate pattern="yyyy.MM.dd" value="${post.regDate}"/></td>
-                                <td class="views">${post.views}</td>
-                                <td class="recommend">${post.recommendCount}</td>
-                            </tr>
-                        </c:forEach>
-                 </table>
+                <table class="boardList">
+                   <!-- 테이블 헤더 -->
+                   <tr>
+                       <th style="width: 10%;">번호</th>
+                       <th style="width: 50%;" class="mobile-visible">제목</th>
+                       <th style="width: 10%;">작성자</th>
+                       <th style="width: 10%;">날짜</th>
+                       <th style="width: 10%;">조회</th>
+                       <th style="width: 10%;">추천</th>
+                   </tr>
+                   <!-- 공지사항 목록 -->
+                   <c:forEach var="notice" items="${selfNoticeList}">
+                       <tr class="notice-tr">
+                           <td>${notice.postNum}</td>
+                           <td class="mobile-visible"><span>[공지]</span>
+                               <a class="noticeTitle" href="/${boardTitle}/readPost?postNum=${notice.postNum}">
+                                   ${notice.title}</a>
+                               <c:if test="${notice.commentCount > 0}">( ${notice.commentCount} )</c:if>
+                           </td>
+                           <td>${notice.writer}</td>
+                           <td><fmt:formatDate pattern="yyyy.MM.dd" value="${notice.regDate}"/></td>
+                           <td>${notice.views}</td>
+                           <td>${notice.recommendCount}</td>
+                       </tr>
+                   </c:forEach>
+                   <!-- 일반 게시물 목록 -->
+                   <c:forEach var="post" items="${postList}">
+                       <tr>
+                           <td>${post.postNum}</td>
+                           <td class="mobile-visible"><a class="postTitle" href="/${boardTitle}/readPost?postNum=${post.postNum}">${post.title}</a>
+                               <c:if test="${post.commentCount > 0}">( ${post.commentCount} )</c:if>
+                           </td>
+                           <td>${post.writer}</td>
+                           <td><fmt:formatDate pattern="yyyy.MM.dd" value="${post.regDate}"/></td>
+                           <td>${post.views}</td>
+                           <td>${post.recommendCount}</td>
+                       </tr>
+                   </c:forEach>
+                </table>
                  <c:if test="${empty postList}"><tr><td>관련 글이 없습니다...</td></tr></c:if>
             </div>
             <div class="post-navigation">
