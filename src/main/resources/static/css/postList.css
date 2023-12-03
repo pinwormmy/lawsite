@@ -27,16 +27,13 @@
 .views, .post-num, .recommend {
     text-align: right;
 }
-/* 모바일 환경에서 특정 열만 표시 */
+/* 모바일 환경에서 특정 열만 숨김 */
 @media screen and (max-width: 600px) {
-    .boardList th, .boardList td {
-        display: none; /* 모든 열을 기본적으로 숨김 */
-    }
-    .mobile-visible {
-        display: table-cell; /* 모바일 환경에서 보일 열 */
+    /* 숨길 열 지정 */
+    .boardList .hide-on-mobile {
+        display: none;
     }
 }
-
 /* 비 모바일 환경에서는 모든 열을 표시 */
 @media screen and (min-width: 601px) {
     .boardList th, .boardList td {
