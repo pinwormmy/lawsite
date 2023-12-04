@@ -29,14 +29,18 @@
 }
 /* 모바일 환경에서 특정 열만 숨김 */
 @media screen and (max-width: 600px) {
+    body .col-lg-3, body .col-lg-9, body.col-xs-12 {
+        padding: 1px;
+    }
+
     /* 숨길 열 지정 */
     .boardList .hide-on-mobile {
         display: none;
     }
     .boardList th,
     .boardList td {
-        padding-top: 7px;
-        padding-bottom: 7px;
+        padding-top: 8px;
+        padding-bottom: 8px;
     }
 }
 /* 비 모바일 환경에서는 모든 열을 표시 */
@@ -45,5 +49,11 @@
         display: table-cell;
     }
 }
+
+/* 모바일 환경에서 Bootstrap Column Padding 조정 */
+@media screen and (max-width: 600px) {
+
+}
+
 
 
