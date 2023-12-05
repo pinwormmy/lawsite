@@ -39,8 +39,8 @@
     }
     .boardList th,
     .boardList td {
-        padding-top: 8px;
-        padding-bottom: 8px;
+        padding-top: 5px;
+        padding-bottom: 5px;
     }
 }
 /* 비 모바일 환경에서는 모든 열을 표시 */
