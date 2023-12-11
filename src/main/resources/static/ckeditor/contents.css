@@ -192,14 +192,12 @@ a > img {
 	max-height: 480px;
 	margin:0 auto;
 }
-
 .embed-720p
 {
 	max-width: 1280px;
 	max-height: 720px;
 	margin:0 auto;
 }
-
 .embed-1080p
 {
 	max-width: 1920px;
