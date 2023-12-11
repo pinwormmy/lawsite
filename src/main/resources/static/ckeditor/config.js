@@ -35,4 +35,7 @@ CKEDITOR.editorConfig = function( config ) {
 
 	// Simplify the dialog windows.
 	config.removeDialogTabs = 'image:advanced;link:advanced';
+
+	// 특정 태그와 속성만 허용합니다.
+    config.extraAllowedContent = 'iframe[*]';
 };
