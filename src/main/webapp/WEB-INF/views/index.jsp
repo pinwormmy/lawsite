@@ -25,6 +25,7 @@
         <div class="container">
             <%@include file="./include/sidebar.jspf" %>
             <div class="col-lg-3">
+                <!-- 종족전 글 4개씩 맞추기. -->
                 <fieldset>
                     <legend><a href="/"> [테란 네트워크]</a></legend>
                     <table class="boardList" style="width: 100%;">
