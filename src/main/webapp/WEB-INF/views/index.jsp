@@ -45,7 +45,7 @@
                         <tr><td><a href="/tVsTBoard/readPost?postNum=2">42. 기본 정석 운영은?</a></td></tr>
                         <tr><td><a href="/tVsTBoard/readPost?postNum=3">43. 그래도 빨리 끝내려면?</a></td></tr>
                         <tr><td><a href="/tVsTBoard/readPost?postNum=4">44. 원팩원스타 전략</a></td></tr>
-                        <tr><td><a href="/tVsTBoard/readPost?postNum=4">45. 글 추가 예정...</a></td></tr>
+                        <tr><td><a href="/tVsTBoard/readPost?postNum=5">45. 후반 운영법</a></td></tr>
                     </table>
                 </fieldset>
             </div>
