@@ -41,11 +41,11 @@
                         <tr><td><a href="/tVsPBoard/readPost?postNum=3">39. 타이밍 찌르기 정리</a></td></tr>
                         <tr><td><a href="/tVsPBoard/readPost?postNum=4">40. 안티 캐리어 빌드</a></td></tr>
                         <tr><td><a href="/tVsPBoard/readPost?postNum=5">41. 정석. 배럭더블 운영</a></td></tr>
-                        <tr><td><a href="/tVsTBoard/list">41. 대테란전 게시판(테테전)</a></td></tr>
-                        <tr><td><a href="/tVsTBoard/readPost?postNum=2">42. 기본 정석 운영은?</a></td></tr>
-                        <tr><td><a href="/tVsTBoard/readPost?postNum=3">43. 그래도 빨리 끝내려면?</a></td></tr>
-                        <tr><td><a href="/tVsTBoard/readPost?postNum=4">44. 원팩원스타 전략</a></td></tr>
-                        <tr><td><a href="/tVsTBoard/readPost?postNum=5">45. 후반 운영법</a></td></tr>
+                        <tr><td><a href="/tVsTBoard/list">42. 대테란전 게시판(테테전)</a></td></tr>
+                        <tr><td><a href="/tVsTBoard/readPost?postNum=2">43. 기본 정석 운영은?</a></td></tr>
+                        <tr><td><a href="/tVsTBoard/readPost?postNum=3">44. 그래도 빨리 끝내려면?</a></td></tr>
+                        <tr><td><a href="/tVsTBoard/readPost?postNum=4">45. 원팩원스타 전략</a></td></tr>
+                        <tr><td><a href="/tVsTBoard/readPost?postNum=5">46. 후반 운영법</a></td></tr>
                     </table>
                 </fieldset>
             </div>
