@@ -64,10 +64,12 @@
                         <tr><td><a href="/zVsPBoard/readPost?postNum=2">58. 973빌드 사용법</a></td></tr>
                         <tr><td><a href="/zVsPBoard/readPost?postNum=3">59. 5해처리 히드라 운영</a></td></tr>
                         <tr><td><a href="/zVsPBoard/readPost?postNum=4">60. 하이브 운영에 대해..</a></td></tr>
-                        <tr><td><a href="/zVsZBoard/list">61. 대저그전 게시판(저저전)</a></td></tr>
-                        <tr><td><a href="/zVsZBoard/readPost?postNum=2">62. 초반빌드 상성 정리</a></td></tr>
-                        <tr><td><a href="/zVsZBoard/readPost?postNum=3">63. 뮤짤로 스커지 잡기</a></td></tr>
-                        <tr><td><a href="/zVsZBoard/readPost?postNum=4">64. 4드론 대신 쓸 날먹빌드</a></td></tr>
+                        <tr><td><a href="/zVsPBoard/readPost?postNum=5">61. 5뮤탈 운영법</a></td></tr>
+                        <tr><td><a href="/zVsZBoard/list">62. 대저그전 게시판(저저전)</a></td></tr>
+                        <tr><td><a href="/zVsZBoard/readPost?postNum=2">63. 초반빌드 상성 정리</a></td></tr>
+                        <tr><td><a href="/zVsZBoard/readPost?postNum=3">64. 뮤짤로 스커지 잡기</a></td></tr>
+                        <tr><td><a href="/zVsZBoard/readPost?postNum=4">65. 4드론 대신 쓸 날먹빌드</a></td></tr>
+                        <tr><td><a href="/zVsZBoard/readPost?postNum=4">66. 업데이트 예정...</a></td></tr>
                     </table>
                 </fieldset>
             </div>
