@@ -66,7 +66,7 @@
             '44': '/tVsTBoard/readPost?postNum=3',
             '45': '/tVsTBoard/readPost?postNum=4',
             '46': '/tVsTBoard/readPost?postNum=5',
-            // 저그 관련 게시판 및 게시물 매핑
+            // 저그 관련 게시판 및 게시물 매핑 (글추가 예정)
             '50': '/zergBoard/list',
             '51': '/zergGuideBoard/readPost?postNum=3',
             '52': '/zVsTBoard/list',
