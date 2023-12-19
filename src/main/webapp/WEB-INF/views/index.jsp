@@ -69,7 +69,7 @@
                         <tr><td><a href="/zVsZBoard/readPost?postNum=2">63. 초반빌드 상성 정리</a></td></tr>
                         <tr><td><a href="/zVsZBoard/readPost?postNum=3">64. 뮤짤로 스커지 잡기</a></td></tr>
                         <tr><td><a href="/zVsZBoard/readPost?postNum=4">65. 4드론 대신 쓸 날먹빌드</a></td></tr>
-                        <tr><td><a href="/zVsZBoard/readPost?postNum=4">66. 업데이트 예정...</a></td></tr>
+                        <tr><td><a href="/zVsZBoard/readPost?postNum=5">66. 빌드상성 극복하기</a></td></tr>
                     </table>
                 </fieldset>
             </div>
