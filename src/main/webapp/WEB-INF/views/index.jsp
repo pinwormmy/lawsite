@@ -83,15 +83,17 @@
                         <tr><td><a href="/pVsTBoard/readPost?postNum=2">73. 안전한 23넥 아비터 운영</a></td></tr>
                         <tr><td><a href="/pVsTBoard/readPost?postNum=3">74. 극혐? 대각생넥캐리어!</a></td></tr>
                         <tr><td><a href="/pVsTBoard/readPost?postNum=4">75. 전진로보 전략</a></td></tr>
-                        <tr><td><a href="/pVsZBoard/list">76. 대저그전 게시판(프저전)</a></td></tr>
-                        <tr><td><a href="/pVsZBoard/readPost?postNum=2">77. 선게이트 운영법</a></td></tr>
-                        <tr><td><a href="/pVsZBoard/readPost?postNum=3">78. 973 찌르기 대응법</a></td></tr>
-                        <tr><td><a href="/pVsZBoard/readPost?postNum=5">79. 포지더블 운영법</a></td></tr>
-                        <tr><td><a href="/pVsZBoard/readPost?postNum=4">80. 커공발 운영법</a></td></tr>
-                        <tr><td><a href="/pVsPBoard/list">81. 대토스전 게시판(프프전)</a></td></tr>
-                        <tr><td><a href="/pVsPBoard/readPost?postNum=2">82. 기어리버 운영법</a></td></tr>
-                        <tr><td><a href="/pVsPBoard/readPost?postNum=4">83. 빌드 상성 정리</a></td></tr>
-                        <tr><td><a href="/pVsPBoard/readPost?postNum=5">84. 2게이트 대처법</a></td></tr>
+                        <tr><td><a href="/pVsTBoard/readPost?postNum=4">76. 업데이트 예정</a></td></tr>
+                        <tr><td><a href="/pVsZBoard/list">77. 대저그전 게시판(프저전)</a></td></tr>
+                        <tr><td><a href="/pVsZBoard/readPost?postNum=2">78. 선게이트 운영법</a></td></tr>
+                        <tr><td><a href="/pVsZBoard/readPost?postNum=3">79. 973 찌르기 대응법</a></td></tr>
+                        <tr><td><a href="/pVsZBoard/readPost?postNum=5">80. 포지더블 운영법</a></td></tr>
+                        <tr><td><a href="/pVsZBoard/readPost?postNum=4">81. 커공발 운영법</a></td></tr>
+                        <tr><td><a href="/pVsPBoard/list">82. 대토스전 게시판(프프전)</a></td></tr>
+                        <tr><td><a href="/pVsPBoard/readPost?postNum=2">83. 기어리버 운영법</a></td></tr>
+                        <tr><td><a href="/pVsPBoard/readPost?postNum=4">84. 빌드 상성 정리</a></td></tr>
+                        <tr><td><a href="/pVsPBoard/readPost?postNum=5">85. 2게이트 대처법</a></td></tr>
+                        <tr><td><a href="/pVsPBoard/readPost?postNum=5">86. 업데이트 예정</a></td></tr>
                     </table>
                 </fieldset>
             </div>
