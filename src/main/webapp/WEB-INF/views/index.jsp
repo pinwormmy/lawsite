@@ -83,7 +83,7 @@
                         <tr><td><a href="/pVsTBoard/readPost?postNum=2">73. 안전한 23넥 아비터 운영</a></td></tr>
                         <tr><td><a href="/pVsTBoard/readPost?postNum=3">74. 극혐? 대각생넥캐리어!</a></td></tr>
                         <tr><td><a href="/pVsTBoard/readPost?postNum=4">75. 전진로보 전략</a></td></tr>
-                        <tr><td><a href="/pVsTBoard/readPost?postNum=4">76. 업데이트 예정</a></td></tr>
+                        <tr><td><a href="/pVsTBoard/readPost?postNum=5">76. 최신 운영법</a></td></tr>
                         <tr><td><a href="/pVsZBoard/list">77. 대저그전 게시판(프저전)</a></td></tr>
                         <tr><td><a href="/pVsZBoard/readPost?postNum=2">78. 선게이트 운영법</a></td></tr>
                         <tr><td><a href="/pVsZBoard/readPost?postNum=3">79. 973 찌르기 대응법</a></td></tr>
