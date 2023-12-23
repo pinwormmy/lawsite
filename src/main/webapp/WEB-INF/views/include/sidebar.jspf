@@ -81,15 +81,19 @@ window.onresize = function() {
     var sidebar = document.getElementById("sidebar");
     var toggleButton = document.getElementById("toggleButton");
 
-    if (window.innerWidth <= 600) {
+    // 창의 너비가 600px 이하이고, 사이드바가 이미 닫혀 있는 경우에만 사이드바를 닫습니다.
+    if (window.innerWidth <= 600 && sidebar.style.width !== "100%") {
         sidebar.style.width = "0";
         sidebar.style.height = "0";
         toggleButton.innerHTML = "상위메뉴 열기";
-    } else {
+    } else if (window.innerWidth > 600) {
+        // 창의 너비가 600px을 초과하면 사이드바를 열 상태로 유지합니다.
         sidebar.style.width = "100%";
         sidebar.style.height = "100%";
+        toggleButton.innerHTML = "상위메뉴 닫기"; // 필요하다면 이 부분을 조정할 수 있습니다.
     }
 };
+
 </script>
 
 
