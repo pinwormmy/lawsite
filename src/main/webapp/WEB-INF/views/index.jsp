@@ -4,7 +4,6 @@
 <head>
 <title>SC1Hub - 스타크래프트1 전문 커뮤니티</title>
 <style>
-
 .boardList {
     border-collapse: collapse;
     overflow: hidden;
@@ -16,7 +15,6 @@
     padding: 5px;
     max-width: 100%;
 }
-
 </style>
 </head>
 <body>
