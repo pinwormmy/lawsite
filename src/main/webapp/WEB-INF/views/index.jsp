@@ -12,7 +12,7 @@
 }
 .boardList th,
 .boardList td {
-    padding: 5px;
+    padding: 7px;
     max-width: 100%;
 }
 .terran-field {
@@ -29,12 +29,6 @@
 }
 .protoss-field {
     background-image: url('/image/zeratull1.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-.section-inner {
-    background-image: url('/image/star_full.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
