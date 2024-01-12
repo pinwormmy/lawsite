@@ -20,6 +20,18 @@
         display: block; /* 모바일 환경에서만 버튼 표시 */
     }
 }
+.menu-content {
+    display: none;
+}
+.menu-toggle-hint {
+    display: block;
+    color: #888;
+    text-align: center;
+    margin: 0;
+}
+.menu-header {
+    cursor: pointer;
+}
 
 </style>
 </head>
@@ -33,30 +45,33 @@
                 <li><a href="/guidelines" accesskey="g">0. 이용안내(G)</a></li>
                 <li><a href="/" accesskey="h">1. 초기화면(H)</a></li>
                 <li><a href="/matchReviewBoard/list">2. 대전리뷰</a></li>
-                <li><a href="/videoLinkBoard/list">3. 영상좌표</a></li>
+                <li><a href="/videoLinkBoard/list">3. 영상자료실</a></li>
                 <li><a href="/promotionBoard/list">4. 홍보게시판</a></li>
-                <li><a href="/teamPlayBoard/list">5. 팀플게시판</a></li>
-                <li><a href="/teamPlayGuideBoard/list">6. 팀플공략</a></li>
                 <li><a href="/freeBoard/list">7. 자유게시판</a></li>
-                <li><a href="/beginnerBoard/list">8. 초보자마당</a></li>
+                <li><a href="/beginnerBoard/list">8. 꿀잼놀이터</a></li>
             </ul>
         </fieldset>
-        <fieldset>
-            <legend>[종족게시판]</legend>
-            <ul>
-                <li><a href="/terranBoard/list" accesskey="t">9. 테란 게시판(T)</a></li>
-                <li><a href="/tVsZBoard/list">10. 테저전 게시판</a></li>
-                <li><a href="/tVsPBoard/list">11. 테프전 게시판</a></li>
-                <li><a href="/tVsTBoard/list">12. 테테전 게시판</a></li>
-                <li><a href="/zergBoard/list" accesskey="z">13. 저그 게시판(Z)</a></li>
-                <li><a href="/zVsTBoard/list">14. 저테전 게시판</a></li>
-                <li><a href="/zVsPBoard/list">15. 저프전 게시판</a></li>
-                <li><a href="/zVsZBoard/list">16. 저저전 게시판</a></li>
-                <li><a href="/protossBoard/list" accesskey="p">17. 프로토스 게시판(P)</a></li>
-                <li><a href="/pVsTBoard/list">18. 프테전 게시판</a></li>
-                <li><a href="/pVsZBoard/list">19. 프저전 게시판</a></li>
-                <li><a href="/pVsPBoard/list">20. 프프전 게시판</a></li>
-            </ul>
+        <fieldset class="menu-section">
+            <legend class="menu-header" onclick="toggleMenu('strategyMenu')">[공략게시판]</legend>
+            <p class="menu-toggle-hint">클릭시 펼치기↑</p>
+            <div id="strategyMenu" class="menu-content">
+                <ul>
+                    <li><a href="/terranBoard/list" accesskey="t">9. 테란 게시판(T)</a></li>
+                    <li><a href="/tVsZBoard/list">10. 테저전 게시판</a></li>
+                    <li><a href="/tVsPBoard/list">11. 테프전 게시판</a></li>
+                    <li><a href="/tVsTBoard/list">12. 테테전 게시판</a></li>
+                    <li><a href="/zergBoard/list" accesskey="z">13. 저그 게시판(Z)</a></li>
+                    <li><a href="/zVsTBoard/list">14. 저테전 게시판</a></li>
+                    <li><a href="/zVsPBoard/list">15. 저프전 게시판</a></li>
+                    <li><a href="/zVsZBoard/list">16. 저저전 게시판</a></li>
+                    <li><a href="/protossBoard/list" accesskey="p">17. 프로토스 게시판(P)</a></li>
+                    <li><a href="/pVsTBoard/list">18. 프테전 게시판</a></li>
+                    <li><a href="/pVsZBoard/list">19. 프저전 게시판</a></li>
+                    <li><a href="/pVsPBoard/list">20. 프프전 게시판</a></li>
+                    <li><a href="/teamPlayBoard/list">5. 팀플게시판</a></li>
+                    <li><a href="/teamPlayGuideBoard/list">6. 팀플공략</a></li>
+                </ul>
+            </div>
         </fieldset>
     </div>
 </div>
@@ -93,6 +108,19 @@ window.onresize = function() {
         toggleButton.innerHTML = "상위메뉴 닫기"; // 필요하다면 이 부분을 조정할 수 있습니다.
     }
 };
+
+function toggleMenu(menuId) {
+    var menu = document.getElementById(menuId);
+    var hint = document.getElementsByClassName('menu-toggle-hint')[0];
+
+    if (menu.style.display === "none" || menu.style.display === "") {
+        menu.style.display = "block";
+        hint.style.display = "none"; // 메뉴가 열릴 때 힌트 숨김
+    } else {
+        menu.style.display = "none";
+        hint.style.display = "block"; // 메뉴가 닫힐 때 힌트 표시
+    }
+}
 
 </script>
 
