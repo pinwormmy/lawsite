@@ -17,10 +17,7 @@
     position: relative;
     max-width: 1200px;
     width: 80%;
-    margin: 10px auto;
     padding: 8px;
-    border-top: solid 1px white;
-    border-bottom: solid 1px white;
 }
 .super-top-menu {
     display: flex;
@@ -41,6 +38,7 @@
 
 .title-container .full-title {
     display: inline;
+    font-size: 32px;
 }
 
 .title-container .short-title {
@@ -80,6 +78,13 @@
     .super-top-menu ul li {
         margin-right: 10px;
     }
+}
+.navbar-wrapper {
+    background-image: url('/image/titlebar.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 120px;
 }
 
 </style>
