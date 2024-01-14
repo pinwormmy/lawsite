@@ -46,12 +46,12 @@
             <ul>
                 <li><a href="/guidelines" accesskey="g">0. 이용안내(G)</a></li>
                 <li><a href="/" accesskey="h">1. 초기화면(H)</a></li>
-                <li><a href="/matchReviewBoard/list">2. 문의게시판</a></li>
+                <li><a href="/supportBoard/list">2. 문의게시판</a></li>
                 <li><a href="/videoLinkBoard/list">3. 영상자료실</a></li>
                 <li><a href="/promotionBoard/list">4. 홍보게시판</a></li>
                 <li><a href="/freeBoard/list">7. 자유게시판</a></li>
-                <li><a href="/freeBoard/list">7. 초보자마당</a></li>
-                <li><a href="/beginnerBoard/list">9. 꿀잼놀이터</a></li>
+                <li><a href="/beginnerBoard/list">7. 초보자마당</a></li>
+                <li><a href="/funBoard/list">9. 꿀잼놀이터</a></li>
             </ul>
         </fieldset>
         <fieldset class="menu-section">

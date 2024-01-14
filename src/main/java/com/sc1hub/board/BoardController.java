@@ -97,16 +97,18 @@ public class BoardController {
             return "프저전 게시판";
         } else if (boardTitle.equalsIgnoreCase("pVsPBoard")) {
             return "프프전 게시판";
-        } else if (boardTitle.equalsIgnoreCase("matchReviewBoard")) {
-            return "대전리뷰";
         } else if (boardTitle.equalsIgnoreCase("videoLinkBoard")) {
-            return "영상좌표";
+            return "영상자료실";
         } else if (boardTitle.equalsIgnoreCase("promotionBoard")) {
             return "홍보게시판";
         } else if (boardTitle.equalsIgnoreCase("teamPlayBoard")) {
             return "팀플게시판";
         } else if (boardTitle.equalsIgnoreCase("teamPlayGuideBoard")) {
             return "팀플 공략";
+        } else if (boardTitle.equalsIgnoreCase("supportBoard")) {
+            return "문의게시판";
+        } else if (boardTitle.equalsIgnoreCase("funBoard")) {
+            return "꿀잼놀이터";
         // ... 기타 매핑
         } else {
             return "알 수 없는 게시판(오류가 있는지 확인하시오)";
