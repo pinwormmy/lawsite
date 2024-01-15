@@ -49,9 +49,9 @@
                 <li><a href="/supportBoard/list">2. 문의게시판</a></li>
                 <li><a href="/videoLinkBoard/list">3. 영상자료실</a></li>
                 <li><a href="/promotionBoard/list">4. 홍보게시판</a></li>
-                <li><a href="/freeBoard/list">7. 자유게시판</a></li>
-                <li><a href="/beginnerBoard/list">7. 초보자마당</a></li>
-                <li><a href="/funBoard/list">9. 꿀잼놀이터</a></li>
+                <li><a href="/freeBoard/list">5. 자유게시판</a></li>
+                <li><a href="/beginnerBoard/list">6. 초보자마당</a></li>
+                <li><a href="/funBoard/list">7. 꿀잼놀이터</a></li>
             </ul>
         </fieldset>
         <fieldset class="menu-section">
@@ -59,20 +59,20 @@
             <p class="menu-toggle-hint">클릭시 펼치기↑</p>
             <div id="strategyMenu" class="menu-content">
                 <ul>
-                    <li><a href="/terranBoard/list" accesskey="t">9. 테란 게시판(T)</a></li>
-                    <li><a href="/tVsZBoard/list">10. 테저전 게시판</a></li>
-                    <li><a href="/tVsPBoard/list">11. 테프전 게시판</a></li>
-                    <li><a href="/tVsTBoard/list">12. 테테전 게시판</a></li>
-                    <li><a href="/zergBoard/list" accesskey="z">13. 저그 게시판(Z)</a></li>
-                    <li><a href="/zVsTBoard/list">14. 저테전 게시판</a></li>
-                    <li><a href="/zVsPBoard/list">15. 저프전 게시판</a></li>
-                    <li><a href="/zVsZBoard/list">16. 저저전 게시판</a></li>
-                    <li><a href="/protossBoard/list" accesskey="p">17. 프로토스 게시판(P)</a></li>
-                    <li><a href="/pVsTBoard/list">18. 프테전 게시판</a></li>
-                    <li><a href="/pVsZBoard/list">19. 프저전 게시판</a></li>
-                    <li><a href="/pVsPBoard/list">20. 프프전 게시판</a></li>
-                    <li><a href="/teamPlayBoard/list">5. 팀플게시판</a></li>
-                    <li><a href="/teamPlayGuideBoard/list">6. 팀플공략</a></li>
+                    <li><a href="/terranBoard/list" accesskey="t">8. 테란 게시판(T)</a></li>
+                    <li><a href="/tVsZBoard/list">9. 테저전 게시판</a></li>
+                    <li><a href="/tVsPBoard/list">10. 테프전 게시판</a></li>
+                    <li><a href="/tVsTBoard/list">11. 테테전 게시판</a></li>
+                    <li><a href="/zergBoard/list" accesskey="z">12. 저그 게시판(Z)</a></li>
+                    <li><a href="/zVsTBoard/list">13. 저테전 게시판</a></li>
+                    <li><a href="/zVsPBoard/list">14. 저프전 게시판</a></li>
+                    <li><a href="/zVsZBoard/list">15. 저저전 게시판</a></li>
+                    <li><a href="/protossBoard/list" accesskey="p">16. 프로토스 게시판(P)</a></li>
+                    <li><a href="/pVsTBoard/list">17. 프테전 게시판</a></li>
+                    <li><a href="/pVsZBoard/list">18. 프저전 게시판</a></li>
+                    <li><a href="/pVsPBoard/list">19. 프프전 게시판</a></li>
+                    <li><a href="/teamPlayBoard/list">20. 팀플게시판</a></li>
+                    <li><a href="/teamPlayGuideBoard/list">21. 팀플공략</a></li>
                 </ul>
             </div>
         </fieldset>
