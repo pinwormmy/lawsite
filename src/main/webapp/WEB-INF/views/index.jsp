@@ -10,11 +10,6 @@
     margin: 10px 0 10px 0;
     width: 100%;
 }
-.boardList th,
-.boardList td {
-    padding: 7px;
-    max-width: 100%;
-}
 .terran-field {
     background-image: url('/image/marine1.jpg');
     background-size: cover;
