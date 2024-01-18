@@ -40,7 +40,7 @@
     <div class="section-inner">
         <div class="container">
             <%@include file="./include/sidebar.jspf" %>
-            <div class="col-lg-3">
+            <div class="col-sm-3">
                 <fieldset class="terran-field">
                     <legend><a href="/"> [테란 네트워크]</a></legend>
                     <table class="boardList" style="width: 100%;">
@@ -60,7 +60,7 @@
                     </table>
                 </fieldset>
             </div>
-            <div class="col-lg-3">
+            <div class="col-sm-3">
                 <fieldset class="zerg-field">
                     <legend><a href="/"> [저그 네트워크]</a></legend>
                     <table class="boardList" style="width: 100%;">
@@ -80,7 +80,7 @@
                     </table>
                 </fieldset>
             </div>
-            <div class="col-lg-3">
+            <div class="col-sm-3">
                 <fieldset class="protoss-field">
                     <legend><a href="/"> [프로토스 네트워크] </a></legend>
                     <table class="boardList" style="width: 100%;">

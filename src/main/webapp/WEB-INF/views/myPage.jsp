@@ -9,7 +9,7 @@
 <div class="section-inner">
     <div class="container">
         <%@include file="./include/sidebar.jspf" %>
-        <div class="col-lg-9">
+        <div class="col-sm-9">
             <div class="media">
                 <div class="media-body">
                     <div class="member-info" style="font-size: 20px; line-height: 50px;">

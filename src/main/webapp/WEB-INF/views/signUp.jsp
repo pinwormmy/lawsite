@@ -10,7 +10,7 @@
         <div class="container">
             <div class="row">
                 <%@include file="./include/sidebar.jspf" %>
-                <div class="col-lg-9">
+                <div class="col-sm-9">
                     <div class="loginMenu">
                         <div class="signUpMenu">
                             <form action="/submitSignUp" name="submitSignUp" id="submitSignUp" method="post">
