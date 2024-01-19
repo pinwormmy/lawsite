@@ -9,7 +9,7 @@
     <span>조 회 : ${post.views} </span> &nbsp;
 </div>
 <div class="row">
-    <div class="col-xs-12 mb fadeInUp">
+    <div class="post-content">
         ${post.content}
         <div class="recommend-div">
             <button onclick="addRecommend(${post.postNum})" accesskey="m">추천(M) : ${post.recommendCount}</button>
@@ -17,7 +17,7 @@
         <hr>
     </div>
 
-    <div id="comments" class="col-xs-12">
+    <div id="comments">
         <div class="mb">
             [댓 글]
         </div>
@@ -41,7 +41,7 @@
             </div><!--/#comment-form-->
         </c:if>
     </div><!--/#comments-->
-    <div class="post-navigation col-xs-12"">
+    <div class="post-navigation "">
         <hr>
         <a class="pull btn btn-right cancel-btn" href="/${boardTitle}/list" accesskey="l">목 록(L)</a>
         <c:if test="${member.id == post.writer || member.grade == 3}">

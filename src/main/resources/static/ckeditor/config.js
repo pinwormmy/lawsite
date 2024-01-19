@@ -38,4 +38,5 @@ CKEDITOR.editorConfig = function( config ) {
 
 	// 특정 태그와 속성만 허용합니다.
     config.extraAllowedContent = 'iframe[*]';
+
 };
