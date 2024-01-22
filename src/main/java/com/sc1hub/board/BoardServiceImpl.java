@@ -213,7 +213,7 @@ public class BoardServiceImpl implements BoardService {
 
     protected PageService initPageUtil() {
         PageService util = new PageService();
-        util.setDISPLAY_POST_LIMIT(10);
+        util.setDISPLAY_POST_LIMIT(15); // 한 페이지 내 게시물 갯수 변경
         util.setPAGESET_LIMIT(10);
         return util;
     }

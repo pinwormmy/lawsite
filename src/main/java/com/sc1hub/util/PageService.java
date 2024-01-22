@@ -2,10 +2,10 @@ package com.sc1hub.util;
 
 import lombok.extern.slf4j.Slf4j;
 
-// 추후 코드 어떻게 정리할지, 서비스로 치는게 맞는지 구현부 따로 두는게 맞는지 알아보기
 @Slf4j
 public class PageService {
 
+    // default값이고, 기준 변경은 개별 서비스에서 아래 set함수 활용해서 진행
     int DISPLAY_POST_LIMIT = 10;
     int PAGESET_LIMIT = 10;
 
