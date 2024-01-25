@@ -39,6 +39,4 @@ CKEDITOR.editorConfig = function( config ) {
 	// 특정 태그와 속성만 허용합니다.
     config.extraAllowedContent = 'iframe[*]';
 
-    // 링크 기능에서 '새창으로 열기' 기본 옵션으로 설정
-    config.linkTargetType = 'blank';
 };
