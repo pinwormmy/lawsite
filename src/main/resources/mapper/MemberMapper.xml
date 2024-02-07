@@ -10,6 +10,11 @@
         where id=#{id}
     </select>
 
+    <select id="isUniqueNickName" resultType="String">
+        select count(*) from member
+            where nickname=#{nickName}
+    </select>
+
     <select id="isUniqueEmail" resultType="String">
         select count(*) from member
         where email=#{email}

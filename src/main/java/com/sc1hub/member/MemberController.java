@@ -122,8 +122,15 @@ public class MemberController {
     @GetMapping("/checkUniqueEmail")
     @ResponseBody
     public String checkUniqueEmail(String email) {
-        log.info("아이디 중복 확인 컨트롤러 작동");
+        log.info("이멜 중복 확인 컨트롤러 작동");
         return memberService.isUniqueEmail(email);
+    }
+
+    @GetMapping("/checkUniqueNickName")
+    @ResponseBody
+    public String checkUniqueNickName(String nickName) throws Exception {
+        log.info("별명 중복 확인 컨트롤러 작동");
+        return memberService.isUniqueNickName(nickName);
     }
 
     @GetMapping(value = "/adminPage")

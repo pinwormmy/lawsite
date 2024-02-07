@@ -26,6 +26,11 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
+    public String isUniqueNickName(String nickName) {
+        return memberMapper.isUniqueNickName(nickName);
+    }
+
+    @Override
     public void submitSignUp(MemberDTO memberDTO) throws Exception {
         memberMapper.submitSignUp(memberDTO);
     }
@@ -145,7 +150,6 @@ public class MemberServiceImpl implements MemberService {
     public void deleteMember(String id) {
         memberMapper.deleteMember(id);
     }
-
 
     private PageService initPageUtil() {
         PageService util = new PageService();

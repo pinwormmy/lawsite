@@ -12,13 +12,17 @@ public interface MemberMapper {
 
     String isUniqueId(String id) throws Exception;
 
+    String isUniqueNickName(String nickName);
+
+    String isUniqueEmail(String email);
+
     void submitSignUp(MemberDTO memberDTO) throws Exception;
 
     MemberDTO checkLoginData(MemberDTO memberDTO) throws Exception;
 
     void submitModifyMyInfo(MemberDTO member) throws Exception;
 
-    String isUniqueEmail(String email);
+
 
     int getTotalMemberCount(PageDTO page);
 
@@ -37,4 +41,6 @@ public interface MemberMapper {
     MemberDTO findByUserIdAndEmail(@Param("userId") String userId, @Param("email") String email);
 
     void deleteMember(String id);
+
+
 }

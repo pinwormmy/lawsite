@@ -32,4 +32,6 @@ public interface MemberService {
     String findPassword(String userId, String email);
 
     void deleteMember(String id);
+
+    String isUniqueNickName(String nickName);
 }
