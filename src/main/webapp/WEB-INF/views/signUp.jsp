@@ -2,60 +2,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>SC1Hub - 회원가입</title>
+    <title>SC1Hub - 회원가입</title>
 </head>
 <body>
 <%@include file="./include/header.jspf" %>
-    <div class="section-inner">
-        <div class="container">
-            <div class="row">
-                <%@include file="./include/sidebar.jspf" %>
-                <div class="col-sm-9">
-                    <div class="loginMenu">
-                        <div class="signUpMenu">
-                            <form action="/submitSignUp" name="submitSignUp" id="submitSignUp" method="post">
-                                <div class="inputId">
-                                    회원ID>
-                                    <input type="text" name="id" id="inputId"><br>
-                                    <span id="idCheckText">ID를 입력해주세요.</span>
-                                </div>
-                                <div>
-                                    패스워드>
-                                    <input type="password" name="pw" id="pw" placeholder="4~16 자리 영문+숫자 조합">
-                                </div>
-                                <div>
-                                    패스워드 재입력>
-                                    <input type="password" name="pw2" id="pw2">
-                                </div>
-                                <div>
-                                    회원명>
-                                    <input type="text" name="realName" id="realName">
-                                </div>
-                                <div>
-                                    별명>
-                                    <input type="text" name="nickName" id="nickName">
-                                </div>
-                                <div>
-                                    이메일>
-                                    <input type="email" id="email" name="email"><br>
-                                    <span id="emailCheckText">이메일을 입력해주세요.</span><br>
-                                    <button type="button" id="sendVerificationNumberButton" class="basicButton">인증번호 받기</button><br>
-                                    이메일 인증번호>
-                                    <input id="inputEmailVerificationNumber"><br>
-                                </div>
-                                <div>
-                                    연락처>
-                                    <input type="text" name="phone" id="phone"><br><br>
-                                </div>
-                                <button type="button" class="basicButton" onclick="checkSignupForm();" accesskey="s">가입하기(S)</button><br>
-                            </form>
-                         </div>
+<div class="section-inner">
+    <div class="container">
+        <div class="row">
+            <%@include file="./include/sidebar.jspf" %>
+            <div class="col-sm-9">
+                <div class="loginMenu">
+                    <div class="signUpMenu">
+                        <form action="/submitSignUp" name="submitSignUp" id="submitSignUp" method="post">
+                            '*'표시된 항목은 꼭 입력해주세요!
+                            <div class="inputId">
+                                회원ID*>
+                                <input type="text" name="id" id="inputId"><br>
+                                <span id="idCheckText">ID를 입력해주세요.</span>
+                            </div>
+                            <div>
+                                패스워드*>
+                                <input type="password" name="pw" id="pw" placeholder="4~16 자리 영문+숫자 조합">
+                            </div>
+                            <div>
+                                패스워드 재입력*>
+                                <input type="password" name="pw2" id="pw2">
+                            </div>
+                            <div>
+                                별명*>
+                                <input type="text" name="nickName" id="nickName"><br>
+                                <span id="nickNameCheckText">별명을 입력해주세요.</span>
+                            </div>
+                            <div>
+                                이메일>
+                                <input type="email" id="email" name="email"><br>
+                                <span id="emailCheckText">이메일을 입력해주세요.</span><br>
+                                <button type="button" id="sendVerificationNumberButton" class="basicButton">인증번호 받기</button><br>
+                                이메일 인증번호>
+                                <input id="inputEmailVerificationNumber"><br>
+                            </div>
+                            <div>
+                                회원명>
+                                <input type="text" name="realName" id="realName">
+                            </div>
+                            <div>
+                                연락처>
+                                <input type="text" name="phone" id="phone"><br><br>
+                            </div>
+                            <button type="button" class="basicButton" onclick="checkSignupForm();" accesskey="s">가입하기(S)</button><br>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 <%@include file="./include/footer.jspf" %>
+
 
 <script type="text/javascript">
 
