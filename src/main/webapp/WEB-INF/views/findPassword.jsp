@@ -12,18 +12,13 @@
             <div class="row">
                 <%@include file="./include/sidebar.jspf" %>
                 <div class="col-lg-9">
-                   <div class="loginMenu">
-                       <div class="findPwMenu">
-                           <form action="/findPassword" method="post">
-                               <div class="inputUserName">
-                                   회원ID >> <input type="text" name="userId" id="userId">
-                               </div>
-                               <div class="inputIdEmail">
-                                   이메일 >> <input type="text" name="email" id="pwEmail">
-                               </div>
-                               <button id="findPwButton">패스워드 찾기</button><br>
-                           </form>
-                       </div>
+                   <div class="col-lg-9">
+                      <div class="loginMenu">
+                          <div class="findIdMenu">
+                              <p>비밀번호가 생각나지 않는다면 아래 주소로 메일 보내주세요:</p>
+                              <a href="mailto:mealchelin@gmail.com">mealchelin@gmail.com</a>
+                          </div>
+                      </div>
                    </div>
                 </div>
             </div>

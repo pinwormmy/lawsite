@@ -3,6 +3,11 @@
 <html>
 <head>
     <title>SC1Hub - 회원가입</title>
+    <style>
+        .infoText {
+            color: #808080; /* 회색 폰트 색상 */
+        }
+    </style>
 </head>
 <body>
 <%@include file="./include/header.jspf" %>
@@ -18,7 +23,7 @@
                             <div class="inputId">
                                 회원ID*>
                                 <input type="text" name="id" id="inputId"><br>
-                                <span id="idCheckText">ID를 입력해주세요.</span>
+                                <span id="idCheckText" class="infoText">ID를 입력해주세요.</span>
                             </div>
                             <div>
                                 패스워드*>
@@ -31,7 +36,7 @@
                             <div>
                                 별명*>
                                 <input type="text" name="nickName" id="nickName"><br>
-                                <span id="nickNameCheckText">별명을 입력해주세요.</span>
+                                <span id="nickNameCheckText" class="infoText">별명을 입력해주세요.</span>
                             </div>
                             <br><br>
                             <div>

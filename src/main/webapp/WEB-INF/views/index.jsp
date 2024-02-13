@@ -44,7 +44,7 @@
                         <tr><td><a href="/tVsZBoard/readPost?postNum=3">24. 투배럭 아카데미 운영</a></td></tr>
                         <tr><td><a href="/tVsZBoard/readPost?postNum=4">25. 개사기 8배럭 완막</a></td></tr>
                         <tr><td><a href="/tVsZBoard/readPost?postNum=5">26. 111 전략</a></td></tr>
-                        <tr><td><a href="/tVsPBoard/readPost?postNum=2">27. 업테란 운영법</a></td></tr>
+                        <tr><td><a href="/tVsPBoard/readPost?postNum=9">27. 업테란 운영법</a></td></tr>
                         <tr><td><a href="/tVsPBoard/readPost?postNum=3">28. 타이밍 찌르기 정리</a></td></tr>
                         <tr><td><a href="/tVsPBoard/readPost?postNum=4">29. 안티 캐리어 빌드</a></td></tr>
                         <tr><td><a href="/tVsPBoard/readPost?postNum=5">30. 정석. 배럭더블 운영</a></td></tr>
