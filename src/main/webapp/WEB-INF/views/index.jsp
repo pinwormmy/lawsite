@@ -28,6 +28,12 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+.ad-banners {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
 </style>
 </head>
 <body>
@@ -94,6 +100,28 @@
                         <tr><td><a href="/pVsPBoard/readPost?postNum=6">60. 3게이트 드라군</a></td></tr>
                     </table>
                 </fieldset>
+            </div>
+            <div class="col-sm-12 ad-banners">
+                <a href="https://link.coupang.com/a/bqROzj" target="_blank" referrerpolicy="unsafe-url">
+                <img src="https://image11.coupangcdn.com/image/affiliate/banner/9b1da9677d1b2c47789967b75f6639de@2x.jpg"
+                alt="스타크래프트 오버로드 봉제인형" width="120" height="240"></a>
+                <a href="https://link.coupang.com/a/bqRWZe" target="_blank" referrerpolicy="unsafe-url"><img src="https://image11.coupangcdn.com/image/affiliate/banner/8abca2f20c326e3de646d261d75ba384@2x.jpg" alt="스타크래프트 저그 호환 블록 장난감 스타 저글링 럴커 뮤탈 히드라 드론 레고 피규어, 세트" width="120" height="240"></a>
+                <a href="https://link.coupang.com/a/bqR0AZ" target="_blank" referrerpolicy="unsafe-url"><img src="https://img4a.coupangcdn.com/image/affiliate/banner/d79efa85758312f24b59f6b4af46a3ee@2x.jpg" alt="레오폴드 FC900RBT PD 그레이 블루 한글 (저소음적축)" width="120" height="240"></a>
+                <a href="https://link.coupang.com/a/bqROzj" target="_blank" referrerpolicy="unsafe-url">
+                <img src="https://image11.coupangcdn.com/image/affiliate/banner/9b1da9677d1b2c47789967b75f6639de@2x.jpg"
+                alt="스타크래프트 오버로드 봉제인형" width="120" height="240"></a>
+                <a href="https://link.coupang.com/a/bqROzj" target="_blank" referrerpolicy="unsafe-url">
+                <img src="https://image11.coupangcdn.com/image/affiliate/banner/9b1da9677d1b2c47789967b75f6639de@2x.jpg"
+                alt="스타크래프트 오버로드 봉제인형" width="120" height="240"></a>
+                <a href="https://link.coupang.com/a/bqROzj" target="_blank" referrerpolicy="unsafe-url">
+                <img src="https://image11.coupangcdn.com/image/affiliate/banner/9b1da9677d1b2c47789967b75f6639de@2x.jpg"
+                alt="스타크래프트 오버로드 봉제인형" width="120" height="240"></a>
+                <a href="https://link.coupang.com/a/bqROzj" target="_blank" referrerpolicy="unsafe-url">
+                <img src="https://image11.coupangcdn.com/image/affiliate/banner/9b1da9677d1b2c47789967b75f6639de@2x.jpg"
+                alt="스타크래프트 오버로드 봉제인형" width="120" height="240"></a>
+                <a href="https://link.coupang.com/a/bqROzj" target="_blank" referrerpolicy="unsafe-url">
+                <img src="https://image11.coupangcdn.com/image/affiliate/banner/9b1da9677d1b2c47789967b75f6639de@2x.jpg"
+                alt="스타크래프트 오버로드 봉제인형" width="120" height="240"></a>
             </div>
         </div>
     </div>
