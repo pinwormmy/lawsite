@@ -139,6 +139,10 @@ window.onresize = function() {
     }
 };
 
+// 페이지 로드 시 실행되는 로직
+document.getElementById('basicMenuContent').style.display = "block"; // 지휘관회의실 메뉴를 열린 상태로 설정
+document.querySelector('#basicMenu .menu-toggle-hint').style.display = "none"; // 지휘관회의실 메뉴의 "클릭시 펼치기↑" 문구 숨김
+
 </script>
 
 </body>
