@@ -14,6 +14,7 @@
             <div class="col-sm-9">
                 <%@include file="../include/postListContent.jspf" %>
             </div>
+            <%@include file="../include/coupangAd.jspf" %>
         </div>
     </div>
 <%@include file="../include/footer.jspf" %>
