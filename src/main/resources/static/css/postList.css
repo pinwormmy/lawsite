@@ -42,6 +42,9 @@
         padding-top: 5px;
         padding-bottom: 5px;
     }
+    .boardList .post-num {
+        min-width: 55px;
+    }
 }
 /* 비 모바일 환경에서는 모든 열을 표시 */
 @media screen and (min-width: 601px) {
