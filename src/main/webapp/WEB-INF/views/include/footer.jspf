@@ -17,10 +17,10 @@
                     <input id="menuInput">
                 </div>
                 <p class="copyright-text">Copyright 2024. SC1Hub All rights reserved.</p>
-                <p style="color: #808080;">"사이트 내 쿠팡 배너는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다."</p>
                 <c:if test="${member.grade == 3}">
-    				<p class="visitor-text">오늘의 방문자 수: ${todayCount}, 누적 방문자 수: ${totalCount}</p>
-    		    </c:if>
+                    <p class="visitor-text">오늘의 방문자 수: ${todayCount}, 누적 방문자 수: ${totalCount}</p>
+                </c:if>
+                <p style="color: #808080;">"사이트 내 쿠팡 배너는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다."</p>
 			</div>
 		</div>
 	</div>
