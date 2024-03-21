@@ -52,20 +52,22 @@
     background-repeat: no-repeat;
     background-position: center;
     height: 80px;
+}
 
-/* 모바일 환경을 위한 스타일 */
 @media (max-width: 768px) {
+    .navbar-wrapper {
+        height: 90px;
+    }
     .this-header {
-        width: 100%; /* 화면 너비에 맞게 조정 */
-        padding: 0; /* 적절한 패딩 추가 */
-        flex-direction: column;
-        align-items: flex-start;
+        width: 100%;
+        flex-direction: column; /* 헤더를 수직으로 배열 */
+        align-items: flex-start; /* 기본적으로 모든 항목을 왼쪽 정렬 */
+        padding: 0 10px; /* 양쪽 패딩 추가 */
     }
     .title-container {
-        font-size: 32px;
-        position: static;
-        transform: none;
-        text-align: left;
+        font-size: 32px; /* 타이틀 폰트 크기 조정 */
+        text-align: left; /* 타이틀 왼쪽 정렬 */
+        width: 100%; /* 타이틀 컨테이너 너비 조정 */
     }
     .title-container .full-title {
         display: none;
@@ -73,13 +75,19 @@
     .title-container .short-title {
         display: block;
     }
+    .super-top-menu {
+        width: 100%; /* 메뉴 너비를 부모와 동일하게 조정 */
+        display: flex; /* Flexbox 사용 */
+        justify-content: flex-end; /* 항목을 우측으로 정렬 */
+        padding-right: 0; /* 오른쪽 패딩 조정 */
+        margin-top: 0px;
+    }
     .super-top-menu ul {
         justify-content: flex-end;
-        width: 100%; /* 전체 너비 사용 */
-        padding-left: 0; /* 왼쪽 패딩 제거 */
     }
     .super-top-menu ul li {
-        margin-right: 10px;
+        margin-right: 5px; /* 메뉴 항목 사이의 오른쪽 여백 조정 */
+        font-size: 14px; /* 메뉴 항목의 폰트 크기 조정 */
     }
 }
 
@@ -95,8 +103,8 @@
 <div class="navbar-wrapper">
     <div class="this-header">
         <div class="title-container">
-            <span class="full-title">SC1Hub - 스타크래프트1 전문 커뮤니티</span>
-            <span class="short-title">SC1Hub</span>
+            <span class="full-title"><a href="/">SC1Hub - 스타크래프트1 전문 커뮤니티</a></span>
+            <span class="short-title"><a href="/">SC1Hub</a></span>
         </div>
         <div class="super-top-menu">
             <ul>
