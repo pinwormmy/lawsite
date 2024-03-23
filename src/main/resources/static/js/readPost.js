@@ -302,3 +302,11 @@ async function movePost(postNum) {
     }
 }
 
+function confirmDelete(postNum) {
+    var confirmResult = confirm("정말로 이 글을 삭제하시겠습니까?");
+    if (confirmResult) {
+        // 사용자가 '확인'을 클릭했을 경우, 실제 글 삭제 처리를 진행
+        window.location.href = boardPath + `/deletePost?postNum=${postNum}`;
+    }
+    // 사용자가 '취소'를 클릭했을 경우, 아무런 작업도 하지 않음
+}
