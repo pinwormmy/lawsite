@@ -50,4 +50,6 @@ public interface BoardService {
     PageDTO commentPageSetting(String boardTitle, PageDTO page) throws Exception;
 
     List<BoardListDTO> getBoardList();
+
+    String getKoreanTitle(String boardTitle);
 }

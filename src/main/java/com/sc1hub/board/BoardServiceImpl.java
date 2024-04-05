@@ -192,6 +192,11 @@ public class BoardServiceImpl implements BoardService {
         return boardMapper.getBoardList();
     }
 
+    @Override
+    public String getKoreanTitle(String boardTitle) {
+        return boardMapper.getKoreanTitle(boardTitle);
+    }
+
     // 나머지 유틸리티 메서드들
     protected void checkPageAndKeyword(PageDTO page) {
         if(page.getRecentPage() < 1) { page.setRecentPage(1); }

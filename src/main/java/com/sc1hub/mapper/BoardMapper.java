@@ -56,5 +56,7 @@ public interface BoardMapper {
     int getActualRecommendCount(@Param("boardTitle") String boardTitle, @Param("postNum") int postNum);
 
     List<BoardListDTO> getBoardList();
+
+    String getKoreanTitle(String boardTitle);
 }
 

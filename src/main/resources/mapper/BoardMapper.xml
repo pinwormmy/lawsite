@@ -156,7 +156,12 @@
 
     <!-- 게시판 목록을 가져오는 쿼리 -->
     <select id="getBoardList" resultType="com.sc1hub.board.BoardListDTO">
-        select board_title from board_list
+        select board_title, korean_title from board_list
+    </select>
+
+    <!-- 특정 게시판의 한글 이름을 가져오는 쿼리 -->
+    <select id="getKoreanTitle" parameterType="java.lang.String" resultType="java.lang.String">
+        SELECT korean_title FROM board_list WHERE board_title = #{boardTitle}
     </select>
 
 </mapper>

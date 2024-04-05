@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<title>글쓰기 - ${boardTitle}</title>
+<title>글쓰기 - ${koreanTitle}</title>
 <script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
 </head>
 <body>

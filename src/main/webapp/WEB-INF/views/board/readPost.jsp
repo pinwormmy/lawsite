@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<title>${post.title} - ${boardTitle}</title>
+<title>${post.title} - ${koreanTitle}</title>
 <link rel="stylesheet" type="text/css" href="/css/readPost.css">
 </head>
 <body>
