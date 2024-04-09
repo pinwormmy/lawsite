@@ -39,4 +39,7 @@ CKEDITOR.editorConfig = function( config ) {
 	// 특정 태그와 속성만 허용합니다.
     config.extraAllowedContent = 'iframe[*]';
 
+    // 게시글 작성공간 높이 지정
+    config.height = 400;
+
 };
