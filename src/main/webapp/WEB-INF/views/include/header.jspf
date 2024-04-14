@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="/css/style.css">
 <link rel="preload" href="/fonts/DungGeunMo.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="/image/star_full.jpg" as="image">
+<link rel="canonical" href="https://www.sc1hub.com/">
 
 <style>
 .this-header {
