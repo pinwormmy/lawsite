@@ -21,7 +21,7 @@
 
     <select id="showPostList" resultType="com.sc1hub.board.BoardDTO">
         select post_num, title, content, writer, reg_date, views, comment_count, recommend_count
-            from ${boardTitle.toLowerCase()}
+            from ${boardTitle}
             where <include refid="searchKeyword" /> and notice=0
             order by post_num desc
             limit #{page.postBeginPoint}, #{page.displayPostLimit}
@@ -35,45 +35,45 @@
     </sql>
 
     <select id="readPost" resultType="com.sc1hub.board.BoardDTO">
-        select * from ${boardTitle.toLowerCase()}
+        select * from ${boardTitle}
         where post_num=#{postNum}
     </select>
 
     <insert id="submitPost">
-        insert into ${boardTitle.toLowerCase()}(title, writer, reg_date, views, content, comment_count, notice)
+        insert into ${boardTitle}(title, writer, reg_date, views, content, comment_count, notice)
         values(#{board.title}, #{board.writer}, now(), 0, #{board.content}, 0, #{board.notice})
     </insert>
 
     <update id="submitModifyPost">
-        update ${boardTitle.toLowerCase()}
+        update ${boardTitle}
         set title=#{board.title}, content=#{board.content}, writer=#{board.writer}, notice=#{board.notice}
         where post_num=#{board.postNum}
     </update>
 
     <delete id="deletePost">
-        delete from ${boardTitle.toLowerCase()}
+        delete from ${boardTitle}
         where post_num=#{postNum}
     </delete>
 
     <select id="countTotalPost" resultType="int">
-        select count(*) from ${boardTitle.toLowerCase()}
+        select count(*) from ${boardTitle}
         where <include refid="searchKeyword" /> and notice=0
     </select>
 
     <select id="countTotalComment" resultType="int">
-        select count(*) from ${boardTitle.toLowerCase()}_comment
+        select count(*) from ${boardTitle}_comment
         where post_num=#{page.postNum}
     </select>
 
     <insert id="addComment">
-        insert into ${boardTitle.toLowerCase()}_comment(post_num, id, reg_date, content)
+        insert into ${boardTitle}_comment(post_num, id, reg_date, content)
         values(#{comment.postNum}, #{comment.id}, now(), #{comment.content})
     </insert>
 
     <select id="showCommentList" resultMap="boardCommentDTO">
         select * from
         (select a.post_num, a.comment_num, a.id, a.reg_date, a.content, b.nickname
-        from ${boardTitle.toLowerCase()}_comment a
+        from ${boardTitle}_comment a
         inner join member b
         on a.id=b.id
         where a.post_num=#{page.postNum}
@@ -83,75 +83,75 @@
     </select>
 
     <delete id="deleteComment">
-        delete from ${boardTitle.toLowerCase()}_comment
+        delete from ${boardTitle}_comment
         where comment_num=#{commentNum}
     </delete>
 
     <update id="updateCommentCount">
-        update ${boardTitle.toLowerCase()}
+        update ${boardTitle}
         set comment_count=
-        (select count(*) from ${boardTitle.toLowerCase()}_comment
+        (select count(*) from ${boardTitle}_comment
         where post_num=#{postNum})
         where post_num=#{postNum}
     </update>
 
     <update id="updateViews">
-        update ${boardTitle.toLowerCase()}
+        update ${boardTitle}
         set views= views + 1
         where post_num=#{postNum}
     </update>
 
     <insert id="saveViewUserIp">
-        insert into ${boardTitle.toLowerCase()}_views
+        insert into ${boardTitle}_views
         values(#{postNum}, #{ip}, now())
     </insert>
 
     <select id="checkViewUserIp" resultType="int">
-        select count(*) from ${boardTitle.toLowerCase()}_views
+        select count(*) from ${boardTitle}_views
         where post_num=#{postNum} and ip=#{ip}
     </select>
 
     <select id="showSelfNoticeList" resultType="com.sc1hub.board.BoardDTO">
-        select * from ${boardTitle.toLowerCase()}
+        select * from ${boardTitle}
         where notice=1
         order by post_num desc
     </select>
 
     <!-- 추천 여부 확인 -->
     <select id="checkRecommendation" resultType="int">
-        select count(*) from ${boardTitle.toLowerCase()}_recommend
+        select count(*) from ${boardTitle}_recommend
         where post_num=#{recommendDTO.postNum} and user_id=#{recommendDTO.userId}
     </select>
 
     <!-- 추천 추가 -->
     <insert id="insertRecommendation">
-        insert into ${boardTitle.toLowerCase()}_recommend (post_num, user_id)
+        insert into ${boardTitle}_recommend (post_num, user_id)
         values (#{recommendDTO.postNum}, #{recommendDTO.userId})
     </insert>
 
     <!-- 추천 취소 -->
     <delete id="deleteRecommendation">
-        delete from ${boardTitle.toLowerCase()}_recommend
+        delete from ${boardTitle}_recommend
         where post_num=#{recommendDTO.postNum} and user_id=#{recommendDTO.userId}
     </delete>
 
     <!-- 추천 수 업데이트 -->
     <update id="updateTotalRecommendCount">
-        update ${boardTitle.toLowerCase()}
-        set recommend_count = (select count(*) from ${boardTitle.toLowerCase()}_recommend where post_num=#{postNum})
+        update ${boardTitle}
+        set recommend_count = (select count(*) from ${boardTitle}_recommend where post_num=#{postNum})
         where post_num=#{postNum}
     </update>
 
     <!-- 추천 수 조회 -->
     <select id="getRecommendCount" resultType="int">
         select recommend_count
-        from ${boardTitle.toLowerCase()}
+        from ${boardTitle}
         where post_num=#{postNum}
     </select>
 
     <!-- 실추천 수 조회 -->
     <select id="getActualRecommendCount" resultType="int">
-        select count(*) from ${boardTitle.toLowerCase()}_recommend where post_num=#{postNum}
+        select count(*) from ${boardTitle}_recommend where post_num=#{postNum}
     </select>
 
     <!-- 게시판 목록을 가져오는 쿼리 -->

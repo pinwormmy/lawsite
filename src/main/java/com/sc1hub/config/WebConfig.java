@@ -32,6 +32,10 @@ public class WebConfig implements WebMvcConfigurer {
         log.debug("업로드 컨피그 작동 확인 파일경로 : {}", uploadPath);
         registry.addResourceHandler(connectPath)
                 .addResourceLocations(uploadPath);
+
+        // favicon.ico에 대한 요청 처리 추가
+        registry.addResourceHandler("/favicon.ico")
+                .addResourceLocations("classpath:/static/favicon.ico");
     }
 
     @Override

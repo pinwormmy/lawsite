@@ -10,6 +10,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
@@ -28,8 +30,8 @@ public class BoardController {
         String koreanTitle = boardService.getKoreanTitle(boardTitle);
         model.addAttribute("koreanTitle", koreanTitle);
         model.addAttribute("boardTitle", boardTitle);
-        model.addAttribute("selfNoticeList", boardService.showSelfNoticeList(boardTitle));
         model.addAttribute("page", boardService.pageSetting(boardTitle, page));
+        model.addAttribute("selfNoticeList", boardService.showSelfNoticeList(boardTitle));
         model.addAttribute("postList", boardService.showPostList(boardTitle, page));
 
         // 글쓰기 권한 설정
@@ -56,6 +58,11 @@ public class BoardController {
         model.addAttribute("canWrite", canWrite);
 
         return "board/postList";
+    }
+
+    @GetMapping("/{boardTitle}")
+    public RedirectView handleBoardRedirect(@PathVariable String boardTitle) {
+        return new RedirectView("/" + boardTitle + "/list");
     }
 
     @RequestMapping("/{boardTitle}/readPost")
