@@ -20,6 +20,7 @@ import java.util.Map;
 
 @Controller
 @Slf4j
+@RequestMapping("/boards")
 public class BoardController {
 
     @Autowired
