@@ -3,15 +3,15 @@
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
 <html>
 <head>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<link rel="canonical" href="https://www.sc1hub.com${request.requestURI}" />
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="/plugins/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="/css/style.css">
 <link rel="preload" href="/fonts/DungGeunMo.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="/image/star_full.jpg" as="image">
-<link rel="canonical" href="https://www.sc1hub.com/">
 
 <style>
 .this-header {
