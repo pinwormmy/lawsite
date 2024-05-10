@@ -2,96 +2,114 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <!-- 메인 페이지 -->
     <url>
-        <loc>https://www.sc1hub.com/</loc>
+        <loc>https://sc1hub.com/</loc>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
 
     <!-- 지휘관 회의실 -->
     <url>
-        <loc>https://www.sc1hub.com/guidelines</loc>
+        <loc>https://sc1hub.com/guidelines</loc>
         <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://www.sc1hub.com/boards/supportBoard</loc>
+        <loc>https://sc1hub.com/boards/supportBoard</loc>
         <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://www.sc1hub.com/boards/videoLinkBoard</loc>
+        <loc>https://sc1hub.com/boards/videoLinkBoard</loc>
         <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.sc1hub.com/boards/promotionBoard</loc>
+        <loc>https://sc1hub.com/boards/promotionBoard</loc>
         <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://www.sc1hub.com/boards/freeBoard</loc>
+        <loc>https://sc1hub.com/boards/freeBoard</loc>
         <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://www.sc1hub.com/boards/beginnerBoard</loc>
+        <loc>https://sc1hub.com/boards/beginnerBoard</loc>
         <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://www.sc1hub.com/boards/funBoard</loc>
+        <loc>https://sc1hub.com/boards/funBoard</loc>
         <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
     </url>
 
     <!-- 공략 게시판 -->
     <url>
-        <loc>https://www.sc1hub.com/boards/terranBoard</loc>
+        <loc>https://sc1hub.com/boards/terranBoard</loc>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>https://www.sc1hub.com/boards/tVsZBoard</loc>
+        <loc>https://sc1hub.com/boards/tVsZBoard</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://sc1hub.com/boards/tVsPBoard</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://sc1hub.com/boards/tVsTBoard</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://sc1hub.com/boards/zergBoard</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://sc1hub.com/boards/zVsTBoard</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://sc1hub.com/boards/zVsPBoard</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://sc1hub.com/boards/zVsZBoard</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://sc1hub.com/boards/protossBoard</loc>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>https://www.sc1hub.com/boards/tVsPBoard</loc>
+        <loc>https://sc1hub.com/boards/pVsTBoard</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://sc1hub.com/boards/pVsZBoard</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://sc1hub.com/boards/pVsPBoard</loc>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://sc1hub.com/boards/teamPlayBoard</loc>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>https://www.sc1hub.com/boards/tVsTBoard</loc>
+        <loc>https://sc1hub.com/boards/teamPlayGuideBoard</loc>
         <changefreq>weekly</changefreq>
-    </url>
-    <url>
-        <loc>https://www.sc1hub.com/boards/zergBoard</loc>
-        <changefreq>weekly</changefreq>
-    </url>
-    <url>
-        <loc>https://www.sc1hub.com/boards/zVsTBoard</loc>
-        <changefreq>weekly</changefreq>
-    </url>
-    <url>
-        <loc>https://www.sc1hub.com/boards/zVsPBoard</loc>
-        <changefreq>weekly</changefreq>
-    </url>
-    <url>
-        <loc>https://www.sc1hub.com/boards/zVsZBoard</loc>
-        <changefreq>weekly</changefreq>
-    </url>
-    <url>
-        <loc>https://www.sc1hub.com/boards/protossBoard</loc>
-        <changefreq>weekly</changefreq>
-    </url>
-    <url>
-        <loc>https://www.sc1hub.com/boards/pVsTBoard</loc>
-        <changefreq>weekly</changefreq>
-    </url>
-    <url>
-        <loc>https://www.sc1hub.com/boards/pVsZBoard</loc>
-        <changefreq>weekly</changefreq>
-    </url>
-    <url>
-        <loc>https://www.sc1hub.com/boards/pVsPBoard</loc>
-        <changefreq>weekly</changefreq>
-    </url>
-    <url>
-        <loc>https://www.sc1hub.com/boards/teamPlayBoard</loc>
-        <changefreq>weekly</changefreq>
-    </url>
-    <url>
-        <loc>https://www.sc1hub.com/boards/teamPlayGuideBoard</loc>
-        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
     </url>
 </urlset>

@@ -6,7 +6,7 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="canonical" href="https://www.sc1hub.com${request.requestURI}" />
+<link rel="canonical" href="https://sc1hub.com${request.contextPath}${request.servletPath}" />
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="/plugins/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="/css/style.css">
