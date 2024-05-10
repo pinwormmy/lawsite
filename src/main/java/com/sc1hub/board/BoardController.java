@@ -10,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -26,7 +25,7 @@ public class BoardController {
     @Autowired
     BoardService boardService;
 
-    @GetMapping(value = "/{boardTitle}/list")
+    @GetMapping(value = "/{boardTitle}")
     public String list(@PathVariable String boardTitle, PageDTO page, Model model, HttpSession session) throws Exception {
         String koreanTitle = boardService.getKoreanTitle(boardTitle);
         model.addAttribute("koreanTitle", koreanTitle);
@@ -61,11 +60,6 @@ public class BoardController {
         return "board/postList";
     }
 
-    @GetMapping("/{boardTitle}")
-    public RedirectView handleBoardRedirect(@PathVariable String boardTitle) {
-        return new RedirectView("/" + boardTitle + "/list");
-    }
-
     @RequestMapping("/{boardTitle}/readPost")
     public String readPost(@PathVariable String boardTitle, Model model, HttpServletRequest request) throws Exception {
         int postNum = Integer.parseInt(request.getParameter("postNum"));
@@ -96,13 +90,13 @@ public class BoardController {
     @RequestMapping("/{boardTitle}/submitPost")
     public String submitPost(@PathVariable String boardTitle, BoardDTO post) throws Exception {
         boardService.submitPost(boardTitle, post);
-        return "redirect:/" + boardTitle + "/list";
+        return "redirect:/boards/" + boardTitle;
     }
 
     @RequestMapping("/{boardTitle}/deletePost")
     public String deletePost(@PathVariable String boardTitle, int postNum) throws Exception {
         boardService.deletePost(boardTitle, postNum);
-        return "redirect:/" + boardTitle + "/list";
+        return "redirect:/boards/" + boardTitle;
     }
 
     @RequestMapping(value = "/{boardTitle}/modifyPost")
@@ -117,7 +111,7 @@ public class BoardController {
     @RequestMapping(value = "/{boardTitle}/submitModifyPost")
     public String submitModifyPost(@PathVariable String boardTitle, BoardDTO post) throws Exception {
         boardService.submitModifyPost(boardTitle, post);
-        return "redirect:/" + boardTitle + "/readPost?postNum=" + post.getPostNum();
+        return "redirect:/boards/" + boardTitle + "/readPost?postNum=" + post.getPostNum();
     }
 
     @RequestMapping(value = "/{boardTitle}/addComment")
@@ -257,7 +251,7 @@ public class BoardController {
 
         boardService.submitPost(targetBoardTitle, newPost);
 
-        return "redirect:/" + boardTitle + "/list";
+        return "redirect:/boards/" + boardTitle;
     }
 
     @GetMapping("/boardList")

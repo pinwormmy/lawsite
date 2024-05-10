@@ -43,10 +43,10 @@
     </div><!--/#comments-->
     <div class="post-navigation "">
         <hr>
-        <a class="pull btn btn-right cancel-btn" href="/${boardTitle}/list" accesskey="l">목 록(L)</a>
+        <a class="pull btn btn-right cancel-btn" href="/boards/${boardTitle}" accesskey="l">목 록(L)</a>
         <c:if test="${member.id == post.writer || member.grade == 3}">
             <a class="pull btn btn-right cancel-btn" href="javascript:void(0);" onclick="confirmDelete(${post.postNum});">삭 제(-)</a>
-            <a class="pull btn btn-right cancel-btn" href="/${boardTitle}/modifyPost?postNum=${post.postNum}" accesskey="o">️수 정(O)</a>
+            <a class="pull btn btn-right cancel-btn" href="/boards/${boardTitle}/modifyPost?postNum=${post.postNum}" accesskey="o">️수 정(O)</a>
         </c:if>
         <c:if test="${member.grade == 3}"> <!-- 관리자만 볼 수 있도록 -->
             <select id="moveToBoard" name="moveToBoard" class="pull btn btn-left cancel-btn">

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <div class="col-xs-12 mb wow fadeInUp">
-    <form action="/${boardTitle}/submitModifyPost" method="post">
+    <form action="/boards/${boardTitle}/submitModifyPost" method="post">
         <input type="hidden" name="writer" value="${post.writer}">
         <input type="hidden" name="postNum" value="${post.postNum}">
         제목> <input type="text" name="title" size="55" value="${post.title}" required>
@@ -17,6 +17,6 @@
         </script>
 
         <button class="pull-left btn btn-theme" accesskey="s">게시하기(S)</button>
-        <button type="button" class="pull-left btn btn-theme" onclick="location.href='/${boardTitle}/list'" accesskey="c">취소(C)</button>
+        <button type="button" class="pull-left btn btn-theme" onclick="location.href='/boards/${boardTitle}'" accesskey="c">취소(C)</button>
     </form>
 </div>

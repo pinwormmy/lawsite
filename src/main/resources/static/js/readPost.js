@@ -256,7 +256,7 @@ window.onload = async function() {
     }
 
     if (isAdmin) {
-        fetch('/boardList')
+        fetch('/boards/boardList')
         .then(response => response.json())
         .then(data => {
             const selectElement = document.getElementById('moveToBoard');

@@ -4,7 +4,7 @@
     const recommendCount = ${post.recommendCount};
     const memberId = "${member.id != null ? member.id : ''}";
     const memberGrade = ${member.grade != null ? member.grade : 0};
-    const boardPath = "/${boardTitle}";
+    const boardPath = "/boards/${boardTitle}";
 
     let isLoggedIn =
     <c:choose>

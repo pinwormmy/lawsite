@@ -13,85 +13,85 @@
         <changefreq>monthly</changefreq>
     </url>
     <url>
-        <loc>https://www.sc1hub.com/supportBoard/list</loc>
+        <loc>https://www.sc1hub.com/boards/supportBoard</loc>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>https://www.sc1hub.com/videoLinkBoard/list</loc>
+        <loc>https://www.sc1hub.com/boards/videoLinkBoard</loc>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>https://www.sc1hub.com/promotionBoard/list</loc>
+        <loc>https://www.sc1hub.com/boards/promotionBoard</loc>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>https://www.sc1hub.com/freeBoard/list</loc>
+        <loc>https://www.sc1hub.com/boards/freeBoard</loc>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>https://www.sc1hub.com/beginnerBoard/list</loc>
+        <loc>https://www.sc1hub.com/boards/beginnerBoard</loc>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>https://www.sc1hub.com/funBoard/list</loc>
+        <loc>https://www.sc1hub.com/boards/funBoard</loc>
         <changefreq>weekly</changefreq>
     </url>
 
     <!-- 공략 게시판 -->
     <url>
-        <loc>https://www.sc1hub.com/terranBoard/list</loc>
+        <loc>https://www.sc1hub.com/boards/terranBoard</loc>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>https://www.sc1hub.com/tVsZBoard/list</loc>
+        <loc>https://www.sc1hub.com/boards/tVsZBoard</loc>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>https://www.sc1hub.com/tVsPBoard/list</loc>
+        <loc>https://www.sc1hub.com/boards/tVsPBoard</loc>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>https://www.sc1hub.com/tVsTBoard/list</loc>
+        <loc>https://www.sc1hub.com/boards/tVsTBoard</loc>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>https://www.sc1hub.com/zergBoard/list</loc>
+        <loc>https://www.sc1hub.com/boards/zergBoard</loc>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>https://www.sc1hub.com/zVsTBoard/list</loc>
+        <loc>https://www.sc1hub.com/boards/zVsTBoard</loc>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>https://www.sc1hub.com/zVsPBoard/list</loc>
+        <loc>https://www.sc1hub.com/boards/zVsPBoard</loc>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>https://www.sc1hub.com/zVsZBoard/list</loc>
+        <loc>https://www.sc1hub.com/boards/zVsZBoard</loc>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>https://www.sc1hub.com/protossBoard/list</loc>
+        <loc>https://www.sc1hub.com/boards/protossBoard</loc>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>https://www.sc1hub.com/pVsTBoard/list</loc>
+        <loc>https://www.sc1hub.com/boards/pVsTBoard</loc>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>https://www.sc1hub.com/pVsZBoard/list</loc>
+        <loc>https://www.sc1hub.com/boards/pVsZBoard</loc>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>https://www.sc1hub.com/pVsPBoard/list</loc>
+        <loc>https://www.sc1hub.com/boards/pVsPBoard</loc>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>https://www.sc1hub.com/teamPlayBoard/list</loc>
+        <loc>https://www.sc1hub.com/boards/teamPlayBoard</loc>
         <changefreq>weekly</changefreq>
     </url>
     <url>
-        <loc>https://www.sc1hub.com/teamPlayGuideBoard/list</loc>
+        <loc>https://www.sc1hub.com/boards/teamPlayGuideBoard</loc>
         <changefreq>weekly</changefreq>
     </url>
 </urlset>
