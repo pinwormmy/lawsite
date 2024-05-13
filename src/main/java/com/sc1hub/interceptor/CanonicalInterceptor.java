@@ -12,8 +12,16 @@ public class CanonicalInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        String canonical = "https://sc1hub.com" + request.getRequestURI();
-        request.setAttribute("canonical", canonical);
+        StringBuilder canonicalUrl = new StringBuilder("https://sc1hub.com");
+        canonicalUrl.append(request.getRequestURI());
+
+        // 쿼리 스트링 추가
+        String queryString = request.getQueryString();
+        if (queryString != null && !queryString.isEmpty()) {
+            canonicalUrl.append('?').append(queryString);
+        }
+
+        request.setAttribute("canonical", canonicalUrl.toString());
         return true;
     }
 
