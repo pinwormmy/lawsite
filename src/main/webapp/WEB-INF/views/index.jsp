@@ -1,38 +1,39 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
 <!DOCTYPE html>
 <html>
 <head>
-<title>SC1Hub - 스타크래프트1 전문 커뮤니티</title>
-<style>
-.boardList {
-    border-collapse: collapse;
-    overflow: hidden;
-    margin: 10px 0 10px 0;
-    width: 100%;
-}
-.terran-field {
-    background-image: url('/image/marine1.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-.zerg-field {
-    background-image: url('/image/hydralisk_center1.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-.protoss-field {
-    background-image: url('/image/zeratull1.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-</style>
+    <title>SC1Hub - 스타크래프트1 전문 커뮤니티</title>
+    <style>
+        .boardList {
+            border-collapse: collapse;
+            overflow: hidden;
+            margin: 10px 0 10px 0;
+            width: 100%;
+        }
+        .terran-field {
+            background-image: url('/image/marine1.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .zerg-field {
+            background-image: url('/image/hydralisk_center1.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .protoss-field {
+            background-image: url('/image/zeratull1.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    </style>
+    <%@include file="./include/header.jspf" %>
 </head>
 <body>
-<%@include file="./include/header.jspf" %>
     <div class="section-inner">
         <div class="container">
             <%@include file="./include/sidebar.jspf" %>
@@ -99,7 +100,6 @@
             <%@include file="./include/coupangAd.jspf" %>
         </div>
     </div>
-</section>
-<%@include file="./include/footer.jspf" %>
+    <%@include file="./include/footer.jspf" %>
 </body>
 </html>

@@ -1,6 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<html>
-<head>
 <style>
 #toggleButton {
     display: none; /* 모바일 환경에서 토글 버튼 숨김 처리 */
@@ -31,8 +29,7 @@
     margin : 15px;
 }
 </style>
-</head>
-<body>
+
 <div class="col-sm-3">
     <div id="sidebar" class="sidebar">
         <fieldset id="basicMenu" class="basic-menu">
@@ -119,5 +116,3 @@ function toggleMenu(menuId) {
     }
 }
 </script>
-</body>
-</html>
