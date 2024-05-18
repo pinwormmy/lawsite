@@ -9,21 +9,24 @@
             <div class="media">
                 <table class="boardList">
                    <!-- 테이블 헤더 -->
-                   <tr>
-                       <th class="post-num" style="width: 10%;">번 호</th>
-                       <th style="width: 60%;">제 &nbsp목</th>
-                       <th class="writer hide-on-mobile" style="width: 10%;">작성자</th>
-                       <th class="date hide-on-mobile" style="width: 10%;">날 짜</th>
-                       <th class="views hide-on-mobile" style="width: 5%;">조회</th>
-                       <th class="recommend hide-on-mobile" style="width: 5%;">추천</th>
-                   </tr>
+                   <thead>
+                       <tr>
+                           <th class="post-num" style="width: 10%;">번 호</th>
+                           <th style="width: 60%;">제 &nbsp목</th>
+                           <th class="writer hide-on-mobile" style="width: 10%;">작성자</th>
+                           <th class="date hide-on-mobile" style="width: 10%;">날 짜</th>
+                           <th class="views hide-on-mobile" style="width: 5%;">조회</th>
+                           <th class="recommend hide-on-mobile" style="width: 5%;">추천</th>
+                       </tr>
+                   </thead>
+                   <tbody>
                    <!-- 공지사항 목록 -->
                    <c:forEach var="notice" items="${selfNoticeList}">
                        <tr class="notice-tr">
                            <td class="post-num">${notice.postNum}&nbsp;</td>
-                           <td class="mobile-visible"><span>[공지]</span>
-                               <a class="noticeTitle" href="/boards/${boardTitle}/readPost?postNum=${notice.postNum}">
-                                   ${notice.title}</a>
+                           <td class="mobile-visible">
+                               <span>[공지]</span>
+                               <a class="noticeTitle" href="/boards/${boardTitle}/readPost?postNum=${notice.postNum}">${notice.title}</a>
                                <c:if test="${notice.commentCount > 0}">( ${notice.commentCount} )</c:if>
                            </td>
                            <td class="writer hide-on-mobile">${notice.writer}</td>
@@ -36,7 +39,8 @@
                    <c:forEach var="post" items="${postList}">
                        <tr>
                            <td class="post-num">${post.postNum}&nbsp;</td>
-                           <td class="mobile-visible"><a class="postTitle" href="/boards/${boardTitle}/readPost?postNum=${post.postNum}">${post.title}</a>
+                           <td class="mobile-visible">
+                               <a class="postTitle" href="/boards/${boardTitle}/readPost?postNum=${post.postNum}">${post.title}</a>
                                <c:if test="${post.commentCount > 0}">( ${post.commentCount} )</c:if>
                            </td>
                            <td class="writer hide-on-mobile">${post.writer}</td>
@@ -45,8 +49,11 @@
                            <td class="recommend hide-on-mobile">${post.recommendCount}</td>
                        </tr>
                    </c:forEach>
+                   </tbody>
                 </table>
-                 <c:if test="${empty postList}"><tr><td>관련 글이 없습니다...</td></tr></c:if>
+                <c:if test="${empty postList}">
+                    <p>관련 글이 없습니다...</p>
+                </c:if>
             </div>
             <div class="post-navigation">
                 <%@include file="../include/paging.jspf" %>
