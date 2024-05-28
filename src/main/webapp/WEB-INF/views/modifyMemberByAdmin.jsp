@@ -3,9 +3,9 @@
 <html lang="ko">
 <head>
 <title>SC1Hub - [관리자 모드]회원정보 수정</title>
+<%@ include file="/WEB-INF/views/include/header.jspf" %>
 </head>
 <body>
-<%@ include file="/WEB-INF/views/include/header.jspf" %>
 <div class="container">
     <%@include file="./include/sidebar.jspf" %>
     <form action="/submitModifyMemberByAdmin" method="post">

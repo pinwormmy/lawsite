@@ -4,9 +4,9 @@
 <head>
 <title>글쓰기 - ${koreanTitle}</title>
 <script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
+<%@include file="../include/header.jspf" %>
 </head>
 <body>
-<%@include file="../include/header.jspf" %>
 <div class="section-inner">
     <div class="container">
         <%@include file="../include/sidebar.jspf" %>

@@ -21,9 +21,9 @@
     padding: 0;
 }
 </style>
+<%@ include file="./include/header.jspf" %>
 </head>
 <body>
-<%@ include file="/WEB-INF/views/include/header.jspf" %>
 <div class="section-inner">
     <div class="container">
         <%@include file="./include/sidebar.jspf" %>

@@ -3,9 +3,9 @@
 <html>
 <head>
 <title>SC1Hub - 마이 페이지</title>
+<%@include file="./include/header.jspf" %>
 </head>
 <body>
-<%@include file="./include/header.jspf" %>
 <div class="section-inner">
     <div class="container">
         <%@include file="./include/sidebar.jspf" %>

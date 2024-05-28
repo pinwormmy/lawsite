@@ -23,9 +23,10 @@
         select post_num, title, content, writer, reg_date, views, comment_count, recommend_count
             from ${boardTitle}
             where <include refid="searchKeyword" /> and notice=0
-            order by post_num desc
+            order by reg_date desc
             limit #{page.postBeginPoint}, #{page.displayPostLimit}
     </select>
+
 
     <sql id="searchKeyword">
         <if test="page.searchType == 'title'">title like concat('%', #{page.keyword}, '%')</if>
@@ -46,8 +47,8 @@
 
     <update id="submitModifyPost">
         update ${boardTitle}
-        set title=#{board.title}, content=#{board.content}, writer=#{board.writer}, notice=#{board.notice}
-        where post_num=#{board.postNum}
+            set title=#{board.title}, content=#{board.content}, writer=#{board.writer}, notice=#{board.notice}, reg_date=now()
+            where post_num=#{board.postNum}
     </update>
 
     <delete id="deletePost">

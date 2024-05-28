@@ -2,15 +2,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>SC1Hub - 회원가입</title>
-    <style>
-        .infoText {
-            color: #808080; /* 회색 폰트 색상 */
-        }
-    </style>
+<title>SC1Hub - 회원가입</title>
+<style>
+    .infoText {
+        color: #808080; /* 회색 폰트 색상 */
+    }
+</style>
+<%@include file="./include/header.jspf" %>
 </head>
 <body>
-<%@include file="./include/header.jspf" %>
 <div class="section-inner">
     <div class="container">
         <div class="row">

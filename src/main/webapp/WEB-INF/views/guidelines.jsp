@@ -3,12 +3,9 @@
 <html>
 <head>
 <title>SC1Hub - 이용안내</title>
-<style>
-
-</style>
+<%@include file="./include/header.jspf" %>
 </head>
 <body>
-<%@include file="./include/header.jspf" %>
     <div class="section-inner">
         <div class="container">
             <%@include file="./include/sidebar.jspf" %>

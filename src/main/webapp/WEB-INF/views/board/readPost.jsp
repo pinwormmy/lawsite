@@ -5,9 +5,9 @@
 <head>
 <title>${post.title} - ${koreanTitle}</title>
 <link rel="stylesheet" type="text/css" href="/css/readPost.css">
+<%@include file="../include/header.jspf" %>
 </head>
 <body>
-<%@include file="../include/header.jspf" %>
 <div class="section-inner">
     <div class="container">
         <%@include file="../include/sidebar.jspf" %>
