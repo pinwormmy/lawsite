@@ -61,7 +61,7 @@
                 <fieldset class="zerg-field">
                     <legend><a href="/boards/"> [저그 네트워크]</a></legend>
                     <table class="boardList" style="width: 100%;">
-                        <tr><td><a href="/boards/zVsTBoard/readPost?postNum=6">35. 테란전 기본 흐름</a></td></tr>
+                        <tr><td><a href="/boards/zVsTBoard/readPost?postNum=3">35. 테란전 기본 흐름</a></td></tr>
                         <tr><td><a href="/boards/zVsTBoard/readPost?postNum=6">36. 필독! 뮤탈짤짤이 공략</a></td></tr>
                         <tr><td><a href="/boards/zVsTBoard/readPost?postNum=7">37. 추천날빌~ 뮤탈 링올인</a></td></tr>
                         <tr><td><a href="/boards/zVsTBoard/readPost?postNum=8">38. 그냥 밀어!! 5럴커 뚫기</a></td></tr>
