@@ -1,0 +1,30 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<style>
+</style>
+
+<div class="latest-posts col-sm-12">
+    <div id="latest1">1최신글</div>
+    <div id="latest2">2최신글</div>
+    <div id="latest3">3최신글</div>
+    <div id="latest4">4최신글</div>
+    <div id="latest5">5최신글</div>
+</div>
+
+<script>
+//alert("최신글메뉴 test1");
+
+let latest1 = document.getElementById("latest1");
+let latest2 = document.getElementById("latest2");
+let latest3 = document.getElementById("latest3");
+let latest4 = document.getElementById("latest4");
+let latest5 = document.getElementById("latest5");
+
+latest1.style.display = 'none';
+latest2.style.display = 'none';
+latest3.style.display = 'none';
+latest4.style.display = 'none';
+latest5.style.display = 'none';
+
+//setInterval(() => alert("5초후 실행 테스트임"), 5000);
+
+</script>
