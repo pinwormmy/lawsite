@@ -19,12 +19,33 @@ let latest3 = document.getElementById("latest3");
 let latest4 = document.getElementById("latest4");
 let latest5 = document.getElementById("latest5");
 
-latest1.style.display = 'none';
+latest1.style.display = 'block';
 latest2.style.display = 'none';
 latest3.style.display = 'none';
 latest4.style.display = 'none';
 latest5.style.display = 'none';
 
-//setInterval(() => alert("5초후 실행 테스트임"), 5000);
+setInterval(() => displayPostOnetime(), 5000);
+
+function displayPostOnetime() {
+    if(latest1.style.display == 'block') {
+        latest1.style.display = 'none';
+        latest2.style.display = 'block';
+    }else if(latest2.style.display == 'block') {
+        latest2.style.display = 'none';
+        latest3.style.display = 'block';
+    }else if(latest3.style.display == 'block') {
+        latest3.style.display = 'none';
+        latest4.style.display = 'block';
+    }else if(latest4.style.display == 'block') {
+        latest4.style.display = 'none';
+        latest5.style.display = 'block';
+    }else if(latest5.style.display == 'block') {
+        latest5.style.display = 'none';
+        latest1.style.display = 'block';
+    }else {
+        latest1.style.display = 'block';
+    }
+}
 
 </script>
