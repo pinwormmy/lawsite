@@ -48,4 +48,8 @@ function displayPostOnetime() {
     }
 }
 
+fetch("/showLatestPosts")
+    .then((response) =>
+        console.log(response));
+
 </script>

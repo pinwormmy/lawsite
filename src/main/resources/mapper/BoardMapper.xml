@@ -136,33 +136,39 @@
         where post_num=#{recommendDTO.postNum} and user_id=#{recommendDTO.userId}
     </delete>
 
-    <!-- 추천 수 업데이트 -->
     <update id="updateTotalRecommendCount">
         update ${boardTitle}
         set recommend_count = (select count(*) from ${boardTitle}_recommend where post_num=#{postNum})
         where post_num=#{postNum}
     </update>
 
-    <!-- 추천 수 조회 -->
     <select id="getRecommendCount" resultType="int">
         select recommend_count
         from ${boardTitle}
         where post_num=#{postNum}
     </select>
 
-    <!-- 실추천 수 조회 -->
     <select id="getActualRecommendCount" resultType="int">
         select count(*) from ${boardTitle}_recommend where post_num=#{postNum}
     </select>
 
-    <!-- 게시판 목록을 가져오는 쿼리 -->
     <select id="getBoardList" resultType="com.sc1hub.board.BoardListDTO">
         select board_title, korean_title from board_list
     </select>
 
-    <!-- 특정 게시판의 한글 이름을 가져오는 쿼리 -->
     <select id="getKoreanTitle" parameterType="java.lang.String" resultType="java.lang.String">
         SELECT korean_title FROM board_list WHERE board_title = #{boardTitle}
+    </select>
+
+    <select id="showLatestPosts" resultType="com.sc1hub.board.BoardDTO">
+        select title from beginnerboard
+        union all select title from freeboard
+        union all select title from funboard
+        union all select title from promotionboard
+        union all select title from protossboard
+        union all select title from pvspboard
+            order by reg_date desc
+            limit 5
     </select>
 
 </mapper>

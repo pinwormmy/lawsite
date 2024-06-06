@@ -60,7 +60,7 @@ public class BoardController {
         return "board/postList";
     }
 
-    @RequestMapping("/{boardTitle}/readPost")
+    @GetMapping("/{boardTitle}/readPost")
     public String readPost(@PathVariable String boardTitle, Model model, HttpServletRequest request) throws Exception {
         int postNum = Integer.parseInt(request.getParameter("postNum"));
         checkIpAndUpdateViews(boardTitle, request, postNum);
@@ -130,7 +130,7 @@ public class BoardController {
         return boardService.commentPageSetting(boardTitle, page);
     }
 
-    @RequestMapping(value = "/{boardTitle}/showCommentList")
+    @GetMapping("/{boardTitle}/showCommentList")
     @ResponseBody
     public List<CommentDTO> showCommentList(@PathVariable String boardTitle, @RequestBody PageDTO page) throws Exception {
         return boardService.showCommentList(boardTitle, page);
@@ -260,4 +260,9 @@ public class BoardController {
         return boardService.getBoardList();
     }
 
+    @GetMapping("/showLatestPosts")
+    @ResponseBody
+    public List<BoardDTO> showLatestPosts() {
+        return boardService.showLatestPosts();
+    }
 }

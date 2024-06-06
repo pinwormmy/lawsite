@@ -19,7 +19,7 @@ public class BoardServiceImpl implements BoardService {
 
     @Override
     public List<BoardDTO> showPostList(String boardTitle, PageDTO page) throws Exception {
-        log.debug("showPostList 작동 테스트입니다.");
+        //log.debug("showPostList 작동 테스트");
         boardTitle = boardTitle.toLowerCase();
         return boardMapper.showPostList(boardTitle, page);
     }
@@ -195,6 +195,11 @@ public class BoardServiceImpl implements BoardService {
     @Override
     public String getKoreanTitle(String boardTitle) {
         return boardMapper.getKoreanTitle(boardTitle);
+    }
+
+    @Override
+    public List<BoardDTO> showLatestPosts() {
+        return boardMapper.showLatestPosts();
     }
 
     // 나머지 유틸리티 메서드들

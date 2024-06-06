@@ -52,4 +52,6 @@ public interface BoardService {
     List<BoardListDTO> getBoardList();
 
     String getKoreanTitle(String boardTitle);
+
+    List<BoardDTO> showLatestPosts();
 }
