@@ -36,7 +36,7 @@
 <body>
     <div class="section-inner">
         <div class="container">
-            <%@include file="./include/latestPosts.jspf" %>
+            <!-- 구현중... <%@include file="./include/latestPosts.jspf" %> -->
             <%@include file="./include/sidebar.jspf" %>
             <div class="col-sm-3">
                 <fieldset class="terran-field">
