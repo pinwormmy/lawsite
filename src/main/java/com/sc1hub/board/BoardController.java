@@ -41,11 +41,10 @@ public class BoardController {
             canWrite = true;
             // 관리자만 글쓰기 가능한 게시판 목록
             String[] adminOnlyBoards = {
-                    "terranGuideBoard", "zergGuideBoard", "protossGuideBoard",
                     "tVsTBoard", "tVsZBoard", "tVsPBoard",
                     "zVsTBoard", "zVsZBoard", "zVsPBoard",
                     "pVsTBoard", "pVsZBoard", "pVsPBoard",
-                    "teamPlayGuideBoard"
+                    "teamPlayGuideBoard", "noticeBoard", "tipBoard"
             };
             for (String adminOnlyBoard : adminOnlyBoards) {
                 if (boardTitle.equalsIgnoreCase(adminOnlyBoard)) { // 대소문자 구분 안 함
