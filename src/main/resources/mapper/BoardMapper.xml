@@ -161,14 +161,27 @@
     </select>
 
     <select id="showLatestPosts" resultType="com.sc1hub.board.BoardDTO">
-        select title from beginnerboard
-        union all select title from freeboard
-        union all select title from funboard
-        union all select title from promotionboard
-        union all select title from protossboard
-        union all select title from pvspboard
+        select post_num, title, reg_date, 'beginnerboard' as board_title from beginnerboard
+        union all select post_num, title, reg_date, 'freeboard' as board_title from freeboard
+        union all select post_num,title, reg_date, 'funboard' as board_title from funboard
+        union all select post_num,title, reg_date, 'noticeboard' as board_title from noticeboard
+        union all select post_num,title, reg_date, 'promotionboard' as board_title from promotionboard
+        union all select post_num,title, reg_date, 'pvspboard' as board_title from pvspboard
+        union all select post_num,title, reg_date, 'pvstboard' as board_title from pvstboard
+        union all select post_num,title, reg_date, 'pvszboard' as board_title from pvszboard
+        union all select post_num,title, reg_date, 'supportboard' as board_title from supportboard
+        union all select post_num,title, reg_date, 'teamplayguideboard' as board_title from teamplayguideboard
+        union all select post_num,title, reg_date, 'tipboard' as board_title from tipboard
+        union all select post_num,title, reg_date, 'tvspboard' as board_title from tvspboard
+        union all select post_num,title, reg_date, 'tvstboard' as board_title from tvstboard
+        union all select post_num,title, reg_date, 'tvszboard' as board_title from tvszboard
+        union all select post_num,title, reg_date, 'userguideboard' as board_title from userguideboard
+        union all select post_num,title, reg_date, 'videolinkboard' as board_title from videolinkboard
+        union all select post_num,title, reg_date, 'zvspboard' as board_title from zvspboard
+        union all select post_num,title, reg_date, 'zvstboard' as board_title from zvstboard
+        union all select post_num,title, reg_date, 'zvszboard' as board_title from zvszboard
             order by reg_date desc
-            limit 5
+            limit 5;
     </select>
 
 </mapper>

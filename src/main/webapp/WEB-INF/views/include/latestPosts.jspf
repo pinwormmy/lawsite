@@ -2,30 +2,44 @@
 <style>
 </style>
 
-<div class="latest-posts col-sm-12">
-    <div id="latest1">1최신글</div>
-    <div id="latest2">2최신글</div>
-    <div id="latest3">3최신글</div>
-    <div id="latest4">4최신글</div>
-    <div id="latest5">5최신글</div>
-</div>
+<div class="latest-posts col-sm-12" id="latestPosts"></div>
 
 <script>
 //alert("최신글메뉴 test1");
 
-let latest1 = document.getElementById("latest1");
-let latest2 = document.getElementById("latest2");
-let latest3 = document.getElementById("latest3");
-let latest4 = document.getElementById("latest4");
-let latest5 = document.getElementById("latest5");
+let latestPosts =  document.getElementById("latestPosts");
+let postIndex = 1;
 
-latest1.style.display = 'block';
-latest2.style.display = 'none';
-latest3.style.display = 'none';
-latest4.style.display = 'none';
-latest5.style.display = 'none';
+fetch("/boards/showLatestPosts")
+    .then((response) => response.json())
+    .then((data) => {
+        data.forEach(latestPost => {
+            //console.log(latestPost); // 최신글 로딩 확인 테스트
+            let postListHtml = "<div id='latest" + postIndex + "'>[최신글] " + latestPost.title + "</div>";
+            latestPosts.innerHTML += postListHtml;
+            postIndex++;
+            console.log(postIndex);
+        });
+    })
+    .catch(error => console.error('최신글 로딩 에러: ', error));
 
-setInterval(() => displayPostOnetime(), 5000);
+window.onload = async function() {
+    console.log("js에서 게시물 변수 생성");
+    let latest1 = document.getElementById("latest1");
+    let latest2 = document.getElementById("latest2");
+    let latest3 = document.getElementById("latest3");
+    let latest4 = document.getElementById("latest4");
+    let latest5 = document.getElementById("latest5");
+
+    console.log("js에서 게시물 스타일 부여");
+    latest1.style.display = 'block';
+    latest2.style.display = 'none';
+    latest3.style.display = 'none';
+    latest4.style.display = 'none';
+    latest5.style.display = 'none';
+
+    setInterval(() => displayPostOnetime(), 5000);
+}
 
 function displayPostOnetime() {
     if(latest1.style.display == 'block') {
@@ -47,9 +61,5 @@ function displayPostOnetime() {
         latest1.style.display = 'block';
     }
 }
-
-fetch("/showLatestPosts")
-    .then((response) =>
-        console.log(response));
 
 </script>

@@ -129,7 +129,7 @@ public class BoardController {
         return boardService.commentPageSetting(boardTitle, page);
     }
 
-    @GetMapping("/{boardTitle}/showCommentList")
+    @RequestMapping("/{boardTitle}/showCommentList")
     @ResponseBody
     public List<CommentDTO> showCommentList(@PathVariable String boardTitle, @RequestBody PageDTO page) throws Exception {
         return boardService.showCommentList(boardTitle, page);
