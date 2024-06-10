@@ -11,6 +11,7 @@
 <div class="section-inner">
     <div class="container">
         <div class="row">
+            <%@include file="./include/latestPosts.jspf" %>
             <%@include file="./include/sidebar.jspf" %>
             <div class="col-sm-9">
                 <div class="loginMenu">

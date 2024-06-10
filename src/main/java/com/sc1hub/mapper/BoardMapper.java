@@ -1,9 +1,6 @@
 package com.sc1hub.mapper;
 
-import com.sc1hub.board.BoardDTO;
-import com.sc1hub.board.BoardListDTO;
-import com.sc1hub.board.CommentDTO;
-import com.sc1hub.board.RecommendDTO;
+import com.sc1hub.board.*;
 import com.sc1hub.util.PageDTO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -59,6 +56,6 @@ public interface BoardMapper {
 
     String getKoreanTitle(String boardTitle);
 
-    List<BoardDTO> showLatestPosts();
+    List<LatestPostDTO> showLatestPosts();
 }
 

@@ -242,6 +242,8 @@ async function fetchRecommendCount(postNum) {
 }
 
 window.onload = async function() {
+    initLatestPostForOnload(); // onload 씹히는 문제때문에 별도로 최신글 다시 세팅함
+
     if (isLoggedIn) {
         try {
             const data = await fetchData(boardPath + "/checkRecommendation?postNum=" + postNum, "GET");

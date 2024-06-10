@@ -160,7 +160,7 @@
         SELECT korean_title FROM board_list WHERE board_title = #{boardTitle}
     </select>
 
-    <select id="showLatestPosts" resultType="com.sc1hub.board.BoardDTO">
+    <select id="showLatestPosts" resultType="com.sc1hub.board.LatestPostDTO">
         select post_num, title, reg_date, 'beginnerboard' as board_title from beginnerboard
         union all select post_num, title, reg_date, 'freeboard' as board_title from freeboard
         union all select post_num,title, reg_date, 'funboard' as board_title from funboard

@@ -261,7 +261,7 @@ public class BoardController {
 
     @GetMapping("/showLatestPosts")
     @ResponseBody
-    public List<BoardDTO> showLatestPosts() {
+    public List<LatestPostDTO> showLatestPosts() {
         return boardService.showLatestPosts();
     }
 }

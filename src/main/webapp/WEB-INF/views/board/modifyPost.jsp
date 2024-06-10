@@ -9,6 +9,7 @@
 <body>
 <div class="section-inner">
     <div class="container">
+        <%@include file="../include/latestPosts.jspf" %>
         <%@include file="../include/sidebar.jspf" %>
         <div class="col-sm-9">
             <%@include file="../include/modifyPostContent.jspf" %>

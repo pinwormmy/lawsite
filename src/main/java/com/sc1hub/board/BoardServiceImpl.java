@@ -198,7 +198,7 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
-    public List<BoardDTO> showLatestPosts() {
+    public List<LatestPostDTO> showLatestPosts() {
         return boardMapper.showLatestPosts();
     }
 

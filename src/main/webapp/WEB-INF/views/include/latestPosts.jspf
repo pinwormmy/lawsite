@@ -1,5 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <style>
+
+.latest-posts {
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 </style>
 
 <div class="latest-posts col-sm-12" id="latestPosts"></div>
@@ -15,28 +23,33 @@ fetch("/boards/showLatestPosts")
     .then((data) => {
         data.forEach(latestPost => {
             //console.log(latestPost); // 최신글 로딩 확인 테스트
-            let postListHtml = "<div id='latest" + postIndex + "'>[최신글] " + latestPost.title + "</div>";
+            let setDisplayPost = ''; // 글목록을 반복문으로 불러오되, 하나만 표시되게 하기
+            if(postIndex == 1) {
+                setDisplayPost = 'block';
+            }else {
+                setDisplayPost = 'none';
+            }
+            let postListHtml = "<div id='latest" + postIndex + "' style='display:"+ setDisplayPost +"'><a href='/boards/"
+            + latestPost.boardTitle + "/readPost?postNum="+ latestPost.postNum +"'>[최신글] "
+            + latestPost.title + "</a></div>";
             latestPosts.innerHTML += postListHtml;
             postIndex++;
-            console.log(postIndex);
+            //console.log(postIndex); // 반복문과 인덱스 확인
         });
     })
     .catch(error => console.error('최신글 로딩 에러: ', error));
 
 window.onload = async function() {
+    initLatestPostForOnload();
+}
+
+function initLatestPostForOnload() {
     console.log("js에서 게시물 변수 생성");
     let latest1 = document.getElementById("latest1");
     let latest2 = document.getElementById("latest2");
     let latest3 = document.getElementById("latest3");
     let latest4 = document.getElementById("latest4");
     let latest5 = document.getElementById("latest5");
-
-    console.log("js에서 게시물 스타일 부여");
-    latest1.style.display = 'block';
-    latest2.style.display = 'none';
-    latest3.style.display = 'none';
-    latest4.style.display = 'none';
-    latest5.style.display = 'none';
 
     setInterval(() => displayPostOnetime(), 5000);
 }

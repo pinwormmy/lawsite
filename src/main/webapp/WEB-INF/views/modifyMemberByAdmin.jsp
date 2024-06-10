@@ -7,6 +7,7 @@
 </head>
 <body>
 <div class="container">
+    <%@include file="./include/latestPosts.jspf" %>
     <%@include file="./include/sidebar.jspf" %>
     <form action="/submitModifyMemberByAdmin" method="post">
         ID> <input type="text" id="id" name="id" value="${member.id}" readonly title="해당 항목은 수정할 수 없습니다"><br>
