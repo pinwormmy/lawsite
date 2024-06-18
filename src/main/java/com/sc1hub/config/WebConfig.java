@@ -49,10 +49,10 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addInterceptor(canonicalInterceptor)
                 .addPathPatterns("/**"); // 모든 경로에 대해 적용
         registry.addInterceptor(new BoardLvInterceptor())
-                .addPathPatterns("/freeBoard/writePost/**", "/freeBoard/modifyPost/**");
+                .addPathPatterns("/**/writePost", "/**/modifyPost/**", "/**/deletePost/**");
         registry.addInterceptor(new AdminInterceptor())
-                .addPathPatterns("/adminPage/**", "/modifyMemberByAdmin/**", "/terranGuideBoard/writePost/**",
-                        "/terranGuideBoard/modifyPost/**", "/terranGuideBoard/deletePost/**");
+                .addPathPatterns("/adminPage/**", "/modifyMemberByAdmin/**", "/deleteMember",
+                        "/**/writePost", "/**/modifyPost/**", "/**/deletePost/**");
     }
 
 }

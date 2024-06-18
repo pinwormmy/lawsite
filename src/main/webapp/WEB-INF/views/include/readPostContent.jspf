@@ -44,8 +44,12 @@
     <div class="post-navigation "">
         <hr>
         <a class="pull btn btn-right cancel-btn" href="/boards/${boardTitle}" accesskey="l">목 록(L)</a>
-        <c:if test="${member.id == post.writer || member.grade == 3}">
-            <a class="pull btn btn-right cancel-btn" href="javascript:void(0);" onclick="confirmDelete(${post.postNum});">삭 제(-)</a>
+        <c:if test="${member.nickName == post.writer || member.grade == 3}">
+            <form action="/boards/${boardTitle}/deletePost" method="post" onsubmit="return confirm('정말 이 글을 삭제할까요?');">
+                <input type="hidden" name="postNum" value="${post.postNum}">
+                <input type="hidden" name="writer" value="${post.writer}">
+                <button type="submit" class="pull btn btn-right cancel-btn" style="height:auto;">삭 제(-)</button>
+            </form>
             <a class="pull btn btn-right cancel-btn" href="/boards/${boardTitle}/modifyPost?postNum=${post.postNum}" accesskey="o">️수 정(O)</a>
         </c:if>
         <c:if test="${member.grade == 3}"> <!-- 관리자만 볼 수 있도록 -->

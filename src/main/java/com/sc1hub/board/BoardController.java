@@ -87,14 +87,29 @@ public class BoardController {
     }
 
     @RequestMapping("/{boardTitle}/submitPost")
-    public String submitPost(@PathVariable String boardTitle, BoardDTO post) throws Exception {
+    public String submitPost(@PathVariable String boardTitle, BoardDTO post, HttpServletRequest request, Model model) throws Exception {
+        MemberDTO member = (MemberDTO) request.getSession().getAttribute("member");
+        if(!post.getWriter().equals(member.getNickName()) && !member.getId().equals("admin")){
+            log.debug("글작성자와 로그인정보 확인 - 작성:{} / 회원:{}", post.getWriter(), member.getNickName());
+            model.addAttribute("msg", "로그인 정보를 확인해주세요");
+            model.addAttribute("url", "/");
+            return "alert";
+        }
+
         boardService.submitPost(boardTitle, post);
         return "redirect:/boards/" + boardTitle;
     }
 
     @RequestMapping("/{boardTitle}/deletePost")
-    public String deletePost(@PathVariable String boardTitle, int postNum) throws Exception {
-        boardService.deletePost(boardTitle, postNum);
+    public String deletePost(@PathVariable String boardTitle, BoardDTO post, HttpServletRequest request, Model model) throws Exception {
+        MemberDTO member = (MemberDTO) request.getSession().getAttribute("member");
+        if(!post.getWriter().equals(member.getNickName()) && !member.getId().equals("admin")){
+            log.debug("글작성자와 로그인정보 확인 - 작성:{} / 회원:{}", post.getWriter(), member.getId());
+            model.addAttribute("msg", "로그인 정보를 확인해주세요");
+            model.addAttribute("url", "/");
+            return "alert";
+        }
+        boardService.deletePost(boardTitle, post.getPostNum());
         return "redirect:/boards/" + boardTitle;
     }
 
@@ -108,7 +123,14 @@ public class BoardController {
     }
 
     @RequestMapping(value = "/{boardTitle}/submitModifyPost")
-    public String submitModifyPost(@PathVariable String boardTitle, BoardDTO post) throws Exception {
+    public String submitModifyPost(@PathVariable String boardTitle, BoardDTO post, HttpServletRequest request, Model model) throws Exception {
+        MemberDTO member = (MemberDTO) request.getSession().getAttribute("member");
+        if(!post.getWriter().equals(member.getNickName()) && !member.getId().equals("admin")){
+            log.debug("글작성자와 로그인정보 확인 - 작성:{} / 회원:{}", post.getWriter(), member.getNickName());
+            model.addAttribute("msg", "로그인 정보를 확인해주세요");
+            model.addAttribute("url", "/");
+            return "alert";
+        }
         boardService.submitModifyPost(boardTitle, post);
         return "redirect:/boards/" + boardTitle + "/readPost?postNum=" + post.getPostNum();
     }

@@ -128,7 +128,7 @@ public class MemberController {
 
     @GetMapping("/checkUniqueNickName")
     @ResponseBody
-    public String checkUniqueNickName(String nickName) throws Exception {
+    public String checkUniqueNickName(String nickName) {
         log.info("별명 중복 확인 컨트롤러 작동");
         return memberService.isUniqueNickName(nickName);
     }
@@ -150,7 +150,7 @@ public class MemberController {
         return "modifyMemberByAdmin";
     }
 
-    @RequestMapping(value = "/submitModifyMemberByAdmin")
+    @RequestMapping(value = "/submitModifyMemberByAdmin",  method = RequestMethod.POST)
     public String submitModifyMemberByAdmin(MemberDTO memberDTO) {
         log.info("관리자의 회원수정 제출");
         memberService.submitModifyMemberByAdmin(memberDTO);
