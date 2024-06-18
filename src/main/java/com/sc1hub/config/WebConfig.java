@@ -52,7 +52,8 @@ public class WebConfig implements WebMvcConfigurer {
                 .addPathPatterns("/**/writePost", "/**/modifyPost/**", "/**/deletePost/**");
         registry.addInterceptor(new AdminInterceptor())
                 .addPathPatterns("/adminPage/**", "/modifyMemberByAdmin/**", "/deleteMember",
-                        "/**/writePost", "/**/modifyPost/**", "/**/deletePost/**");
+                        "/**/writePost", "/**/modifyPost/**", "/**/deletePost/**")
+                .excludePathPatterns("/boards/supportBoard/**", "/boards/videoLinkBoard/**", "/boards/promotionBoard/**",
+                        "/boards/freeboard/**", "/boards/beginnerBoard/**", "/boards/funBoard/**", "/boards/userGuideBoard/**");
     }
-
 }
