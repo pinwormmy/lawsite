@@ -125,7 +125,7 @@ button.cancel-btn:hover {
 }
 .section-inner {
     margin-top: 10px;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
     min-height: 630px;
 }
 .ad-banners {
