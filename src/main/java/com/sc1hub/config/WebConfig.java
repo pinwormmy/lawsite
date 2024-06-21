@@ -54,6 +54,6 @@ public class WebConfig implements WebMvcConfigurer {
                 .addPathPatterns("/adminPage/**", "/modifyMemberByAdmin/**", "/deleteMember",
                         "/**/writePost", "/**/modifyPost/**", "/**/deletePost/**")
                 .excludePathPatterns("/boards/supportBoard/**", "/boards/videoLinkBoard/**", "/boards/promotionBoard/**",
-                        "/boards/freeboard/**", "/boards/beginnerBoard/**", "/boards/funBoard/**", "/boards/userGuideBoard/**");
+                        "/boards/freeBoard/**", "/boards/beginnerBoard/**", "/boards/funBoard/**", "/boards/userGuideBoard/**");
     }
 }
