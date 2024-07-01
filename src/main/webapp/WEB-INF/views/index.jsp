@@ -62,7 +62,7 @@
                 <fieldset class="zerg-field">
                     <legend><a href="/boards/"> [저그 네트워크]</a></legend>
                     <table class="boardList" style="width: 100%;">
-                        <tr><td><a href="/boards/zVsTBoard/readPost?postNum=3">35. 테란전 기본 흐름</a></td></tr>
+                        <tr><td><a href="/boards/zVsTBoard/readPost?postNum=3">35. 테란전 정석. 투햇 뮤탈</a></td></tr>
                         <tr><td><a href="/boards/zVsTBoard/readPost?postNum=6">36. 필독! 뮤탈짤짤이 공략</a></td></tr>
                         <tr><td><a href="/boards/zVsTBoard/readPost?postNum=7">37. 추천날빌~ 뮤탈 링올인</a></td></tr>
                         <tr><td><a href="/boards/zVsTBoard/readPost?postNum=8">38. 그냥 밀어!! 5럴커 뚫기</a></td></tr>
@@ -93,7 +93,7 @@
                         <tr><td><a href="/boards/pVsZBoard/readPost?postNum=2">56. 강력한 초반운영. 선게이트</a></td></tr>
                         <tr><td><a href="/boards/pVsPBoard/readPost?postNum=2">57. 프프전 정석. 기어 리버</a></td></tr>
                         <tr><td><a href="/boards/pVsPBoard/readPost?postNum=4">58. 프프전 빌드 상성 정리</a></td></tr>
-                        <tr><td><a href="/boards/pVsPBoard/readPost?postNum=5">59. 2게이트 대처법</a></td></tr>
+                        <tr><td><a href="/boards/pVsPBoard/readPost?postNum=5">59. 꼭 숙지. 투게이트 대처</a></td></tr>
                         <tr><td><a href="/boards/pVsPBoard/readPost?postNum=6">60. 쉽고 강한 3게이트 드라군</a></td></tr>
                     </table>
                 </fieldset>

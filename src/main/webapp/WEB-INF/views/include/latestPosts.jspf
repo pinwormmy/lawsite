@@ -51,7 +51,7 @@ function initLatestPostForOnload() {
     let latest4 = document.getElementById("latest4");
     let latest5 = document.getElementById("latest5");
 
-    setInterval(() => displayPostOnetime(), 5000);
+    setInterval(() => displayPostOnetime(), 3000);
 }
 
 function displayPostOnetime() {
