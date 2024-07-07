@@ -79,7 +79,8 @@ public class BoardController {
     }
 
     @RequestMapping("/{boardTitle}/writePost")
-    public String writePost(@PathVariable String boardTitle, Model model) {
+    public String writePost(@PathVariable String boardTitle, Model model, HttpServletRequest request) {
+        log.debug("세션 만료 시간 : {}", request.getSession().getMaxInactiveInterval());
         String koreanTitle = boardService.getKoreanTitle(boardTitle);
         model.addAttribute("koreanTitle", koreanTitle);
         model.addAttribute("boardTitle", boardTitle);
