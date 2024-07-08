@@ -242,4 +242,11 @@ public class MemberController {
         }
     }
 
+    @PutMapping("/extendLogin")
+    @ResponseBody
+    public void extendLogin(HttpServletRequest request) {
+        log.info("로그인 시간을 연장합니다.");
+        request.getSession().setMaxInactiveInterval(1800);
+    }
+
 }

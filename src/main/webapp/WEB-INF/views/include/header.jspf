@@ -117,6 +117,28 @@
 </div>
 
 <script>
+    function checkExtendLogin() {
+        if(${member != null}) {
+            let loginAction = confirm("장시간 한 페이지에 머무르고 있습니다. 로그인을 연장할까요?");
+            if(loginAction) {
+                fetch("/extendLogin", {
+                  method: "PUT",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                })
+                  .then((response) => response.json())
+                  .then((data) => console.log(data))
+                  alert("로그인 연장");
+            }else{
+                alert("로그아웃. 초기화면으로 이동합니다.");
+                location.href="/logout";
+            }
+        }
+    }
+
+    setInterval(checkExtendLogin, 1500000); // 로그인연장(25분마다 메세지. 확인누르면 30분 연장)
+
     function goMyPage() {
         if(${member == null}) {
             alert("로그인이 필요합니다.");

@@ -44,14 +44,14 @@ window.onload = async function() {
 }
 
 function initLatestPostForOnload() {
-    console.log("js에서 게시물 변수 생성");
+    //console.log("js에서 게시물 변수 생성");
     let latest1 = document.getElementById("latest1");
     let latest2 = document.getElementById("latest2");
     let latest3 = document.getElementById("latest3");
     let latest4 = document.getElementById("latest4");
     let latest5 = document.getElementById("latest5");
 
-    setInterval(() => displayPostOnetime(), 3000);
+    setInterval(displayPostOnetime, 3000);
 }
 
 function displayPostOnetime() {
