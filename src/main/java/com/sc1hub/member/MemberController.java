@@ -137,9 +137,9 @@ public class MemberController {
     public String adminPage(Model model, PageDTO page) throws Exception {
         log.info("관리자 모드");
         page = memberService.pageSetting(page);
-        List<MemberDTO> memberList = memberService.getMemberList(page);
-        model.addAttribute("memberList", memberList);
         model.addAttribute("pageInfo", page);
+        model.addAttribute("memberList", memberService.getMemberList(page));
+        model.addAttribute("recentVisitors", memberService.getRecentVisitors());
         return "adminPage";
     }
 
@@ -248,5 +248,6 @@ public class MemberController {
         log.info("로그인 시간을 연장합니다.");
         request.getSession().setMaxInactiveInterval(1800);
     }
+
 
 }

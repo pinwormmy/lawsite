@@ -31,6 +31,11 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
+    public List<VisitorsDTO> getRecentVisitors() {
+        return memberMapper.getRecentVisitors();
+    }
+
+    @Override
     public void submitSignUp(MemberDTO memberDTO) throws Exception {
         memberMapper.submitSignUp(memberDTO);
     }

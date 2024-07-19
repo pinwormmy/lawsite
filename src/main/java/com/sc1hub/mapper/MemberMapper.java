@@ -1,5 +1,6 @@
 package com.sc1hub.mapper;
 
+import com.sc1hub.member.VisitorsDTO;
 import com.sc1hub.util.PageDTO;
 import com.sc1hub.member.MemberDTO;
 import org.apache.ibatis.annotations.Mapper;
@@ -43,4 +44,5 @@ public interface MemberMapper {
     void deleteMember(String id);
 
 
+    List<VisitorsDTO> getRecentVisitors();
 }

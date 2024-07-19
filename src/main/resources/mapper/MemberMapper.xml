@@ -94,4 +94,12 @@
         where id=#{id}
     </delete>
 
+    <select id="getRecentVisitors" resultType="com.sc1hub.member.VisitorsDTO">
+        select *
+            from (select * from visitor_count
+                order by date desc
+                limit 10) as a
+            order by date asc
+    </select>
+
 </mapper>

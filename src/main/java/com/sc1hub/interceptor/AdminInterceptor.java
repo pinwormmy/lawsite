@@ -19,7 +19,7 @@ public class AdminInterceptor implements HandlerInterceptor {
         if (member == null || member.getGrade() != 3){
             String message = "해당 접근은 관리자 전용입니다.";
             response.setContentType("text/html;charset=UTF-8");
-            response.getWriter().write("<script>alert('" + message + "'); history.go(-1);</script>");
+            response.getWriter().write("<script>alert('" + message + "'); location.href='/';</script>");
             return false;
         }
         return true;

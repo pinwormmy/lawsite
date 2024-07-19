@@ -20,6 +20,10 @@
     list-style: none;
     padding: 0;
 }
+.daily-count, .daily-count th, .daily-count td {
+    border: 1px solid white;
+    border-collapse : collapse;
+}
 </style>
 <%@ include file="./include/header.jspf" %>
 </head>
@@ -104,6 +108,22 @@
                             </c:if>
                         </ul>
                     </nav>
+                    <div>
+                        <h3>최근 일방문자수</h3>
+                        <table class="daily-count">
+                            <tr>
+                                <c:forEach var="visitors" items="${recentVisitors}">
+                                    <th><fmt:formatDate pattern="MM.dd" value="${visitors.date}"/></th>
+                                </c:forEach>
+                            </tr>
+                            <tr>
+                                <c:forEach var="visitors" items="${recentVisitors}">
+                                    <th>${visitors.dailyCount}</th>
+                                </c:forEach>
+                            </tr>
+                        </table>
+                    </div>
+                    <button onclick="location.href='/myPage'">뒤로가기</button>
                 </div>
             </div>
         </div>

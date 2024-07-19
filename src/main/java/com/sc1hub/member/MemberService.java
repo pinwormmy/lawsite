@@ -34,4 +34,6 @@ public interface MemberService {
     void deleteMember(String id);
 
     String isUniqueNickName(String nickName);
+
+    List<VisitorsDTO> getRecentVisitors();
 }
