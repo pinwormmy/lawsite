@@ -3,12 +3,12 @@
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="스타크래프트1 전문 커뮤니티. 종족별 운영 및 전략 총정리 사이트">
+<meta name="description" content="스타크래프트1 전문 공략 사이트. 종족별 운영 및 전략 총정리">
 <link rel="canonical" href="${canonical}" />
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="/plugins/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="/css/style.css">
-<link rel="preload" href="/fonts/DungGeunMo.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+<link rel="preload" href="/fonts/neodgm.woff" as="font" type="font/woff" crossorigin="anonymous">
 <link rel="preload" href="/image/star_full.jpg" as="image">
 
 <style>
@@ -97,7 +97,7 @@
 <div class="navbar-wrapper">
     <div class="this-header">
         <div class="title-container">
-            <span class="full-title"><a href="/">SC1Hub - 스타크래프트1 전문 커뮤니티</a></span>
+            <span class="full-title"><a href="/">SC1Hub - 스타크래프트1 전문 공략 사이트</a></span>
             <span class="short-title"><a href="/">SC1Hub</a></span>
         </div>
         <div class="super-top-menu">

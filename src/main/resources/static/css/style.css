@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'DungGeunMo';
-    src: url('/fonts/DungGeunMo.ttf') format('truetype');
+    font-family: 'NeoDungGeunMo';
+    src: url('/fonts/neodgm.woff') format('woff');
 }
 body {
     min-height: 100vh;
@@ -8,9 +8,9 @@ body {
     width: 100%;
     height: 100%;
     line-height: 1.5;
-    font-family: "DungGeunMo", sans-serif;
+    font-family: "NeoDungGeunMo", sans-serif;
     color: white;
-    font-size: 16px;
+    font-size: 20px;
     background-image: url('/image/star_full.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -25,12 +25,12 @@ body {
     min-height: 850px;
 }
 p {
-  font-family: "DungGeunMo", sans-serif;
-  font-size: 16px;
+  font-family: "NeoDungGeunMo", sans-serif;
+  font-size: 20px;
   margin: 10px;
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family: "DungGeunMo", sans-serif;
+  font-family: "NeoDungGeunMo", sans-serif;
 }
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
@@ -41,7 +41,7 @@ ol, ul {
   list-style: none;
 }
 legend {
-    font-size: 16px;
+    font-size: 20px;
     color: white;
     border-bottom: 0;
     width: auto;
