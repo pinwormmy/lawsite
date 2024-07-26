@@ -32,6 +32,7 @@
     border-bottom: 1px solid white;
 }
 </style>
+
 <%@ include file="./include/header.jspf" %>
 </head>
 <body>
