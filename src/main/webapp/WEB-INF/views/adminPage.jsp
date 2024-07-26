@@ -24,9 +24,12 @@
 .daily-count {
     overflow: auto;
 }
-.daily-count, .daily-count th, .daily-count td {
-    border: 1px solid white;
+.daily-count{
+    border: 2px solid white;
     border-collapse : collapse;
+}
+.daily-count th {
+    border-bottom: 1px solid white;
 }
 </style>
 <%@ include file="./include/header.jspf" %>
@@ -51,14 +54,14 @@
             <table class="admin-memberlist">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>닉네임</th>
-                        <th>실명</th>
-                        <th>이메일</th>
-                        <th>연락처</th>
-                        <th>등급</th>
-                        <th>가입일자</th>
-                        <th>관리</th>
+                        <th style="width: 10%;">ID</th>
+                        <th style="width: 10%;">별명</th>
+                        <th style="width: 10%;">실명</th>
+                        <th style="width: 20%;">이메일</th>
+                        <th style="width: 10%;">연락처</th>
+                        <th style="width: 10%;">등급</th>
+                        <th style="width: 20%;">가입일</th>
+                        <th style="width: 10%;">관리</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -73,7 +76,7 @@
                             <td><fmt:formatDate value="${member.regDate}" pattern="yy.MM.dd"/></td>
                             <td>
                                 <button style="margin: 0px;" onclick="location.href='/modifyMemberByAdmin?id=${member.id}'">수정</button>
-                                <button onclick="confirmDelete('${member.id}')">탈퇴</button>
+                                <button style="margin: 0;" onclick="confirmDelete('${member.id}')">탈퇴</button>
                             </td>
                         </tr>
                     </c:forEach>
@@ -108,8 +111,9 @@
                     </c:if>
                 </ul>
             </nav>
+            <hr>
             <div>
-                <h3>최근 일방문자수</h3>
+                <p>최근 방문자수</p>
                 <table class="daily-count">
                     <tr>
                         <c:forEach var="visitors" items="${recentVisitors}">
@@ -123,7 +127,7 @@
                     </tr>
                 </table>
             </div>
-            <button onclick="location.href='/myPage'">뒤로가기</button>
+            <button style="margin: 10px;" onclick="location.href='/myPage'">뒤로가기</button>
         </div>
     </div>
 </div>

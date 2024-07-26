@@ -12,11 +12,11 @@
                    <thead>
                        <tr>
                            <th class="post-num" style="width: 10%;">번 호</th>
-                           <th style="width: 60%;">제 &nbsp목</th>
+                           <th style="width: 56%;">제 &nbsp목</th>
                            <th class="writer hide-on-mobile" style="width: 10%;">작성자</th>
                            <th class="date hide-on-mobile" style="width: 10%;">날 짜</th>
-                           <th class="views hide-on-mobile" style="width: 5%;">조회</th>
-                           <th class="recommend hide-on-mobile" style="width: 5%;">추천</th>
+                           <th class="views hide-on-mobile" style="width: 7%;">조회</th>
+                           <th class="recommend hide-on-mobile" style="width: 7%;">추천</th>
                        </tr>
                    </thead>
                    <tbody>
@@ -30,7 +30,7 @@
                                <c:if test="${notice.commentCount > 0}">( ${notice.commentCount} )</c:if>
                            </td>
                            <td class="writer hide-on-mobile">${notice.writer}</td>
-                           <td class="date hide-on-mobile"><fmt:formatDate pattern="yyyy.MM.dd" value="${notice.regDate}"/></td>
+                           <td class="date hide-on-mobile"><fmt:formatDate pattern="MM-dd" value="${notice.regDate}"/></td>
                            <td class="views hide-on-mobile">${notice.views}</td>
                            <td class="recommend hide-on-mobile">${notice.recommendCount}</td>
                        </tr>
@@ -44,7 +44,7 @@
                                <c:if test="${post.commentCount > 0}">( ${post.commentCount} )</c:if>
                            </td>
                            <td class="writer hide-on-mobile">${post.writer}</td>
-                           <td class="date hide-on-mobile"><fmt:formatDate pattern="yyyy.MM.dd" value="${post.regDate}"/></td>
+                           <td class="date hide-on-mobile"><fmt:formatDate pattern="MM-dd" value="${post.regDate}"/></td>
                            <td class="views hide-on-mobile">${post.views}</td>
                            <td class="recommend hide-on-mobile">${post.recommendCount}</td>
                        </tr>
