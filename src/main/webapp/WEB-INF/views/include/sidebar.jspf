@@ -39,7 +39,7 @@
                 <ul>
                     <li><a href="/guidelines" accesskey="g">0. 이용안내(G)</a></li>
                     <li><a href="/" accesskey="h">1. 초기화면(H)</a></li>
-                    <li><a href="/boards/noticeBoard" accesskey="h">2. 공지사항(N)</a></li>
+                    <li><a href="/boards/noticeBoard" accesskey="n">2. 공지사항(N)</a></li>
                     <li><a href="/boards/supportBoard">3. 문의게시판</a></li>
                     <li><a href="/boards/videoLinkBoard">4. 영상자료실</a></li>
                     <li><a href="/boards/promotionBoard">5. 추천 및 홍보</a></li>

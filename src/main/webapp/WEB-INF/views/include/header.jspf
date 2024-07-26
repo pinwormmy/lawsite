@@ -40,13 +40,12 @@
 }
 .title-container .full-title {
     display: inline;
-    font-size: 42px;
+    font-size: 48px;
 }
 .title-container .short-title {
     display: none;
 }
 .navbar-wrapper {
-    background-image: url('/image/titlebar.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -86,7 +85,7 @@
     }
     .super-top-menu ul li {
         margin-right: 5px; /* 메뉴 항목 사이의 오른쪽 여백 조정 */
-        font-size: 14px; /* 메뉴 항목의 폰트 크기 조정 */
+        font-size: 16px; /* 메뉴 항목의 폰트 크기 조정 */
     }
 }
 </style>
