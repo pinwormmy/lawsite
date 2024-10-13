@@ -21,6 +21,12 @@
 .post-heading {
     border-bottom: 2px solid white;
 }
+.title {
+    max-width: 470px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 .writer, .date {
     text-align: center;
 }

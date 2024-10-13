@@ -11,10 +11,11 @@ body {
     font-family: "NeoDungGeunMo", sans-serif;
     color: white;
     font-size: 20px;
-    background-image: url('/image/star_full.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.9)), url("/image/star_full.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    background-attachment: fixed;
 }
 @media (max-width: 768px) {
     body {

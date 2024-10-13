@@ -55,14 +55,12 @@
             <table class="admin-memberlist">
                 <thead>
                     <tr>
-                        <th style="width: 10%;">ID</th>
-                        <th style="width: 10%;">별명</th>
-                        <th style="width: 10%;">실명</th>
-                        <th style="width: 20%;">이메일</th>
-                        <th style="width: 10%;">연락처</th>
-                        <th style="width: 10%;">등급</th>
-                        <th style="width: 20%;">가입일</th>
-                        <th style="width: 10%;">관리</th>
+                        <th width="15%">ID</th>
+                        <th width="15%">별명</th>
+                        <th width="30%">이메일</th>
+                        <th width="10%">등급</th>
+                        <th width="10%">가입일</th>
+                        <th width="20%">관리</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -70,10 +68,8 @@
                         <tr>
                             <td>${member.id}</td>
                             <td>${member.nickName}</td>
-                            <td>${member.realName}</td>
                             <td>${member.email}</td>
-                            <td>${member.phone}</td>
-                            <td>${member.grade}</td>
+                            <td align="center">${member.grade}</td>
                             <td><fmt:formatDate value="${member.regDate}" pattern="yy.MM.dd"/></td>
                             <td>
                                 <button style="margin: 0px;" onclick="location.href='/modifyMemberByAdmin?id=${member.id}'">수정</button>

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <div class="post-heading mb">
-    ${koreanTitle}
+    [${koreanTitle}]
 </div>
 <div class="row">
     <div id="comments" class="col-xs-12">
@@ -12,7 +12,7 @@
                    <thead>
                        <tr>
                            <th class="post-num" style="width: 10%;">번 호</th>
-                           <th style="width: 56%;">제 &nbsp목</th>
+                           <th style="title width: 56%;">제 &nbsp목</th>
                            <th class="writer hide-on-mobile" style="width: 10%;">작성자</th>
                            <th class="date hide-on-mobile" style="width: 10%;">날 짜</th>
                            <th class="views hide-on-mobile" style="width: 7%;">조회</th>
@@ -24,7 +24,7 @@
                    <c:forEach var="notice" items="${selfNoticeList}">
                        <tr class="notice-tr">
                            <td class="post-num">${notice.postNum}&nbsp;</td>
-                           <td class="mobile-visible">
+                           <td class="title mobile-visible">
                                <span>[공지]</span>
                                <a class="noticeTitle" href="/boards/${boardTitle}/readPost?postNum=${notice.postNum}">${notice.title}</a>
                                <c:if test="${notice.commentCount > 0}">( ${notice.commentCount} )</c:if>
@@ -39,7 +39,7 @@
                    <c:forEach var="post" items="${postList}">
                        <tr>
                            <td class="post-num">${post.postNum}&nbsp;</td>
-                           <td class="mobile-visible">
+                           <td class="title mobile-visible">
                                <a class="postTitle" href="/boards/${boardTitle}/readPost?postNum=${post.postNum}">${post.title}</a>
                                <c:if test="${post.commentCount > 0}">( ${post.commentCount} )</c:if>
                            </td>
