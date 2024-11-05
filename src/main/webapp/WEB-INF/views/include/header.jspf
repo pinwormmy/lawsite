@@ -136,7 +136,7 @@
         }
     }
 
-    setInterval(checkExtendLogin, 1500000); // 로그인연장(25분마다 메세지. 확인누르면 30분 연장)
+    setInterval(checkExtendLogin, 15000000); // 로그인연장(25분마다 메세지. 확인누르면 30분 연장)
 
     function goMyPage() {
         if(${member == null}) {

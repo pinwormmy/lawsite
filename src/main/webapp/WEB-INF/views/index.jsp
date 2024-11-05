@@ -81,7 +81,7 @@
                     <legend style="color:#75f94c;">프로토스 네트워크</legend>
                     <table class="boardList" style="width: 100%;">
                         <tr><td><a href="/boards/pVsTBoard/readPost?postNum=2" style="color:yellow;">45. 프테전 정석 빌드</a></td></tr>
-                        <tr><td><a href="/boards/pVsTBoard/readPost?postNum=3">46. 짱! 대각 생넥 캐리어</a></td></tr>
+                        <tr><td><a href="/boards/pVsTBoard/readPost?postNum=3">46. 대각 생넥 캐리어</a></td></tr>
                         <tr><td><a href="/boards/pVsTBoard/readPost?postNum=4">47. 걸리버 전진로보 전략</a></td></tr>
                         <tr><td><a href="/boards/pVsTBoard/readPost?postNum=11">48. 5팩 타이밍 대처</a></td></tr>
                         <tr><td><a href="/boards/pVsZBoard/readPost?postNum=5" style="color:yellow;">49. 프저전 정석 빌드</a></td></tr>
