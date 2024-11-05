@@ -58,14 +58,14 @@
     }
     .this-header {
         width: 100%;
-        flex-direction: column; /* 헤더를 수직으로 배열 */
-        align-items: flex-start; /* 기본적으로 모든 항목을 왼쪽 정렬 */
-        padding: 0 10px; /* 양쪽 패딩 추가 */
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 10px;
     }
     .title-container {
-        font-size: 32px; /* 타이틀 폰트 크기 조정 */
-        text-align: left; /* 타이틀 왼쪽 정렬 */
-        width: 100%; /* 타이틀 컨테이너 너비 조정 */
+        font-size: 32px;
+        text-align: left;
+        width: 100%;
     }
     .title-container .full-title {
         display: none;
@@ -74,18 +74,18 @@
         display: block;
     }
     .super-top-menu {
-        width: 100%; /* 메뉴 너비를 부모와 동일하게 조정 */
-        display: flex; /* Flexbox 사용 */
-        justify-content: flex-end; /* 항목을 우측으로 정렬 */
-        padding-right: 0; /* 오른쪽 패딩 조정 */
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 0;
         margin-top: 0px;
     }
     .super-top-menu ul {
         justify-content: flex-end;
     }
     .super-top-menu ul li {
-        margin-right: 5px; /* 메뉴 항목 사이의 오른쪽 여백 조정 */
-        font-size: 16px; /* 메뉴 항목의 폰트 크기 조정 */
+        margin-right: 5px;
+        font-size: 16px;
     }
 }
 </style>

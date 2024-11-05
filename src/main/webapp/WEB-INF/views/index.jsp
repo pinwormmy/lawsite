@@ -40,7 +40,7 @@
             <%@include file="./include/sidebar.jspf" %>
             <div class="col-sm-3">
                 <fieldset class="terran-field">
-                    <legend><a href="/boards/"> [테란 네트워크]</a></legend>
+                    <legend>[테란 네트워크]</legend>
                     <table class="boardList" style="width: 100%;">
                         <tr><td><a href="/boards/tVsZBoard/readPost?postNum=3">22. 저그전 기본 정석</a></td></tr>
                         <tr><td><a href="/boards/tVsZBoard/readPost?postNum=2">23. 선엔베 업테란 운영</a></td></tr>
@@ -60,7 +60,7 @@
             </div>
             <div class="col-sm-3">
                 <fieldset class="zerg-field">
-                    <legend><a href="/boards/"> [저그 네트워크]</a></legend>
+                    <legend>[저그 네트워크]</legend>
                     <table class="boardList" style="width: 100%;">
                         <tr><td><a href="/boards/zVsTBoard/readPost?postNum=3">35. 테란전 기본 정석</a></td></tr>
                         <tr><td><a href="/boards/zVsTBoard/readPost?postNum=6">36. 필독! 뮤짤 공략</a></td></tr>
@@ -80,7 +80,7 @@
             </div>
             <div class="col-sm-3">
                 <fieldset class="protoss-field">
-                    <legend><a href="/boards/"> [프로토스 네트워크] </a></legend>
+                    <legend>[프로토스 네트워크]</legend>
                     <table class="boardList" style="width: 100%;">
                         <tr><td><a href="/boards/pVsTBoard/readPost?postNum=2">48. 테란전 기본 정석</a></td></tr>
                         <tr><td><a href="/boards/pVsTBoard/readPost?postNum=3">49. 짱! 대각 생넥 캐리어</a></td></tr>
