@@ -46,6 +46,7 @@
             '19': '/boards/tipBoard/',
             '20': '/boards/userGuideBoard/',
             // 메인페이지
+            // 테란
             '21': '/boards/tVsZBoard/readPost?postNum=3',
             '22': '/boards/tVsZBoard/readPost?postNum=2',
             '23': '/boards/tVsZBoard/readPost?postNum=6',
@@ -58,6 +59,7 @@
             '30': '/boards/tVsTBoard/readPost?postNum=4',
             '31': '/boards/tVsTBoard/readPost?postNum=5',
             '32': '/boards/tVsTBoard/readPost?postNum=3',
+            // 저그
             '33': '/boards/zVsTBoard/readPost?postNum=3',
             '34': '/boards/zVsTBoard/readPost?postNum=6',
             '35': '/boards/zVsTBoard/readPost?postNum=8',
@@ -70,6 +72,7 @@
             '42': '/boards/zVsZBoard/readPost?postNum=3',
             '43': '/boards/zVsZBoard/readPost?postNum=4',
             '44': '/boards/zVsZBoard/readPost?postNum=2',
+            // 프로토스
             '45': '/boards/pVsTBoard/readPost?postNum=2',
             '46': '/boards/pVsTBoard/readPost?postNum=3',
             '47': '/boards/pVsTBoard/readPost?postNum=4',

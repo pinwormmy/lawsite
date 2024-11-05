@@ -23,12 +23,8 @@ fetch("/boards/showLatestPosts")
     .then((data) => {
         data.forEach(latestPost => {
             //console.log(latestPost); // 최신글 로딩 확인 테스트
-            let setDisplayPost = ''; // 글목록을 반복문으로 불러오되, 하나만 표시되게 하기
-            if(postIndex == 1) {
-                setDisplayPost = 'block';
-            }else {
-                setDisplayPost = 'none';
-            }
+            // 글목록을 반복문으로 불러오되, 하나만 표시되게 하기
+            let setDisplayPost = (postIndex == 1)? 'block' : 'none';
             let postListHtml = "<div id='latest" + postIndex + "' style='display:"+ setDisplayPost +"'><a href='/boards/"
             + latestPost.boardTitle + "/readPost?postNum="+ latestPost.postNum +"'>[최신글] "
             + latestPost.title + "</a></div>";
