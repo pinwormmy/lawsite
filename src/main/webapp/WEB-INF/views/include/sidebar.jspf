@@ -33,12 +33,12 @@
 <div class="col-sm-3">
     <div id="sidebar" class="sidebar">
         <fieldset id="basicMenu" class="basic-menu">
-            <legend class="menu-header" onclick="toggleMenu('basicMenuContent')">[지휘관회의실]</legend>
+            <legend class="menu-header" onclick="toggleMenu('basicMenuContent')">[ 지휘관회의실 ]</legend>
             <p class="menu-toggle-hint">클릭시 펼치기↑</p>
             <div id="basicMenuContent" class="menu-content" style="display: block;">
                 <ul>
                     <li><a href="/guidelines" accesskey="g">0. 이용안내(G)</a></li>
-                    <li><a href="/" accesskey="h">1. 초기화면(H)</a></li>
+                    <li><a href="/" accesskey="h" style="color:#ea40f7;">1. 초기화면(H)</a></li>
                     <li><a href="/boards/noticeBoard" accesskey="n">2. 공지사항(N)</a></li>
                     <li><a href="/boards/supportBoard">3. 문의게시판</a></li>
                     <li><a href="/boards/videoLinkBoard">4. 영상자료실</a></li>
@@ -50,7 +50,7 @@
             </div>
         </fieldset>
         <fieldset id="strategyMenu" class="menu-section">
-            <legend class="menu-header" onclick="toggleMenu('strategyMenuContent')">[공략게시판]</legend>
+            <legend class="menu-header" onclick="toggleMenu('strategyMenuContent')">[ 공략게시판 ]</legend>
             <p class="menu-toggle-hint">클릭시 펼치기↑</p>
             <div id="strategyMenuContent" class="menu-content">
                 <ul>
@@ -64,7 +64,7 @@
                     <li><a href="/boards/pVsZBoard">16. 프저전 게시판</a></li>
                     <li><a href="/boards/pVsPBoard">17. 프프전 게시판</a></li>
                     <li><a href="/boards/teamPlayGuideBoard">18. 팀플 게시판</a></li>
-                    <li><a href="/boards/tipBoard" accesskey="t">19. 꿀팁보급고(T)</a></li>
+                    <li><a href="/boards/tipBoard" accesskey="t" style="color:#ea40f7;">19. 꿀팁보급고(T)</a></li>
                     <li><a href="/boards/userGuideBoard" accesskey="u">20. 유저 공략(U)</a></li>
                 </ul>
             </div>
