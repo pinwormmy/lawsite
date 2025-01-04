@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>SC1Hub - 이용안내</title>
+<title>LawSite - 이용안내</title>
 <%@include file="./include/header.jspf" %>
 </head>
 <body>
@@ -40,9 +40,9 @@
                             </a>
                         </p>
                     </div>
-                    <!-- Additional licenses can be added below in a similar format -->
+                    <!-- GoogleFont  -->
+
                 </div>
-                <!-- End of License Information -->
             </div>
         </div>
     </div>

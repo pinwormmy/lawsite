@@ -1,21 +1,12 @@
-@font-face {
-    font-family: 'NeoDungGeunMo';
-    src: url('/fonts/neodgm.woff') format('woff');
-}
 body {
     min-height: 100vh;
     position: relative;
     width: 100%;
     height: 100%;
     line-height: 1.5;
-    font-family: "NeoDungGeunMo", sans-serif;
-    color: white;
-    font-size: 20px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.9)), url("/image/star_full.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
+    font-family: 'NanumGothicLight';
+    font-size: 18px;
+    font-weight: 300;
 }
 @media (max-width: 768px) {
     body {
@@ -26,12 +17,15 @@ body {
     min-height: 850px;
 }
 p {
-  font-family: "NeoDungGeunMo", sans-serif;
+  font-family: 'NanumGothicLight';
   font-size: 20px;
   margin: 10px;
 }
+a {
+    color: black;
+}
 h1, h2, h3, h4, h5, h6 {
-  font-family: "NeoDungGeunMo", sans-serif;
+  font-family: 'NanumGothicLight';
 }
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
@@ -43,7 +37,6 @@ ol, ul {
 }
 legend {
     font-size: 20px;
-    color: #75f94c;
     border-bottom: 0;
     width: auto;
     text-align: center;
@@ -73,9 +66,6 @@ fieldset {
     border: 1px solid white;
     padding: 10px;
 }
-a {
-    color: white;
-}
 li {
     margin: 10px;
     display: block;
@@ -102,7 +92,6 @@ button {
     height: 50px;
     border: 2px solid #ffffff;
     margin: 2px;
-    color: white;
     background-color: transparent;
     cursor: pointer;
 }

@@ -5,8 +5,8 @@ plugins {
 	id 'war'
 }
 
-group = 'com.sc1hub'
-version = '1.0.093-SNAPSHOT'
+group = 'com.lawsite'
+version = '0.0.001-SNAPSHOT'
 sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
 

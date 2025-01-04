@@ -2,111 +2,111 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <!-- 메인 페이지 -->
     <url>
-        <loc>https://sc1hub.com/</loc>
+        <loc>https://lawsite.com/</loc>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
 
     <!-- 지휘관 회의실 -->
     <url>
-        <loc>https://sc1hub.com/guidelines</loc>
+        <loc>https://lawsite.com/guidelines</loc>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://sc1hub.com/boards/noticeBoard</loc>
+        <loc>https://lawsite.com/boards/noticeBoard</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://sc1hub.com/boards/supportBoard</loc>
+        <loc>https://lawsite.com/boards/supportBoard</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://sc1hub.com/boards/videoLinkBoard</loc>
+        <loc>https://lawsite.com/boards/videoLinkBoard</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://sc1hub.com/boards/promotionBoard</loc>
+        <loc>https://lawsite.com/boards/promotionBoard</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://sc1hub.com/boards/freeBoard</loc>
+        <loc>https://lawsite.com/boards/freeBoard</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://sc1hub.com/boards/beginnerBoard</loc>
+        <loc>https://lawsite.com/boards/beginnerBoard</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://sc1hub.com/boards/funBoard</loc>
+        <loc>https://lawsite.com/boards/funBoard</loc>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <!-- 공략 게시판 -->
     <url>
-        <loc>https://sc1hub.com/boards/tVsZBoard</loc>
+        <loc>https://lawsite.com/boards/tVsZBoard</loc>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://sc1hub.com/boards/tVsPBoard</loc>
+        <loc>https://lawsite.com/boards/tVsPBoard</loc>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://sc1hub.com/boards/tVsTBoard</loc>
+        <loc>https://lawsite.com/boards/tVsTBoard</loc>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://sc1hub.com/boards/zVsTBoard</loc>
+        <loc>https://lawsite.com/boards/zVsTBoard</loc>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://sc1hub.com/boards/zVsPBoard</loc>
+        <loc>https://lawsite.com/boards/zVsPBoard</loc>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://sc1hub.com/boards/zVsZBoard</loc>
+        <loc>https://lawsite.com/boards/zVsZBoard</loc>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://sc1hub.com/boards/pVsTBoard</loc>
+        <loc>https://lawsite.com/boards/pVsTBoard</loc>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://sc1hub.com/boards/pVsZBoard</loc>
+        <loc>https://lawsite.com/boards/pVsZBoard</loc>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://sc1hub.com/boards/pVsPBoard</loc>
+        <loc>https://lawsite.com/boards/pVsPBoard</loc>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://sc1hub.com/boards/teamPlayGuideBoard</loc>
+        <loc>https://lawsite.com/boards/teamPlayGuideBoard</loc>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://sc1hub.com/boards/tipboard</loc>
+        <loc>https://lawsite.com/boards/tipboard</loc>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://sc1hub.com/boards/userGuideBoard</loc>
+        <loc>https://lawsite.com/boards/userGuideBoard</loc>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<title>SC1Hub - 회원정보 수정</title>
+<title>LawSite - 회원정보 수정</title>
 <%@include file="./include/header.jspf" %>
 </head>
 <body>

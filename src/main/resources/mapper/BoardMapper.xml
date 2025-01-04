@@ -3,14 +3,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.sc1hub.mapper.BoardMapper">
+<mapper namespace="com.lawsite.mapper.BoardMapper">
 
-    <resultMap id="MemberDTO" type="com.sc1hub.member.MemberDTO">
+    <resultMap id="MemberDTO" type="com.lawsite.member.MemberDTO">
         <result column="id" property="id" />
         <result column="nickname" property="nickName" />
     </resultMap>
 
-    <resultMap id="boardCommentDTO" type="com.sc1hub.board.CommentDTO">
+    <resultMap id="boardCommentDTO" type="com.lawsite.board.CommentDTO">
         <result column="post_num" property="postNum" />
         <result column="comment_num" property="commentNum" />
         <result column="id" property="id" />
@@ -19,7 +19,7 @@
         <collection property="memberDTO" resultMap="MemberDTO" />
     </resultMap>
 
-    <select id="showPostList" resultType="com.sc1hub.board.BoardDTO">
+    <select id="showPostList" resultType="com.lawsite.board.BoardDTO">
         select post_num, title, content, writer, reg_date, views, comment_count, recommend_count
             from ${boardTitle}
             where <include refid="searchKeyword" /> and notice=0
@@ -35,7 +35,7 @@
             or content like concat('%', #{page.keyword}, '%')</if>
     </sql>
 
-    <select id="readPost" resultType="com.sc1hub.board.BoardDTO">
+    <select id="readPost" resultType="com.lawsite.board.BoardDTO">
         select * from ${boardTitle}
         where post_num=#{postNum}
     </select>
@@ -112,7 +112,7 @@
         where post_num=#{postNum} and ip=#{ip}
     </select>
 
-    <select id="showSelfNoticeList" resultType="com.sc1hub.board.BoardDTO">
+    <select id="showSelfNoticeList" resultType="com.lawsite.board.BoardDTO">
         select * from ${boardTitle}
         where notice=1
         order by post_num desc
@@ -152,7 +152,7 @@
         select count(*) from ${boardTitle}_recommend where post_num=#{postNum}
     </select>
 
-    <select id="getBoardList" resultType="com.sc1hub.board.BoardListDTO">
+    <select id="getBoardList" resultType="com.lawsite.board.BoardListDTO">
         select board_title, korean_title from board_list
     </select>
 
@@ -160,7 +160,7 @@
         SELECT korean_title FROM board_list WHERE board_title = #{boardTitle}
     </select>
 
-    <select id="showLatestPosts" resultType="com.sc1hub.board.LatestPostDTO">
+    <select id="showLatestPosts" resultType="com.lawsite.board.LatestPostDTO">
         select post_num, title, reg_date, 'beginnerboard' as board_title from beginnerboard
         union all select post_num, title, reg_date, 'freeboard' as board_title from freeboard
         union all select post_num,title, reg_date, 'funboard' as board_title from funboard

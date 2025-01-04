@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>SC1Hub - 관리자 페이지</title>
+<title>LawSite - 관리자 페이지</title>
 <style>
 .leftbar-ul li a {
     color: white;

@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<title>SC1Hub - 로그인</title>
+<title>LawSite - 로그인</title>
 <%@include file="./include/header.jspf" %>
 </head>
 <body>

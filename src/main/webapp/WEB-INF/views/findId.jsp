@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<title>SC1Hub - ID 찾기</title>
+<title>LawSite - ID 찾기</title>
 <%@include file="./include/header.jspf" %>
 </head>
 <body>

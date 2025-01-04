@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>SC1Hub - 회원가입</title>
+<title>LawSite - 회원가입</title>
 <style>
     .infoText {
         color: #808080; /* 회색 폰트 색상 */

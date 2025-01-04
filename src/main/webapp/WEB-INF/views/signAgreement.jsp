@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>SC1Hub - 약관 동의</title>
+<title>LawSite - 약관 동의</title>
 <style>
 .terms-section {
     margin-bottom: 20px;

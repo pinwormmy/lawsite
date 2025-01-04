@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<title>SC1Hub - 패스워드 찾기</title>
+<title>LawSite - 패스워드 찾기</title>
 <%@include file="./include/header.jspf" %>
 </head>
 <body>

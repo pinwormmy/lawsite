@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>SC1Hub - 마이 페이지</title>
+<title>LawSite - 마이 페이지</title>
 <%@include file="./include/header.jspf" %>
 </head>
 <body>

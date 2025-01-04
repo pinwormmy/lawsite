@@ -2,14 +2,16 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
 <meta charset="utf-8">
+<meta http-equiv="page-enter" content="blendTrans(duration=0.3)">
+<meta http-equiv="page-exit" content="blendTrans(duration=0.3)">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="스타크래프트1 전문 공략 사이트. 종족별 운영 및 전략 총정리">
+<meta name="description" content="한국헌법학회 샘플">
 <link rel="canonical" href="${canonical}" />
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
-<link rel="stylesheet" href="/plugins/bootstrap/css/bootstrap.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <link rel="stylesheet" href="/css/style.css">
-<link rel="preload" href="/fonts/neodgm.woff" as="font" type="font/woff" crossorigin="anonymous">
-<link rel="preload" href="/image/star_full.jpg" as="image">
+<link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic.css" rel="stylesheet">
 
 <style>
 .this-header {
@@ -51,7 +53,6 @@
     background-position: center;
     height: 80px;
 }
-
 @media (max-width: 768px) {
     .navbar-wrapper {
         height: 90px;
@@ -90,20 +91,16 @@
 }
 </style>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9442860103048802"
-      crossorigin="anonymous"></script>
-
 <div class="navbar-wrapper">
     <div class="this-header">
         <div class="title-container">
-            <span class="full-title"><a href="/">SC1Hub - 스타크래프트1 전문 공략 사이트</a></span>
-            <span class="short-title"><a href="/">SC1Hub</a></span>
+            <span class="full-title"><a href="/">한국헌법학회 - 샘플</a></span>
+            <span class="short-title"><a href="/">LawSite</a></span>
         </div>
         <div class="super-top-menu">
             <ul>
                 <c:if test="${member == null}">
-                    <li><a href="/login">[로그인]</a></li>
-                    <li><a href="/signAgreement">[회원가입]</a></li>
+                    <li><a href="/login">관리자로그인</a></li>
                 </c:if>
                 <c:if test="${member != null}">
                     <li>${member.nickName}님 로그인 중 : </li>
@@ -116,27 +113,6 @@
 </div>
 
 <script>
-    function checkExtendLogin() {
-        if(${member != null}) {
-            let loginAction = confirm("장시간 한 페이지에 머무르고 있습니다. 로그인을 연장할까요?");
-            if(loginAction) {
-                fetch("/extendLogin", {
-                  method: "PUT",
-                  headers: {
-                    "Content-Type": "application/json",
-                  },
-                })
-                  .then((response) => response.json())
-                  .then((data) => console.log(data))
-                  alert("로그인 시간을 연장합니다.");
-            }else{
-                alert("로그아웃. 초기화면으로 이동합니다.");
-                location.href="/logout";
-            }
-        }
-    }
-
-    setInterval(checkExtendLogin, 15000000); // 로그인연장(25분마다 메세지. 확인누르면 30분 연장)
 
     function goMyPage() {
         if(${member == null}) {
