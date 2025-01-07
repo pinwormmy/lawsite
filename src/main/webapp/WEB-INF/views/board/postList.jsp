@@ -8,10 +8,11 @@
 </head>
 <body>
     <div class="section-inner">
-        <div class="container">
-            <%@include file="../include/latestPosts.jspf" %>
-            <%@include file="../include/sidebar.jspf" %>
-            <div class="col-sm-9">
+        <div class="row">
+            <div class="col-lg-3">
+                    <%@include file="../include/sidebar.jspf" %>
+            </div>
+            <div class="col-lg-9">
                 <%@include file="../include/postListContent.jspf" %>
             </div>
         </div>

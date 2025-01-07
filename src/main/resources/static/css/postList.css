@@ -2,24 +2,25 @@
     width: 100%;
     border-collapse: collapse;
     overflow: hidden;
+    border-radius: 5px;
 }
-
 .boardList th {
     text-align: center;
-    border-bottom: 1px solid white;
+    border-top: 2px solid grey;
+    border-bottom: 2px solid grey;
 }
 .boardList tr:last-child {
     border: none;
 }
 .boardList th,
 .boardList td {
-    padding: 2px;
+    padding: 5px;
 }
 .boardList tr th {
     padding: 5px;
 }
-.post-heading {
-    border-bottom: 2px solid white;
+.boardList td {
+    border-bottom: 1px solid #f0f0f0;
 }
 .title {
     max-width: 470px;
@@ -27,10 +28,10 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.writer, .date {
+.writer, .date, .views, .post-num {
     text-align: center;
 }
-.views, .post-num, .recommend {
+.recommend {
     text-align: right;
 }
 /* 모바일 환경에서 특정 열만 숨김 */

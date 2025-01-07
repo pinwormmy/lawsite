@@ -1,69 +1,59 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<div class="post-heading mb">
-    [${koreanTitle}]
+<div class="row">
+    <div class="post-heading mb">${koreanTitle}</div>
 </div>
 <div class="row">
-    <div id="comments" class="col-xs-12">
-        <div id="comments-list" class="gap">
-            <div class="media">
-                <table class="boardList">
-                   <!-- 테이블 헤더 -->
-                   <thead>
-                       <tr>
-                           <th class="post-num" style="width: 10%;">번 호</th>
-                           <th style="title width: 56%;">제 &nbsp목</th>
-                           <th class="writer hide-on-mobile" style="width: 10%;">작성자</th>
-                           <th class="date hide-on-mobile" style="width: 10%;">날 짜</th>
-                           <th class="views hide-on-mobile" style="width: 7%;">조회</th>
-                           <th class="recommend hide-on-mobile" style="width: 7%;">추천</th>
-                       </tr>
-                   </thead>
-                   <tbody>
-                   <!-- 공지사항 목록 -->
-                   <c:forEach var="notice" items="${selfNoticeList}">
-                       <tr class="notice-tr">
-                           <td class="post-num">${notice.postNum}&nbsp;</td>
-                           <td class="title mobile-visible">
-                               <span>[공지]</span>
-                               <a class="noticeTitle" href="/boards/${boardTitle}/readPost?postNum=${notice.postNum}">${notice.title}</a>
-                               <c:if test="${notice.commentCount > 0}">( ${notice.commentCount} )</c:if>
-                           </td>
-                           <td class="writer hide-on-mobile">${notice.writer}</td>
-                           <td class="date hide-on-mobile"><fmt:formatDate pattern="MM-dd" value="${notice.regDate}"/></td>
-                           <td class="views hide-on-mobile">${notice.views}</td>
-                           <td class="recommend hide-on-mobile">${notice.recommendCount}</td>
-                       </tr>
-                   </c:forEach>
-                   <!-- 일반 게시물 목록 -->
-                   <c:forEach var="post" items="${postList}">
-                       <tr>
-                           <td class="post-num">${post.postNum}&nbsp;</td>
-                           <td class="title mobile-visible">
-                               <a class="postTitle" href="/boards/${boardTitle}/readPost?postNum=${post.postNum}">${post.title}</a>
-                               <c:if test="${post.commentCount > 0}">( ${post.commentCount} )</c:if>
-                           </td>
-                           <td class="writer hide-on-mobile">${post.writer}</td>
-                           <td class="date hide-on-mobile"><fmt:formatDate pattern="MM-dd" value="${post.regDate}"/></td>
-                           <td class="views hide-on-mobile">${post.views}</td>
-                           <td class="recommend hide-on-mobile">${post.recommendCount}</td>
-                       </tr>
-                   </c:forEach>
-                   </tbody>
-                </table>
-                <c:if test="${empty postList}">
-                    <p>관련 글이 없습니다...</p>
-                </c:if>
-            </div>
-            <div class="post-navigation">
-                <%@include file="../include/paging.jspf" %>
-            </div>
-            <div class="form-group">
-                <%@include file="../include/searchForm.jspf" %>
-            </div>
-            <c:if test="${canWrite}">
-                <a href="/boards/${boardTitle}/writePost" class="pull-right btn btn-theme" accesskey="i">글쓰기(I)</a>
-            </c:if>
-        </div><!--/#comments-list-->
-    </div><!--/#comments-->
+
+    <div class="board">
+        <table class="boardList">
+           <thead>
+               <tr>
+                   <th class="post-num" style="width: 10%;">번 호</th>
+                   <th style="title width: 60%;">제 목</th>
+                   <th class="date hide-on-mobile" style="width: 20%;">날 짜</th>
+                   <th class="views hide-on-mobile" style="width: 10%;">조 회</th>
+               </tr>
+           </thead>
+           <tbody>
+           <!-- 공지사항 목록 -->
+           <c:forEach var="notice" items="${selfNoticeList}">
+               <tr class="notice-tr" style="font-weight: 600;">
+                   <td class="post-num">${notice.postNum}&nbsp;</td>
+                   <td class="title mobile-visible">
+                       <span>[공지]</span>
+                       <a class="noticeTitle" href="/boards/${boardTitle}/readPost?postNum=${notice.postNum}">${notice.title}</a>
+                       <c:if test="${notice.commentCount > 0}">( ${notice.commentCount} )</c:if>
+                   </td>
+                   <td class="date hide-on-mobile"><fmt:formatDate pattern="YYYY-MM-dd" value="${notice.regDate}"/></td>
+                   <td class="views hide-on-mobile">${notice.views}</td>
+               </tr>
+           </c:forEach>
+           <!-- 일반 게시물 목록 -->
+           <c:forEach var="post" items="${postList}">
+               <tr>
+                   <td class="post-num">${post.postNum}&nbsp;</td>
+                   <td class="title mobile-visible">
+                       <a class="postTitle" href="/boards/${boardTitle}/readPost?postNum=${post.postNum}">${post.title}</a>
+                       <c:if test="${post.commentCount > 0}">( ${post.commentCount} )</c:if>
+                   </td>
+                   <td class="date hide-on-mobile"><fmt:formatDate pattern="YYYY-MM-dd" value="${post.regDate}"/></td>
+                   <td class="views hide-on-mobile">${post.views}</td>
+               </tr>
+           </c:forEach>
+           </tbody>
+        </table>
+        <c:if test="${empty postList}">
+            <p>관련 글이 없습니다...</p>
+        </c:if>
+        <div class="post-navigation">
+            <%@include file="../include/paging.jspf" %>
+        </div>
+        <div class="form-group">
+            <%@include file="../include/searchForm.jspf" %>
+        </div>
+        <c:if test="${canWrite}">
+            <a href="/boards/${boardTitle}/writePost" class="pull-right btn btn-theme" accesskey="i">글쓰기(I)</a>
+        </c:if>
+    </div>
 </div>
