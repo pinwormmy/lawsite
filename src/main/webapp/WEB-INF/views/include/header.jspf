@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
+<meta http-equiv="page-enter" content="blendTrans(duration=0.5)">
+<meta http-equiv="page-exit" content="blendTrans(duration=0.5)">
 <meta charset="utf-8">
-<meta http-equiv="page-enter" content="blendTrans(duration=0.3)">
-<meta http-equiv="page-exit" content="blendTrans(duration=0.3)">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="한국헌법학회 샘플">
 <link rel="canonical" href="${canonical}" />
@@ -23,7 +23,6 @@ integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEw
 }
 .title-container {
     flex-grow: 3;
-    text-align: center;
 }
 .super-top-menu {
     display: flex;
@@ -94,13 +93,13 @@ integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEw
 <div class="navbar-wrapper">
     <div class="this-header">
         <div class="title-container">
-            <span class="full-title"><a href="/">한국헌법학회 - 샘플</a></span>
-            <span class="short-title"><a href="/">LawSite</a></span>
+            <span class="full-title"><a href="/"><img src="/image/logo.gif"></a></span>
+            <span class="short-title"><a href="/"><img src="/image/logo.gif"></a></span>
         </div>
         <div class="super-top-menu">
             <ul>
                 <c:if test="${member == null}">
-                    <li><a href="/login">관리자로그인</a></li>
+                    <li><a href="/login">.️</a></li>
                 </c:if>
                 <c:if test="${member != null}">
                     <li>${member.nickName}님 로그인 중 : </li>
@@ -113,7 +112,6 @@ integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEw
 </div>
 
 <script>
-
     function goMyPage() {
         if(${member == null}) {
             alert("로그인이 필요합니다.");

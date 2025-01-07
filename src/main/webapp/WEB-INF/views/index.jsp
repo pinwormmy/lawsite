@@ -17,12 +17,7 @@
 </head>
 <body>
     <div class="col-lg-12">
-        <div id="carouselExampleIndicators" class="carousel slide main-slide">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          </div>
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img src="/image/slide1.jpg" class="d-block w-100" alt="...">
@@ -34,15 +29,8 @@
               <img src="/image/slide3.jpg" class="d-block w-100" alt="...">
             </div>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
         </div>
+
         <div class="accordion" id="accordionExample">
           <div class="accordion-item">
             <h2 class="accordion-header">
@@ -84,12 +72,12 @@
     </div>
     <div class="section-inner">
         <div class="container">
-            <div class="col-sm-3">
+            <div class="col-sm-6">
                 <fieldset class="terran-field">
                     <legend style="color:#75f94c;"> 테란 네트워크 </legend>
                     <table class="boardList" style="width: 100%;">
-                        <tr><td><a href="/boards/tVsZBoard/readPost?postNum=3" style="color:yellow;">21. 테저전 정석 빌드</a></td></tr>
-                        <tr><td><a href="/boards/tVsZBoard/readPost?postNum=2">22. 선엔베 업테란 운영</a></td></tr>
+                        <tr><td><a href="/boards/freeBoard" style="color:yellow;">(테스트)자유게시판</a></td></tr>
+                        <tr><td><a href="/boards/historyBoard">(테스트)학회연혁</a></td></tr>
                         <tr><td><a href="/boards/tVsZBoard/readPost?postNum=6">23. 저그전 심시티 모음</a></td></tr>
                         <tr><td><a href="/boards/tVsZBoard/readPost?postNum=9">24. 초보추천! 5팩 골리앗</a></td></tr>
                         <tr><td><a href="/boards/tVsPBoard/readPost?postNum=11" style="color:yellow;">25. 테프전 정석 빌드</a></td></tr>
@@ -103,7 +91,7 @@
                     </table>
                 </fieldset>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-6">
                 <fieldset class="zerg-field">
                     <legend style="color:#75f94c;">저그 네트워크</legend>
                     <table class="boardList" style="width: 100%;">
@@ -119,25 +107,6 @@
                         <tr><td><a href="/boards/zVsZBoard/readPost?postNum=3">42. 뮤짤로 스커지 잡기</a></td></tr>
                         <tr><td><a href="/boards/zVsZBoard/readPost?postNum=4">43. 4드론 대신할 날먹</a></td></tr>
                         <tr><td><a href="/boards/zVsZBoard/readPost?postNum=2">44. 저저전 빌드 상성</a></td></tr>
-                    </table>
-                </fieldset>
-            </div>
-            <div class="col-sm-3">
-                <fieldset class="protoss-field">
-                    <legend style="color:#75f94c;">프로토스 네트워크</legend>
-                    <table class="boardList" style="width: 100%;">
-                        <tr><td><a href="/boards/pVsTBoard/readPost?postNum=2" style="color:yellow;">45. 프테전 정석 빌드</a></td></tr>
-                        <tr><td><a href="/boards/pVsTBoard/readPost?postNum=3">46. 대각 생넥 캐리어</a></td></tr>
-                        <tr><td><a href="/boards/pVsTBoard/readPost?postNum=4">47. 걸리버 전진로보 전략</a></td></tr>
-                        <tr><td><a href="/boards/pVsTBoard/readPost?postNum=11">48. 5팩 타이밍 대처</a></td></tr>
-                        <tr><td><a href="/boards/pVsZBoard/readPost?postNum=5" style="color:yellow;">49. 프저전 정석 빌드</a></td></tr>
-                        <tr><td><a href="/boards/pVsZBoard/readPost?postNum=15">50. 최신래더맵 심시티</a></td></tr>
-                        <tr><td><a href="/boards/pVsZBoard/readPost?postNum=3">51. 개같은 973 대처하기</a></td></tr>
-                        <tr><td><a href="/boards/pVsZBoard/readPost?postNum=14">52. 초장기전 운영법</a></td></tr>
-                        <tr><td><a href="/boards/pVsPBoard/readPost?postNum=2" style="color:yellow;">53. 프프전 정석 빌드</a></td></tr>
-                        <tr><td><a href="/boards/pVsPBoard/readPost?postNum=4">54. 프프전 빌드 상성</a></td></tr>
-                        <tr><td><a href="/boards/pVsPBoard/readPost?postNum=5">55. 암기!! 투게이트 대처</a></td></tr>
-                        <tr><td><a href="/boards/pVsPBoard/readPost?postNum=6">56. 날먹~3게이트 드라군</a></td></tr>
                     </table>
                 </fieldset>
             </div>
