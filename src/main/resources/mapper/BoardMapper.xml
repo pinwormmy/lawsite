@@ -27,7 +27,6 @@
             limit #{page.postBeginPoint}, #{page.displayPostLimit}
     </select>
 
-
     <sql id="searchKeyword">
         <if test="page.searchType == 'title'">title like concat('%', #{page.keyword}, '%')</if>
         <if test="page.searchType == 'content'">content like concat('%', #{page.keyword}, '%')</if>
@@ -47,7 +46,7 @@
 
     <update id="submitModifyPost">
         update ${boardTitle}
-            set title=#{board.title}, content=#{board.content}, writer=#{board.writer}, notice=#{board.notice}, reg_date=now()
+            set title=#{board.title}, content=#{board.content}, notice=#{board.notice}
             where post_num=#{board.postNum}
     </update>
 

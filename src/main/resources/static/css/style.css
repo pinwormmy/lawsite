@@ -157,6 +157,10 @@ button.cancel-btn:hover {
 .mainmenu img {
     object-fit: cover;
 }
+.mainmenu a {
+    font-size: 26px;
+    font-weight: 600;
+}
 body {
   animation: fadein 3s forwards; /* 애니메이션 실행 */
 }

@@ -24,7 +24,7 @@
         <a href="/boards/researchBoard" class="list-group-item list-group-item-action">헌법학연구</a>
         <a href="/boards/downloadBoard" class="list-group-item list-group-item-action">학회자료실</a>
         <a href="/boards/freeBoard" class="list-group-item list-group-item-action">자유게시판</a>
-        <a href="/boards/downloadBoard" class="list-group-item list-group-item-action">학회가입</a>
+        <a href="/boards/downloadBoard/readPost?postNum=1" class="list-group-item list-group-item-action">학회가입</a>
     </div>
 </div>
 

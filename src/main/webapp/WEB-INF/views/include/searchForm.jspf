@@ -6,9 +6,9 @@
         <input class="form-control" name="keyword" value="${page.keyword}" placeholder="검색어 입력" size="50">
     </div>
     <div class="col-auto">
-        <button class="btn btn-primary mb-3" type="submit">검 색</button>
+        <button class="btn btn-outline-info" type="submit">검 색</button>
         <c:if test="${page.keyword != ''}">
-            <button type="button" class="btn btn-primary mb-3" onclick="location.href='/boards/${boardTitle}'">검색취소</button>
+            <button type="button" class="btn btn-outline-info" onclick="location.href='/boards/${boardTitle}'">검색취소</button>
         </c:if>
     </div>
 

@@ -46,12 +46,5 @@
             </form>
             <a class="pull btn btn-right cancel-btn" href="/boards/${boardTitle}/modifyPost?postNum=${post.postNum}">️수정</a>
         </c:if>
-        <c:if test="${member.grade == 3}"> <!-- 관리자만 볼 수 있도록 -->
-            <select id="moveToBoard" name="moveToBoard" class="pull btn btn-left cancel-btn">
-                <option value="" selected disabled>이동할 게시판 선택</option>
-                <!-- JavaScript를 통해 옵션을 채워 넣을 예정 -->
-            </select>
-            <a href="javascript:void(0);" class="pull btn btn-right cancel-btn" onclick="movePost(${post.postNum});">이동</a>
-        </c:if>
     </div>
 </div>

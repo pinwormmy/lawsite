@@ -71,7 +71,7 @@
                 </div>
                 <div class="col-lg-2">
                     <div class="mainmenu">
-                        <a href="/boards/downloadBoard">
+                        <a href="/boards/downloadBoard/readPost?postNum=1">
                             <img src="/image/membership_btn.jpg" width="180px">학회가입
                        </a>
                     </div>

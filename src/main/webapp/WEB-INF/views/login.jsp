@@ -20,11 +20,10 @@
                     </div>
                     <form action="/submitLogin" method="post">
                         <div class="inputId">
-                            회원ID>
-                            <input type="text" name="id" id="id">
+                            <input type="text" name="id" id="id" placeholder="관리자ID입력">
                         </div>
                         <div>
-                            패스워드> <input type="password" name="pw" id="pw">
+                            <input type="password" name="pw" id="pw" placeholder="비밀번호 입력">
                         </div>
                         <button id="loginButton" class="btn btn-light">로그인</button><br>
                     </form>

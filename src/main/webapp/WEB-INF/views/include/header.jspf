@@ -95,9 +95,6 @@ integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEw
         </div>
         <div class="super-top-menu">
             <ul>
-                <c:if test="${member == null}">
-                    <li><a href="/login">.️</a></li>
-                </c:if>
                 <c:if test="${member != null}">
                     <li>${member.nickName}님 로그인 중 : </li>
                     <li><a href="/logout">[로그아웃]</a></li>
