@@ -15,6 +15,7 @@
 }
 </style>
 
+
 <div id="sidebar" class="sidebar">
     <div class="list-group side-list">
         <a href="/boards/historyBoard" class="list-group-item list-group-item-action" aria-current="true">
