@@ -1,19 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 
-<div class="title-row">
-    <div class="post-title">${post.title}</div>
-</div>
 <div class="info-row">
-    <span>작성자 : ${post.writer} </span> &nbsp;
+    <div class="post-title">${post.title}</div>
     <span>날 짜 : <fmt:formatDate value="${post.regDate}" pattern="yyyy-MM-dd HH:mm"/> </span> &nbsp;
     <span>조 회 : ${post.views} </span> &nbsp;
 </div>
 <div class="row">
     <div class="post-content">
         ${post.content}
-        <div class="recommend-div">
-            <button onclick="addRecommend(${post.postNum})" accesskey="m">추천(M) : ${post.recommendCount}</button>
-        </div>
         <hr>
     </div>
 
@@ -35,7 +29,7 @@
                         <textarea rows="1" class="form-control" name="commentContent" id="commentContent" placeholder="댓글을 작성합니다"></textarea>
                     </div>
                     <div class="col-sm-12">
-                        <button type="button" class="pull btn btn-right cancel-btn" style="margin-left: 15px;" onclick="addComment();" accesskey="c">댓글작성(C)</button>
+                        <button type="button" class="pull btn btn-right cancel-btn" style="margin-left: 15px;" onclick="addComment();">댓글작성</button>
                     </div>
                 </div>
             </div><!--/#comment-form-->
@@ -43,21 +37,21 @@
     </div><!--/#comments-->
     <div class="post-navigation "">
         <hr>
-        <a class="pull btn btn-right cancel-btn" href="/boards/${boardTitle}" accesskey="l">목 록(L)</a>
+        <a class="pull btn btn-right cancel-btn" href="/boards/${boardTitle}">목록</a>
         <c:if test="${member.nickName == post.writer || member.grade == 3}">
             <form action="/boards/${boardTitle}/deletePost" method="post" onsubmit="return confirm('정말 이 글을 삭제할까요?');">
                 <input type="hidden" name="postNum" value="${post.postNum}">
                 <input type="hidden" name="writer" value="${post.writer}">
-                <button type="submit" class="pull btn btn-right cancel-btn" style="height:auto;">삭 제(-)</button>
+                <button type="submit" class="pull btn btn-right cancel-btn" style="height:auto;">삭제</button>
             </form>
-            <a class="pull btn btn-right cancel-btn" href="/boards/${boardTitle}/modifyPost?postNum=${post.postNum}" accesskey="o">️수 정(O)</a>
+            <a class="pull btn btn-right cancel-btn" href="/boards/${boardTitle}/modifyPost?postNum=${post.postNum}">️수정</a>
         </c:if>
         <c:if test="${member.grade == 3}"> <!-- 관리자만 볼 수 있도록 -->
             <select id="moveToBoard" name="moveToBoard" class="pull btn btn-left cancel-btn">
                 <option value="" selected disabled>이동할 게시판 선택</option>
                 <!-- JavaScript를 통해 옵션을 채워 넣을 예정 -->
             </select>
-            <a href="javascript:void(0);" class="pull btn btn-right cancel-btn" onclick="movePost(${post.postNum});">이동(-)</a>
+            <a href="javascript:void(0);" class="pull btn btn-right cancel-btn" onclick="movePost(${post.postNum});">이동</a>
         </c:if>
     </div>
 </div>

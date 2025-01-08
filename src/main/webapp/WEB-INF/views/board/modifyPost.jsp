@@ -7,15 +7,16 @@
 <%@include file="../include/header.jspf" %>
 </head>
 <body>
-<div class="section-inner">
-    <div class="container">
-        <%@include file="../include/latestPosts.jspf" %>
-        <%@include file="../include/sidebar.jspf" %>
-        <div class="col-sm-9">
-            <%@include file="../include/modifyPostContent.jspf" %>
+    <div class="section-inner">
+        <div class="row">
+            <div class="col-lg-2 sidebar-full">
+                    <%@include file="../include/sidebar.jspf" %>
+            </div>
+            <div class="col-lg-10">
+                <%@include file="../include/modifyPostContent.jspf" %>
+            </div>
         </div>
     </div>
-</div>
 <%@include file="../include/footer.jspf" %>
 
 <script>

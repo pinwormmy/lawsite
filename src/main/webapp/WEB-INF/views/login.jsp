@@ -9,32 +9,25 @@
 </head>
 <body>
 <div class="section-inner">
-    <div class="container">
-        <div class="row">
-            <%@include file="./include/latestPosts.jspf" %>
+    <div class="row">
+        <div class="col-lg-2">
             <%@include file="./include/sidebar.jspf" %>
-            <div class="col-sm-9">
-                <div class="loginMenu">
-                    <div class="signUpMenu">
-                        <div class="loginTitle">
-                        </div>
-                        <form action="/submitLogin" method="post">
-                            <div class="inputId">
-                                회원ID>
-                                <input type="text" name="id" id="id">
-                            </div>
-                            <div>
-                                패스워드> <input type="password" name="pw" id="pw">
-                            </div>
-                            <button id="loginButton" accesskey="l">로그인(L)</button><br>
-                            <hr>
-                        </form>
-                        <div class="subMenu">
-                            <div id="right-menu">
-                                <a href="/findId">ID 찾기</a> | <a href="/findPassword">패스워드 찾기</a>
-                            </div>
-                        </div>
+        </div>
+        <div class="col-lg-10">
+            <div class="loginMenu">
+                <div class="signUpMenu">
+                    <div class="loginTitle">
                     </div>
+                    <form action="/submitLogin" method="post">
+                        <div class="inputId">
+                            회원ID>
+                            <input type="text" name="id" id="id">
+                        </div>
+                        <div>
+                            패스워드> <input type="password" name="pw" id="pw">
+                        </div>
+                        <button id="loginButton" class="btn btn-light">로그인</button><br>
+                    </form>
                 </div>
             </div>
         </div>

@@ -10,7 +10,7 @@ body {
 }
 @media (max-width: 768px) {
     body {
-        font-size: 20px;
+        font-size: 15px;
     }
 }
 .section-wrapper {
@@ -18,12 +18,12 @@ body {
 }
 p {
   font-family: 'NanumGothic';
-  font-size: 20px;
+  font-size: 18px;
   margin: 10px;
 }
 a {
     color: black;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 300;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -37,15 +37,8 @@ ol, ul {
   padding: 0;
   list-style: none;
 }
-legend {
-    font-size: 20px;
-    border-bottom: 0;
-    width: auto;
-    text-align: center;
-    margin: 0;
-}
 th {
-    font-size: 21px;
+    font-size: 19px;
     font-weight: 600;
     padding: 10px;
 }
@@ -70,7 +63,6 @@ fieldset {
     padding: 10px;
 }
 li {
-    margin: 10px;
     display: block;
 }
 a, a:focus, a:hover {
@@ -120,7 +112,6 @@ button.cancel-btn:hover {
 .section-inner {
     margin-top: 10px;
     margin-bottom: 0px;
-    min-height: 630px;
 }
 .ad-banners {
     display: flex;
@@ -129,19 +120,42 @@ button.cancel-btn:hover {
     margin-top: 20px;
 }
 .btn {
-    font-size: 20px;
+    font-size: 17px;
 }
 .post-heading {
-    font-size: 50px;
-    font-weight: 600;
+    font-size: 46px;
+    font-weight: 700;
 }
 .row {
     margin: 10px;
 }
+.page-btn {
+    color: grey;
+}
 .footer-info {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 100;
     font-color: grey;
+}
+.sidebar-full::before {
+    content: "";
+    background: url("/image/sidebar_back.jpg") no-repeat;
+    background-size: contain;
+    position: absolute;
+    width: 18%;
+    min-width: 280px;
+    top: 85px;
+    left: 0px;
+    right: 0px;
+    bottom: 130px;
+    opacity: 0.45;
+}
+.mainmenu {
+    text-align: center;
+    margin: 5px;
+}
+.mainmenu img {
+    object-fit: cover;
 }
 body {
   animation: fadein 3s forwards; /* 애니메이션 실행 */

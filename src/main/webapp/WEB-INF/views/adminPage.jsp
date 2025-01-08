@@ -47,7 +47,7 @@
                     <input type="text" name="keyword" value="${pageInfo.keyword}">
                     <button type="submit" style="visibility:hidden">검색</button>
                     <c:if test="${pageInfo.keyword != ''}">
-                        <button type="button" class="pull btn btn-theme cancel-btn" onclick="location.href='/adminPage'" accesskey="c">검색취소(C)</button>
+                        <button type="button" class="pull btn btn-theme cancel-btn" onclick="location.href='/adminPage'">검색취소</button>
                     </c:if>
                     <hr>
                 </div>

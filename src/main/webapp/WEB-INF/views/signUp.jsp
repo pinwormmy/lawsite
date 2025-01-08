@@ -53,7 +53,7 @@
                                 <input type="email" id="email" name="email"><br>
                             </div>
                             <br>
-                            <button type="button" class="basicButton" onclick="checkSignupForm();" accesskey="s">가입하기(S)</button><br>
+                            <button type="button" class="basicButton" onclick="checkSignupForm();">가입하기</button><br>
                         </form>
                     </div>
                 </div>

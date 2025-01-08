@@ -12,7 +12,7 @@
         <script type="text/javascript">	// 글쓰기 editor 및 사진 업로드 기능
             CKEDITOR.replace('content', {filebrowserUploadUrl:'/imageUpload'});
         </script>
-        <button class="pull-left btn btn-theme" accesskey="s">게시하기(S)</button>
-        <button type="button" class="pull-left btn btn-theme" onclick="location.href='/boards/${boardTitle}'" accesskey="c">취소(C)</button>
+        <button class="pull-left btn btn-theme">게시하기</button>
+        <button type="button" class="pull-left btn btn-theme" onclick="location.href='/boards/${boardTitle}'">취소</button>
     </form>
 </div>

@@ -9,10 +9,10 @@
 <body>
     <div class="section-inner">
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-2 sidebar-full">
                     <%@include file="../include/sidebar.jspf" %>
             </div>
-            <div class="col-lg-9">
+            <div class="col-lg-10">
                 <%@include file="../include/postListContent.jspf" %>
             </div>
         </div>

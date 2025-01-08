@@ -22,7 +22,8 @@
                    <td class="post-num">${notice.postNum}&nbsp;</td>
                    <td class="title mobile-visible">
                        <span>[공지]</span>
-                       <a class="noticeTitle" href="/boards/${boardTitle}/readPost?postNum=${notice.postNum}">${notice.title}</a>
+                       <a class="noticeTitle" href="/boards/${boardTitle}/readPost?postNum=${notice.postNum}"
+                       style="font-weight: 600;">${notice.title}</a>
                        <c:if test="${notice.commentCount > 0}">( ${notice.commentCount} )</c:if>
                    </td>
                    <td class="date hide-on-mobile"><fmt:formatDate pattern="YYYY-MM-dd" value="${notice.regDate}"/></td>
@@ -53,7 +54,7 @@
             <%@include file="../include/searchForm.jspf" %>
         </div>
         <c:if test="${canWrite}">
-            <a href="/boards/${boardTitle}/writePost" class="pull-right btn btn-theme" accesskey="i">글쓰기(I)</a>
+            <a href="/boards/${boardTitle}/writePost" class="pull-right btn btn-theme">글쓰기</a>
         </c:if>
     </div>
 </div>
