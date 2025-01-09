@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -249,5 +248,8 @@ public class MemberController {
         request.getSession().setMaxInactiveInterval(1800);
     }
 
-
+    @GetMapping(value = "/greetings")
+    public String greetings() {
+        return "greetings";
+    }
 }

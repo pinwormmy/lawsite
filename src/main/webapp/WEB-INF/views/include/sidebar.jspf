@@ -13,14 +13,31 @@
     font-size: 28px;
     font-weight: 700;
 }
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.submenu {
+  display: none;
+}
+.submenu > li:hover > ul {
+  display: block;
+}
+
 </style>
 
 
 <div id="sidebar" class="sidebar">
     <div class="list-group side-list">
-        <a href="/boards/historyBoard" class="list-group-item list-group-item-action" aria-current="true">
-        학회연혁
+        <a href="/greetings" class="list-group-item list-group-item-action" aria-current="true">
+        학회소개
         </a>
+        <ul class="submenu">
+            <li><a href="#">text1</a></li>
+            <li><a href="#">text2</a></li>
+            <li><a href="#">text3</a></li>
+          </ul>
         <a href="/boards/noticeBoard" class="list-group-item list-group-item-action">학회소식</a>
         <a href="/boards/researchBoard" class="list-group-item list-group-item-action">헌법학연구</a>
         <a href="/boards/downloadBoard" class="list-group-item list-group-item-action">학회자료실</a>
