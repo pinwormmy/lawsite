@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>한국헌법학회 샘플</title>
+    <title>사이트 샘플</title>
     <style>
         .boardList {
             border-collapse: collapse;
