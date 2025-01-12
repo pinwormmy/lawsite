@@ -36,7 +36,7 @@
             <div class="row">
                 <div class="col-lg-2">
                     <div class="mainmenu">
-                        <a href="/boards/historyBoard">
+                        <a href="/greetings">
                             <img src="/image/aboutus_btn.jpg" width="180px">학회소개
                        </a>
                     </div>

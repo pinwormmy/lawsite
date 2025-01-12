@@ -10,7 +10,7 @@
 <body>
 <div class="section-inner">
     <div class="row">
-        <div class="col-lg-2 sidebar-full">
+        <div class="col-lg-2">
                 <%@include file="../include/sidebar.jspf" %>
         </div>
         <div class="col-lg-10">
