@@ -161,6 +161,9 @@ button.cancel-btn:hover {
     font-size: 26px;
     font-weight: 600;
 }
+.board {
+    min-height: 700px;
+}
 body {
   animation: fadein 3s forwards; /* 애니메이션 실행 */
 }

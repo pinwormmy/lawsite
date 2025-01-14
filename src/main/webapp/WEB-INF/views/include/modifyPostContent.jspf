@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<div class="col-xs-12 mb wow fadeInUp">
+<div class="board">
     <form action="/boards/${boardTitle}/submitModifyPost" method="post">
         <input type="hidden" name="writer" value="${post.writer}">
         <input type="hidden" name="postNum" value="${post.postNum}">
@@ -19,4 +19,4 @@
         <button class="pull-left btn btn-theme">게시하기</button>
         <button type="button" class="pull-left btn btn-theme" onclick="location.href='/boards/${boardTitle}'">취소</button>
     </form>
-</div>
+</board>

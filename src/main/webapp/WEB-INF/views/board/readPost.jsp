@@ -18,6 +18,7 @@
         </div>
     </div>
 </div>
+<%@include file="../include/readPostScript.jspf" %>
 <script src="/js/readPost.js"></script>
 <%@include file="../include/footer.jspf" %>
 </body>
