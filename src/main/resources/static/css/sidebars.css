@@ -75,6 +75,7 @@ main {
   margin-top: .125rem;
   margin-left: 1.25rem;
   text-decoration: none;
+  font-weight: 600;
 }
 .btn-toggle-nav a:hover,
 .btn-toggle-nav a:focus {

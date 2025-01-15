@@ -22,9 +22,9 @@ p {
   margin: 10px;
 }
 a {
-    color: black;
-    font-size: 16px;
-    font-weight: 300;
+    color: #1d1d1f;
+    font-size: 17px;
+    font-weight: 400;
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: 'NanumGothic';
@@ -109,10 +109,6 @@ button.cancel-btn:hover {
 .container {
     padding: 0;
 }
-.section-inner {
-    margin-top: 10px;
-    margin-bottom: 0px;
-}
 .ad-banners {
     display: flex;
     justify-content: center;
@@ -125,9 +121,6 @@ button.cancel-btn:hover {
 .post-heading {
     font-size: 46px;
     font-weight: 700;
-}
-.row {
-    margin: 10px;
 }
 .page-btn {
     color: grey;
