@@ -3,7 +3,6 @@ package com.lawsite.config;
 import com.lawsite.interceptor.AdminInterceptor;
 import com.lawsite.interceptor.BoardLvInterceptor;
 import com.lawsite.interceptor.CanonicalInterceptor;
-import com.lawsite.interceptor.VisitorCountInterceptor;
 import com.lawsite.visitorCount.VisitorCountService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,8 +43,6 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new VisitorCountInterceptor(visitorCountService))
-                .addPathPatterns("/**");
         registry.addInterceptor(canonicalInterceptor)
                 .addPathPatterns("/**"); // 모든 경로에 대해 적용
         registry.addInterceptor(new BoardLvInterceptor())
